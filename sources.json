@@ -1,0 +1,25 @@
+[
+  {
+    "id": "artificial-engineering",
+    "name": "Artificial Engineering",
+    "home_url": "https://www.linkedin.com/newsletters/artificial-engineering-7324756381780140032",
+    "feed_url": "",
+    "enabled": true,
+    "sections": [
+      {
+        "type": "project_roundup",
+        "required": true,
+        "display": "unnumbered_list",
+        "coverage": "all"
+      }
+    ]
+  },
+  {
+    "id": "elevate",
+    "name": "Elevate",
+    "home_url": "https://addyo.substack.com/",
+    "feed_url": "https://addyo.substack.com/feed",
+    "enabled": true,
+    "sections": []
+  }
+]
