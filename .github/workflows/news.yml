@@ -30,6 +30,11 @@ jobs:
           python-version: '3.12'
       - name: Collect new items into editorial queue
         run: python scripts/news.py fetch
+      - name: Generate Korean summaries from verified source excerpts
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: gpt-4.1-mini
+        run: python scripts/summarize.py
       - name: Build validated site and RSS
         run: python scripts/news.py build
       - name: Deploy Pages
