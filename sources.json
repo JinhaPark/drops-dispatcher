@@ -12,7 +12,8 @@
         "display": "unnumbered_list",
         "coverage": "all"
       }
-    ]
+    ],
+    "author": "André Lindenberg"
   },
   {
     "id": "elevate",
@@ -20,6 +21,7 @@
     "home_url": "https://addyo.substack.com/",
     "feed_url": "https://addyo.substack.com/feed",
     "enabled": true,
-    "sections": []
+    "sections": [],
+    "author": "Addy Osmani"
   }
 ]
