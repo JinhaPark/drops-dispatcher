@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "monitoring_started_at": "2026-10-19T18:17:23Z",
+  "last_checked_at": "2026-10-19T18:17:23Z",
+  "baseline_policy": "Only independently verified issues published strictly after monitoring_started_at may be published automatically. Older items are baseline-only and never sent as newly discovered issues.",
+  "sources": {
+    "artificial-engineering": {
+      "status": "access_limited",
+      "last_checked_at": "2026-10-19T18:17:23Z",
+      "latest_confirmed_issue": null,
+      "notes": "LinkedIn newsletter index could not be fetched (cache miss); author's profile was rate-limited; search hits are not a complete or freshly verified issue list. Do not infer no new issue from this result."
+    },
+    "elevate": {
+      "status": "incomplete_freshness",
+      "last_checked_at": "2026-10-19T18:17:23Z",
+      "latest_confirmed_issue": null,
+      "last_visible_archived_issue": {
+        "title": "Agentic Code Quality",
+        "published_at": "2026-08-08",
+        "url": "https://addyo.substack.com/archive"
+      },
+      "notes": "Substack archive response was cached about two months earlier; no recent issue independently verified, but this does not establish no new publication."
+    }
+  }
+}
