@@ -2,9 +2,8 @@
   {
     "id": "artificial-engineering",
     "name": "Artificial Engineering",
-    "home_url": "https://www.linkedin.com/newsletters/artificial-engineering-7324756381780140032",
-    "feed_url": "",
-    "enabled": true,
+    "url": "https://www.linkedin.com/newsletters/artificial-engineering-7324756381780140032",
+    "author": "André Lindenberg",
     "sections": [
       {
         "type": "project_roundup",
@@ -12,16 +11,13 @@
         "display": "unnumbered_list",
         "coverage": "all"
       }
-    ],
-    "author": "André Lindenberg"
+    ]
   },
   {
     "id": "elevate",
     "name": "Elevate",
-    "home_url": "https://addyo.substack.com/",
-    "feed_url": "https://addyo.substack.com/feed",
-    "enabled": true,
-    "sections": [],
-    "author": "Addy Osmani"
+    "url": "https://addyo.substack.com/archive",
+    "author": "Addy Osmani",
+    "sections": []
   }
 ]
