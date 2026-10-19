@@ -13,9 +13,9 @@ New sources must be added through the registry rather than hard-coded into inges
 ## Korean editorial style
 - Always write polite, natural Korean (존댓말); concise, technical, factual, not promotional.
 - Order articles by publication date descending, using original source dates and ISO dates in metadata.
-- Per article: publication date (YYYY.MM.DD), original English title linked to canonical source, then exactly seven Korean sentences describing the article's core technical substance.
+- Per article: publication date (YYYY.MM.DD), original English title linked to canonical source, then approximately 500 Korean characters (target 450–550, excluding title and roundup) describing the article's core technical substance.
 - Keep the article summary as one readable paragraph, not a numbered list. Preserve relevant technical terminology in English where clarity benefits.
-- For Artificial Engineering, include every entry in the issue's concluding weekly GitHub/project roundup as an **unnumbered list** after the seven-sentence summary. Each entry: project name, original project link when verified, and one concise Korean sentence on its function or key trade-off. Do not silently omit non-GitHub items in the roundup.
+- For Artificial Engineering, include every entry in the issue's concluding weekly GitHub/project roundup as an **unnumbered list** after the approximately 500-character summary. Each entry: project name, original project link when verified, and one concise Korean sentence on its function or key trade-off. Do not silently omit non-GitHub items in the roundup.
 - For Elevate, omit the roundup unless the source actually includes one.
 - Never invent publication dates, URLs, project names, benchmarks, or claims. Distinguish author/vendor claims from independently established results.
 - Original links and attribution do not themselves grant republication rights. Summarize in original Korean prose, not bulk verbatim translation. If source access is limited, label coverage incomplete rather than fabricating content.
