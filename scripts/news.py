@@ -23,7 +23,7 @@ def fetch():
     date=entry.findtext('pubDate') or ''
     try:date=datetime.datetime.strptime(date[:25],'%a, %d %b %Y %H:%M:%S').date().isoformat()
     except ValueError:date=datetime.date.today().isoformat()
-    found.append({'id':uid,'source':source['id'],'date':date,'title':strip(title),'url':link,'excerpt':strip(entry.findtext('description'))[:1000],'status':'needs_editorial_review'})
+    found.append({'id':uid,'source':source['id'],'date':date,'title':strip(title),'author':source.get('author'),'url':link,'excerpt':strip(entry.findtext('description'))[:1000],'status':'needs_editorial_review'})
   except Exception as e:print('Source unavailable:',source['id'],type(e).__name__,str(e)[:150])
  pending+=found;save(P/'pending.json',pending);print('New drafts:',len(found))
 def build():
@@ -31,7 +31,7 @@ def build():
  for a in articles:
   if a['id'] in ids:raise ValueError('Duplicate article '+a['id'])
   ids.add(a['id']);s=sources[a['source']];n=len(a['summary'])
-  if not 350<=n<=650:raise ValueError('Summary must be approximately 500 characters: '+a['id'])
+  if not 180<=len(a['summary'].split())<=430:raise ValueError('Summary must be approximately 300 Korean words: '+a['id'])
   for section in s.get('sections',[]):
    if section.get('required') and section['type']=='project_roundup' and not a.get('roundup_verified'):raise ValueError('Unverified roundup: '+a['id'])
  articles.sort(key=lambda a:a['date'],reverse=True);out=pathlib.Path('dist');out.mkdir(exist_ok=True)
