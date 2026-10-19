@@ -1,0 +1,40 @@
+name: Deliver approved Markdown to Discord
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'articles/**/*.md'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: discord-feed-ledger
+  cancel-in-progress: false
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate local delivery skill
+        run: python -m unittest discover -s .agents/skills/discord-feed/tests -v
+      - name: Deliver ready articles
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          if [ -z "$DISCORD_WEBHOOK_URL" ]; then echo "DISCORD_WEBHOOK_URL is missing in news Actions secrets"; exit 1; fi
+          python scripts/deliver_articles.py
+      - name: Persist durable delivery ledger
+        if: always()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/discord-deliveries.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore: persist Discord delivery ledger'
+            git push
+          fi
