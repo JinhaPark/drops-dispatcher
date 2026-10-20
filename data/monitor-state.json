@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "monitoring_started_at": "2026-10-19T18:17:23Z",
-  "last_checked_at": "2026-10-20T00:20:32Z",
+  "last_checked_at": "2026-10-20T07:05:54Z",
   "baseline_policy": "Only independently verified issues published strictly after monitoring_started_at may be published automatically. Older items are baseline-only and never sent as newly discovered issues.",
   "sources": {
     "artificial-engineering": {
       "status": "no_new_since_baseline",
-      "last_checked_at": "2026-10-20T00:20:32Z",
+      "last_checked_at": "2026-10-20T07:05:54Z",
       "latest_confirmed_issue": {
         "title": "Forgetting Is a Write: Agent Memory That Knows What Stopped Being True",
         "published_at": "2026-10-18",
@@ -15,7 +15,7 @@
     },
     "elevate": {
       "status": "no_new_since_baseline",
-      "last_checked_at": "2026-10-20T00:20:32Z",
+      "last_checked_at": "2026-10-20T07:05:54Z",
       "latest_confirmed_issue": {
         "title": "Agentic Verification",
         "published_at": "2026-10-14",
