@@ -1,1 +1,13 @@
-{}
+{
+  "system:discord-smoke-v1": {
+    "sha256": "47da4d4dffcc56dfd47ba1b4ceac8e95258253a0e8732adb9ffa5818bb36c567",
+    "status": "complete",
+    "messages": [
+      {
+        "index": 0,
+        "message_id": "1561919717344542731"
+      }
+    ],
+    "total": 1
+  }
+}
