@@ -1,25 +1,31 @@
 {
   "schema_version": 1,
   "monitoring_started_at": "2026-10-19T18:17:23Z",
-  "last_checked_at": "2026-10-19T18:17:23Z",
+  "last_checked_at": "2026-10-20T00:20:32Z",
   "baseline_policy": "Only independently verified issues published strictly after monitoring_started_at may be published automatically. Older items are baseline-only and never sent as newly discovered issues.",
   "sources": {
     "artificial-engineering": {
-      "status": "access_limited",
-      "last_checked_at": "2026-10-19T18:17:23Z",
-      "latest_confirmed_issue": null,
-      "notes": "LinkedIn newsletter index could not be fetched (cache miss); author's profile was rate-limited; search hits are not a complete or freshly verified issue list. Do not infer no new issue from this result."
+      "status": "no_new_since_baseline",
+      "last_checked_at": "2026-10-20T00:20:32Z",
+      "latest_confirmed_issue": {
+        "title": "Forgetting Is a Write: Agent Memory That Knows What Stopped Being True",
+        "published_at": "2026-10-18",
+        "url": "https://www.linkedin.com/pulse/forgetting-write-agent-memory-knows-what-stopped-being-lindenberg-5nezf"
+      }
     },
     "elevate": {
-      "status": "incomplete_freshness",
-      "last_checked_at": "2026-10-19T18:17:23Z",
-      "latest_confirmed_issue": null,
+      "status": "no_new_since_baseline",
+      "last_checked_at": "2026-10-20T00:20:32Z",
+      "latest_confirmed_issue": {
+        "title": "Agentic Verification",
+        "published_at": "2026-10-14",
+        "url": "https://addyo.substack.com/p/agentic-verification"
+      },
       "last_visible_archived_issue": {
         "title": "Agentic Code Quality",
         "published_at": "2026-08-08",
         "url": "https://addyo.substack.com/archive"
-      },
-      "notes": "Substack archive response was cached about two months earlier; no recent issue independently verified, but this does not establish no new publication."
+      }
     }
   }
 }
