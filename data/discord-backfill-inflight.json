@@ -1,1 +1,6 @@
-{}
+{
+  "id": "elevate:stretch-yourself-from-time-to-time",
+  "sha256": "a21c75f559c2aa1c58b07d70c6bdde1aa40001d1949e655120b01ab77f3a26bf",
+  "run_id": "39431937911",
+  "plan": "data/chronological-backfill.json"
+}
