@@ -1,0 +1,979 @@
+{
+  "schema_version": 1,
+  "status": "active",
+  "ordering": "published_at,source_id,id",
+  "authorization": "2026-10-20 사용자 추가 요청: Elevate 최초 64개 아카이브 항목을 조사·한국어 요약하고 두 소스의 검증된 미전송 전체를 실제 발행일 오름차순으로 Discord에 전달합니다. 기존 전송분은 보존합니다. 일회성 작업입니다.",
+  "checked_at": "2026-10-20",
+  "excluded_unverified_ids": [
+    "artificial-engineering:edition-1",
+    "artificial-engineering:edition-2",
+    "elevate:bonus-book-and-sneak-peek-for-paid",
+    "elevate:leading-effective-teams",
+    "elevate:drive-effective-results-outcomes",
+    "elevate:conquering-conflicting-priorities",
+    "elevate:setting-a-team-vision-mission-and",
+    "elevate:possibilities-if-you-ask-for-what"
+  ],
+  "items": [
+    {
+      "id": "elevate:growth-mindset-vs-fixed-mindset",
+      "source_id": "elevate",
+      "published_at": "2023-11-21",
+      "canonical_url": "https://addyo.substack.com/p/growth-mindset-vs-fixed-mindset",
+      "markdown_path": "articles/elevate/2023-11-21-growth-mindset-vs-fixed-mindset.md",
+      "markdown_sha256": "163428c072986f3a1f15910ad9bad3cb46fc21a47669fd07a64094a74cdf1038"
+    },
+    {
+      "id": "elevate:dont-expect-to-be-motivated-everyday",
+      "source_id": "elevate",
+      "published_at": "2023-11-25",
+      "canonical_url": "https://addyo.substack.com/p/dont-expect-to-be-motivated-everyday",
+      "markdown_path": "articles/elevate/2023-11-25-dont-expect-to-be-motivated-everyday.md",
+      "markdown_sha256": "49f09d8ee7405e128b8f31e44b043236e287d9c3592c2194fa04aa6296df70ed"
+    },
+    {
+      "id": "elevate:effective-software-engineers",
+      "source_id": "elevate",
+      "published_at": "2023-11-29",
+      "canonical_url": "https://addyo.substack.com/p/effective-software-engineers",
+      "markdown_path": "articles/elevate/2023-11-29-effective-software-engineers.md",
+      "markdown_sha256": "ae87039cd282ca86f34389b87cf14a333d2713705b308c7d7ce7fc6d26164960"
+    },
+    {
+      "id": "elevate:it-takes-23-mins-to-recover-after",
+      "source_id": "elevate",
+      "published_at": "2023-12-07",
+      "canonical_url": "https://addyo.substack.com/p/it-takes-23-mins-to-recover-after",
+      "markdown_path": "articles/elevate/2023-12-07-it-takes-23-mins-to-recover-after.md",
+      "markdown_sha256": "4b79b5db58e78530ef8074c06ede29a59acd099bb76fc0d58a8ec532e9f1d00a"
+    },
+    {
+      "id": "elevate:change-what-you-do-to-change-where",
+      "source_id": "elevate",
+      "published_at": "2023-12-16",
+      "canonical_url": "https://addyo.substack.com/p/change-what-you-do-to-change-where",
+      "markdown_path": "articles/elevate/2023-12-16-change-what-you-do-to-change-where.md",
+      "markdown_sha256": "55f3f8d52c87567a5626b3642df5f14347596ef22c4a85c991b1b02df4b954e3"
+    },
+    {
+      "id": "elevate:good-code-is-like-a-love-letter-to",
+      "source_id": "elevate",
+      "published_at": "2023-12-21",
+      "canonical_url": "https://addyo.substack.com/p/good-code-is-like-a-love-letter-to",
+      "markdown_path": "articles/elevate/2023-12-21-good-code-is-like-a-love-letter-to.md",
+      "markdown_sha256": "c1b07a212aded4e70692e57c610e80a63548e2416722cfa004e801c0e82392fa"
+    },
+    {
+      "id": "elevate:first-do-it-then-do-it-right-then",
+      "source_id": "elevate",
+      "published_at": "2023-12-24",
+      "canonical_url": "https://addyo.substack.com/p/first-do-it-then-do-it-right-then",
+      "markdown_path": "articles/elevate/2023-12-24-first-do-it-then-do-it-right-then.md",
+      "markdown_sha256": "e2daa07867a171442cd8372903ce4661da669ff4fda91911eb25deae4d4b3c82"
+    },
+    {
+      "id": "elevate:soft-skills-books-for-developers",
+      "source_id": "elevate",
+      "published_at": "2023-12-26",
+      "canonical_url": "https://addyo.substack.com/p/soft-skills-books-for-developers",
+      "markdown_path": "articles/elevate/2023-12-26-soft-skills-books-for-developers.md",
+      "markdown_sha256": "830c581b3a21f907dd730ee23960445434570211d3c5baec2b84d4988040c6e1"
+    },
+    {
+      "id": "elevate:reduce-the-gap-between-idea-and-execution",
+      "source_id": "elevate",
+      "published_at": "2023-12-29",
+      "canonical_url": "https://addyo.substack.com/p/reduce-the-gap-between-idea-and-execution",
+      "markdown_path": "articles/elevate/2023-12-29-reduce-the-gap-between-idea-and-execution.md",
+      "markdown_sha256": "1c473df2e84b8770ac76e019fba60a09f8ad76beb2ad3a528d490b048fcdd413"
+    },
+    {
+      "id": "elevate:23-lessons-in-2023",
+      "source_id": "elevate",
+      "published_at": "2023-12-30",
+      "canonical_url": "https://addyo.substack.com/p/23-lessons-in-2023",
+      "markdown_path": "articles/elevate/2023-12-30-23-lessons-in-2023.md",
+      "markdown_sha256": "fa96bed9f01f2d7dd3eafe568c2fd4748d359ddf4fcb55f63288716aa550739c"
+    },
+    {
+      "id": "elevate:stretch-yourself-from-time-to-time",
+      "source_id": "elevate",
+      "published_at": "2024-01-05",
+      "canonical_url": "https://addyo.substack.com/p/stretch-yourself-from-time-to-time",
+      "markdown_path": "articles/elevate/2024-01-05-stretch-yourself-from-time-to-time.md",
+      "markdown_sha256": "a21c75f559c2aa1c58b07d70c6bdde1aa40001d1949e655120b01ab77f3a26bf"
+    },
+    {
+      "id": "elevate:effective-engineering-managers",
+      "source_id": "elevate",
+      "published_at": "2024-01-09",
+      "canonical_url": "https://addyo.substack.com/p/effective-engineering-managers",
+      "markdown_path": "articles/elevate/2024-01-09-effective-engineering-managers.md",
+      "markdown_sha256": "3adecf7d240a7e96bc6d1a1accf7854d6fb1304728492f407548ba7157365a16"
+    },
+    {
+      "id": "elevate:leading-effective-engineering-teams",
+      "source_id": "elevate",
+      "published_at": "2024-01-18",
+      "canonical_url": "https://addyo.substack.com/p/leading-effective-engineering-teams",
+      "markdown_path": "articles/elevate/2024-01-18-leading-effective-engineering-teams.md",
+      "markdown_sha256": "76151eeac4129b86c4f72af92167ae763da86dc2d6cd6057a49f2ffdfbf0a1fb"
+    },
+    {
+      "id": "elevate:consistency-matters",
+      "source_id": "elevate",
+      "published_at": "2024-01-28",
+      "canonical_url": "https://addyo.substack.com/p/consistency-matters",
+      "markdown_path": "articles/elevate/2024-01-28-consistency-matters.md",
+      "markdown_sha256": "b7393ac29b6a57c741e181f8aa2b324007b0137a9f44687961ecf820b0592358"
+    },
+    {
+      "id": "elevate:stick-to-boring-architecture-for",
+      "source_id": "elevate",
+      "published_at": "2024-02-19",
+      "canonical_url": "https://addyo.substack.com/p/stick-to-boring-architecture-for",
+      "markdown_path": "articles/elevate/2024-02-19-stick-to-boring-architecture-for.md",
+      "markdown_sha256": "b4caa478c97cb1a0d53c4126b04873059ea56cf9b3d6b90f41597561caad8075"
+    },
+    {
+      "id": "elevate:the-debuggers-toolkit",
+      "source_id": "elevate",
+      "published_at": "2024-04-09",
+      "canonical_url": "https://addyo.substack.com/p/the-debuggers-toolkit",
+      "markdown_path": "articles/elevate/2024-04-09-the-debuggers-toolkit.md",
+      "markdown_sha256": "8fbaa95ac2b222fcbed9e3d5e97c431ebeb6269490b0a7a043547da79c629681"
+    },
+    {
+      "id": "elevate:conquering-imposter-syndrome",
+      "source_id": "elevate",
+      "published_at": "2024-04-30",
+      "canonical_url": "https://addyo.substack.com/p/conquering-imposter-syndrome",
+      "markdown_path": "articles/elevate/2024-04-30-conquering-imposter-syndrome.md",
+      "markdown_sha256": "315bfe16c39243a00821a2ae713cda1fcc4e1b1fe5fe9b7dcc67b4cbb7a144d3"
+    },
+    {
+      "id": "elevate:10-lessons-from-12-years-at-google",
+      "source_id": "elevate",
+      "published_at": "2024-05-13",
+      "canonical_url": "https://addyo.substack.com/p/10-lessons-from-12-years-at-google",
+      "markdown_path": "articles/elevate/2024-05-13-10-lessons-from-12-years-at-google.md",
+      "markdown_sha256": "afc37b955cfe04c56752e96074d4e48f522f9740d05b498e9bad3f568263827e"
+    },
+    {
+      "id": "elevate:focus-on-what-you-can-control",
+      "source_id": "elevate",
+      "published_at": "2024-06-24",
+      "canonical_url": "https://addyo.substack.com/p/focus-on-what-you-can-control",
+      "markdown_path": "articles/elevate/2024-06-24-focus-on-what-you-can-control.md",
+      "markdown_sha256": "6bca7133a5ed23be0ca5fdcd0cdf4d57e22dfb0f70b690adde5dd1608e060dbd"
+    },
+    {
+      "id": "elevate:comparison-is-the-thief-of-joy",
+      "source_id": "elevate",
+      "published_at": "2024-08-14",
+      "canonical_url": "https://addyo.substack.com/p/comparison-is-the-thief-of-joy",
+      "markdown_path": "articles/elevate/2024-08-14-comparison-is-the-thief-of-joy.md",
+      "markdown_sha256": "697b3d1f24898a1af89da1689679943f8100c872d672b237c3e6fdb4b3ead924"
+    },
+    {
+      "id": "elevate:there-is-no-right-time-just-time",
+      "source_id": "elevate",
+      "published_at": "2024-08-23",
+      "canonical_url": "https://addyo.substack.com/p/there-is-no-right-time-just-time",
+      "markdown_path": "articles/elevate/2024-08-23-there-is-no-right-time-just-time.md",
+      "markdown_sha256": "a0c05e49a4cba42aa3af3c3e379ca1815388c28032f7a5be157454767acf25eb"
+    },
+    {
+      "id": "elevate:user-centric-engineering",
+      "source_id": "elevate",
+      "published_at": "2024-11-15",
+      "canonical_url": "https://addyo.substack.com/p/user-centric-engineering",
+      "markdown_path": "articles/elevate/2024-11-15-user-centric-engineering.md",
+      "markdown_sha256": "b4f6128e106173ec84a1cf4d013dff033a48691b4c757c474632a3a66283d451"
+    },
+    {
+      "id": "elevate:the-70-problem-hard-truths-about",
+      "source_id": "elevate",
+      "published_at": "2024-12-04",
+      "canonical_url": "https://addyo.substack.com/p/the-70-problem-hard-truths-about",
+      "markdown_path": "articles/elevate/2024-12-04-the-70-problem-hard-truths-about.md",
+      "markdown_sha256": "c1ef9a73c322efcc4dc0ec12eb6980190f66ea62f89237de07ff971118e8537b"
+    },
+    {
+      "id": "elevate:future-proofing-your-software-engineering",
+      "source_id": "elevate",
+      "published_at": "2024-12-23",
+      "canonical_url": "https://addyo.substack.com/p/future-proofing-your-software-engineering",
+      "markdown_path": "articles/elevate/2024-12-23-future-proofing-your-software-engineering.md",
+      "markdown_sha256": "6c0013cca6393de63ab9a918bb9b872074d5efeb382b14effac24c41d7e6863d"
+    },
+    {
+      "id": "elevate:ai-driven-prototyping-v0-bolt-and",
+      "source_id": "elevate",
+      "published_at": "2025-01-11",
+      "canonical_url": "https://addyo.substack.com/p/ai-driven-prototyping-v0-bolt-and",
+      "markdown_path": "articles/elevate/2025-01-11-ai-driven-prototyping-v0-bolt-and.md",
+      "markdown_sha256": "c30f8e24557755d14eaebb522df1a0cbfef7ebbaa39ca1106ffae08ad2e329e7"
+    },
+    {
+      "id": "elevate:why-i-use-cline-for-ai-engineering",
+      "source_id": "elevate",
+      "published_at": "2025-01-30",
+      "canonical_url": "https://addyo.substack.com/p/why-i-use-cline-for-ai-engineering",
+      "markdown_path": "articles/elevate/2025-01-30-why-i-use-cline-for-ai-engineering.md",
+      "markdown_sha256": "b94222f7e01e58b35bd47dba769fd0229ca4dda778a580fa598cdd8e08219e27"
+    },
+    {
+      "id": "elevate:personal-software-the-unbundling",
+      "source_id": "elevate",
+      "published_at": "2025-02-09",
+      "canonical_url": "https://addyo.substack.com/p/personal-software-the-unbundling",
+      "markdown_path": "articles/elevate/2025-02-09-personal-software-the-unbundling.md",
+      "markdown_sha256": "b5ea9304fb69de96489e76b958e47b14bfc736890d90bf92da8ee135fe4bc711"
+    },
+    {
+      "id": "elevate:speech-to-code-vibe-coding-with-voice",
+      "source_id": "elevate",
+      "published_at": "2025-02-28",
+      "canonical_url": "https://addyo.substack.com/p/speech-to-code-vibe-coding-with-voice",
+      "markdown_path": "articles/elevate/2025-02-28-speech-to-code-vibe-coding-with-voice.md",
+      "markdown_sha256": "66a7c5d6eb7305d912d27780b740656e720be9d80c0b5c3992a8b07a85933291"
+    },
+    {
+      "id": "elevate:applied-software-engineering-at-google",
+      "source_id": "elevate",
+      "published_at": "2025-03-06",
+      "canonical_url": "https://addyo.substack.com/p/applied-software-engineering-at-google",
+      "markdown_path": "articles/elevate/2025-03-06-applied-software-engineering-at-google.md",
+      "markdown_sha256": "702f7bf814935ca72ef33626845dbbd8c917dcc5157e9ea6ac928440b9304efc"
+    },
+    {
+      "id": "elevate:beyond-the-70-maximizing-the-human",
+      "source_id": "elevate",
+      "published_at": "2025-03-13",
+      "canonical_url": "https://addyo.substack.com/p/beyond-the-70-maximizing-the-human",
+      "markdown_path": "articles/elevate/2025-03-13-beyond-the-70-maximizing-the-human.md",
+      "markdown_sha256": "df4ff9138e4e6dfa70935a6f359ea319126e7bec22b5dcc2f34b8ffebf85723f"
+    },
+    {
+      "id": "elevate:leading-effective-engineering-teams-c9b",
+      "source_id": "elevate",
+      "published_at": "2025-03-19",
+      "canonical_url": "https://addyo.substack.com/p/leading-effective-engineering-teams-c9b",
+      "markdown_path": "articles/elevate/2025-03-19-leading-effective-engineering-teams-c9b.md",
+      "markdown_sha256": "aa7e9872c72eaee5b6e707acdb0e8e8bdcd82685592a77156da7b8809b0779e0"
+    },
+    {
+      "id": "elevate:mcp-what-it-is-and-why-it-matters",
+      "source_id": "elevate",
+      "published_at": "2025-03-27",
+      "canonical_url": "https://addyo.substack.com/p/mcp-what-it-is-and-why-it-matters",
+      "markdown_path": "articles/elevate/2025-03-27-mcp-what-it-is-and-why-it-matters.md",
+      "markdown_sha256": "acc7772c830cab7bbc85868613d3ab0ecb00f79bab94507beb28ce1fb2afd640"
+    },
+    {
+      "id": "elevate:vibe-coding-revolution-or-reckless",
+      "source_id": "elevate",
+      "published_at": "2025-04-03",
+      "canonical_url": "https://addyo.substack.com/p/vibe-coding-revolution-or-reckless",
+      "markdown_path": "articles/elevate/2025-04-03-vibe-coding-revolution-or-reckless.md",
+      "markdown_sha256": "75ede3f4bc914eaa19a07c308437074883d2137f49983520062049dbd4f37e39"
+    },
+    {
+      "id": "elevate:what-are-ai-agents-why-do-they-matter",
+      "source_id": "elevate",
+      "published_at": "2025-04-11",
+      "canonical_url": "https://addyo.substack.com/p/what-are-ai-agents-why-do-they-matter",
+      "markdown_path": "articles/elevate/2025-04-11-what-are-ai-agents-why-do-they-matter.md",
+      "markdown_sha256": "9b6afa07b30d3fb905f5d4bbbd66f416dcd8e095ee8ea48252af09ca86091bfa"
+    },
+    {
+      "id": "elevate:vibe-coding-is-not-an-excuse-for",
+      "source_id": "elevate",
+      "published_at": "2025-04-18",
+      "canonical_url": "https://addyo.substack.com/p/vibe-coding-is-not-an-excuse-for",
+      "markdown_path": "articles/elevate/2025-04-18-vibe-coding-is-not-an-excuse-for.md",
+      "markdown_sha256": "6e171b57ca9dd089074f64482075786f88325be018ffa54c7e115d04760bd889"
+    },
+    {
+      "id": "elevate:avoiding-skill-atrophy-in-the-age",
+      "source_id": "elevate",
+      "published_at": "2025-04-25",
+      "canonical_url": "https://addyo.substack.com/p/avoiding-skill-atrophy-in-the-age",
+      "markdown_path": "articles/elevate/2025-04-25-avoiding-skill-atrophy-in-the-age.md",
+      "markdown_sha256": "e5b5366cf1a712848adb82562aa182dd48fe5807d5e60dde305993b03c4a6a48"
+    },
+    {
+      "id": "elevate:ai-wont-kill-junior-devs-but-your",
+      "source_id": "elevate",
+      "published_at": "2025-05-10",
+      "canonical_url": "https://addyo.substack.com/p/ai-wont-kill-junior-devs-but-your",
+      "markdown_path": "articles/elevate/2025-05-10-ai-wont-kill-junior-devs-but-your.md",
+      "markdown_sha256": "610459f0591d3c697217166303fac2ab735533a80348e32f9b354a32492eff5b"
+    },
+    {
+      "id": "artificial-engineering:edition-3",
+      "source_id": "artificial-engineering",
+      "published_at": "2025-05-18",
+      "canonical_url": "https://www.linkedin.com/pulse/architecting-ai-from-visualization-trust-andr%C3%A9-lindenberg-zcoie",
+      "markdown_path": "articles/artificial-engineering/2025-05-18-edition-3.md",
+      "markdown_sha256": "03c83a1ce98eacc9a50ff78a86559965d84ecf1d579170a87e813dcd3fb07314"
+    },
+    {
+      "id": "artificial-engineering:edition-4",
+      "source_id": "artificial-engineering",
+      "published_at": "2025-05-25",
+      "canonical_url": "https://www.linkedin.com/pulse/profiting-from-code-ethics-efficiency-ai-engineering-andr%C3%A9-lindenberg-yaf9e",
+      "markdown_path": "articles/artificial-engineering/2025-05-25-edition-4.md",
+      "markdown_sha256": "220e86fb73819425931c4021f2cfbfa7f01cce927eb389347843f3227ac4e014"
+    },
+    {
+      "id": "elevate:the-prompt-engineering-playbook-for",
+      "source_id": "elevate",
+      "published_at": "2025-05-27",
+      "canonical_url": "https://addyo.substack.com/p/the-prompt-engineering-playbook-for",
+      "markdown_path": "articles/elevate/2025-05-27-the-prompt-engineering-playbook-for.md",
+      "markdown_sha256": "893595841fc850756697a25858f3367d784055804a1fc8500f80f7f823430153"
+    },
+    {
+      "id": "artificial-engineering:edition-5",
+      "source_id": "artificial-engineering",
+      "published_at": "2025-06-01",
+      "canonical_url": "https://www.linkedin.com/pulse/from-legacy-fear-smart-platforms-ais-role-software-andr%C3%A9-lindenberg-h5hoe",
+      "markdown_path": "articles/artificial-engineering/2025-06-01-edition-5.md",
+      "markdown_sha256": "72aee06857a85a2c83c54dd6e5f51fe59aac420d20c95a59e13e9b2ee86e7352"
+    },
+    {
+      "id": "artificial-engineering:edition-6",
+      "source_id": "artificial-engineering",
+      "published_at": "2025-06-08",
+      "canonical_url": "https://www.linkedin.com/pulse/building-ai-from-foundations-future-opportunities-andr%C3%A9-lindenberg-216ke",
+      "markdown_path": "articles/artificial-engineering/2025-06-08-edition-6.md",
+      "markdown_sha256": "78f39ab06876ec15931edbff3aaed4024f5640627893bd8af5b2c899520043cc"
+    },
+    {
+      "id": "elevate:the-trust-but-verify-pattern-for",
+      "source_id": "elevate",
+      "published_at": "2025-06-09",
+      "canonical_url": "https://addyo.substack.com/p/the-trust-but-verify-pattern-for",
+      "markdown_path": "articles/elevate/2025-06-09-the-trust-but-verify-pattern-for.md",
+      "markdown_sha256": "4511e234c551b14adfda1fcdab3158f13c2ff62bf3606366352536a7eb3f5565"
+    },
+    {
+      "id": "artificial-engineering:edition-7",
+      "source_id": "artificial-engineering",
+      "published_at": "2025-06-15",
+      "canonical_url": "https://www.linkedin.com/pulse/mastering-ai-driven-transformation-scaling-migration-andr%C3%A9-lindenberg-fnife",
+      "markdown_path": "articles/artificial-engineering/2025-06-15-edition-7.md",
+      "markdown_sha256": "d7c988dffcb847d4219e3db11959faa30d47eab0e6e3259de5c3794fd89520bd"
+    },
+    {
+      "id": "artificial-engineering:edition-8",
+      "source_id": "artificial-engineering",
+      "published_at": "2025-06-22",
+      "canonical_url": "https://www.linkedin.com/pulse/convergence-ai-architecture-from-decomposition-reuse-andr%C3%A9-lindenberg-mbwje",
+      "markdown_path": "articles/artificial-engineering/2025-06-22-edition-8.md",
+      "markdown_sha256": "51573ce7835a24e341f9e74daf8ebe101e0198147f6397df2e0c5cfa2576dc54"
+    },
+    {
+      "id": "artificial-engineering:edition-9",
+      "source_id": "artificial-engineering",
+      "published_at": "2025-06-29",
+      "canonical_url": "https://www.linkedin.com/pulse/adaptive-ai-scalable-architectures-reinventing-andr%C3%A9-lindenberg-5xbie",
+      "markdown_path": "articles/artificial-engineering/2025-06-29-edition-9.md",
+      "markdown_sha256": "8a3cc5e31a8fa7d2d22ecd6c0f5107511e6de3083b7e01e3b2358bac14c23c68"
+    },
+    {
+      "id": "elevate:the-ai-native-software-engineer",
+      "source_id": "elevate",
+      "published_at": "2025-07-01",
+      "canonical_url": "https://addyo.substack.com/p/the-ai-native-software-engineer",
+      "markdown_path": "articles/elevate/2025-07-01-the-ai-native-software-engineer.md",
+      "markdown_sha256": "32560c7aa27a97edcd0c8c93a92fe4e9228e5b74e4056a6e3adc0ec9aa8b14af"
+    },
+    {
+      "id": "artificial-engineering:edition-10",
+      "source_id": "artificial-engineering",
+      "published_at": "2025-07-06",
+      "canonical_url": "https://www.linkedin.com/pulse/navigating-dual-paths-ai-integration-andr%C3%A9-lindenberg-1ejfe",
+      "markdown_path": "articles/artificial-engineering/2025-07-06-edition-10.md",
+      "markdown_sha256": "67d61f36c372cc6f3552b42520bf77fd7e0677cee0e5730919e3048bbba086d7"
+    },
+    {
+      "id": "artificial-engineering:edition-11",
+      "source_id": "artificial-engineering",
+      "published_at": "2025-07-13",
+      "canonical_url": "https://www.linkedin.com/pulse/ai-memory-revolution-agentic-systems-motion-andr%C3%A9-lindenberg-lpoxe",
+      "markdown_path": "articles/artificial-engineering/2025-07-13-edition-11.md",
+      "markdown_sha256": "607715e53ea8f2bd3ca8f5b481b9d55999a3248d4adc56d2df8228ea4152e4fd"
+    },
+    {
+      "id": "elevate:context-engineering-bringing-engineering",
+      "source_id": "elevate",
+      "published_at": "2025-07-13",
+      "canonical_url": "https://addyo.substack.com/p/context-engineering-bringing-engineering",
+      "markdown_path": "articles/elevate/2025-07-13-context-engineering-bringing-engineering.md",
+      "markdown_sha256": "d9883fb59e781efd2b93c83e43bd50a3452510918e9ca5411d1a0052404443ac"
+    },
+    {
+      "id": "artificial-engineering:edition-12",
+      "source_id": "artificial-engineering",
+      "published_at": "2025-07-20",
+      "canonical_url": "https://www.linkedin.com/pulse/pioneering-mindsets-ai-development-andr%C3%A9-lindenberg-qokae",
+      "markdown_path": "articles/artificial-engineering/2025-07-20-edition-12.md",
+      "markdown_sha256": "89fcf6131fc9200c335a8086cd55b2380a4c8cee044fdc352aa02c19d7ba3c81"
+    },
+    {
+      "id": "artificial-engineering:edition-13",
+      "source_id": "artificial-engineering",
+      "published_at": "2025-07-27",
+      "canonical_url": "https://www.linkedin.com/pulse/engineering-evolution-ai-from-autonomy-efficiency-andr%C3%A9-lindenberg-zglqe",
+      "markdown_path": "articles/artificial-engineering/2025-07-27-edition-13.md",
+      "markdown_sha256": "246cc55e9927c385dc62501c3a20ab9adb5f1ec64b3ece352e2809e3a954a407"
+    },
+    {
+      "id": "elevate:coding-for-the-future-agentic-world",
+      "source_id": "elevate",
+      "published_at": "2025-07-29",
+      "canonical_url": "https://addyo.substack.com/p/coding-for-the-future-agentic-world",
+      "markdown_path": "articles/elevate/2025-07-29-coding-for-the-future-agentic-world.md",
+      "markdown_sha256": "4dc8dccc3338760b5f9004f552b0af50491ee5965b5c999d6b2ace0dfd1777a2"
+    },
+    {
+      "id": "artificial-engineering:edition-14",
+      "source_id": "artificial-engineering",
+      "published_at": "2025-08-03",
+      "canonical_url": "https://www.linkedin.com/pulse/evolution-agentic-ai-system-transformation-andr%C3%A9-lindenberg-e71ge",
+      "markdown_path": "articles/artificial-engineering/2025-08-03-edition-14.md",
+      "markdown_sha256": "e2c8246c240326b962725de81a0de0fd155f258c087c97ac7740cb53e61b23f8"
+    },
+    {
+      "id": "artificial-engineering:edition-15",
+      "source_id": "artificial-engineering",
+      "published_at": "2025-08-10",
+      "canonical_url": "https://www.linkedin.com/pulse/navigating-ai-agent-landscape-from-tools-threats-andr%C3%A9-lindenberg-8n5ue",
+      "markdown_path": "articles/artificial-engineering/2025-08-10-edition-15.md",
+      "markdown_sha256": "2ef741758fcf360cb37ecfe937a0ad7be8c82a6340369984803aebf77cffb660"
+    },
+    {
+      "id": "elevate:the-reality-of-ai-assisted-software",
+      "source_id": "elevate",
+      "published_at": "2025-08-16",
+      "canonical_url": "https://addyo.substack.com/p/the-reality-of-ai-assisted-software",
+      "markdown_path": "articles/elevate/2025-08-16-the-reality-of-ai-assisted-software.md",
+      "markdown_sha256": "0aeb34eed2f65142c72d43cc1e5e559203b3800c399dc3d181fad3fb620b0266"
+    },
+    {
+      "id": "artificial-engineering:edition-16",
+      "source_id": "artificial-engineering",
+      "published_at": "2025-08-17",
+      "canonical_url": "https://www.linkedin.com/pulse/from-secure-systems-endless-possibilities-andr%C3%A9-lindenberg-3xs7e",
+      "markdown_path": "articles/artificial-engineering/2025-08-17-edition-16.md",
+      "markdown_sha256": "e359c3bdaf7c811c3aa12791d8e133d463fbf13639665d27cd5d1cff2c1cedfe"
+    },
+    {
+      "id": "artificial-engineering:edition-17",
+      "source_id": "artificial-engineering",
+      "published_at": "2025-08-24",
+      "canonical_url": "https://www.linkedin.com/pulse/from-prompt-engineering-ai-driven-ecosystems-building-lindenberg-iavre",
+      "markdown_path": "articles/artificial-engineering/2025-08-24-edition-17.md",
+      "markdown_sha256": "3ee573b6cfba758d9f9dd9aacadaac03a8b1766b879dddce8793b8a19f285741"
+    },
+    {
+      "id": "elevate:vibe-coding-is-not-the-same-as-ai",
+      "source_id": "elevate",
+      "published_at": "2025-08-30",
+      "canonical_url": "https://addyo.substack.com/p/vibe-coding-is-not-the-same-as-ai",
+      "markdown_path": "articles/elevate/2025-08-30-vibe-coding-is-not-the-same-as-ai.md",
+      "markdown_sha256": "a51c9d06ebe14dc2e92b96cb894d747ddb6d3405100445f75ca30c1ee8ebf834"
+    },
+    {
+      "id": "artificial-engineering:edition-18",
+      "source_id": "artificial-engineering",
+      "published_at": "2025-08-31",
+      "canonical_url": "https://www.linkedin.com/pulse/navigating-intersection-ai-trust-andr%C3%A9-lindenberg-szq1e",
+      "markdown_path": "articles/artificial-engineering/2025-08-31-edition-18.md",
+      "markdown_sha256": "c35e4154930fd58c98ebecd614eb81b011ef302d7a13b866625cc3f559c9444c"
+    },
+    {
+      "id": "artificial-engineering:edition-19",
+      "source_id": "artificial-engineering",
+      "published_at": "2025-09-07",
+      "canonical_url": "https://www.linkedin.com/pulse/transformative-shifts-from-trust-tactical-deployments-lindenberg-y9nce",
+      "markdown_path": "articles/artificial-engineering/2025-09-07-edition-19.md",
+      "markdown_sha256": "61a0d057329fb92e19be973ac69bfc25dc5f2c746e1fbd55bdad0f075da536c3"
+    },
+    {
+      "id": "elevate:how-modern-browsers-work",
+      "source_id": "elevate",
+      "published_at": "2025-09-13",
+      "canonical_url": "https://addyo.substack.com/p/how-modern-browsers-work",
+      "markdown_path": "articles/elevate/2025-09-13-how-modern-browsers-work.md",
+      "markdown_sha256": "700bec840ac25ae013429ebcca3db3cbcd433926d0958db5140720489a0c48a3"
+    },
+    {
+      "id": "artificial-engineering:edition-20",
+      "source_id": "artificial-engineering",
+      "published_at": "2025-09-14",
+      "canonical_url": "https://www.linkedin.com/pulse/orchestrating-ai-agents-from-audits-acceleration-andr%C3%A9-lindenberg-qdsme",
+      "markdown_path": "articles/artificial-engineering/2025-09-14-edition-20.md",
+      "markdown_sha256": "3e19fb3c02fe352e6250bab7969dfd2901517815550791e806725ffdd92576e9"
+    },
+    {
+      "id": "artificial-engineering:edition-21",
+      "source_id": "artificial-engineering",
+      "published_at": "2025-09-21",
+      "canonical_url": "https://www.linkedin.com/pulse/deterministic-systems-explainable-agents-andr%C3%A9-lindenberg-laose",
+      "markdown_path": "articles/artificial-engineering/2025-09-21-edition-21.md",
+      "markdown_sha256": "76d28cd3f30a8a2dae0a499578190afaabd857e328dc112082c38721fb10661e"
+    },
+    {
+      "id": "artificial-engineering:edition-22",
+      "source_id": "artificial-engineering",
+      "published_at": "2025-09-28",
+      "canonical_url": "https://www.linkedin.com/pulse/shaping-ai-reasoning-explainability-productivity-andr%C3%A9-lindenberg-reeae",
+      "markdown_path": "articles/artificial-engineering/2025-09-28-edition-22.md",
+      "markdown_sha256": "7219556e6193bfaa6b2f8fb6a5acc898caac7aaadd8da4846bb02f540148ceba"
+    },
+    {
+      "id": "artificial-engineering:edition-23",
+      "source_id": "artificial-engineering",
+      "published_at": "2025-10-05",
+      "canonical_url": "https://www.linkedin.com/pulse/unlocking-efficiency-transparency-andr%C3%A9-lindenberg-ndpqe",
+      "markdown_path": "articles/artificial-engineering/2025-10-05-edition-23.md",
+      "markdown_sha256": "da64d57faa8d4d61d1c08fa036ca913a8f1272df25ed7aeba2da3d916aaeddd5"
+    },
+    {
+      "id": "artificial-engineering:edition-24",
+      "source_id": "artificial-engineering",
+      "published_at": "2025-10-12",
+      "canonical_url": "https://www.linkedin.com/pulse/building-thinking-machine-how-ai-moves-from-scale-andr%C3%A9-lindenberg-ei4ae",
+      "markdown_path": "articles/artificial-engineering/2025-10-12-edition-24.md",
+      "markdown_sha256": "5376368067d8bf562bd086a107a23cda10557594bf47591797147cd5b081d743"
+    },
+    {
+      "id": "artificial-engineering:edition-25",
+      "source_id": "artificial-engineering",
+      "published_at": "2025-10-19",
+      "canonical_url": "https://www.linkedin.com/pulse/shifting-gears-from-scale-context-ai-andr%C3%A9-lindenberg-p0the",
+      "markdown_path": "articles/artificial-engineering/2025-10-19-edition-25.md",
+      "markdown_sha256": "a2f993d85108a1a3f637a3a8699f7bfc6db57f1d52c975ea9c98b243eef6db6b"
+    },
+    {
+      "id": "elevate:gemini-cli-tips-and-tricks",
+      "source_id": "elevate",
+      "published_at": "2025-10-21",
+      "canonical_url": "https://addyo.substack.com/p/gemini-cli-tips-and-tricks",
+      "markdown_path": "articles/elevate/2025-10-21-gemini-cli-tips-and-tricks.md",
+      "markdown_sha256": "6479382b6f91415ae91648f1b8e4f2993e8c8735509e19f9bc6aaa9e1ba43c8c"
+    },
+    {
+      "id": "artificial-engineering:edition-26",
+      "source_id": "artificial-engineering",
+      "published_at": "2025-10-26",
+      "canonical_url": "https://www.linkedin.com/pulse/specengineering-when-intent-becomes-sourceoftruth-andr%C3%A9-lindenberg-c5m7e",
+      "markdown_path": "articles/artificial-engineering/2025-10-26-edition-26.md",
+      "markdown_sha256": "a273ddc3717a2399911537ab2427a34acec3c3c287f06d24b966cb0ba688280b"
+    },
+    {
+      "id": "elevate:conductors-to-orchestrators-the-future",
+      "source_id": "elevate",
+      "published_at": "2025-11-01",
+      "canonical_url": "https://addyo.substack.com/p/conductors-to-orchestrators-the-future",
+      "markdown_path": "articles/elevate/2025-11-01-conductors-to-orchestrators-the-future.md",
+      "markdown_sha256": "06c1d2329d75ebc1728549628d955a1b5745c05d925699e29b1e93809645ae6e"
+    },
+    {
+      "id": "artificial-engineering:edition-27",
+      "source_id": "artificial-engineering",
+      "published_at": "2025-11-02",
+      "canonical_url": "https://www.linkedin.com/pulse/navigating-agentic-automation-andr%C3%A9-lindenberg-cwroe",
+      "markdown_path": "articles/artificial-engineering/2025-11-02-edition-27.md",
+      "markdown_sha256": "035e26687baa87a7bb22e7940c024d6dcd4bf73e81fc10796a3ab108ffd2b344"
+    },
+    {
+      "id": "artificial-engineering:edition-28",
+      "source_id": "artificial-engineering",
+      "published_at": "2025-11-09",
+      "canonical_url": "https://www.linkedin.com/pulse/memory-sovereignty-talent-andr%C3%A9-lindenberg-glyxe",
+      "markdown_path": "articles/artificial-engineering/2025-11-09-edition-28.md",
+      "markdown_sha256": "ab6de0c468b990dbbde3fe6af6be1454674c2a896cb2b23d7b76bc761f382b6f"
+    },
+    {
+      "id": "artificial-engineering:edition-29",
+      "source_id": "artificial-engineering",
+      "published_at": "2025-11-16",
+      "canonical_url": "https://www.linkedin.com/pulse/navigating-complexity-ai-leadership-andr%C3%A9-lindenberg-xsqle",
+      "markdown_path": "articles/artificial-engineering/2025-11-16-edition-29.md",
+      "markdown_sha256": "7ed277d915922411ae4c4623f8f3bb3a099acc54e6fb5a276deb340b854f868e"
+    },
+    {
+      "id": "elevate:critical-thinking-during-the-age",
+      "source_id": "elevate",
+      "published_at": "2025-11-21",
+      "canonical_url": "https://addyo.substack.com/p/critical-thinking-during-the-age",
+      "markdown_path": "articles/elevate/2025-11-21-critical-thinking-during-the-age.md",
+      "markdown_sha256": "0b3f98640c8b87773068798d8dc00d58fad8996e0d4647eadbf16b98233e34e7"
+    },
+    {
+      "id": "artificial-engineering:edition-30",
+      "source_id": "artificial-engineering",
+      "published_at": "2025-11-23",
+      "canonical_url": "https://www.linkedin.com/pulse/ai-driven-modernization-from-trustworthy-systems-andr%C3%A9-lindenberg-fodee",
+      "markdown_path": "articles/artificial-engineering/2025-11-23-edition-30.md",
+      "markdown_sha256": "40275467e7bd0af2449f13f7187aa9e3710a856c3ab0ed280f657845e7457c22"
+    },
+    {
+      "id": "elevate:treat-ai-generated-code-as-a-draft",
+      "source_id": "elevate",
+      "published_at": "2025-11-25",
+      "canonical_url": "https://addyo.substack.com/p/treat-ai-generated-code-as-a-draft",
+      "markdown_path": "articles/elevate/2025-11-25-treat-ai-generated-code-as-a-draft.md",
+      "markdown_sha256": "719d542cbf0fad861fdd8167a161cef27d95c64a53ae474e7028fe587bff0992"
+    },
+    {
+      "id": "artificial-engineering:edition-31",
+      "source_id": "artificial-engineering",
+      "published_at": "2025-11-30",
+      "canonical_url": "https://www.linkedin.com/pulse/ai-driven-re-engineering-it-systems-andr%C3%A9-lindenberg-idn2e",
+      "markdown_path": "articles/artificial-engineering/2025-11-30-edition-31.md",
+      "markdown_sha256": "e4ece356271b5631a1e31d4e88ca4086808585c0d0828aa9cf32c0d2e404dc2a"
+    },
+    {
+      "id": "elevate:21-lessons-from-14-years-at-google",
+      "source_id": "elevate",
+      "published_at": "2025-12-04",
+      "canonical_url": "https://addyo.substack.com/p/21-lessons-from-14-years-at-google",
+      "markdown_path": "articles/elevate/2025-12-04-21-lessons-from-14-years-at-google.md",
+      "markdown_sha256": "6fa94d1f6738ec3ecb6a24a8ac9649cb42d3eed1668f3d4334885f6f38898c8c"
+    },
+    {
+      "id": "artificial-engineering:edition-32",
+      "source_id": "artificial-engineering",
+      "published_at": "2025-12-07",
+      "canonical_url": "https://www.linkedin.com/pulse/navigating-ai-geo-intelligence-andr%C3%A9-lindenberg-zewqe",
+      "markdown_path": "articles/artificial-engineering/2025-12-07-edition-32.md",
+      "markdown_sha256": "5741efc3e693b4bcedab9b4fca662174703541f7030c68afe22e8f7a9615ff63"
+    },
+    {
+      "id": "artificial-engineering:edition-33",
+      "source_id": "artificial-engineering",
+      "published_at": "2025-12-14",
+      "canonical_url": "https://www.linkedin.com/pulse/enabling-ai-comprehend-legacy-code-senior-engineer-level-lindenberg-upf8f",
+      "markdown_path": "articles/artificial-engineering/2025-12-14-edition-33.md",
+      "markdown_sha256": "4e78f451a919b07e476ee6c14b6812ad794a2b953d88e1b5cec8d89ec19b0680"
+    },
+    {
+      "id": "elevate:my-llm-coding-workflow-going-into",
+      "source_id": "elevate",
+      "published_at": "2025-12-18",
+      "canonical_url": "https://addyo.substack.com/p/my-llm-coding-workflow-going-into",
+      "markdown_path": "articles/elevate/2025-12-18-my-llm-coding-workflow-going-into.md",
+      "markdown_sha256": "f7d90b91fa71f06d200ef4398d68767a183189aefd01c40cfe2313517d2a5c06"
+    },
+    {
+      "id": "artificial-engineering:edition-34",
+      "source_id": "artificial-engineering",
+      "published_at": "2025-12-21",
+      "canonical_url": "https://www.linkedin.com/pulse/enabling-ainative-data-architectures-one-use-case-time-lindenberg-qiere",
+      "markdown_path": "articles/artificial-engineering/2025-12-21-edition-34.md",
+      "markdown_sha256": "ddd8d791490d1b1b9254da29d89a1c223f8d215f116334f300f2e98de7fd72ad"
+    },
+    {
+      "id": "artificial-engineering:edition-35",
+      "source_id": "artificial-engineering",
+      "published_at": "2025-12-28",
+      "canonical_url": "https://www.linkedin.com/pulse/bridging-data-decision-ais-expanding-role-software-andr%C3%A9-lindenberg-hva4f",
+      "markdown_path": "articles/artificial-engineering/2025-12-28-edition-35.md",
+      "markdown_sha256": "91ebc00d238b80ee0faa7c5544239884aa08132e1dc1bdb770a0e9b635b1be10"
+    },
+    {
+      "id": "elevate:how-good-is-ai-at-coding-react-really",
+      "source_id": "elevate",
+      "published_at": "2025-12-29",
+      "canonical_url": "https://addyo.substack.com/p/how-good-is-ai-at-coding-react-really",
+      "markdown_path": "articles/elevate/2025-12-29-how-good-is-ai-at-coding-react-really.md",
+      "markdown_sha256": "cf16fba3b7d3db6f16eedcfdb5b566389e96c4d874dba49297aaf761dc1131f3"
+    },
+    {
+      "id": "artificial-engineering:edition-36",
+      "source_id": "artificial-engineering",
+      "published_at": "2026-01-04",
+      "canonical_url": "https://www.linkedin.com/pulse/how-smaller-ai-systems-quietly-winning-andr%C3%A9-lindenberg-ebgwf",
+      "markdown_path": "articles/artificial-engineering/2026-01-04-edition-36.md",
+      "markdown_sha256": "d1e877f544098b813c90ed475c9a84b2cc8fac5b20284ac94858dfbbc7b2688e"
+    },
+    {
+      "id": "elevate:code-review-in-the-age-of-ai",
+      "source_id": "elevate",
+      "published_at": "2026-01-05",
+      "canonical_url": "https://addyo.substack.com/p/code-review-in-the-age-of-ai",
+      "markdown_path": "articles/elevate/2026-01-05-code-review-in-the-age-of-ai.md",
+      "markdown_sha256": "488b0755f31451629bcc61b426c9075f8d69c8df11c4f7cb44ce1de6563015cd"
+    },
+    {
+      "id": "artificial-engineering:edition-37",
+      "source_id": "artificial-engineering",
+      "published_at": "2026-01-11",
+      "canonical_url": "https://www.linkedin.com/pulse/emerging-era-recursive-language-models-andr%C3%A9-lindenberg-z86ff",
+      "markdown_path": "articles/artificial-engineering/2026-01-11-edition-37.md",
+      "markdown_sha256": "3e430a2b91366353c767d4cb36eef5fe086344d4efca4cb63c05ad5a1def2d60"
+    },
+    {
+      "id": "artificial-engineering:edition-38",
+      "source_id": "artificial-engineering",
+      "published_at": "2026-01-18",
+      "canonical_url": "https://www.linkedin.com/pulse/unpacking-ai-contextual-reasoning-visualization-andr%C3%A9-lindenberg-xwkjf",
+      "markdown_path": "articles/artificial-engineering/2026-01-18-edition-38.md",
+      "markdown_sha256": "f5f9d4c136b411a4fc1dab9d6c26dd29d3a2c97b7a9a6b7ad94ab1ed1ce7f50d"
+    },
+    {
+      "id": "elevate:how-to-write-a-good-spec-for-ai-agents",
+      "source_id": "elevate",
+      "published_at": "2026-01-19",
+      "canonical_url": "https://addyo.substack.com/p/how-to-write-a-good-spec-for-ai-agents",
+      "markdown_path": "articles/elevate/2026-01-19-how-to-write-a-good-spec-for-ai-agents.md",
+      "markdown_sha256": "c13a52d16e15f6c86d836aa2ec3c3e820677db7635772376b3176511ea9aa09e"
+    },
+    {
+      "id": "artificial-engineering:edition-39",
+      "source_id": "artificial-engineering",
+      "published_at": "2026-01-25",
+      "canonical_url": "https://www.linkedin.com/pulse/shaping-ai-landscapes-from-memory-systems-geospatial-andr%C3%A9-lindenberg-xrasf",
+      "markdown_path": "articles/artificial-engineering/2026-01-25-edition-39.md",
+      "markdown_sha256": "7ef2e118aa01c5894a2337c153467435519f4ae34098aef516b3efbac3d04bc0"
+    },
+    {
+      "id": "elevate:the-80-problem-in-agentic-coding",
+      "source_id": "elevate",
+      "published_at": "2026-01-28",
+      "canonical_url": "https://addyo.substack.com/p/the-80-problem-in-agentic-coding",
+      "markdown_path": "articles/elevate/2026-01-28-the-80-problem-in-agentic-coding.md",
+      "markdown_sha256": "42fb49ddcb852ba7d1e978c954e9f11ccaecf95cb1b2038c9a09a18a04e16111"
+    },
+    {
+      "id": "artificial-engineering:edition-40",
+      "source_id": "artificial-engineering",
+      "published_at": "2026-02-01",
+      "canonical_url": "https://www.linkedin.com/pulse/why-most-powerful-llms-cant-rewrite-old-erp-yet-andr%C3%A9-lindenberg-jjwsf",
+      "markdown_path": "articles/artificial-engineering/2026-02-01-edition-40.md",
+      "markdown_sha256": "722735dde7f3bf2e7bbdb119c48bdf7a798bc6eee71c9c8f4730848e25cc0d5e"
+    },
+    {
+      "id": "artificial-engineering:edition-41",
+      "source_id": "artificial-engineering",
+      "published_at": "2026-02-07",
+      "canonical_url": "https://www.linkedin.com/pulse/evals-foundation-reliable-ai-agents-andr%C3%A9-lindenberg-tcgoe",
+      "markdown_path": "articles/artificial-engineering/2026-02-07-edition-41.md",
+      "markdown_sha256": "ad3f49e0cc3e906518da3b9c2706bcf8c3097bf2815fb8fea031183ab4aef6ce"
+    },
+    {
+      "id": "elevate:14-more-lessons-from-14-years-at",
+      "source_id": "elevate",
+      "published_at": "2026-02-12",
+      "canonical_url": "https://addyo.substack.com/p/14-more-lessons-from-14-years-at",
+      "markdown_path": "articles/elevate/2026-02-12-14-more-lessons-from-14-years-at.md",
+      "markdown_sha256": "fca2be495fa2e8c876811af47fa97dc08985ea78caf5b133fade7378a8a74756"
+    },
+    {
+      "id": "artificial-engineering:edition-42",
+      "source_id": "artificial-engineering",
+      "published_at": "2026-02-14",
+      "canonical_url": "https://www.linkedin.com/pulse/when-ai-meets-backend-andr%C3%A9-lindenberg-sotuf",
+      "markdown_path": "articles/artificial-engineering/2026-02-14-edition-42.md",
+      "markdown_sha256": "188df86f4c21a7f04376919b25c00cf71b3d98d212796a1ac6167a87e4fba84b"
+    },
+    {
+      "id": "artificial-engineering:edition-43",
+      "source_id": "artificial-engineering",
+      "published_at": "2026-02-22",
+      "canonical_url": "https://www.linkedin.com/pulse/ontology-moat-andr%C3%A9-lindenberg-jpowf",
+      "markdown_path": "articles/artificial-engineering/2026-02-22-edition-43.md",
+      "markdown_sha256": "512d95254c7ab9886b5878c973ef3913a7bd3057e0b50eb598525faa89a4eb74"
+    },
+    {
+      "id": "artificial-engineering:edition-44",
+      "source_id": "artificial-engineering",
+      "published_at": "2026-03-01",
+      "canonical_url": "https://www.linkedin.com/pulse/from-solo-agent-parallel-fleet-andr%C3%A9-lindenberg-ncspf",
+      "markdown_path": "articles/artificial-engineering/2026-03-01-edition-44.md",
+      "markdown_sha256": "269aaf9d0bafb575d790586eb17b61959b74ffeac84722b91cd01fd324b619e7"
+    },
+    {
+      "id": "artificial-engineering:edition-45",
+      "source_id": "artificial-engineering",
+      "published_at": "2026-03-08",
+      "canonical_url": "https://www.linkedin.com/pulse/closing-context-gap-why-ontologies-missing-layer-ai-andr%C3%A9-lindenberg-2bhef",
+      "markdown_path": "articles/artificial-engineering/2026-03-08-edition-45.md",
+      "markdown_sha256": "a954fcc0c1c4dacfd5148d734f3fc842c3d569895bfb89bea316dd8c99ef1f6d"
+    },
+    {
+      "id": "artificial-engineering:edition-46",
+      "source_id": "artificial-engineering",
+      "published_at": "2026-03-14",
+      "canonical_url": "https://www.linkedin.com/pulse/memory-problem-one-talks-why-ai-agents-need-two-andr%C3%A9-lindenberg-spjvf",
+      "markdown_path": "articles/artificial-engineering/2026-03-14-edition-46.md",
+      "markdown_sha256": "38bec13669faad96e02d76a3d107557796ac4fbc78970f847f2aad8030d7ba37"
+    },
+    {
+      "id": "elevate:death-of-the-ide",
+      "source_id": "elevate",
+      "published_at": "2026-03-20",
+      "canonical_url": "https://addyo.substack.com/p/death-of-the-ide",
+      "markdown_path": "articles/elevate/2026-03-20-death-of-the-ide.md",
+      "markdown_sha256": "443e3f05ea7a0efe054025b004801ce68df7b8e0e28e926de5f69eea9e8223ad"
+    },
+    {
+      "id": "artificial-engineering:edition-47",
+      "source_id": "artificial-engineering",
+      "published_at": "2026-03-21",
+      "canonical_url": "https://www.linkedin.com/pulse/minimize-surprise-maximize-agency-what-active-teaches-lindenberg-q39tf",
+      "markdown_path": "articles/artificial-engineering/2026-03-21-edition-47.md",
+      "markdown_sha256": "66435d484f82cf8eefb6bb0811300323fec54cf44374de136fa4d80829c825bf"
+    },
+    {
+      "id": "artificial-engineering:edition-48",
+      "source_id": "artificial-engineering",
+      "published_at": "2026-03-28",
+      "canonical_url": "https://www.linkedin.com/pulse/context-cores-end-memento-nightmare-why-agent-memory-needs-andr%C3%A9-r1q1f",
+      "markdown_path": "articles/artificial-engineering/2026-03-28-edition-48.md",
+      "markdown_sha256": "4b6ee18d3d4c0be25e1d9a9fd8bd45fa139fd2fd62f00175f01cdfa2541ee4d7"
+    },
+    {
+      "id": "artificial-engineering:edition-49",
+      "source_id": "artificial-engineering",
+      "published_at": "2026-04-04",
+      "canonical_url": "https://www.linkedin.com/pulse/why-production-ai-needs-engineering-discipline-more-andr%C3%A9-lindenberg-av02f",
+      "markdown_path": "articles/artificial-engineering/2026-04-04-edition-49.md",
+      "markdown_sha256": "1b73bce00d8ee817097b077a7872784edddb79795f300fa9887a8629fd6d8b1f"
+    },
+    {
+      "id": "artificial-engineering:edition-50",
+      "source_id": "artificial-engineering",
+      "published_at": "2026-04-11",
+      "canonical_url": "https://www.linkedin.com/pulse/mempalace-milla-jovovich-48-hour-audit-when-open-andr%C3%A9-lindenberg-1akvf",
+      "markdown_path": "articles/artificial-engineering/2026-04-11-edition-50.md",
+      "markdown_sha256": "ea212b6b4d0bd5856582412eb417c41d30c5062ec11b87f5164280851d150228"
+    },
+    {
+      "id": "artificial-engineering:edition-51",
+      "source_id": "artificial-engineering",
+      "published_at": "2026-04-18",
+      "canonical_url": "https://www.linkedin.com/pulse/from-consulting-decks-slash-commands-enterprise-goes-andr%C3%A9-lindenberg-sifjf",
+      "markdown_path": "articles/artificial-engineering/2026-04-18-edition-51.md",
+      "markdown_sha256": "916e7feeb683fcdcdbf432b7093e51c64b2d521084684d6f1381d7fc623af3e7"
+    },
+    {
+      "id": "elevate:the-agent-stack-bet",
+      "source_id": "elevate",
+      "published_at": "2026-04-18",
+      "canonical_url": "https://addyo.substack.com/p/the-agent-stack-bet",
+      "markdown_path": "articles/elevate/2026-04-18-the-agent-stack-bet.md",
+      "markdown_sha256": "2d03544852139572ecd7754d48a08b12fbff6c971540d9b18c744ef6a09342dd"
+    },
+    {
+      "id": "artificial-engineering:edition-52",
+      "source_id": "artificial-engineering",
+      "published_at": "2026-04-25",
+      "canonical_url": "https://www.linkedin.com/pulse/how-ship-token-efficient-coding-agent-your-team-andr%C3%A9-lindenberg-nvirf",
+      "markdown_path": "articles/artificial-engineering/2026-04-25-edition-52.md",
+      "markdown_sha256": "9dc85eced913e0af35c42dbad6b3fd2ffc65a31a8de83d2a8e9dfb4bd2baf257"
+    },
+    {
+      "id": "artificial-engineering:edition-53",
+      "source_id": "artificial-engineering",
+      "published_at": "2026-05-02",
+      "canonical_url": "https://www.linkedin.com/pulse/agentic-primitives-six-levers-agent-sovereignty-andr%C3%A9-lindenberg-vkn3f",
+      "markdown_path": "articles/artificial-engineering/2026-05-02-edition-53.md",
+      "markdown_sha256": "f8b3fe8e4761e678435c035616c880f2f18367bcb18c8b969a199e5b1767f534"
+    },
+    {
+      "id": "artificial-engineering:edition-54",
+      "source_id": "artificial-engineering",
+      "published_at": "2026-05-09",
+      "canonical_url": "https://www.linkedin.com/pulse/why-agents-need-world-model-andr%C3%A9-lindenberg-9cc6e",
+      "markdown_path": "articles/artificial-engineering/2026-05-09-edition-54.md",
+      "markdown_sha256": "1ee8a57064a731260ebb3f62d0d89044888b17777ca5c9b384ee326e050442d7"
+    },
+    {
+      "id": "artificial-engineering:edition-55",
+      "source_id": "artificial-engineering",
+      "published_at": "2026-05-16",
+      "canonical_url": "https://www.linkedin.com/pulse/substrate-shrinks-when-31gb-rag-becomes-4gb-laptop-andr%C3%A9-lindenberg-p2ngf",
+      "markdown_path": "articles/artificial-engineering/2026-05-16-edition-55.md",
+      "markdown_sha256": "4d82e58bd4b6d722e2bb9a6b5288fb5e91c4eccb1313467016ee207d8c40220d"
+    },
+    {
+      "id": "artificial-engineering:edition-56",
+      "source_id": "artificial-engineering",
+      "published_at": "2026-05-23",
+      "canonical_url": "https://www.linkedin.com/pulse/log-agent-event-sourced-architectures-take-stack-andr%C3%A9-lindenberg-p98af",
+      "markdown_path": "articles/artificial-engineering/2026-05-23-edition-56.md",
+      "markdown_sha256": "ccc8011a8e841fc1c3e2d5def9e9403cb2b32e33a4f4c55290eb4fe039c73705"
+    },
+    {
+      "id": "artificial-engineering:edition-57",
+      "source_id": "artificial-engineering",
+      "published_at": "2026-05-30",
+      "canonical_url": "https://www.linkedin.com/pulse/map-only-surface-andr%C3%A9-lindenberg-bp87f",
+      "markdown_path": "articles/artificial-engineering/2026-05-30-edition-57.md",
+      "markdown_sha256": "1a6f64ee753e67af77502753d5f0ae74ef34a6ef01d319fc747137fee8d22cf2"
+    },
+    {
+      "id": "artificial-engineering:edition-58",
+      "source_id": "artificial-engineering",
+      "published_at": "2026-06-06",
+      "canonical_url": "https://www.linkedin.com/pulse/modernization-loop-needs-score-andr%C3%A9-lindenberg-6fwqf",
+      "markdown_path": "articles/artificial-engineering/2026-06-06-edition-58.md",
+      "markdown_sha256": "068360ebc79f629c61971782ffaea6729a65938a0bdf34b4636a38fc94c352dd"
+    },
+    {
+      "id": "artificial-engineering:edition-59",
+      "source_id": "artificial-engineering",
+      "published_at": "2026-06-13",
+      "canonical_url": "https://www.linkedin.com/pulse/own-harness-change-model-equation-andr%C3%A9-lindenberg-dueze",
+      "markdown_path": "articles/artificial-engineering/2026-06-13-edition-59.md",
+      "markdown_sha256": "37b110232c3a02df47bd8329c14f97aa71b5722761adc485d9ade05c835709cc"
+    },
+    {
+      "id": "artificial-engineering:edition-60",
+      "source_id": "artificial-engineering",
+      "published_at": "2026-06-20",
+      "canonical_url": "https://www.linkedin.com/pulse/memory-should-change-future-behavior-andr%C3%A9-lindenberg-genve",
+      "markdown_path": "articles/artificial-engineering/2026-06-20-edition-60.md",
+      "markdown_sha256": "5381f16a033c9409e3751783fd64077f3aebdd9e91cee6dd792a7b2e81a6f6be"
+    },
+    {
+      "id": "artificial-engineering:edition-61",
+      "source_id": "artificial-engineering",
+      "published_at": "2026-06-27",
+      "canonical_url": "https://www.linkedin.com/pulse/from-prompts-loops-next-step-agent-engineering-andr%C3%A9-lindenberg-wnqre",
+      "markdown_path": "articles/artificial-engineering/2026-06-27-edition-61.md",
+      "markdown_sha256": "3b297431d65f518461b12f1880592877e26d94c77c7432b9c2b78012e9ada3c3"
+    },
+    {
+      "id": "artificial-engineering:edition-62",
+      "source_id": "artificial-engineering",
+      "published_at": "2026-07-04",
+      "canonical_url": "https://www.linkedin.com/pulse/plan-loop-before-you-build-andr%C3%A9-lindenberg-y0t1e",
+      "markdown_path": "articles/artificial-engineering/2026-07-04-edition-62.md",
+      "markdown_sha256": "d8c75adc171e019a1b8caececcd414a8c7d2072bde3e306fbcfc01f73a7a1915"
+    },
+    {
+      "id": "artificial-engineering:edition-63",
+      "source_id": "artificial-engineering",
+      "published_at": "2026-07-11",
+      "canonical_url": "https://www.linkedin.com/pulse/memory-model-isnt-allowed-write-andr%C3%A9-lindenberg-mqjse",
+      "markdown_path": "articles/artificial-engineering/2026-07-11-edition-63.md",
+      "markdown_sha256": "234e91816b710c838fc42d4be8a5db605b650506a1ce9cda53076b92f6e81cc0"
+    },
+    {
+      "id": "artificial-engineering:edition-64",
+      "source_id": "artificial-engineering",
+      "published_at": "2026-07-18",
+      "canonical_url": "https://www.linkedin.com/pulse/more-machines-slower-model-still-worth-andr%C3%A9-lindenberg-isufe",
+      "markdown_path": "articles/artificial-engineering/2026-07-18-edition-64.md",
+      "markdown_sha256": "7c5f6879dc0f8055b67e4528edb62d6a31113a665b5705696db7fb37af6c3adc"
+    }
+  ]
+}

@@ -1,0 +1,2512 @@
+{
+  "schema_version": 1,
+  "source_id": "elevate",
+  "range": [
+    1,
+    64
+  ],
+  "index_basis": "official-sitemap-publication-date-ascending",
+  "index_note": "archive_index는 공식 발행번호가 아닙니다. 공식 사이트맵 전체 게시물 중 실제 발행일 오름차순 최초 64개이며 제한 글도 순번에 포함합니다. 같은 날은 stable id 순서입니다.",
+  "checked_at": "2026-10-20",
+  "official_sitemaps": [
+    "https://addyo.substack.com/sitemap/2023",
+    "https://addyo.substack.com/sitemap/2024",
+    "https://addyo.substack.com/sitemap/2025",
+    "https://addyo.substack.com/sitemap/2026"
+  ],
+  "sitemap_entry_counts": {
+    "2023": 15,
+    "2024": 15,
+    "2025": 28,
+    "2026": 20
+  },
+  "parallel_execution": {
+    "mode": "six concurrent subagents; eight independent batches of eight",
+    "batch_ranges": [
+      [
+        1,
+        8
+      ],
+      [
+        9,
+        16
+      ],
+      [
+        17,
+        24
+      ],
+      [
+        25,
+        32
+      ],
+      [
+        33,
+        40
+      ],
+      [
+        41,
+        48
+      ],
+      [
+        49,
+        56
+      ],
+      [
+        57,
+        64
+      ]
+    ]
+  },
+  "articles": [
+    {
+      "id": "elevate:growth-mindset-vs-fixed-mindset",
+      "source_id": "elevate",
+      "archive_index": 1,
+      "title": "Growth mindset vs. fixed mindset",
+      "canonical_url": "https://addyo.substack.com/p/growth-mindset-vs-fixed-mindset",
+      "author": "Addy Osmani",
+      "published_at": "2023-11-21",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/growth-mindset-vs-fixed-mindset",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2023",
+        "date_display": "Nov 21, 2023"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "65c495ba07edad38178458f2c6d683918a09f10c284f42afa3d254208ea235ba",
+      "source_hash_method": "SHA-256 of UTF-8 normalized full public article body from web-rendered lines; explicit body line range excludes title/byline/comments/footer; subscription callouts and image captions excluded; rendered link references reduced to visible labels; whitespace collapsed within nonempty lines; lines joined with LF and no terminal LF. Images are excluded from this text digest.",
+      "source_evidence": {
+        "access": "Public canonical article via web open/click, no authentication or bypass",
+        "source_ref": "turn244view0",
+        "visible_body_line_range": [
+          18,
+          146
+        ],
+        "all_rendered_lines_retrieved": true,
+        "total_rendered_lines": 242,
+        "canonical_url": "https://addyo.substack.com/p/growth-mindset-vs-fixed-mindset",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2023-11-21-growth-mindset-vs-fixed-mindset.md",
+      "markdown_sha256": "163428c072986f3a1f15910ad9bad3cb46fc21a47669fd07a64094a74cdf1038",
+      "summary_eojeol": 258,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:dont-expect-to-be-motivated-everyday",
+      "source_id": "elevate",
+      "archive_index": 2,
+      "title": "Don't expect to be motivated everyday.",
+      "canonical_url": "https://addyo.substack.com/p/dont-expect-to-be-motivated-everyday",
+      "author": "Addy Osmani",
+      "published_at": "2023-11-25",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/dont-expect-to-be-motivated-everyday",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2023",
+        "date_display": "Nov 25, 2023"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "62b10486553036cd86ae3d04861404ed03de9667d84a54295aecaf93acdcaaa2",
+      "source_hash_method": "SHA-256 of UTF-8 normalized full public article body from web-rendered lines; explicit body line range excludes title/byline/comments/footer; subscription callouts and image captions excluded; rendered link references reduced to visible labels; whitespace collapsed within nonempty lines; lines joined with LF and no terminal LF. Images are excluded from this text digest.",
+      "source_evidence": {
+        "access": "Public canonical article via web open/click, no authentication or bypass",
+        "source_ref": "turn243view0",
+        "visible_body_line_range": [
+          15,
+          69
+        ],
+        "all_rendered_lines_retrieved": true,
+        "total_rendered_lines": 111,
+        "canonical_url": "https://addyo.substack.com/p/dont-expect-to-be-motivated-everyday",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2023-11-25-dont-expect-to-be-motivated-everyday.md",
+      "markdown_sha256": "49f09d8ee7405e128b8f31e44b043236e287d9c3592c2194fa04aa6296df70ed",
+      "summary_eojeol": 263,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:effective-software-engineers",
+      "source_id": "elevate",
+      "archive_index": 3,
+      "title": "What makes a software engineer effective?",
+      "canonical_url": "https://addyo.substack.com/p/effective-software-engineers",
+      "author": "Addy Osmani",
+      "published_at": "2023-11-29",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/effective-software-engineers",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2023",
+        "date_display": "Nov 29, 2023"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "d2ffb35a5e4979f1d6c7f03fc773f5090fe9ca104f29a7b25411e884f23243d1",
+      "source_hash_method": "SHA-256 of UTF-8 normalized full public article body from web-rendered lines; explicit body line range excludes title/byline/comments/footer; subscription callouts and image captions excluded; rendered link references reduced to visible labels; whitespace collapsed within nonempty lines; lines joined with LF and no terminal LF. Images are excluded from this text digest.",
+      "source_evidence": {
+        "access": "Public canonical article via web open/click, no authentication or bypass",
+        "source_ref": "turn242view0",
+        "visible_body_line_range": [
+          17,
+          283
+        ],
+        "all_rendered_lines_retrieved": true,
+        "total_rendered_lines": 328,
+        "canonical_url": "https://addyo.substack.com/p/effective-software-engineers",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2023-11-29-effective-software-engineers.md",
+      "markdown_sha256": "ae87039cd282ca86f34389b87cf14a333d2713705b308c7d7ce7fc6d26164960",
+      "summary_eojeol": 277,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:bonus-book-and-sneak-peek-for-paid",
+      "source_id": "elevate",
+      "archive_index": 4,
+      "title": "Bonus book and sneak peek for Paid Subscribers",
+      "canonical_url": "https://addyo.substack.com/p/bonus-book-and-sneak-peek-for-paid",
+      "author": "Addy Osmani",
+      "published_at": "2023-12-03",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/bonus-book-and-sneak-peek-for-paid",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2023",
+        "date_display": "Dec 03, 2023"
+      },
+      "status": "pending",
+      "full_source_verified": false,
+      "reason": "Original article displays Paid and only a truncated public preview before the subscription continuation screen. Full text not accessed; no summary created.",
+      "source_evidence": {
+        "canonical_url": "https://addyo.substack.com/p/bonus-book-and-sneak-peek-for-paid",
+        "access": "restricted public preview",
+        "complete_body_read": false
+      }
+    },
+    {
+      "id": "elevate:leading-effective-teams",
+      "source_id": "elevate",
+      "archive_index": 5,
+      "title": "Leading Effective Teams",
+      "canonical_url": "https://addyo.substack.com/p/leading-effective-teams",
+      "author": "Addy Osmani",
+      "published_at": "2023-12-06",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/leading-effective-teams",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2023",
+        "date_display": "Dec 06, 2023"
+      },
+      "status": "pending",
+      "full_source_verified": false,
+      "reason": "Original article displays Paid and only a truncated public preview before the subscription continuation screen. Full text not accessed; no summary created.",
+      "source_evidence": {
+        "canonical_url": "https://addyo.substack.com/p/leading-effective-teams",
+        "access": "restricted public preview",
+        "complete_body_read": false
+      }
+    },
+    {
+      "id": "elevate:it-takes-23-mins-to-recover-after",
+      "source_id": "elevate",
+      "archive_index": 6,
+      "title": "It takes 23 mins to recover after an interruption",
+      "canonical_url": "https://addyo.substack.com/p/it-takes-23-mins-to-recover-after",
+      "author": "Addy Osmani",
+      "published_at": "2023-12-07",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/it-takes-23-mins-to-recover-after",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2023",
+        "date_display": "Dec 07, 2023"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "be11484d5b6d0115baeee642cca501bb940d0c2acc77ee5f5eb2e78747eac470",
+      "source_hash_method": "SHA-256 of UTF-8 normalized full public article body from web-rendered lines; explicit body line range excludes title/byline/comments/footer; subscription callouts and image captions excluded; rendered link references reduced to visible labels; whitespace collapsed within nonempty lines; lines joined with LF and no terminal LF. Images are excluded from this text digest.",
+      "source_evidence": {
+        "access": "Public canonical article via web open/click, no authentication or bypass",
+        "source_ref": "turn176view0",
+        "visible_body_line_range": [
+          16,
+          114
+        ],
+        "all_rendered_lines_retrieved": true,
+        "total_rendered_lines": 164,
+        "canonical_url": "https://addyo.substack.com/p/it-takes-23-mins-to-recover-after",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2023-12-07-it-takes-23-mins-to-recover-after.md",
+      "markdown_sha256": "4b79b5db58e78530ef8074c06ede29a59acd099bb76fc0d58a8ec532e9f1d00a",
+      "summary_eojeol": 274,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:drive-effective-results-outcomes",
+      "source_id": "elevate",
+      "archive_index": 7,
+      "title": "Drive Effective Results: Outcomes vs. Outputs",
+      "canonical_url": "https://addyo.substack.com/p/drive-effective-results-outcomes",
+      "author": "Addy Osmani",
+      "published_at": "2023-12-11",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/drive-effective-results-outcomes",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2023",
+        "date_display": "Dec 11, 2023"
+      },
+      "status": "pending",
+      "full_source_verified": false,
+      "reason": "Original article displays Paid and only a truncated public preview before the subscription continuation screen. Full text not accessed; no summary created.",
+      "source_evidence": {
+        "canonical_url": "https://addyo.substack.com/p/drive-effective-results-outcomes",
+        "access": "restricted public preview",
+        "complete_body_read": false
+      }
+    },
+    {
+      "id": "elevate:change-what-you-do-to-change-where",
+      "source_id": "elevate",
+      "archive_index": 8,
+      "title": "Change what you do, to change where you go.",
+      "canonical_url": "https://addyo.substack.com/p/change-what-you-do-to-change-where",
+      "author": "Addy Osmani",
+      "published_at": "2023-12-16",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/change-what-you-do-to-change-where",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2023",
+        "date_display": "Dec 16, 2023"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "72bb9c7ad619171b147132e7790ddfd576de980c5688b78b2ab58a0503504f09",
+      "source_hash_method": "SHA-256 of UTF-8 normalized full public article body from web-rendered lines; explicit body line range excludes title/byline/comments/footer; subscription callouts and image captions excluded; rendered link references reduced to visible labels; whitespace collapsed within nonempty lines; lines joined with LF and no terminal LF. Images are excluded from this text digest.",
+      "source_evidence": {
+        "access": "Public canonical article via web open/click, no authentication or bypass",
+        "source_ref": "turn168view0",
+        "visible_body_line_range": [
+          17,
+          136
+        ],
+        "all_rendered_lines_retrieved": true,
+        "total_rendered_lines": 196,
+        "canonical_url": "https://addyo.substack.com/p/change-what-you-do-to-change-where",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2023-12-16-change-what-you-do-to-change-where.md",
+      "markdown_sha256": "55f3f8d52c87567a5626b3642df5f14347596ef22c4a85c991b1b02df4b954e3",
+      "summary_eojeol": 276,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:conquering-conflicting-priorities",
+      "source_id": "elevate",
+      "archive_index": 9,
+      "title": "Conquering conflicting priorities",
+      "canonical_url": "https://addyo.substack.com/p/conquering-conflicting-priorities",
+      "author": "Addy Osmani",
+      "published_at": "2023-12-17",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/conquering-conflicting-priorities",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2023",
+        "date_display": "Dec 17, 2023"
+      },
+      "status": "pending",
+      "full_source_verified": false,
+      "reason": "공식 원문에 Paid 표시가 있으며 공개 본문이 중간에서 잘리고 구독 안내로 이어집니다. 인증 또는 구독 제한을 우회하지 않았으며 미리보기만으로 전문을 요약하지 않았습니다.",
+      "source_evidence": {
+        "canonical_url": "https://addyo.substack.com/p/conquering-conflicting-priorities",
+        "access": "restricted public preview",
+        "complete_body_read": false
+      }
+    },
+    {
+      "id": "elevate:good-code-is-like-a-love-letter-to",
+      "source_id": "elevate",
+      "archive_index": 10,
+      "title": "Good code is like a love letter to the next developer who will maintain it.",
+      "canonical_url": "https://addyo.substack.com/p/good-code-is-like-a-love-letter-to",
+      "author": "Addy Osmani",
+      "published_at": "2023-12-21",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/good-code-is-like-a-love-letter-to",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2023",
+        "date_display": "Dec 21, 2023"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "73b7e795360b8fc2506f9fc3efd8f74b6e9e8f275cc3e30d3a634d2b9da1d234",
+      "source_hash_method": "Web-rendered public article body; navigation, reactions, comments and final subscription prompt excluded; link markers reduced to labels; whitespace normalized within paragraphs; UTF-8 SHA-256",
+      "source_evidence": {
+        "method": "Official Substack article rendered by web tool, complete body through conclusion independently read; scratch cache supplied by sibling enumeration agent",
+        "canonical_url": "https://addyo.substack.com/p/good-code-is-like-a-love-letter-to",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2023-12-21-good-code-is-like-a-love-letter-to.md",
+      "markdown_sha256": "c1b07a212aded4e70692e57c610e80a63548e2416722cfa004e801c0e82392fa",
+      "summary_eojeol": 254,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:first-do-it-then-do-it-right-then",
+      "source_id": "elevate",
+      "archive_index": 11,
+      "title": "First do it, then do it right, then do it better.",
+      "canonical_url": "https://addyo.substack.com/p/first-do-it-then-do-it-right-then",
+      "author": "Addy Osmani",
+      "published_at": "2023-12-24",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/first-do-it-then-do-it-right-then",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2023",
+        "date_display": "Dec 24, 2023"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "7556235678e7a934b2cef62cf99f21e678098855ffbb5bff3745d82a667e27b1",
+      "source_hash_method": "Web-rendered public article body; navigation, reactions, comments and final subscription prompt excluded; link markers reduced to labels; whitespace normalized within paragraphs; UTF-8 SHA-256",
+      "source_evidence": {
+        "method": "Official Substack article rendered by web tool, complete body through conclusion independently read; scratch cache supplied by sibling enumeration agent",
+        "canonical_url": "https://addyo.substack.com/p/first-do-it-then-do-it-right-then",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2023-12-24-first-do-it-then-do-it-right-then.md",
+      "markdown_sha256": "e2daa07867a171442cd8372903ce4661da669ff4fda91911eb25deae4d4b3c82",
+      "summary_eojeol": 253,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:soft-skills-books-for-developers",
+      "source_id": "elevate",
+      "archive_index": 12,
+      "title": "Soft Skills books for developers",
+      "canonical_url": "https://addyo.substack.com/p/soft-skills-books-for-developers",
+      "author": "Addy Osmani",
+      "published_at": "2023-12-26",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/soft-skills-books-for-developers",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2023",
+        "date_display": "Dec 26, 2023"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "0e97ee6bb556548095104508b6a64da4e955d17757ea1eb4518f08dd75c14cc4",
+      "source_hash_method": "Web-rendered public article body; navigation, reactions, comments and final subscription prompt excluded; link markers reduced to labels; whitespace normalized within paragraphs; UTF-8 SHA-256",
+      "source_evidence": {
+        "method": "Official Substack article rendered by web tool, complete body through conclusion independently read; scratch cache supplied by sibling enumeration agent",
+        "canonical_url": "https://addyo.substack.com/p/soft-skills-books-for-developers",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2023-12-26-soft-skills-books-for-developers.md",
+      "markdown_sha256": "830c581b3a21f907dd730ee23960445434570211d3c5baec2b84d4988040c6e1",
+      "summary_eojeol": 262,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:setting-a-team-vision-mission-and",
+      "source_id": "elevate",
+      "archive_index": 13,
+      "title": "Setting a team vision, mission, and strategy",
+      "canonical_url": "https://addyo.substack.com/p/setting-a-team-vision-mission-and",
+      "author": "Addy Osmani",
+      "published_at": "2023-12-28",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/setting-a-team-vision-mission-and",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2023",
+        "date_display": "Dec 28, 2023"
+      },
+      "status": "pending",
+      "full_source_verified": false,
+      "reason": "공식 원문에 Paid 표시가 있으며 공개 본문이 중간에서 잘리고 구독 안내로 이어집니다. 인증 또는 구독 제한을 우회하지 않았으며 미리보기만으로 전문을 요약하지 않았습니다.",
+      "source_evidence": {
+        "canonical_url": "https://addyo.substack.com/p/setting-a-team-vision-mission-and",
+        "access": "restricted public preview",
+        "complete_body_read": false
+      }
+    },
+    {
+      "id": "elevate:reduce-the-gap-between-idea-and-execution",
+      "source_id": "elevate",
+      "archive_index": 14,
+      "title": "Reduce the gap between idea and execution",
+      "canonical_url": "https://addyo.substack.com/p/reduce-the-gap-between-idea-and-execution",
+      "author": "Addy Osmani",
+      "published_at": "2023-12-29",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/reduce-the-gap-between-idea-and-execution",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2023",
+        "date_display": "Dec 29, 2023"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "8307f4fc7df36a7ffee31ba339ab1fe61c4a8c2c61c7edc99d766b3ba37c1ea2",
+      "source_hash_method": "Web-rendered public article body; navigation, reactions, comments and final subscription prompt excluded; link markers reduced to labels; whitespace normalized within paragraphs; UTF-8 SHA-256",
+      "source_evidence": {
+        "method": "Official Substack article rendered by web tool, complete body through conclusion independently read; scratch cache supplied by sibling enumeration agent",
+        "canonical_url": "https://addyo.substack.com/p/reduce-the-gap-between-idea-and-execution",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2023-12-29-reduce-the-gap-between-idea-and-execution.md",
+      "markdown_sha256": "1c473df2e84b8770ac76e019fba60a09f8ad76beb2ad3a528d490b048fcdd413",
+      "summary_eojeol": 256,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:23-lessons-in-2023",
+      "source_id": "elevate",
+      "archive_index": 15,
+      "title": "23 lessons in 2023",
+      "canonical_url": "https://addyo.substack.com/p/23-lessons-in-2023",
+      "author": "Addy Osmani",
+      "published_at": "2023-12-30",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/23-lessons-in-2023",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2023",
+        "date_display": "Dec 30, 2023"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "b385f4ca63fc33672855289c2df7735426ca9500654a83f190a62bed814bf3b2",
+      "source_hash_method": "Web-rendered public article body; navigation, reactions, comments and final subscription prompt excluded; link markers reduced to labels; whitespace normalized within paragraphs; UTF-8 SHA-256",
+      "source_evidence": {
+        "method": "Official Substack article rendered by web tool, complete body through conclusion independently read; scratch cache supplied by sibling enumeration agent",
+        "canonical_url": "https://addyo.substack.com/p/23-lessons-in-2023",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2023-12-30-23-lessons-in-2023.md",
+      "markdown_sha256": "fa96bed9f01f2d7dd3eafe568c2fd4748d359ddf4fcb55f63288716aa550739c",
+      "summary_eojeol": 260,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:possibilities-if-you-ask-for-what",
+      "source_id": "elevate",
+      "archive_index": 16,
+      "title": "Possibilities if you ask for what you want.",
+      "canonical_url": "https://addyo.substack.com/p/possibilities-if-you-ask-for-what",
+      "author": "Addy Osmani",
+      "published_at": "2024-01-02",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/possibilities-if-you-ask-for-what",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2024",
+        "date_display": "Jan 02, 2024"
+      },
+      "status": "pending",
+      "full_source_verified": false,
+      "reason": "공식 원문에 Paid 표시가 있으며 공개 본문이 중간에서 잘리고 구독 안내로 이어집니다. 인증 또는 구독 제한을 우회하지 않았으며 미리보기만으로 전문을 요약하지 않았습니다.",
+      "source_evidence": {
+        "canonical_url": "https://addyo.substack.com/p/possibilities-if-you-ask-for-what",
+        "access": "restricted public preview",
+        "complete_body_read": false
+      }
+    },
+    {
+      "id": "elevate:stretch-yourself-from-time-to-time",
+      "source_id": "elevate",
+      "archive_index": 17,
+      "title": "Stretch yourself from time to time.",
+      "canonical_url": "https://addyo.substack.com/p/stretch-yourself-from-time-to-time",
+      "author": "Addy Osmani",
+      "published_at": "2024-01-05",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/stretch-yourself-from-time-to-time",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2024",
+        "date_display": "Jan 05, 2024"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "33dc311433f387887c6bf38ad153e9a4d749251fb3ca3af2aabff44be97ef88d",
+      "source_hash_method": "SHA-256 of complete public article body rendered by web.open; source L<n> prefixes removed; included documented body bounds; reader-subscription boilerplate, UI, reactions and comments excluded; link citations replaced by visible label; Markdown heading/list/quote prefixes removed; Unicode NFC; whitespace collapsed within nonempty lines; LF-joined UTF-8 without trailing newline.",
+      "source_evidence": {
+        "url": "https://addyo.substack.com/p/stretch-yourself-from-time-to-time",
+        "web_ref": "turn253view0",
+        "retrieval": "web.open public full article; direct HTTP returned Site Unavailable and was not used as source",
+        "metadata": "Visible original title, Addy Osmani byline and displayed publication date matched catalog",
+        "completion": "Full article through conclusion and any further-reading/book-promotion section before reader subscription and discussion UI; no paid gate present",
+        "canonical_url": "https://addyo.substack.com/p/stretch-yourself-from-time-to-time",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2024-01-05-stretch-yourself-from-time-to-time.md",
+      "markdown_sha256": "a21c75f559c2aa1c58b07d70c6bdde1aa40001d1949e655120b01ab77f3a26bf",
+      "summary_eojeol": 250,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:effective-engineering-managers",
+      "source_id": "elevate",
+      "archive_index": 18,
+      "title": "Effective engineering managers",
+      "canonical_url": "https://addyo.substack.com/p/effective-engineering-managers",
+      "author": "Addy Osmani",
+      "published_at": "2024-01-09",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/effective-engineering-managers",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2024",
+        "date_display": "Jan 09, 2024"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "2ffcc9781d312fd2afad40da1dca325bbae2d2a25899faa74b447d87704aa0b9",
+      "source_hash_method": "SHA-256 of complete public article body rendered by web.open; source L<n> prefixes removed; included documented body bounds; reader-subscription boilerplate, UI, reactions and comments excluded; link citations replaced by visible label; Markdown heading/list/quote prefixes removed; Unicode NFC; whitespace collapsed within nonempty lines; LF-joined UTF-8 without trailing newline.",
+      "source_evidence": {
+        "url": "https://addyo.substack.com/p/effective-engineering-managers",
+        "web_ref": "turn258view0",
+        "retrieval": "web.open public full article; direct HTTP returned Site Unavailable and was not used as source",
+        "metadata": "Visible original title, Addy Osmani byline and displayed publication date matched catalog",
+        "completion": "Full article through conclusion and any further-reading/book-promotion section before reader subscription and discussion UI; no paid gate present",
+        "canonical_url": "https://addyo.substack.com/p/effective-engineering-managers",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2024-01-09-effective-engineering-managers.md",
+      "markdown_sha256": "3adecf7d240a7e96bc6d1a1accf7854d6fb1304728492f407548ba7157365a16",
+      "summary_eojeol": 258,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:leading-effective-engineering-teams",
+      "source_id": "elevate",
+      "archive_index": 19,
+      "title": "Leading Effective Engineering Teams",
+      "canonical_url": "https://addyo.substack.com/p/leading-effective-engineering-teams",
+      "author": "Addy Osmani",
+      "published_at": "2024-01-18",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/leading-effective-engineering-teams",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2024",
+        "date_display": "Jan 18, 2024"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "80606ff787c4d42375dd1f767253e0c7c916030952385f4e18e935188ffc4212",
+      "source_hash_method": "SHA-256 of complete public article body rendered by web.open; source L<n> prefixes removed; included documented body bounds; reader-subscription boilerplate, UI, reactions and comments excluded; link citations replaced by visible label; Markdown heading/list/quote prefixes removed; Unicode NFC; whitespace collapsed within nonempty lines; LF-joined UTF-8 without trailing newline.",
+      "source_evidence": {
+        "url": "https://addyo.substack.com/p/leading-effective-engineering-teams",
+        "web_ref": "turn251view0",
+        "retrieval": "web.open public full article; direct HTTP returned Site Unavailable and was not used as source",
+        "metadata": "Visible original title, Addy Osmani byline and displayed publication date matched catalog",
+        "completion": "Full article through conclusion and any further-reading/book-promotion section before reader subscription and discussion UI; no paid gate present",
+        "canonical_url": "https://addyo.substack.com/p/leading-effective-engineering-teams",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2024-01-18-leading-effective-engineering-teams.md",
+      "markdown_sha256": "76151eeac4129b86c4f72af92167ae763da86dc2d6cd6057a49f2ffdfbf0a1fb",
+      "summary_eojeol": 250,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:consistency-matters",
+      "source_id": "elevate",
+      "archive_index": 20,
+      "title": "Consistency matters.",
+      "canonical_url": "https://addyo.substack.com/p/consistency-matters",
+      "author": "Addy Osmani",
+      "published_at": "2024-01-28",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/consistency-matters",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2024",
+        "date_display": "Jan 28, 2024"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "7f0287b6f34b205bd668131c181e8ee8a9b548ea0d57067097593a59cbd03140",
+      "source_hash_method": "SHA-256 of complete public article body rendered by web.open; source L<n> prefixes removed; included documented body bounds; reader-subscription boilerplate, UI, reactions and comments excluded; link citations replaced by visible label; Markdown heading/list/quote prefixes removed; Unicode NFC; whitespace collapsed within nonempty lines; LF-joined UTF-8 without trailing newline.",
+      "source_evidence": {
+        "url": "https://addyo.substack.com/p/consistency-matters",
+        "web_ref": "turn252view0",
+        "retrieval": "web.open public full article; direct HTTP returned Site Unavailable and was not used as source",
+        "metadata": "Visible original title, Addy Osmani byline and displayed publication date matched catalog",
+        "completion": "Full article through conclusion and any further-reading/book-promotion section before reader subscription and discussion UI; no paid gate present",
+        "canonical_url": "https://addyo.substack.com/p/consistency-matters",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2024-01-28-consistency-matters.md",
+      "markdown_sha256": "b7393ac29b6a57c741e181f8aa2b324007b0137a9f44687961ecf820b0592358",
+      "summary_eojeol": 252,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:stick-to-boring-architecture-for",
+      "source_id": "elevate",
+      "archive_index": 21,
+      "title": "Stick to boring architecture for as long as possible.",
+      "canonical_url": "https://addyo.substack.com/p/stick-to-boring-architecture-for",
+      "author": "Addy Osmani",
+      "published_at": "2024-02-19",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/stick-to-boring-architecture-for",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2024",
+        "date_display": "Feb 19, 2024"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "ff18ac3ab68b5c42ed4c95b6d15fda2995c61f161a511ec05eea0cfe602fc4e7",
+      "source_hash_method": "SHA-256 of complete public article body rendered by web.open; source L<n> prefixes removed; included documented body bounds; reader-subscription boilerplate, UI, reactions and comments excluded; link citations replaced by visible label; Markdown heading/list/quote prefixes removed; Unicode NFC; whitespace collapsed within nonempty lines; LF-joined UTF-8 without trailing newline.",
+      "source_evidence": {
+        "url": "https://addyo.substack.com/p/stick-to-boring-architecture-for",
+        "web_ref": "turn259view0",
+        "retrieval": "web.open public full article; direct HTTP returned Site Unavailable and was not used as source",
+        "metadata": "Visible original title, Addy Osmani byline and displayed publication date matched catalog",
+        "completion": "Full article through conclusion and any further-reading/book-promotion section before reader subscription and discussion UI; no paid gate present",
+        "canonical_url": "https://addyo.substack.com/p/stick-to-boring-architecture-for",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2024-02-19-stick-to-boring-architecture-for.md",
+      "markdown_sha256": "b4caa478c97cb1a0d53c4126b04873059ea56cf9b3d6b90f41597561caad8075",
+      "summary_eojeol": 259,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:the-debuggers-toolkit",
+      "source_id": "elevate",
+      "archive_index": 22,
+      "title": "The Debugger's Toolkit",
+      "canonical_url": "https://addyo.substack.com/p/the-debuggers-toolkit",
+      "author": "Addy Osmani",
+      "published_at": "2024-04-09",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/the-debuggers-toolkit",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2024",
+        "date_display": "Apr 09, 2024"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "b7b9c5660c487f8fe2302ffd3954a1d2a104ef9370fb03cab669f876f24df21c",
+      "source_hash_method": "SHA-256 of complete public article body rendered by web.open; source L<n> prefixes removed; included documented body bounds; reader-subscription boilerplate, UI, reactions and comments excluded; link citations replaced by visible label; Markdown heading/list/quote prefixes removed; Unicode NFC; whitespace collapsed within nonempty lines; LF-joined UTF-8 without trailing newline.",
+      "source_evidence": {
+        "url": "https://addyo.substack.com/p/the-debuggers-toolkit",
+        "web_ref": "turn257view0",
+        "retrieval": "web.open public full article; direct HTTP returned Site Unavailable and was not used as source",
+        "metadata": "Visible original title, Addy Osmani byline and displayed publication date matched catalog",
+        "completion": "Full article through conclusion and any further-reading/book-promotion section before reader subscription and discussion UI; no paid gate present",
+        "canonical_url": "https://addyo.substack.com/p/the-debuggers-toolkit",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2024-04-09-the-debuggers-toolkit.md",
+      "markdown_sha256": "8fbaa95ac2b222fcbed9e3d5e97c431ebeb6269490b0a7a043547da79c629681",
+      "summary_eojeol": 257,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:conquering-imposter-syndrome",
+      "source_id": "elevate",
+      "archive_index": 23,
+      "title": "Conquering Imposter Syndrome",
+      "canonical_url": "https://addyo.substack.com/p/conquering-imposter-syndrome",
+      "author": "Addy Osmani",
+      "published_at": "2024-04-30",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/conquering-imposter-syndrome",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2024",
+        "date_display": "Apr 30, 2024"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "4d4f65dfd92c6f3b566bcd47ac45efb49c31d4ca2912a136828ea2bd4e0f0e48",
+      "source_hash_method": "SHA-256 of complete public article body rendered by web.open; source L<n> prefixes removed; included documented body bounds; reader-subscription boilerplate, UI, reactions and comments excluded; link citations replaced by visible label; Markdown heading/list/quote prefixes removed; Unicode NFC; whitespace collapsed within nonempty lines; LF-joined UTF-8 without trailing newline.",
+      "source_evidence": {
+        "url": "https://addyo.substack.com/p/conquering-imposter-syndrome",
+        "web_ref": "turn260view0",
+        "retrieval": "web.open public full article; direct HTTP returned Site Unavailable and was not used as source",
+        "metadata": "Visible original title, Addy Osmani byline and displayed publication date matched catalog",
+        "completion": "Full article through conclusion and any further-reading/book-promotion section before reader subscription and discussion UI; no paid gate present",
+        "canonical_url": "https://addyo.substack.com/p/conquering-imposter-syndrome",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2024-04-30-conquering-imposter-syndrome.md",
+      "markdown_sha256": "315bfe16c39243a00821a2ae713cda1fcc4e1b1fe5fe9b7dcc67b4cbb7a144d3",
+      "summary_eojeol": 257,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:10-lessons-from-12-years-at-google",
+      "source_id": "elevate",
+      "archive_index": 24,
+      "title": "10 lessons from 12 years at Google",
+      "canonical_url": "https://addyo.substack.com/p/10-lessons-from-12-years-at-google",
+      "author": "Addy Osmani",
+      "published_at": "2024-05-13",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/10-lessons-from-12-years-at-google",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2024",
+        "date_display": "May 13, 2024"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "6356994660ce78f3bba17f058f3863f4a4c29cb1370d636e23fbeb399dac8bef",
+      "source_hash_method": "SHA-256 of complete public article body rendered by web.open; source L<n> prefixes removed; included documented body bounds; reader-subscription boilerplate, UI, reactions and comments excluded; link citations replaced by visible label; Markdown heading/list/quote prefixes removed; Unicode NFC; whitespace collapsed within nonempty lines; LF-joined UTF-8 without trailing newline.",
+      "source_evidence": {
+        "url": "https://addyo.substack.com/p/10-lessons-from-12-years-at-google",
+        "web_ref": "turn254view0",
+        "retrieval": "web.open public full article; direct HTTP returned Site Unavailable and was not used as source",
+        "metadata": "Visible original title, Addy Osmani byline and displayed publication date matched catalog",
+        "completion": "Full article through conclusion and any further-reading/book-promotion section before reader subscription and discussion UI; no paid gate present",
+        "canonical_url": "https://addyo.substack.com/p/10-lessons-from-12-years-at-google",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2024-05-13-10-lessons-from-12-years-at-google.md",
+      "markdown_sha256": "afc37b955cfe04c56752e96074d4e48f522f9740d05b498e9bad3f568263827e",
+      "summary_eojeol": 261,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:focus-on-what-you-can-control",
+      "source_id": "elevate",
+      "archive_index": 25,
+      "title": "Focus on what you can control",
+      "canonical_url": "https://addyo.substack.com/p/focus-on-what-you-can-control",
+      "author": "Addy Osmani",
+      "published_at": "2024-06-24",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/focus-on-what-you-can-control",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2024",
+        "date_display": "Jun 24, 2024"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "70c2dec84a6da59a851230aa48f9527ab6b3a306b342384fdce384a9c83133d2",
+      "source_hash_method": "SHA-256 of UTF-8 encoded public article body text; Unicode NFC; web retrieval L-number prefixes removed; inline retrieval link markers reduced to visible anchor labels; per-line whitespace collapsed and trimmed; empty lines and Substack subscription boilerplate removed; remaining lines joined with LF and one trailing LF. Title, subtitle, byline, publication metadata, reaction counts, site chrome and reader comments excluded. Complete body including final author section retained.",
+      "source_evidence": {
+        "retrieval_method": "Public canonical article opened through web retrieval, with all line-indexed author body text available. Not a search snippet. Direct unauthenticated HTTP GET returned a generic Site Unavailable page and was not used as source.",
+        "source_url": "https://addyo.substack.com/p/focus-on-what-you-can-control",
+        "web_refs": [
+          "turn286view0"
+        ],
+        "metadata_verified_lines": {
+          "title": 2,
+          "author": 5,
+          "published_at": 7
+        },
+        "complete_article_line_range": [
+          15,
+          269
+        ],
+        "source_updated_at": null,
+        "access_restriction_encountered": false,
+        "retrieved_at": "2026-10-20",
+        "canonical_url": "https://addyo.substack.com/p/focus-on-what-you-can-control",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2024-06-24-focus-on-what-you-can-control.md",
+      "markdown_sha256": "6bca7133a5ed23be0ca5fdcd0cdf4d57e22dfb0f70b690adde5dd1608e060dbd",
+      "summary_eojeol": 255,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:comparison-is-the-thief-of-joy",
+      "source_id": "elevate",
+      "archive_index": 26,
+      "title": "Comparison is the thief of joy",
+      "canonical_url": "https://addyo.substack.com/p/comparison-is-the-thief-of-joy",
+      "author": "Addy Osmani",
+      "published_at": "2024-08-14",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/comparison-is-the-thief-of-joy",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2024",
+        "date_display": "Aug 14, 2024"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "23d55fe84ef63bc484042adbd19e2aa51c1aec0724f5aea261a1549cdbec1d16",
+      "source_hash_method": "SHA-256 of UTF-8 encoded public article body text; Unicode NFC; web retrieval L-number prefixes removed; inline retrieval link markers reduced to visible anchor labels; per-line whitespace collapsed and trimmed; empty lines and Substack subscription boilerplate removed; remaining lines joined with LF and one trailing LF. Title, subtitle, byline, publication metadata, reaction counts, site chrome and reader comments excluded. Complete body including final author section retained.",
+      "source_evidence": {
+        "retrieval_method": "Public canonical article opened through web retrieval, with all line-indexed author body text available. Not a search snippet. Direct unauthenticated HTTP GET returned a generic Site Unavailable page and was not used as source.",
+        "source_url": "https://addyo.substack.com/p/comparison-is-the-thief-of-joy",
+        "web_refs": [
+          "turn296view0"
+        ],
+        "metadata_verified_lines": {
+          "title": 2,
+          "author": 5,
+          "published_at": 7
+        },
+        "complete_article_line_range": [
+          17,
+          113
+        ],
+        "source_updated_at": null,
+        "access_restriction_encountered": false,
+        "retrieved_at": "2026-10-20",
+        "canonical_url": "https://addyo.substack.com/p/comparison-is-the-thief-of-joy",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2024-08-14-comparison-is-the-thief-of-joy.md",
+      "markdown_sha256": "697b3d1f24898a1af89da1689679943f8100c872d672b237c3e6fdb4b3ead924",
+      "summary_eojeol": 254,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:there-is-no-right-time-just-time",
+      "source_id": "elevate",
+      "archive_index": 27,
+      "title": "There is no right time. Just time and what you do with it.",
+      "canonical_url": "https://addyo.substack.com/p/there-is-no-right-time-just-time",
+      "author": "Addy Osmani",
+      "published_at": "2024-08-23",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/there-is-no-right-time-just-time",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2024",
+        "date_display": "Aug 23, 2024"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "ec273ef100fa7ab4b13d7f71318125861c95a685b0adc8811b232e6e9b980e7f",
+      "source_hash_method": "SHA-256 of UTF-8 encoded public article body text; Unicode NFC; web retrieval L-number prefixes removed; inline retrieval link markers reduced to visible anchor labels; per-line whitespace collapsed and trimmed; empty lines and Substack subscription boilerplate removed; remaining lines joined with LF and one trailing LF. Title, subtitle, byline, publication metadata, reaction counts, site chrome and reader comments excluded. Complete body including final author section retained.",
+      "source_evidence": {
+        "retrieval_method": "Public canonical article opened through web retrieval, with all line-indexed author body text available. Not a search snippet. Direct unauthenticated HTTP GET returned a generic Site Unavailable page and was not used as source.",
+        "source_url": "https://addyo.substack.com/p/there-is-no-right-time-just-time",
+        "web_refs": [
+          "turn283view0"
+        ],
+        "metadata_verified_lines": {
+          "title": 2,
+          "author": 5,
+          "published_at": 7
+        },
+        "complete_article_line_range": [
+          17,
+          156
+        ],
+        "source_updated_at": null,
+        "access_restriction_encountered": false,
+        "retrieved_at": "2026-10-20",
+        "canonical_url": "https://addyo.substack.com/p/there-is-no-right-time-just-time",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2024-08-23-there-is-no-right-time-just-time.md",
+      "markdown_sha256": "a0c05e49a4cba42aa3af3c3e379ca1815388c28032f7a5be157454767acf25eb",
+      "summary_eojeol": 263,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:user-centric-engineering",
+      "source_id": "elevate",
+      "archive_index": 28,
+      "title": "User-centric engineering.",
+      "canonical_url": "https://addyo.substack.com/p/user-centric-engineering",
+      "author": "Addy Osmani",
+      "published_at": "2024-11-15",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/user-centric-engineering",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2024",
+        "date_display": "Nov 15, 2024"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "e66276100b8de40a31a5579302f0fb417555bc5990e129383d24dfe2dcea9229",
+      "source_hash_method": "SHA-256 of UTF-8 encoded public article body text; Unicode NFC; web retrieval L-number prefixes removed; inline retrieval link markers reduced to visible anchor labels; per-line whitespace collapsed and trimmed; empty lines and Substack subscription boilerplate removed; remaining lines joined with LF and one trailing LF. Title, subtitle, byline, publication metadata, reaction counts, site chrome and reader comments excluded. Complete body including final author section retained.",
+      "source_evidence": {
+        "retrieval_method": "Public canonical article opened through web retrieval, with all line-indexed author body text available. Not a search snippet. Direct unauthenticated HTTP GET returned a generic Site Unavailable page and was not used as source.",
+        "source_url": "https://addyo.substack.com/p/user-centric-engineering",
+        "web_refs": [
+          "turn293view0"
+        ],
+        "metadata_verified_lines": {
+          "title": 2,
+          "author": 5,
+          "published_at": 7
+        },
+        "complete_article_line_range": [
+          17,
+          251
+        ],
+        "source_updated_at": null,
+        "access_restriction_encountered": false,
+        "retrieved_at": "2026-10-20",
+        "canonical_url": "https://addyo.substack.com/p/user-centric-engineering",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2024-11-15-user-centric-engineering.md",
+      "markdown_sha256": "b4f6128e106173ec84a1cf4d013dff033a48691b4c757c474632a3a66283d451",
+      "summary_eojeol": 269,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:the-70-problem-hard-truths-about",
+      "source_id": "elevate",
+      "archive_index": 29,
+      "title": "The 70% problem: Hard truths about AI-assisted coding",
+      "canonical_url": "https://addyo.substack.com/p/the-70-problem-hard-truths-about",
+      "author": "Addy Osmani",
+      "published_at": "2024-12-04",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/the-70-problem-hard-truths-about",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2024",
+        "date_display": "Dec 04, 2024"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "de3c8efe2592e455c7fed69cc9c070b914419fdc11a38ef2e1670511ffd2e5f3",
+      "source_hash_method": "SHA-256 of UTF-8 encoded public article body text; Unicode NFC; web retrieval L-number prefixes removed; inline retrieval link markers reduced to visible anchor labels; per-line whitespace collapsed and trimmed; empty lines and Substack subscription boilerplate removed; remaining lines joined with LF and one trailing LF. Title, subtitle, byline, publication metadata, reaction counts, site chrome and reader comments excluded. Complete body including final author section retained.",
+      "source_evidence": {
+        "retrieval_method": "Public canonical article opened through web retrieval, with all line-indexed author body text available. Not a search snippet. Direct unauthenticated HTTP GET returned a generic Site Unavailable page and was not used as source.",
+        "source_url": "https://addyo.substack.com/p/the-70-problem-hard-truths-about",
+        "web_refs": [
+          "turn282view0"
+        ],
+        "metadata_verified_lines": {
+          "title": 2,
+          "author": 5,
+          "published_at": 7
+        },
+        "complete_article_line_range": [
+          17,
+          337
+        ],
+        "source_updated_at": null,
+        "access_restriction_encountered": false,
+        "retrieved_at": "2026-10-20",
+        "canonical_url": "https://addyo.substack.com/p/the-70-problem-hard-truths-about",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2024-12-04-the-70-problem-hard-truths-about.md",
+      "markdown_sha256": "c1ef9a73c322efcc4dc0ec12eb6980190f66ea62f89237de07ff971118e8537b",
+      "summary_eojeol": 275,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:future-proofing-your-software-engineering",
+      "source_id": "elevate",
+      "archive_index": 30,
+      "title": "Future-proofing your Software Engineering career",
+      "canonical_url": "https://addyo.substack.com/p/future-proofing-your-software-engineering",
+      "author": "Addy Osmani",
+      "published_at": "2024-12-23",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/future-proofing-your-software-engineering",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2024",
+        "date_display": "Dec 23, 2024"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "495920f89d82425e76d613356ca795bd3d108e242c6ef461dbe621aab7dbf49f",
+      "source_hash_method": "SHA-256 of UTF-8 encoded public article body text; Unicode NFC; web retrieval L-number prefixes removed; inline retrieval link markers reduced to visible anchor labels; per-line whitespace collapsed and trimmed; empty lines and Substack subscription boilerplate removed; remaining lines joined with LF and one trailing LF. Title, subtitle, byline, publication metadata, reaction counts, site chrome and reader comments excluded. Complete body including final author section retained.",
+      "source_evidence": {
+        "retrieval_method": "Public canonical article opened through web retrieval, with all line-indexed author body text available. Not a search snippet. Direct unauthenticated HTTP GET returned a generic Site Unavailable page and was not used as source.",
+        "source_url": "https://addyo.substack.com/p/future-proofing-your-software-engineering",
+        "web_refs": [
+          "turn285view0"
+        ],
+        "metadata_verified_lines": {
+          "title": 2,
+          "author": 5,
+          "published_at": 7
+        },
+        "complete_article_line_range": [
+          17,
+          194
+        ],
+        "source_updated_at": null,
+        "access_restriction_encountered": false,
+        "retrieved_at": "2026-10-20",
+        "canonical_url": "https://addyo.substack.com/p/future-proofing-your-software-engineering",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2024-12-23-future-proofing-your-software-engineering.md",
+      "markdown_sha256": "6c0013cca6393de63ab9a918bb9b872074d5efeb382b14effac24c41d7e6863d",
+      "summary_eojeol": 275,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:ai-driven-prototyping-v0-bolt-and",
+      "source_id": "elevate",
+      "archive_index": 31,
+      "title": "AI-Driven Prototyping: v0, Bolt, and Lovable Compared",
+      "canonical_url": "https://addyo.substack.com/p/ai-driven-prototyping-v0-bolt-and",
+      "author": "Addy Osmani",
+      "published_at": "2025-01-11",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/ai-driven-prototyping-v0-bolt-and",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2025",
+        "date_display": "Jan 11, 2025"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "560b06a499c3706d94a87e20733001856ddcad751ab971be60b1bf5228521eb4",
+      "source_hash_method": "SHA-256 of UTF-8 encoded public article body text; Unicode NFC; web retrieval L-number prefixes removed; inline retrieval link markers reduced to visible anchor labels; per-line whitespace collapsed and trimmed; empty lines and Substack subscription boilerplate removed; remaining lines joined with LF and one trailing LF. Title, subtitle, byline, publication metadata, reaction counts, site chrome and reader comments excluded. Complete body including final author section retained.",
+      "source_evidence": {
+        "retrieval_method": "Public canonical article opened through web retrieval, with all line-indexed author body text available. Not a search snippet. Direct unauthenticated HTTP GET returned a generic Site Unavailable page and was not used as source.",
+        "source_url": "https://addyo.substack.com/p/ai-driven-prototyping-v0-bolt-and",
+        "web_refs": [
+          "turn284view0"
+        ],
+        "metadata_verified_lines": {
+          "title": 2,
+          "author": 5,
+          "published_at": 7
+        },
+        "complete_article_line_range": [
+          17,
+          137
+        ],
+        "source_updated_at": null,
+        "access_restriction_encountered": false,
+        "retrieved_at": "2026-10-20",
+        "canonical_url": "https://addyo.substack.com/p/ai-driven-prototyping-v0-bolt-and",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2025-01-11-ai-driven-prototyping-v0-bolt-and.md",
+      "markdown_sha256": "c30f8e24557755d14eaebb522df1a0cbfef7ebbaa39ca1106ffae08ad2e329e7",
+      "summary_eojeol": 282,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:why-i-use-cline-for-ai-engineering",
+      "source_id": "elevate",
+      "archive_index": 32,
+      "title": "Why I use Cline for AI Engineering",
+      "canonical_url": "https://addyo.substack.com/p/why-i-use-cline-for-ai-engineering",
+      "author": "Addy Osmani",
+      "published_at": "2025-01-30",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/why-i-use-cline-for-ai-engineering",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2025",
+        "date_display": "Jan 30, 2025"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "b124ceda1dfa705d0167450cca11b999fb75b3b75fa4041dfe08772b3903d62a",
+      "source_hash_method": "SHA-256 of UTF-8 encoded public article body text; Unicode NFC; web retrieval L-number prefixes removed; inline retrieval link markers reduced to visible anchor labels; per-line whitespace collapsed and trimmed; empty lines and Substack subscription boilerplate removed; remaining lines joined with LF and one trailing LF. Title, subtitle, byline, publication metadata, reaction counts, site chrome and reader comments excluded. Complete body including final author section retained.",
+      "source_evidence": {
+        "retrieval_method": "Public canonical article opened through web retrieval, with all line-indexed author body text available. Not a search snippet. Direct unauthenticated HTTP GET returned a generic Site Unavailable page and was not used as source.",
+        "source_url": "https://addyo.substack.com/p/why-i-use-cline-for-ai-engineering",
+        "web_refs": [
+          "turn294view0"
+        ],
+        "metadata_verified_lines": {
+          "title": 2,
+          "author": 5,
+          "published_at": 7
+        },
+        "complete_article_line_range": [
+          16,
+          322
+        ],
+        "source_updated_at": "2025-07-21",
+        "access_restriction_encountered": false,
+        "retrieved_at": "2026-10-20",
+        "canonical_url": "https://addyo.substack.com/p/why-i-use-cline-for-ai-engineering",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2025-01-30-why-i-use-cline-for-ai-engineering.md",
+      "markdown_sha256": "b94222f7e01e58b35bd47dba769fd0229ca4dda778a580fa598cdd8e08219e27",
+      "summary_eojeol": 279,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:personal-software-the-unbundling",
+      "source_id": "elevate",
+      "archive_index": 33,
+      "title": "Personal Software: The Unbundling of the Programmer?",
+      "canonical_url": "https://addyo.substack.com/p/personal-software-the-unbundling",
+      "author": "Addy Osmani",
+      "published_at": "2025-02-09",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/personal-software-the-unbundling",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2025",
+        "date_display": "Feb 09, 2025"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "560c7dcc9d1b56fdcd368c1868360a2e36d68f9a3ebccc804b91d7762ce061aa",
+      "source_hash_method": "SHA-256 of exact UTF-8 bytes at source_evidence.normalized_full_body_path. Public article visible text retrieved with web.open; overlapping numbered-line excerpts merged by line number. Select inclusive article_body_lines, remove L<number>: prefixes, replace web link markup with its visible label, omit image-only placeholders, normalize Unicode NFC and all whitespace to single ASCII spaces, strip, and append one LF. Includes all article prose, headings, lists, quotations, captions and author endnotes; excludes title/byline/date, engagement controls, reader comments and site footer. This is normalized complete visible textual body, not a hash of HTML or image/video binaries.",
+      "source_evidence": {
+        "canonical_url": "https://addyo.substack.com/p/personal-software-the-unbundling",
+        "web_refs": [
+          "turn263view0"
+        ],
+        "retrieval": "Public publisher page opened through web search service; complete article textual body read, not search snippets.",
+        "article_body_lines": [
+          16,
+          46
+        ],
+        "all_body_lines_present": true,
+        "metadata_evidence": "Visible English heading, Addy Osmani byline and displayed publication date matched catalog; opened publisher URL matched catalog URL.",
+        "paywall_observed": false,
+        "normalized_full_body_bytes": 9372,
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2025-02-09-personal-software-the-unbundling.md",
+      "markdown_sha256": "b5ea9304fb69de96489e76b958e47b14bfc736890d90bf92da8ee135fe4bc711",
+      "summary_eojeol": 265,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:speech-to-code-vibe-coding-with-voice",
+      "source_id": "elevate",
+      "archive_index": 34,
+      "title": "Speech-to-Code: Vibe Coding with Voice",
+      "canonical_url": "https://addyo.substack.com/p/speech-to-code-vibe-coding-with-voice",
+      "author": "Addy Osmani",
+      "published_at": "2025-02-28",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/speech-to-code-vibe-coding-with-voice",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2025",
+        "date_display": "Feb 28, 2025"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "ddf314d25a3b2c9da37f7f92af71a34f8498f6bbd7c63117dfa7eacc67bd89cc",
+      "source_hash_method": "SHA-256 of exact UTF-8 bytes at source_evidence.normalized_full_body_path. Public article visible text retrieved with web.open; overlapping numbered-line excerpts merged by line number. Select inclusive article_body_lines, remove L<number>: prefixes, replace web link markup with its visible label, omit image-only placeholders, normalize Unicode NFC and all whitespace to single ASCII spaces, strip, and append one LF. Includes all article prose, headings, lists, quotations, captions and author endnotes; excludes title/byline/date, engagement controls, reader comments and site footer. This is normalized complete visible textual body, not a hash of HTML or image/video binaries.",
+      "source_evidence": {
+        "canonical_url": "https://addyo.substack.com/p/speech-to-code-vibe-coding-with-voice",
+        "web_refs": [
+          "turn264view0"
+        ],
+        "retrieval": "Public publisher page opened through web search service; complete article textual body read, not search snippets.",
+        "article_body_lines": [
+          15,
+          119
+        ],
+        "all_body_lines_present": true,
+        "metadata_evidence": "Visible English heading, Addy Osmani byline and displayed publication date matched catalog; opened publisher URL matched catalog URL.",
+        "paywall_observed": false,
+        "normalized_full_body_bytes": 16772,
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2025-02-28-speech-to-code-vibe-coding-with-voice.md",
+      "markdown_sha256": "66a7c5d6eb7305d912d27780b740656e720be9d80c0b5c3992a8b07a85933291",
+      "summary_eojeol": 262,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:applied-software-engineering-at-google",
+      "source_id": "elevate",
+      "archive_index": 35,
+      "title": "Applied \"Software Engineering at Google\"",
+      "canonical_url": "https://addyo.substack.com/p/applied-software-engineering-at-google",
+      "author": "Addy Osmani",
+      "published_at": "2025-03-06",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/applied-software-engineering-at-google",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2025",
+        "date_display": "Mar 06, 2025"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "3c68da892da0e21011ed603146cff4e579653241075df6ab2fc11d21e858eec9",
+      "source_hash_method": "SHA-256 of exact UTF-8 bytes at source_evidence.normalized_full_body_path. Public article visible text retrieved with web.open; overlapping numbered-line excerpts merged by line number. Select inclusive article_body_lines, remove L<number>: prefixes, replace web link markup with its visible label, omit image-only placeholders, normalize Unicode NFC and all whitespace to single ASCII spaces, strip, and append one LF. Includes all article prose, headings, lists, quotations, captions and author endnotes; excludes title/byline/date, engagement controls, reader comments and site footer. This is normalized complete visible textual body, not a hash of HTML or image/video binaries.",
+      "source_evidence": {
+        "canonical_url": "https://addyo.substack.com/p/applied-software-engineering-at-google",
+        "web_refs": [
+          "turn265view0"
+        ],
+        "retrieval": "Public publisher page opened through web search service; complete article textual body read, not search snippets.",
+        "article_body_lines": [
+          16,
+          198
+        ],
+        "all_body_lines_present": true,
+        "metadata_evidence": "Visible English heading, Addy Osmani byline and displayed publication date matched catalog; opened publisher URL matched catalog URL.",
+        "paywall_observed": false,
+        "normalized_full_body_bytes": 14519,
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2025-03-06-applied-software-engineering-at-google.md",
+      "markdown_sha256": "702f7bf814935ca72ef33626845dbbd8c917dcc5157e9ea6ac928440b9304efc",
+      "summary_eojeol": 265,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:beyond-the-70-maximizing-the-human",
+      "source_id": "elevate",
+      "archive_index": 36,
+      "title": "Beyond the 70%: Maximizing the human 30% of AI-assisted coding",
+      "canonical_url": "https://addyo.substack.com/p/beyond-the-70-maximizing-the-human",
+      "author": "Addy Osmani",
+      "published_at": "2025-03-13",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/beyond-the-70-maximizing-the-human",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2025",
+        "date_display": "Mar 13, 2025"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "8a6b33437234acd8938a01c2b7bc237e974b862b7eb8bb057bb9826a4d951cb4",
+      "source_hash_method": "SHA-256 of exact UTF-8 bytes at source_evidence.normalized_full_body_path. Public article visible text retrieved with web.open; overlapping numbered-line excerpts merged by line number. Select inclusive article_body_lines, remove L<number>: prefixes, replace web link markup with its visible label, omit image-only placeholders, normalize Unicode NFC and all whitespace to single ASCII spaces, strip, and append one LF. Includes all article prose, headings, lists, quotations, captions and author endnotes; excludes title/byline/date, engagement controls, reader comments and site footer. This is normalized complete visible textual body, not a hash of HTML or image/video binaries.",
+      "source_evidence": {
+        "canonical_url": "https://addyo.substack.com/p/beyond-the-70-maximizing-the-human",
+        "web_refs": [
+          "turn266view0"
+        ],
+        "retrieval": "Public publisher page opened through web search service; complete article textual body read, not search snippets.",
+        "article_body_lines": [
+          17,
+          129
+        ],
+        "all_body_lines_present": true,
+        "metadata_evidence": "Visible English heading, Addy Osmani byline and displayed publication date matched catalog; opened publisher URL matched catalog URL.",
+        "paywall_observed": false,
+        "normalized_full_body_bytes": 34865,
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2025-03-13-beyond-the-70-maximizing-the-human.md",
+      "markdown_sha256": "df4ff9138e4e6dfa70935a6f359ea319126e7bec22b5dcc2f34b8ffebf85723f",
+      "summary_eojeol": 260,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:leading-effective-engineering-teams-c9b",
+      "source_id": "elevate",
+      "archive_index": 37,
+      "title": "Leading Effective Engineering Teams in the Age of GenAI",
+      "canonical_url": "https://addyo.substack.com/p/leading-effective-engineering-teams-c9b",
+      "author": "Addy Osmani",
+      "published_at": "2025-03-19",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/leading-effective-engineering-teams-c9b",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2025",
+        "date_display": "Mar 19, 2025"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "76107381c2f4b8efa7e04aace9d73baef5700c58d21473894a652b6c67369929",
+      "source_hash_method": "SHA-256 of exact UTF-8 bytes at source_evidence.normalized_full_body_path. Public article visible text retrieved with web.open; overlapping numbered-line excerpts merged by line number. Select inclusive article_body_lines, remove L<number>: prefixes, replace web link markup with its visible label, omit image-only placeholders, normalize Unicode NFC and all whitespace to single ASCII spaces, strip, and append one LF. Includes all article prose, headings, lists, quotations, captions and author endnotes; excludes title/byline/date, engagement controls, reader comments and site footer. This is normalized complete visible textual body, not a hash of HTML or image/video binaries.",
+      "source_evidence": {
+        "canonical_url": "https://addyo.substack.com/p/leading-effective-engineering-teams-c9b",
+        "web_refs": [
+          "turn271view0",
+          "turn319view0",
+          "turn324view0"
+        ],
+        "retrieval": "Public publisher page opened through web search service; complete article textual body read, not search snippets.",
+        "article_body_lines": [
+          18,
+          353
+        ],
+        "all_body_lines_present": true,
+        "metadata_evidence": "Visible English heading, Addy Osmani byline and displayed publication date matched catalog; opened publisher URL matched catalog URL.",
+        "paywall_observed": false,
+        "normalized_full_body_bytes": 92092,
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2025-03-19-leading-effective-engineering-teams-c9b.md",
+      "markdown_sha256": "aa7e9872c72eaee5b6e707acdb0e8e8bdcd82685592a77156da7b8809b0779e0",
+      "summary_eojeol": 266,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:mcp-what-it-is-and-why-it-matters",
+      "source_id": "elevate",
+      "archive_index": 38,
+      "title": "MCP: What It Is and Why It Matters",
+      "canonical_url": "https://addyo.substack.com/p/mcp-what-it-is-and-why-it-matters",
+      "author": "Addy Osmani",
+      "published_at": "2025-03-27",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/mcp-what-it-is-and-why-it-matters",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2025",
+        "date_display": "Mar 27, 2025"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "2ec8527f7d880c14f533ef48e9dad911c761c4a0117a19870af6a1691448ba63",
+      "source_hash_method": "SHA-256 of exact UTF-8 bytes at source_evidence.normalized_full_body_path. Public article visible text retrieved with web.open; overlapping numbered-line excerpts merged by line number. Select inclusive article_body_lines, remove L<number>: prefixes, replace web link markup with its visible label, omit image-only placeholders, normalize Unicode NFC and all whitespace to single ASCII spaces, strip, and append one LF. Includes all article prose, headings, lists, quotations, captions and author endnotes; excludes title/byline/date, engagement controls, reader comments and site footer. This is normalized complete visible textual body, not a hash of HTML or image/video binaries.",
+      "source_evidence": {
+        "canonical_url": "https://addyo.substack.com/p/mcp-what-it-is-and-why-it-matters",
+        "web_refs": [
+          "turn272view0",
+          "turn320view0",
+          "turn323view0"
+        ],
+        "retrieval": "Public publisher page opened through web search service; complete article textual body read, not search snippets.",
+        "article_body_lines": [
+          17,
+          304
+        ],
+        "all_body_lines_present": true,
+        "metadata_evidence": "Visible English heading, Addy Osmani byline and displayed publication date matched catalog; opened publisher URL matched catalog URL.",
+        "paywall_observed": false,
+        "normalized_full_body_bytes": 73673,
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2025-03-27-mcp-what-it-is-and-why-it-matters.md",
+      "markdown_sha256": "acc7772c830cab7bbc85868613d3ab0ecb00f79bab94507beb28ce1fb2afd640",
+      "summary_eojeol": 265,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:vibe-coding-revolution-or-reckless",
+      "source_id": "elevate",
+      "archive_index": 39,
+      "title": "Vibe Coding: Revolution or Reckless Abandon?",
+      "canonical_url": "https://addyo.substack.com/p/vibe-coding-revolution-or-reckless",
+      "author": "Addy Osmani",
+      "published_at": "2025-04-03",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/vibe-coding-revolution-or-reckless",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2025",
+        "date_display": "Apr 03, 2025"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "fdc517ea811ae513bdd23501c830f09587238dcdaebd1cc5dd4185c7725d8e38",
+      "source_hash_method": "SHA-256 of exact UTF-8 bytes at source_evidence.normalized_full_body_path. Public article visible text retrieved with web.open; overlapping numbered-line excerpts merged by line number. Select inclusive article_body_lines, remove L<number>: prefixes, replace web link markup with its visible label, omit image-only placeholders, normalize Unicode NFC and all whitespace to single ASCII spaces, strip, and append one LF. Includes all article prose, headings, lists, quotations, captions and author endnotes; excludes title/byline/date, engagement controls, reader comments and site footer. This is normalized complete visible textual body, not a hash of HTML or image/video binaries.",
+      "source_evidence": {
+        "canonical_url": "https://addyo.substack.com/p/vibe-coding-revolution-or-reckless",
+        "web_refs": [
+          "turn270view0",
+          "turn321view0",
+          "turn322view0"
+        ],
+        "retrieval": "Public publisher page opened through web search service; complete article textual body read, not search snippets.",
+        "article_body_lines": [
+          16,
+          285
+        ],
+        "all_body_lines_present": true,
+        "metadata_evidence": "Visible English heading, Addy Osmani byline and displayed publication date matched catalog; opened publisher URL matched catalog URL.",
+        "paywall_observed": false,
+        "normalized_full_body_bytes": 70927,
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2025-04-03-vibe-coding-revolution-or-reckless.md",
+      "markdown_sha256": "75ede3f4bc914eaa19a07c308437074883d2137f49983520062049dbd4f37e39",
+      "summary_eojeol": 268,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:what-are-ai-agents-why-do-they-matter",
+      "source_id": "elevate",
+      "archive_index": 40,
+      "title": "What are AI Agents? why do they matter?",
+      "canonical_url": "https://addyo.substack.com/p/what-are-ai-agents-why-do-they-matter",
+      "author": "Addy Osmani",
+      "published_at": "2025-04-11",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/what-are-ai-agents-why-do-they-matter",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2025",
+        "date_display": "Apr 11, 2025"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "364b11d93b3f94f5b260df5ffdbb6044c9ce7779d8a37b02fbb6e0af331771fe",
+      "source_hash_method": "SHA-256 of exact UTF-8 bytes at source_evidence.normalized_full_body_path. Public article visible text retrieved with web.open; overlapping numbered-line excerpts merged by line number. Select inclusive article_body_lines, remove L<number>: prefixes, replace web link markup with its visible label, omit image-only placeholders, normalize Unicode NFC and all whitespace to single ASCII spaces, strip, and append one LF. Includes all article prose, headings, lists, quotations, captions and author endnotes; excludes title/byline/date, engagement controls, reader comments and site footer. This is normalized complete visible textual body, not a hash of HTML or image/video binaries.",
+      "source_evidence": {
+        "canonical_url": "https://addyo.substack.com/p/what-are-ai-agents-why-do-they-matter",
+        "web_refs": [
+          "turn269view0"
+        ],
+        "retrieval": "Public publisher page opened through web search service; complete article textual body read, not search snippets.",
+        "article_body_lines": [
+          17,
+          413
+        ],
+        "all_body_lines_present": true,
+        "metadata_evidence": "Visible English heading, Addy Osmani byline and displayed publication date matched catalog; opened publisher URL matched catalog URL.",
+        "paywall_observed": false,
+        "normalized_full_body_bytes": 27240,
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2025-04-11-what-are-ai-agents-why-do-they-matter.md",
+      "markdown_sha256": "9b6afa07b30d3fb905f5d4bbbd66f416dcd8e095ee8ea48252af09ca86091bfa",
+      "summary_eojeol": 267,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:vibe-coding-is-not-an-excuse-for",
+      "source_id": "elevate",
+      "archive_index": 41,
+      "title": "Vibe Coding is not an excuse for low-quality work",
+      "canonical_url": "https://addyo.substack.com/p/vibe-coding-is-not-an-excuse-for",
+      "author": "Addy Osmani",
+      "published_at": "2025-04-18",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/vibe-coding-is-not-an-excuse-for",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2025",
+        "date_display": "Apr 18, 2025"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "6f3a0cc5598581503a872da582c53506703d8d8d351b93e30c6d50d305cbd3ea",
+      "source_hash_method": "SHA-256 of exact UTF-8 normalized complete visible article body from public web extraction. Merge all numbered page lines, select article body through its closing and book/resource footer, exclude title/byline/date/reaction counts/comments/site chrome. Replace web link-reference markup with visible anchor text; collapse Unicode whitespace within each nonempty line; LF-join, no final LF. Images/binary content are not included.",
+      "source_evidence": {
+        "method": "Unauthenticated public original Substack page read in contiguous numbered ranges until complete page including article ending and subsequent discussion section.",
+        "web_refs": [
+          "turn267view0"
+        ],
+        "total_page_lines": 160,
+        "all_page_lines_captured": true,
+        "article_body_lines": [
+          17,
+          100
+        ],
+        "full_body_word_count": 3561,
+        "access_restriction_observed": false,
+        "direct_curl_note": "curl returned Site Unavailable, not article content; not used for hash or prose.",
+        "metadata_verified_from_original_page": true,
+        "metadata_header": "#\n\n# Vibe Coding is not an excuse for low-quality work\n### A field guide to responsible AI-assisted development\n\n【0†Addy Osmani†substack.com】\n\nApr 18, 2025\n\n254\n\n21\n\n42\n\nShare",
+        "full_source_verified": true,
+        "published_date_display": "Apr 18, 2025",
+        "canonical_url": "https://addyo.substack.com/p/vibe-coding-is-not-an-excuse-for",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2025-04-18-vibe-coding-is-not-an-excuse-for.md",
+      "markdown_sha256": "6e171b57ca9dd089074f64482075786f88325be018ffa54c7e115d04760bd889",
+      "summary_eojeol": 251,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:avoiding-skill-atrophy-in-the-age",
+      "source_id": "elevate",
+      "archive_index": 42,
+      "title": "Avoiding Skill Atrophy in the Age of AI",
+      "canonical_url": "https://addyo.substack.com/p/avoiding-skill-atrophy-in-the-age",
+      "author": "Addy Osmani",
+      "published_at": "2025-04-25",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/avoiding-skill-atrophy-in-the-age",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2025",
+        "date_display": "Apr 25, 2025"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "9fa8cede39907d68b0055417574e810738c87bb45b62e65cf1722af5b5879207",
+      "source_hash_method": "SHA-256 of exact UTF-8 normalized complete visible article body from public web extraction. Merge all numbered page lines, select article body through its closing and book/resource footer, exclude title/byline/date/reaction counts/comments/site chrome. Replace web link-reference markup with visible anchor text; collapse Unicode whitespace within each nonempty line; LF-join, no final LF. Images/binary content are not included.",
+      "source_evidence": {
+        "method": "Unauthenticated public original Substack page read in contiguous numbered ranges until complete page including article ending and subsequent discussion section.",
+        "web_refs": [
+          "turn268view0"
+        ],
+        "total_page_lines": 147,
+        "all_page_lines_captured": true,
+        "article_body_lines": [
+          17,
+          95
+        ],
+        "full_body_word_count": 2999,
+        "access_restriction_observed": false,
+        "direct_curl_note": "curl returned Site Unavailable, not article content; not used for hash or prose.",
+        "metadata_verified_from_original_page": true,
+        "metadata_header": "#\n\n# Avoiding Skill Atrophy in the Age of AI\n### How to use AI coding assistants without letting your hard-earned engineering skills wither away.\n\n【0†Addy Osmani†substack.com】\n\nApr 25, 2025\n\n341\n\n23\n\n49\n\nShare",
+        "full_source_verified": true,
+        "published_date_display": "Apr 25, 2025",
+        "canonical_url": "https://addyo.substack.com/p/avoiding-skill-atrophy-in-the-age",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2025-04-25-avoiding-skill-atrophy-in-the-age.md",
+      "markdown_sha256": "e5b5366cf1a712848adb82562aa182dd48fe5807d5e60dde305993b03c4a6a48",
+      "summary_eojeol": 251,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:ai-wont-kill-junior-devs-but-your",
+      "source_id": "elevate",
+      "archive_index": 43,
+      "title": "AI Won't Kill Junior Devs - But Your Hiring Strategy Might",
+      "canonical_url": "https://addyo.substack.com/p/ai-wont-kill-junior-devs-but-your",
+      "author": "Addy Osmani",
+      "published_at": "2025-05-10",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/ai-wont-kill-junior-devs-but-your",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2025",
+        "date_display": "May 10, 2025"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "83bc876ca795814f361dab08d7393705cbe11dcd264b7b01f640766fef1ad6c1",
+      "source_hash_method": "SHA-256 of exact UTF-8 normalized complete visible article body from public web extraction. Merge all numbered page lines, select article body through its closing and book/resource footer, exclude title/byline/date/reaction counts/comments/site chrome. Replace web link-reference markup with visible anchor text; collapse Unicode whitespace within each nonempty line; LF-join, no final LF. Images/binary content are not included.",
+      "source_evidence": {
+        "method": "Unauthenticated public original Substack page read in contiguous numbered ranges until complete page including article ending and subsequent discussion section.",
+        "web_refs": [
+          "turn273view0",
+          "turn274view0"
+        ],
+        "total_page_lines": 267,
+        "all_page_lines_captured": true,
+        "article_body_lines": [
+          17,
+          215
+        ],
+        "full_body_word_count": 9006,
+        "access_restriction_observed": false,
+        "direct_curl_note": "curl returned Site Unavailable, not article content; not used for hash or prose.",
+        "metadata_verified_from_original_page": true,
+        "metadata_header": "#\n\n# AI Won't Kill Junior Devs - But Your Hiring Strategy Might\n### No juniors today means no seniors tomorrow: rethinking talent development\n\n【0†Addy Osmani†substack.com】\n\nMay 10, 2025\n\n120\n\n12\n\n13\n\nShare",
+        "full_source_verified": true,
+        "published_date_display": "May 10, 2025",
+        "canonical_url": "https://addyo.substack.com/p/ai-wont-kill-junior-devs-but-your",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2025-05-10-ai-wont-kill-junior-devs-but-your.md",
+      "markdown_sha256": "610459f0591d3c697217166303fac2ab735533a80348e32f9b354a32492eff5b",
+      "summary_eojeol": 257,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:the-prompt-engineering-playbook-for",
+      "source_id": "elevate",
+      "archive_index": 44,
+      "title": "The Prompt Engineering Playbook for Programmers",
+      "canonical_url": "https://addyo.substack.com/p/the-prompt-engineering-playbook-for",
+      "author": "Addy Osmani",
+      "published_at": "2025-05-27",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/the-prompt-engineering-playbook-for",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2025",
+        "date_display": "May 27, 2025"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "3417791f3972a65f396296f5650e00feed3e7bbae0e33430b0cd6b909b03b582",
+      "source_hash_method": "SHA-256 of exact UTF-8 normalized complete visible article body from public web extraction. Merge all numbered page lines, select article body through its closing and book/resource footer, exclude title/byline/date/reaction counts/comments/site chrome. Replace web link-reference markup with visible anchor text; collapse Unicode whitespace within each nonempty line; LF-join, no final LF. Images/binary content are not included.",
+      "source_evidence": {
+        "method": "Unauthenticated public original Substack page read in contiguous numbered ranges until complete page including article ending and subsequent discussion section.",
+        "web_refs": [
+          "turn275view0",
+          "turn276view0",
+          "turn278view0"
+        ],
+        "total_page_lines": 546,
+        "all_page_lines_captured": true,
+        "article_body_lines": [
+          16,
+          494
+        ],
+        "full_body_word_count": 10161,
+        "access_restriction_observed": false,
+        "direct_curl_note": "curl returned Site Unavailable, not article content; not used for hash or prose.",
+        "metadata_verified_from_original_page": true,
+        "metadata_header": "#\n\n# The Prompt Engineering Playbook for Programmers\n### Turn AI coding assistants into more reliable development partners\n\n【0†Addy Osmani†substack.com】\n\nMay 27, 2025\n\n761\n\n12\n\n79\n\nShare",
+        "full_source_verified": true,
+        "published_date_display": "May 27, 2025",
+        "canonical_url": "https://addyo.substack.com/p/the-prompt-engineering-playbook-for",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2025-05-27-the-prompt-engineering-playbook-for.md",
+      "markdown_sha256": "893595841fc850756697a25858f3367d784055804a1fc8500f80f7f823430153",
+      "summary_eojeol": 252,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:the-trust-but-verify-pattern-for",
+      "source_id": "elevate",
+      "archive_index": 45,
+      "title": "The \"Trust, But Verify\" Pattern For AI-Assisted Engineering",
+      "canonical_url": "https://addyo.substack.com/p/the-trust-but-verify-pattern-for",
+      "author": "Addy Osmani",
+      "published_at": "2025-06-09",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/the-trust-but-verify-pattern-for",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2025",
+        "date_display": "Jun 09, 2025"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "f5fc4f745ca578da6fcced1df4cf451b1ba56c5d7ec7f309df79e9e73ff31846",
+      "source_hash_method": "SHA-256 of exact UTF-8 normalized complete visible article body from public web extraction. Merge all numbered page lines, select article body through its closing and book/resource footer, exclude title/byline/date/reaction counts/comments/site chrome. Replace web link-reference markup with visible anchor text; collapse Unicode whitespace within each nonempty line; LF-join, no final LF. Images/binary content are not included.",
+      "source_evidence": {
+        "method": "Unauthenticated public original Substack page read in contiguous numbered ranges until complete page including article ending and subsequent discussion section.",
+        "web_refs": [
+          "turn279view0"
+        ],
+        "total_page_lines": 196,
+        "all_page_lines_captured": true,
+        "article_body_lines": [
+          17,
+          142
+        ],
+        "full_body_word_count": 5341,
+        "access_restriction_observed": false,
+        "direct_curl_note": "curl returned Site Unavailable, not article content; not used for hash or prose.",
+        "metadata_verified_from_original_page": true,
+        "metadata_header": "#\n\n# The \"Trust, But Verify\" Pattern For AI-Assisted Engineering\n### Why verification, not generation, is the next development bottleneck\n\n【0†Addy Osmani†substack.com】\n\nJun 09, 2025\n\n65\n\n5\n\n9\n\nShare",
+        "full_source_verified": true,
+        "published_date_display": "Jun 09, 2025",
+        "canonical_url": "https://addyo.substack.com/p/the-trust-but-verify-pattern-for",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2025-06-09-the-trust-but-verify-pattern-for.md",
+      "markdown_sha256": "4511e234c551b14adfda1fcdab3158f13c2ff62bf3606366352536a7eb3f5565",
+      "summary_eojeol": 257,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:the-ai-native-software-engineer",
+      "source_id": "elevate",
+      "archive_index": 46,
+      "title": "The AI-Native Software Engineer",
+      "canonical_url": "https://addyo.substack.com/p/the-ai-native-software-engineer",
+      "author": "Addy Osmani",
+      "published_at": "2025-07-01",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/the-ai-native-software-engineer",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2025",
+        "date_display": "Jul 01, 2025"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "63d0e62de85caefc382dc3838fec5d325573471fa26ec7c754f0a7803e95dac0",
+      "source_hash_method": "SHA-256 of exact UTF-8 normalized complete visible article body from public web extraction. Merge all numbered page lines, select article body through its closing and book/resource footer, exclude title/byline/date/reaction counts/comments/site chrome. Replace web link-reference markup with visible anchor text; collapse Unicode whitespace within each nonempty line; LF-join, no final LF. Images/binary content are not included.",
+      "source_evidence": {
+        "method": "Unauthenticated public original Substack page read in contiguous numbered ranges until complete page including article ending and subsequent discussion section.",
+        "web_refs": [
+          "turn280view0",
+          "turn281view0",
+          "turn298view0",
+          "turn299view0"
+        ],
+        "total_page_lines": 413,
+        "all_page_lines_captured": true,
+        "article_body_lines": [
+          17,
+          356
+        ],
+        "full_body_word_count": 15915,
+        "access_restriction_observed": false,
+        "direct_curl_note": "curl returned Site Unavailable, not article content; not used for hash or prose.",
+        "metadata_verified_from_original_page": true,
+        "metadata_header": "#\n\n# The AI-Native Software Engineer\n### A practical playbook for integrating AI into your daily engineering workflow\n\n【0†Addy Osmani†substack.com】\n\nJul 01, 2025\n\n364\n\n8\n\n40\n\nShare",
+        "full_source_verified": true,
+        "published_date_display": "Jul 01, 2025",
+        "canonical_url": "https://addyo.substack.com/p/the-ai-native-software-engineer",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2025-07-01-the-ai-native-software-engineer.md",
+      "markdown_sha256": "32560c7aa27a97edcd0c8c93a92fe4e9228e5b74e4056a6e3adc0ec9aa8b14af",
+      "summary_eojeol": 256,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:context-engineering-bringing-engineering",
+      "source_id": "elevate",
+      "archive_index": 47,
+      "title": "Context Engineering: Bringing Engineering Discipline to Prompts",
+      "canonical_url": "https://addyo.substack.com/p/context-engineering-bringing-engineering",
+      "author": "Addy Osmani",
+      "published_at": "2025-07-13",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/context-engineering-bringing-engineering",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2025",
+        "date_display": "Jul 13, 2025"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "2d48db3904eb28c31400ec9fa5d3a516c0254fbc4af77f53d1f6708cfe0a39c3",
+      "source_hash_method": "SHA-256 of exact UTF-8 normalized complete visible article body from public web extraction. Merge all numbered page lines, select article body through its closing and book/resource footer, exclude title/byline/date/reaction counts/comments/site chrome. Replace web link-reference markup with visible anchor text; collapse Unicode whitespace within each nonempty line; LF-join, no final LF. Images/binary content are not included.",
+      "source_evidence": {
+        "method": "Unauthenticated public original Substack page read in contiguous numbered ranges until complete page including article ending and subsequent discussion section.",
+        "web_refs": [
+          "turn300view0",
+          "turn301view0"
+        ],
+        "total_page_lines": 253,
+        "all_page_lines_captured": true,
+        "article_body_lines": [
+          18,
+          202
+        ],
+        "full_body_word_count": 6575,
+        "access_restriction_observed": false,
+        "direct_curl_note": "curl returned Site Unavailable, not article content; not used for hash or prose.",
+        "metadata_verified_from_original_page": true,
+        "metadata_header": "#\n\n# Context Engineering: Bringing Engineering Discipline to Prompts\n\n### A practical guide to information architecture of AI prompts\n\n【0†Addy Osmani†substack.com】\n\nJul 13, 2025\n\n296\n\n10\n\n40\n",
+        "full_source_verified": true,
+        "published_date_display": "Jul 13, 2025",
+        "canonical_url": "https://addyo.substack.com/p/context-engineering-bringing-engineering",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2025-07-13-context-engineering-bringing-engineering.md",
+      "markdown_sha256": "d9883fb59e781efd2b93c83e43bd50a3452510918e9ca5411d1a0052404443ac",
+      "summary_eojeol": 257,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:coding-for-the-future-agentic-world",
+      "source_id": "elevate",
+      "archive_index": 48,
+      "title": "Coding for the Future Agentic World",
+      "canonical_url": "https://addyo.substack.com/p/coding-for-the-future-agentic-world",
+      "author": "Addy Osmani",
+      "published_at": "2025-07-29",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/coding-for-the-future-agentic-world",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2025",
+        "date_display": "Jul 29, 2025"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "9db6609380c824564ef4afcb44eb3215373ebf58eaeb73f618c2a018c51fc9d1",
+      "source_hash_method": "SHA-256 of exact UTF-8 normalized complete visible article body from public web extraction. Merge all numbered page lines, select article body through its closing and book/resource footer, exclude title/byline/date/reaction counts/comments/site chrome. Replace web link-reference markup with visible anchor text; collapse Unicode whitespace within each nonempty line; LF-join, no final LF. Images/binary content are not included.",
+      "source_evidence": {
+        "method": "Unauthenticated public original Substack page read in contiguous numbered ranges until complete page including article ending and subsequent discussion section.",
+        "web_refs": [
+          "turn302view0",
+          "turn303view0",
+          "turn305view0"
+        ],
+        "total_page_lines": 332,
+        "all_page_lines_captured": true,
+        "article_body_lines": [
+          16,
+          276
+        ],
+        "full_body_word_count": 9444,
+        "access_restriction_observed": false,
+        "direct_curl_note": "curl returned Site Unavailable, not article content; not used for hash or prose.",
+        "metadata_verified_from_original_page": true,
+        "metadata_header": "#\n\n# Coding for the Future Agentic World\n### The promise and reality of autonomous coding agents in 2025\n\n【0†Addy Osmani†substack.com】\n\nJul 29, 2025\n\n169\n\n16\n\n19\n\nShare",
+        "full_source_verified": true,
+        "published_date_display": "Jul 29, 2025",
+        "canonical_url": "https://addyo.substack.com/p/coding-for-the-future-agentic-world",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2025-07-29-coding-for-the-future-agentic-world.md",
+      "markdown_sha256": "4dc8dccc3338760b5f9004f552b0af50491ee5965b5c999d6b2ace0dfd1777a2",
+      "summary_eojeol": 257,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:the-reality-of-ai-assisted-software",
+      "source_id": "elevate",
+      "archive_index": 49,
+      "title": "The reality of AI-Assisted software engineering productivity",
+      "canonical_url": "https://addyo.substack.com/p/the-reality-of-ai-assisted-software",
+      "author": "Addy Osmani",
+      "published_at": "2025-08-16",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/the-reality-of-ai-assisted-software",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2025",
+        "date_display": "Aug 16, 2025"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "5b4ada5613313184dc8f9eccb54f3f94c2ad3f79f1b9aad74054eaeb81ff7d3f",
+      "source_hash_method": "Complete web-rendered public article body, assembled by source line number with zero missing lines; navigation, reaction counts and comments excluded; link markers reduced to labels; whitespace normalized within paragraphs; UTF-8 SHA-256",
+      "source_evidence": {
+        "method": "Official public article independently read through conclusion. Long articles retrieved in overlapping page-line ranges; all source lines present; no access restriction bypass.",
+        "source_refs": [
+          "turn317view0",
+          "turn325view0",
+          "turn311view0"
+        ],
+        "total_rendered_lines": 280,
+        "missing_rendered_lines": 0,
+        "canonical_url": "https://addyo.substack.com/p/the-reality-of-ai-assisted-software",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2025-08-16-the-reality-of-ai-assisted-software.md",
+      "markdown_sha256": "0aeb34eed2f65142c72d43cc1e5e559203b3800c399dc3d181fad3fb620b0266",
+      "summary_eojeol": 260,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:vibe-coding-is-not-the-same-as-ai",
+      "source_id": "elevate",
+      "archive_index": 50,
+      "title": "Vibe coding is not the same as AI-Assisted engineering.",
+      "canonical_url": "https://addyo.substack.com/p/vibe-coding-is-not-the-same-as-ai",
+      "author": "Addy Osmani",
+      "published_at": "2025-08-30",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/vibe-coding-is-not-the-same-as-ai",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2025",
+        "date_display": "Aug 30, 2025"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "7cb8be9046b21054400e3356fc48c581fbe1953defb79ed91e5019c2a302eb6c",
+      "source_hash_method": "Complete web-rendered public article body, assembled by source line number with zero missing lines; navigation, reaction counts and comments excluded; link markers reduced to labels; whitespace normalized within paragraphs; UTF-8 SHA-256",
+      "source_evidence": {
+        "method": "Official public article independently read through conclusion. Long articles retrieved in overlapping page-line ranges; all source lines present; no access restriction bypass.",
+        "source_refs": [
+          "turn330view0",
+          "turn313view0"
+        ],
+        "total_rendered_lines": 203,
+        "missing_rendered_lines": 0,
+        "canonical_url": "https://addyo.substack.com/p/vibe-coding-is-not-the-same-as-ai",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2025-08-30-vibe-coding-is-not-the-same-as-ai.md",
+      "markdown_sha256": "a51c9d06ebe14dc2e92b96cb894d747ddb6d3405100445f75ca30c1ee8ebf834",
+      "summary_eojeol": 260,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:how-modern-browsers-work",
+      "source_id": "elevate",
+      "archive_index": 51,
+      "title": "How modern browsers work",
+      "canonical_url": "https://addyo.substack.com/p/how-modern-browsers-work",
+      "author": "Addy Osmani",
+      "published_at": "2025-09-13",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/how-modern-browsers-work",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2025",
+        "date_display": "Sep 13, 2025"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "81d8bdfdc2b42bd4f14d7fed850c8e286aadb007ea6fecfe6c0350bf9b3607f0",
+      "source_hash_method": "Complete web-rendered public article body, assembled by source line number with zero missing lines; navigation, reaction counts and comments excluded; link markers reduced to labels; whitespace normalized within paragraphs; UTF-8 SHA-256",
+      "source_evidence": {
+        "method": "Official public article independently read through conclusion. Long articles retrieved in overlapping page-line ranges; all source lines present; no access restriction bypass.",
+        "source_refs": [
+          "turn315view0",
+          "turn326view0",
+          "turn312view0"
+        ],
+        "total_rendered_lines": 385,
+        "missing_rendered_lines": 0,
+        "canonical_url": "https://addyo.substack.com/p/how-modern-browsers-work",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2025-09-13-how-modern-browsers-work.md",
+      "markdown_sha256": "700bec840ac25ae013429ebcca3db3cbcd433926d0958db5140720489a0c48a3",
+      "summary_eojeol": 266,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:gemini-cli-tips-and-tricks",
+      "source_id": "elevate",
+      "archive_index": 52,
+      "title": "Gemini CLI Tips & Tricks",
+      "canonical_url": "https://addyo.substack.com/p/gemini-cli-tips-and-tricks",
+      "author": "Addy Osmani",
+      "published_at": "2025-10-21",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/gemini-cli-tips-and-tricks",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2025",
+        "date_display": "Oct 21, 2025"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "2363596d670ceeddcfa7006317dc747999f633938c6093b89247c3ece6f06cd7",
+      "source_hash_method": "Complete web-rendered public article body, assembled by source line number with zero missing lines; navigation, reaction counts and comments excluded; link markers reduced to labels; whitespace normalized within paragraphs; UTF-8 SHA-256",
+      "source_evidence": {
+        "method": "Official public article independently read through conclusion. Long articles retrieved in overlapping page-line ranges; all source lines present; no access restriction bypass.",
+        "source_refs": [
+          "turn316view0",
+          "turn327view0",
+          "turn328view0",
+          "turn329view0",
+          "turn314view0"
+        ],
+        "total_rendered_lines": 680,
+        "missing_rendered_lines": 0,
+        "canonical_url": "https://addyo.substack.com/p/gemini-cli-tips-and-tricks",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2025-10-21-gemini-cli-tips-and-tricks.md",
+      "markdown_sha256": "6479382b6f91415ae91648f1b8e4f2993e8c8735509e19f9bc6aaa9e1ba43c8c",
+      "summary_eojeol": 265,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:conductors-to-orchestrators-the-future",
+      "source_id": "elevate",
+      "archive_index": 53,
+      "title": "Conductors to Orchestrators: The Future of Agentic Coding",
+      "canonical_url": "https://addyo.substack.com/p/conductors-to-orchestrators-the-future",
+      "author": "Addy Osmani",
+      "published_at": "2025-11-01",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/conductors-to-orchestrators-the-future",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2025",
+        "date_display": "Nov 01, 2025"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "53cd3f13645adb030540dd0fefd17d8c78e1140311e22203a19308bac985698c",
+      "source_hash_method": "Complete web-rendered public article body, assembled by source line number with zero missing lines; navigation, reaction counts and comments excluded; link markers reduced to labels; whitespace normalized within paragraphs; UTF-8 SHA-256",
+      "source_evidence": {
+        "method": "Official public article independently read through conclusion. Long articles retrieved in overlapping page-line ranges; all source lines present; no access restriction bypass.",
+        "source_refs": [
+          "turn318view0",
+          "turn307view0"
+        ],
+        "total_rendered_lines": 214,
+        "missing_rendered_lines": 0,
+        "canonical_url": "https://addyo.substack.com/p/conductors-to-orchestrators-the-future",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2025-11-01-conductors-to-orchestrators-the-future.md",
+      "markdown_sha256": "06c1d2329d75ebc1728549628d955a1b5745c05d925699e29b1e93809645ae6e",
+      "summary_eojeol": 259,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:critical-thinking-during-the-age",
+      "source_id": "elevate",
+      "archive_index": 54,
+      "title": "Critical Thinking during the age of AI",
+      "canonical_url": "https://addyo.substack.com/p/critical-thinking-during-the-age",
+      "author": "Addy Osmani",
+      "published_at": "2025-11-21",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/critical-thinking-during-the-age",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2025",
+        "date_display": "Nov 21, 2025"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "701c650167a83308ef3ce4d51235d17ab3eb423a0dc432423314533ae722d476",
+      "source_hash_method": "Complete web-rendered public article body, assembled by source line number with zero missing lines; navigation, reaction counts and comments excluded; link markers reduced to labels; whitespace normalized within paragraphs; UTF-8 SHA-256",
+      "source_evidence": {
+        "method": "Official public article independently read through conclusion. Long articles retrieved in overlapping page-line ranges; all source lines present; no access restriction bypass.",
+        "source_refs": [
+          "turn310view0"
+        ],
+        "total_rendered_lines": 177,
+        "missing_rendered_lines": 0,
+        "canonical_url": "https://addyo.substack.com/p/critical-thinking-during-the-age",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2025-11-21-critical-thinking-during-the-age.md",
+      "markdown_sha256": "0b3f98640c8b87773068798d8dc00d58fad8996e0d4647eadbf16b98233e34e7",
+      "summary_eojeol": 262,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:treat-ai-generated-code-as-a-draft",
+      "source_id": "elevate",
+      "archive_index": 55,
+      "title": "Treat AI-Generated code as a draft",
+      "canonical_url": "https://addyo.substack.com/p/treat-ai-generated-code-as-a-draft",
+      "author": "Addy Osmani",
+      "published_at": "2025-11-25",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/treat-ai-generated-code-as-a-draft",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2025",
+        "date_display": "Nov 25, 2025"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "701276bee90e47eef4426e6871162a569aeabe5da2414ace62a38d86f72cf104",
+      "source_hash_method": "Complete web-rendered public article body, assembled by source line number with zero missing lines; navigation, reaction counts and comments excluded; link markers reduced to labels; whitespace normalized within paragraphs; UTF-8 SHA-256",
+      "source_evidence": {
+        "method": "Official public article independently read through conclusion. Long articles retrieved in overlapping page-line ranges; all source lines present; no access restriction bypass.",
+        "source_refs": [
+          "turn309view0"
+        ],
+        "total_rendered_lines": 171,
+        "missing_rendered_lines": 0,
+        "canonical_url": "https://addyo.substack.com/p/treat-ai-generated-code-as-a-draft",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2025-11-25-treat-ai-generated-code-as-a-draft.md",
+      "markdown_sha256": "719d542cbf0fad861fdd8167a161cef27d95c64a53ae474e7028fe587bff0992",
+      "summary_eojeol": 262,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:21-lessons-from-14-years-at-google",
+      "source_id": "elevate",
+      "archive_index": 56,
+      "title": "21 Lessons from 14 Years at Google",
+      "canonical_url": "https://addyo.substack.com/p/21-lessons-from-14-years-at-google",
+      "author": "Addy Osmani",
+      "published_at": "2025-12-04",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/21-lessons-from-14-years-at-google",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2025",
+        "date_display": "Dec 04, 2025"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "d371bac42d51e05eb19b254a77e185aef5f86e2c73b32de946f6f4da8f63a8ec",
+      "source_hash_method": "Complete web-rendered public article body, assembled by source line number with zero missing lines; navigation, reaction counts and comments excluded; link markers reduced to labels; whitespace normalized within paragraphs; UTF-8 SHA-256",
+      "source_evidence": {
+        "method": "Official public article independently read through conclusion. Long articles retrieved in overlapping page-line ranges; all source lines present; no access restriction bypass.",
+        "source_refs": [
+          "turn308view0"
+        ],
+        "total_rendered_lines": 224,
+        "missing_rendered_lines": 0,
+        "canonical_url": "https://addyo.substack.com/p/21-lessons-from-14-years-at-google",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2025-12-04-21-lessons-from-14-years-at-google.md",
+      "markdown_sha256": "6fa94d1f6738ec3ecb6a24a8ac9649cb42d3eed1668f3d4334885f6f38898c8c",
+      "summary_eojeol": 263,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:my-llm-coding-workflow-going-into",
+      "source_id": "elevate",
+      "archive_index": 57,
+      "title": "My LLM coding workflow going into 2026",
+      "canonical_url": "https://addyo.substack.com/p/my-llm-coding-workflow-going-into",
+      "author": "Addy Osmani",
+      "published_at": "2025-12-18",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/my-llm-coding-workflow-going-into",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2025",
+        "date_display": "Dec 18, 2025"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "20aeca1550beb5f9a85a9fe23af7254c66dc0ccb7f50d2ee26b32066995d5798",
+      "source_hash_method": "SHA-256 of UTF-8 normalized full public article body from web-rendered lines; explicit body line range excludes title/byline/comments/footer; embedded media reference-only lines and horizontal rules excluded; rendered link references reduced to visible labels; whitespace collapsed within nonempty lines; lines joined with LF and no terminal LF. Images/video are excluded from this text digest.",
+      "source_evidence": {
+        "access": "Public canonical article via web open, no authentication or bypass",
+        "source_refs": [
+          "turn295view0"
+        ],
+        "visible_body_line_range": [
+          17,
+          143
+        ],
+        "all_rendered_lines_retrieved": true,
+        "total_rendered_lines": 195,
+        "full_body_read_through_end": true,
+        "body_last_line_sha256": "c9b143686d2acd8d480456f1b4d25f22b010ec33423a9fcb21a3b7271fc3497f",
+        "canonical_url": "https://addyo.substack.com/p/my-llm-coding-workflow-going-into",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2025-12-18-my-llm-coding-workflow-going-into.md",
+      "markdown_sha256": "f7d90b91fa71f06d200ef4398d68767a183189aefd01c40cfe2313517d2a5c06",
+      "summary_eojeol": 267,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:how-good-is-ai-at-coding-react-really",
+      "source_id": "elevate",
+      "archive_index": 58,
+      "title": "How Good Is AI at Coding React (Really)?",
+      "canonical_url": "https://addyo.substack.com/p/how-good-is-ai-at-coding-react-really",
+      "author": "Addy Osmani",
+      "published_at": "2025-12-29",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/how-good-is-ai-at-coding-react-really",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2025",
+        "date_display": "Dec 29, 2025"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "8a64c92985b6358b5715288d53a0022880ad9825778c0f7878fd3eff368ebd07",
+      "source_hash_method": "SHA-256 of UTF-8 normalized full public article body from web-rendered lines; explicit body line range excludes title/byline/comments/footer; embedded media reference-only lines and horizontal rules excluded; rendered link references reduced to visible labels; whitespace collapsed within nonempty lines; lines joined with LF and no terminal LF. Images/video are excluded from this text digest.",
+      "source_evidence": {
+        "access": "Public canonical article via web open, no authentication or bypass",
+        "source_refs": [
+          "turn287view0",
+          "turn306view0"
+        ],
+        "visible_body_line_range": [
+          16,
+          534
+        ],
+        "all_rendered_lines_retrieved": true,
+        "total_rendered_lines": 589,
+        "full_body_read_through_end": true,
+        "body_last_line_sha256": "680b69520de65a69f02ca9d103d1506002a8444dc75baf4bca447b2d6396fdae",
+        "canonical_url": "https://addyo.substack.com/p/how-good-is-ai-at-coding-react-really",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2025-12-29-how-good-is-ai-at-coding-react-really.md",
+      "markdown_sha256": "cf16fba3b7d3db6f16eedcfdb5b566389e96c4d874dba49297aaf761dc1131f3",
+      "summary_eojeol": 269,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:code-review-in-the-age-of-ai",
+      "source_id": "elevate",
+      "archive_index": 59,
+      "title": "Code Review in the Age of AI",
+      "canonical_url": "https://addyo.substack.com/p/code-review-in-the-age-of-ai",
+      "author": "Addy Osmani",
+      "published_at": "2026-01-05",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/code-review-in-the-age-of-ai",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2026",
+        "date_display": "Jan 05, 2026"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "e1cab234666a1a2793adca6d300c06029dddfd76d436ae065ab555175f6db694",
+      "source_hash_method": "SHA-256 of UTF-8 normalized full public article body from web-rendered lines; explicit body line range excludes title/byline/comments/footer; embedded media reference-only lines and horizontal rules excluded; rendered link references reduced to visible labels; whitespace collapsed within nonempty lines; lines joined with LF and no terminal LF. Images/video are excluded from this text digest.",
+      "source_evidence": {
+        "access": "Public canonical article via web open, no authentication or bypass",
+        "source_refs": [
+          "turn291view0"
+        ],
+        "visible_body_line_range": [
+          17,
+          111
+        ],
+        "all_rendered_lines_retrieved": true,
+        "total_rendered_lines": 172,
+        "full_body_read_through_end": true,
+        "body_last_line_sha256": "4c36d9a9e716e66d2ea5416c13f828a4e16dbf2f5abca7e46efe93c2775c14ad",
+        "canonical_url": "https://addyo.substack.com/p/code-review-in-the-age-of-ai",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2026-01-05-code-review-in-the-age-of-ai.md",
+      "markdown_sha256": "488b0755f31451629bcc61b426c9075f8d69c8df11c4f7cb44ce1de6563015cd",
+      "summary_eojeol": 264,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:how-to-write-a-good-spec-for-ai-agents",
+      "source_id": "elevate",
+      "archive_index": 60,
+      "title": "How to write a good spec for AI agents",
+      "canonical_url": "https://addyo.substack.com/p/how-to-write-a-good-spec-for-ai-agents",
+      "author": "Addy Osmani",
+      "published_at": "2026-01-19",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/how-to-write-a-good-spec-for-ai-agents",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2026",
+        "date_display": "Jan 19, 2026"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "e575ef00e4bd63b4b9c19f8560180cb2114197f5c4917e83e05e79d1263f69ea",
+      "source_hash_method": "SHA-256 of UTF-8 normalized full public article body from web-rendered lines; explicit body line range excludes title/byline/comments/footer; embedded media reference-only lines and horizontal rules excluded; rendered link references reduced to visible labels; whitespace collapsed within nonempty lines; lines joined with LF and no terminal LF. Images/video are excluded from this text digest.",
+      "source_evidence": {
+        "access": "Public canonical article via web open, no authentication or bypass",
+        "source_refs": [
+          "turn297view0",
+          "turn304view0"
+        ],
+        "visible_body_line_range": [
+          17,
+          207
+        ],
+        "all_rendered_lines_retrieved": true,
+        "total_rendered_lines": 260,
+        "full_body_read_through_end": true,
+        "body_last_line_sha256": "b70b2595b8bdbbc5f41e54dd0fba412d8b9b5e00071fa2054b28341457175ac7",
+        "canonical_url": "https://addyo.substack.com/p/how-to-write-a-good-spec-for-ai-agents",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2026-01-19-how-to-write-a-good-spec-for-ai-agents.md",
+      "markdown_sha256": "c13a52d16e15f6c86d836aa2ec3c3e820677db7635772376b3176511ea9aa09e",
+      "summary_eojeol": 268,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:the-80-problem-in-agentic-coding",
+      "source_id": "elevate",
+      "archive_index": 61,
+      "title": "The 80% Problem in Agentic Coding",
+      "canonical_url": "https://addyo.substack.com/p/the-80-problem-in-agentic-coding",
+      "author": "Addy Osmani",
+      "published_at": "2026-01-28",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/the-80-problem-in-agentic-coding",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2026",
+        "date_display": "Jan 28, 2026"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "75ff0aabd6901d0838b83ca99bfe76a84027005a618b786fdaee427e93f5c664",
+      "source_hash_method": "SHA-256 of UTF-8 normalized full public article body from web-rendered lines; explicit body line range excludes title/byline/comments/footer; embedded media reference-only lines and horizontal rules excluded; rendered link references reduced to visible labels; whitespace collapsed within nonempty lines; lines joined with LF and no terminal LF. Images/video are excluded from this text digest.",
+      "source_evidence": {
+        "access": "Public canonical article via web open, no authentication or bypass",
+        "source_refs": [
+          "turn289view0"
+        ],
+        "visible_body_line_range": [
+          17,
+          240
+        ],
+        "all_rendered_lines_retrieved": true,
+        "total_rendered_lines": 300,
+        "full_body_read_through_end": true,
+        "body_last_line_sha256": "192e005d9dacad4b818c313928ea0b1f4bf15eeba7f6d00bed49696b8de8e4c6",
+        "canonical_url": "https://addyo.substack.com/p/the-80-problem-in-agentic-coding",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2026-01-28-the-80-problem-in-agentic-coding.md",
+      "markdown_sha256": "42fb49ddcb852ba7d1e978c954e9f11ccaecf95cb1b2038c9a09a18a04e16111",
+      "summary_eojeol": 274,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:14-more-lessons-from-14-years-at",
+      "source_id": "elevate",
+      "archive_index": 62,
+      "title": "14 More lessons from 14 years at Google",
+      "canonical_url": "https://addyo.substack.com/p/14-more-lessons-from-14-years-at",
+      "author": "Addy Osmani",
+      "published_at": "2026-02-12",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/14-more-lessons-from-14-years-at",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2026",
+        "date_display": "Feb 12, 2026"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "0ca7414fa21e7a88671acebd0c92a0af2be14af1bdbf4e32f997b4f65b3fc94e",
+      "source_hash_method": "SHA-256 of UTF-8 normalized full public article body from web-rendered lines; explicit body line range excludes title/byline/comments/footer; embedded media reference-only lines and horizontal rules excluded; rendered link references reduced to visible labels; whitespace collapsed within nonempty lines; lines joined with LF and no terminal LF. Images/video are excluded from this text digest.",
+      "source_evidence": {
+        "access": "Public canonical article via web open, no authentication or bypass",
+        "source_refs": [
+          "turn290view0"
+        ],
+        "visible_body_line_range": [
+          17,
+          144
+        ],
+        "all_rendered_lines_retrieved": true,
+        "total_rendered_lines": 203,
+        "full_body_read_through_end": true,
+        "body_last_line_sha256": "9578b2bc37794ce73bdc4febd92b05c42f0a8cb6e2a5ffafddd361df87ab4341",
+        "canonical_url": "https://addyo.substack.com/p/14-more-lessons-from-14-years-at",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2026-02-12-14-more-lessons-from-14-years-at.md",
+      "markdown_sha256": "fca2be495fa2e8c876811af47fa97dc08985ea78caf5b133fade7378a8a74756",
+      "summary_eojeol": 273,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:death-of-the-ide",
+      "source_id": "elevate",
+      "archive_index": 63,
+      "title": "Is the IDE dead?",
+      "canonical_url": "https://addyo.substack.com/p/death-of-the-ide",
+      "author": "Addy Osmani",
+      "published_at": "2026-03-20",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/death-of-the-ide",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2026",
+        "date_display": "Mar 20, 2026"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "fa0d471593e23035ac7de5bb147f3d97c2ac1979d8ed5b12357fafe15ebcd30a",
+      "source_hash_method": "SHA-256 of UTF-8 normalized full public article body from web-rendered lines; explicit body line range excludes title/byline/comments/footer; embedded media reference-only lines and horizontal rules excluded; rendered link references reduced to visible labels; whitespace collapsed within nonempty lines; lines joined with LF and no terminal LF. Images/video are excluded from this text digest.",
+      "source_evidence": {
+        "access": "Public canonical article via web open, no authentication or bypass",
+        "source_refs": [
+          "turn288view0"
+        ],
+        "visible_body_line_range": [
+          17,
+          72
+        ],
+        "all_rendered_lines_retrieved": true,
+        "total_rendered_lines": 126,
+        "full_body_read_through_end": true,
+        "body_last_line_sha256": "f4cd862d66ba1bf3f83317c2f899a5d0027f60d2935261ce9c778e4b8a44a41d",
+        "canonical_url": "https://addyo.substack.com/p/death-of-the-ide",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2026-03-20-death-of-the-ide.md",
+      "markdown_sha256": "443e3f05ea7a0efe054025b004801ce68df7b8e0e28e926de5f69eea9e8223ad",
+      "summary_eojeol": 276,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    },
+    {
+      "id": "elevate:the-agent-stack-bet",
+      "source_id": "elevate",
+      "archive_index": 64,
+      "title": "The Agent Stack Bet",
+      "canonical_url": "https://addyo.substack.com/p/the-agent-stack-bet",
+      "author": "Addy Osmani",
+      "published_at": "2026-04-18",
+      "official_edition_number": null,
+      "metadata_verified": true,
+      "metadata_evidence": {
+        "url": "https://addyo.substack.com/p/the-agent-stack-bet",
+        "sitemap_url": "https://addyo.substack.com/sitemap/2026",
+        "date_display": "Apr 18, 2026"
+      },
+      "status": "ready",
+      "full_source_verified": true,
+      "source_sha256": "1973eb04e1adb477f73a1c591f662acb14f27fb0b088d15754378829cd911ef7",
+      "source_hash_method": "SHA-256 of UTF-8 normalized full public article body from web-rendered lines; explicit body line range excludes title/byline/comments/footer; embedded media reference-only lines and horizontal rules excluded; rendered link references reduced to visible labels; whitespace collapsed within nonempty lines; lines joined with LF and no terminal LF. Images/video are excluded from this text digest.",
+      "source_evidence": {
+        "access": "Public canonical article via web open, no authentication or bypass",
+        "source_refs": [
+          "turn292view0"
+        ],
+        "visible_body_line_range": [
+          17,
+          70
+        ],
+        "all_rendered_lines_retrieved": true,
+        "total_rendered_lines": 118,
+        "full_body_read_through_end": true,
+        "body_last_line_sha256": "33c74d9547b7d1d453b36a75abe74e9cdec4fb129b855bf89611fd3ff0d031ad",
+        "canonical_url": "https://addyo.substack.com/p/the-agent-stack-bet",
+        "complete_body_read": true
+      },
+      "markdown_path": "articles/elevate/2026-04-18-the-agent-stack-bet.md",
+      "markdown_sha256": "2d03544852139572ecd7754d48a08b12fbff6c971540d9b18c744ef6a09342dd",
+      "summary_eojeol": 273,
+      "summary_paragraphs": 4,
+      "editorial_version": "ko-300eojeol-v1"
+    }
+  ]
+}
