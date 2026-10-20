@@ -1,1 +1,6 @@
-{}
+{
+  "id": "elevate:the-reality-of-ai-assisted-software",
+  "sha256": "0aeb34eed2f65142c72d43cc1e5e559203b3800c399dc3d181fad3fb620b0266",
+  "run_id": "39431937911",
+  "plan": "data/chronological-backfill.json"
+}
