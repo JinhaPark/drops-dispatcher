@@ -1,6 +1,1 @@
-{
-  "id": "elevate:soft-skills-books-for-developers",
-  "sha256": "830c581b3a21f907dd730ee23960445434570211d3c5baec2b84d4988040c6e1",
-  "run_id": "39431937911",
-  "plan": "data/chronological-backfill.json"
-}
+{}
