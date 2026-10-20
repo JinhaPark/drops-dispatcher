@@ -1,6 +1,1 @@
-{
-  "id": "elevate:consistency-matters",
-  "sha256": "b7393ac29b6a57c741e181f8aa2b324007b0137a9f44687961ecf820b0592358",
-  "run_id": "39431937911",
-  "plan": "data/chronological-backfill.json"
-}
+{}
