@@ -1,21 +1,35 @@
 #!/usr/bin/env python3
-"""Dispatch already reviewed Markdown; never generate or rewrite summaries."""
-import json,os,pathlib,re,subprocess,sys
-root=pathlib.Path(__file__).resolve().parents[1]
-state=root/"data/discord-deliveries.json"
-for p in sorted((root/"articles").glob("**/*.md")):
- text=p.read_text(encoding="utf-8")
- if not text.startswith("---\n") or "\n---\n" not in text[4:]:
-  raise SystemExit(f"Missing YAML front matter: {p}")
- meta=text.split("---",2)[1]
- fields={}
- for line in meta.splitlines():
-  if ":" in line:
-   k,v=line.split(":",1);fields[k.strip()]=v.strip().strip('"').strip("'")
- if fields.get("status")!="ready":continue
- if not fields.get("id") or not fields.get("canonical_url") or not fields.get("author") or not re.fullmatch(r"\d{4}-\d{2}-\d{2}",fields.get("published_at","")):
-  raise SystemExit(f"Missing or invalid provenance: {p}")
- args=[sys.executable,str(root/".agents/skills/discord-feed/scripts/send.py"),"--file",str(p),"--id",fields["id"],"--state",str(state)]
- result=subprocess.run(args,cwd=root)
- if result.returncode:
-  raise SystemExit(f"Discord delivery failed for {p}; preserve ledger and inspect uncertain state")
+"""Dispatch completed Markdown; keep historical backfill on its ordered path."""
+import pathlib
+import re
+import subprocess
+import sys
+
+import backfill
+
+
+def main():
+    root = pathlib.Path(__file__).resolve().parents[1]
+    manifest = backfill.read_json(root / backfill.MANIFEST)
+    if manifest and manifest.get("status") == "active":
+        backfill.deliver(root, manifest)
+        return
+    for path in sorted((root / "articles").glob("**/*.md")):
+        text = path.read_text(encoding="utf-8")
+        fields, _ = backfill.frontmatter(text)
+        match = re.fullmatch(r"artificial-engineering:edition-(\d+)", fields.get("id", ""))
+        if match and 1 <= int(match[1]) <= 64:
+            continue
+        if fields.get("status") != "ready":
+            continue
+        if not fields.get("id") or not fields.get("canonical_url") or not fields.get("author") or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", fields.get("published_at", "")):
+            raise SystemExit(f"Missing or invalid provenance: {path}")
+        result = subprocess.run([sys.executable, str(root / ".agents/skills/discord-feed/scripts/send.py"),
+                                 "--file", str(path), "--id", fields["id"],
+                                 "--state", str(root / backfill.LEDGER)], cwd=root)
+        if result.returncode:
+            raise SystemExit(f"Discord delivery failed for {path}; preserve ledger and inspect uncertain state")
+
+
+if __name__ == "__main__":
+    main()
