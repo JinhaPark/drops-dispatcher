@@ -1,6 +1,1 @@
-{
-  "id": "elevate:mcp-what-it-is-and-why-it-matters",
-  "sha256": "acc7772c830cab7bbc85868613d3ab0ecb00f79bab94507beb28ce1fb2afd640",
-  "run_id": "39431937911",
-  "plan": "data/chronological-backfill.json"
-}
+{}
