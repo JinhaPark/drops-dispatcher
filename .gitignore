@@ -2,3 +2,5 @@ __pycache__/
 *.py[cod]
 *.lock
 
+
+.discord-checkpoints-used

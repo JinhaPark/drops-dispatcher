@@ -6,18 +6,26 @@ import subprocess
 import sys
 
 import backfill
+import chronological_backfill as chronological
 
 
 def main():
     root = pathlib.Path(__file__).resolve().parents[1]
+    plan = backfill.read_json(root / chronological.MANIFEST)
+    if plan and not chronological.already_completed(root, plan):
+        (root / '.discord-checkpoints-used').touch()
+        chronological.deliver(root, plan)
+        return
+    publication_ids = {i['id'] for i in plan['items']} if plan else set()
     manifest = backfill.read_json(root / backfill.MANIFEST)
     if manifest and manifest.get("status") == "active" and not backfill.already_completed(root, manifest):
+        (root / '.discord-checkpoints-used').touch()
         backfill.deliver(root, manifest)
         return
     for path in sorted((root / "articles").glob("**/*.md")):
         text = path.read_text(encoding="utf-8")
         fields, _ = backfill.frontmatter(text)
-        if backfill.is_backfill_id(fields.get("id", "")):
+        if fields.get("id") in publication_ids or backfill.is_backfill_id(fields.get("id", "")):
             continue
         if fields.get("status") != "ready":
             continue

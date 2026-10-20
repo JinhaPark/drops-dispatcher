@@ -5,6 +5,7 @@ on:
     paths:
       - 'articles/**/*.md'
       - 'data/artificial-engineering-backfill.json'
+      - 'data/chronological-backfill.json'
   workflow_dispatch:
 permissions:
   contents: write
@@ -30,6 +31,7 @@ jobs:
           python -m unittest discover -s .agents/skills/discord-feed/tests -v
           python -m unittest discover -s tests -v
           python scripts/backfill.py --validate-only
+          python scripts/chronological_backfill.py --validate-only
       - name: Configure checkpoint author
         run: |
           git config user.name 'github-actions[bot]'
@@ -43,8 +45,8 @@ jobs:
       - name: Persist durable delivery ledger
         if: always()
         run: |
-          if python -c 'import json,pathlib,sys; p=pathlib.Path("data/artificial-engineering-backfill.json"); sys.exit(0 if p.exists() and json.loads(p.read_text()).get("status")=="active" else 1)'; then
-            echo 'Ordered backfill persists and verifies its ledger after each edition.'
+          if [ -f .discord-checkpoints-used ]; then
+            echo 'Ordered backfill persists and verifies its ledger after each article.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
