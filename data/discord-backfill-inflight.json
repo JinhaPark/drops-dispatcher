@@ -1,1 +1,6 @@
-{}
+{
+  "id": "elevate:effective-software-engineers",
+  "sha256": "ae87039cd282ca86f34389b87cf14a333d2713705b308c7d7ce7fc6d26164960",
+  "run_id": "39431937911",
+  "plan": "data/chronological-backfill.json"
+}
