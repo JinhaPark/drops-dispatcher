@@ -1,1 +1,6 @@
-{}
+{
+  "id": "elevate:the-80-problem-in-agentic-coding",
+  "sha256": "42fb49ddcb852ba7d1e978c954e9f11ccaecf95cb1b2038c9a09a18a04e16111",
+  "run_id": "39431937911",
+  "plan": "data/chronological-backfill.json"
+}
