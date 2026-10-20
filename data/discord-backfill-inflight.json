@@ -1,1 +1,6 @@
-{}
+{
+  "id": "elevate:the-trust-but-verify-pattern-for",
+  "sha256": "4511e234c551b14adfda1fcdab3158f13c2ff62bf3606366352536a7eb3f5565",
+  "run_id": "39431937911",
+  "plan": "data/chronological-backfill.json"
+}
