@@ -1,6 +1,1 @@
-{
-  "id": "elevate:context-engineering-bringing-engineering",
-  "sha256": "d9883fb59e781efd2b93c83e43bd50a3452510918e9ca5411d1a0052404443ac",
-  "run_id": "39431937911",
-  "plan": "data/chronological-backfill.json"
-}
+{}
