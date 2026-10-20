@@ -1,1 +1,6 @@
-{}
+{
+  "id": "elevate:leading-effective-engineering-teams",
+  "sha256": "76151eeac4129b86c4f72af92167ae763da86dc2d6cd6057a49f2ffdfbf0a1fb",
+  "run_id": "39431937911",
+  "plan": "data/chronological-backfill.json"
+}
