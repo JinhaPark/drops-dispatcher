@@ -1,1 +1,6 @@
-{}
+{
+  "id": "elevate:vibe-coding-is-not-an-excuse-for",
+  "sha256": "6e171b57ca9dd089074f64482075786f88325be018ffa54c7e115d04760bd889",
+  "run_id": "39431937911",
+  "plan": "data/chronological-backfill.json"
+}
