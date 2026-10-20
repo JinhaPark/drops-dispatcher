@@ -1,6 +1,1 @@
-{
-  "id": "elevate:the-debuggers-toolkit",
-  "sha256": "8fbaa95ac2b222fcbed9e3d5e97c431ebeb6269490b0a7a043547da79c629681",
-  "run_id": "39431937911",
-  "plan": "data/chronological-backfill.json"
-}
+{}
