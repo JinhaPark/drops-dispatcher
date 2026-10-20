@@ -1,6 +1,1 @@
-{
-  "id": "elevate:focus-on-what-you-can-control",
-  "sha256": "6bca7133a5ed23be0ca5fdcd0cdf4d57e22dfb0f70b690adde5dd1608e060dbd",
-  "run_id": "39431937911",
-  "plan": "data/chronological-backfill.json"
-}
+{}
