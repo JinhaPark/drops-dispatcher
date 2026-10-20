@@ -1,1 +1,6 @@
-{}
+{
+  "id": "elevate:the-ai-native-software-engineer",
+  "sha256": "32560c7aa27a97edcd0c8c93a92fe4e9228e5b74e4056a6e3adc0ec9aa8b14af",
+  "run_id": "39431937911",
+  "plan": "data/chronological-backfill.json"
+}
