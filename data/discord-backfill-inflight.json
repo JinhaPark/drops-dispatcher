@@ -1,6 +1,1 @@
-{
-  "id": "elevate:applied-software-engineering-at-google",
-  "sha256": "702f7bf814935ca72ef33626845dbbd8c917dcc5157e9ea6ac928440b9304efc",
-  "run_id": "39431937911",
-  "plan": "data/chronological-backfill.json"
-}
+{}
