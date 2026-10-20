@@ -1,1 +1,6 @@
-{}
+{
+  "id": "elevate:personal-software-the-unbundling",
+  "sha256": "b5ea9304fb69de96489e76b958e47b14bfc736890d90bf92da8ee135fe4bc711",
+  "run_id": "39431937911",
+  "plan": "data/chronological-backfill.json"
+}
