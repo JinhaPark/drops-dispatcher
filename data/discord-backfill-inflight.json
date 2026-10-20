@@ -1,6 +1,1 @@
-{
-  "id": "elevate:reduce-the-gap-between-idea-and-execution",
-  "sha256": "1c473df2e84b8770ac76e019fba60a09f8ad76beb2ad3a528d490b048fcdd413",
-  "run_id": "39431937911",
-  "plan": "data/chronological-backfill.json"
-}
+{}
