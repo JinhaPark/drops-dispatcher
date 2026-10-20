@@ -1,6 +1,1 @@
-{
-  "id": "elevate:there-is-no-right-time-just-time",
-  "sha256": "a0c05e49a4cba42aa3af3c3e379ca1815388c28032f7a5be157454767acf25eb",
-  "run_id": "39431937911",
-  "plan": "data/chronological-backfill.json"
-}
+{}
