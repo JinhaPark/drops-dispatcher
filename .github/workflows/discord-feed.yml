@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - 'articles/**/*.md'
+      - 'data/artificial-engineering-backfill.json'
   workflow_dispatch:
 permissions:
   contents: write
@@ -17,13 +18,22 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: true
+          ref: main
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - name: Refresh main after acquiring concurrency slot
         run: git pull --ff-only origin main
       - name: Validate local delivery skill
-        run: python -m unittest discover -s .agents/skills/discord-feed/tests -v
+        run: |
+          python -m unittest discover -s .agents/skills/discord-feed/tests -v
+          python -m unittest discover -s tests -v
+          python scripts/backfill.py --validate-only
+      - name: Configure checkpoint author
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
       - name: Deliver ready articles
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
@@ -33,6 +43,10 @@ jobs:
       - name: Persist durable delivery ledger
         if: always()
         run: |
+          if python -c 'import json,pathlib,sys; p=pathlib.Path("data/artificial-engineering-backfill.json"); sys.exit(0 if p.exists() and json.loads(p.read_text()).get("status")=="active" else 1)'; then
+            echo 'Ordered backfill persists and verifies its ledger after each edition.'
+            exit 0
+          fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add data/discord-deliveries.json
@@ -46,3 +60,11 @@ jobs:
             done
             exit 1
           fi
+      - name: Preserve ledger evidence after failure
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: discord-ledger-${{ github.run_id }}
+          path: |
+            data/discord-deliveries.json
+            data/discord-backfill-inflight.json
