@@ -21,6 +21,24 @@ def sha(text):
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
+def is_backfill_id(item_id):
+    match = re.fullmatch(r"artificial-engineering:edition-(\d+)", item_id)
+    return bool(match and 1 <= int(match[1]) <= 64)
+
+
+def already_completed(root, manifest):
+    if manifest.get("status") != "active":
+        return False
+    items = validate_manifest(root, manifest)
+    ledger = read_json(root / LEDGER, {})
+    if read_json(root / INFLIGHT, {}):
+        return False
+    return all(item["status"] == "ready" and
+               ledger.get(f'artificial-engineering:edition-{item["edition_number"]}', {}).get("status") == "complete" and
+               ledger[f'artificial-engineering:edition-{item["edition_number"]}']["sha256"] == item["markdown_sha256"]
+               for item in items)
+
+
 def read_json(path, default=None):
     return json.loads(path.read_text()) if path.exists() else default
 
@@ -88,6 +106,8 @@ def validate_article(root, item):
 
 
 def validate_manifest(root, manifest):
+    if manifest.get("status") not in ("held", "active"):
+        raise ValueError("Unknown backfill activation state")
     if manifest.get("source_id") != "artificial-engineering" or manifest.get("range") != [1, 64]:
         raise ValueError("Unexpected backfill scope")
     items = manifest["editions"]
