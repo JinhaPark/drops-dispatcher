@@ -6,8 +6,10 @@ on:
       - 'tests/**'
       - '.agents/skills/discord-feed/**'
       - '.github/workflows/**'
-      - 'articles/artificial-engineering/**'
+      - 'articles/**'
       - 'data/artificial-engineering-backfill.json'
+      - 'data/elevate-backfill.json'
+      - 'data/chronological-backfill.json'
   push:
     branches: [main]
     paths:
@@ -15,6 +17,8 @@ on:
       - 'tests/**'
       - '.github/workflows/**'
       - 'data/artificial-engineering-backfill.json'
+      - 'data/elevate-backfill.json'
+      - 'data/chronological-backfill.json'
 permissions:
   contents: read
 jobs:
@@ -28,3 +32,4 @@ jobs:
       - run: python -m unittest discover -s .agents/skills/discord-feed/tests -v
       - run: python -m unittest discover -s tests -v
       - run: python scripts/backfill.py --validate-only
+      - run: python scripts/chronological_backfill.py --validate-only
