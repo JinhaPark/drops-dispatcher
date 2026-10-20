@@ -260,5 +260,16 @@
       }
     ],
     "total": 1
+  },
+  "elevate:effective-engineering-managers": {
+    "sha256": "3adecf7d240a7e96bc6d1a1accf7854d6fb1304728492f407548ba7157365a16",
+    "status": "complete",
+    "messages": [
+      {
+        "index": 0,
+        "message_id": "1562097588356784291"
+      }
+    ],
+    "total": 1
   }
 }
