@@ -1,6 +1,1 @@
-{
-  "id": "elevate:the-agent-stack-bet",
-  "sha256": "2d03544852139572ecd7754d48a08b12fbff6c971540d9b18c744ef6a09342dd",
-  "run_id": "39431937911",
-  "plan": "data/chronological-backfill.json"
-}
+{}
