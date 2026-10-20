@@ -643,5 +643,20 @@
       }
     ],
     "total": 2
+  },
+  "artificial-engineering:edition-8": {
+    "sha256": "51573ce7835a24e341f9e74daf8ebe101e0198147f6397df2e0c5cfa2576dc54",
+    "status": "complete",
+    "messages": [
+      {
+        "index": 0,
+        "message_id": "1562098298565828622"
+      },
+      {
+        "index": 1,
+        "message_id": "1562098299916390413"
+      }
+    ],
+    "total": 2
   }
 }
