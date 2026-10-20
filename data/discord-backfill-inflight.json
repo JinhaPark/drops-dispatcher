@@ -1,1 +1,6 @@
-{}
+{
+  "id": "elevate:the-prompt-engineering-playbook-for",
+  "sha256": "893595841fc850756697a25858f3367d784055804a1fc8500f80f7f823430153",
+  "run_id": "39431937911",
+  "plan": "data/chronological-backfill.json"
+}
