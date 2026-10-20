@@ -20,6 +20,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Refresh main after acquiring concurrency slot
+        run: git pull --ff-only origin main
       - name: Validate local delivery skill
         run: python -m unittest discover -s .agents/skills/discord-feed/tests -v
       - name: Deliver ready articles
@@ -36,5 +38,11 @@ jobs:
           git add data/discord-deliveries.json
           if ! git diff --cached --quiet; then
             git commit -m 'chore: persist Discord delivery ledger'
-            git push
+            for attempt in 1 2 3 4 5; do
+              if git push origin HEAD:main; then exit 0; fi
+              git fetch origin main
+              git rebase origin/main || { echo 'Ledger conflict requires reconciliation'; exit 1; }
+              sleep $((attempt * 2))
+            done
+            exit 1
           fi
