@@ -36,3 +36,5 @@ jobs:
             git commit -m 'chore: record Discord smoke test'
             git push
           fi
+
+# Re-run the same stable smoke-test ID to verify idempotent delivery.
