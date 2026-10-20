@@ -11,14 +11,13 @@ import backfill
 def main():
     root = pathlib.Path(__file__).resolve().parents[1]
     manifest = backfill.read_json(root / backfill.MANIFEST)
-    if manifest and manifest.get("status") == "active":
+    if manifest and manifest.get("status") == "active" and not backfill.already_completed(root, manifest):
         backfill.deliver(root, manifest)
         return
     for path in sorted((root / "articles").glob("**/*.md")):
         text = path.read_text(encoding="utf-8")
         fields, _ = backfill.frontmatter(text)
-        match = re.fullmatch(r"artificial-engineering:edition-(\d+)", fields.get("id", ""))
-        if match and 1 <= int(match[1]) <= 64:
+        if backfill.is_backfill_id(fields.get("id", "")):
             continue
         if fields.get("status") != "ready":
             continue

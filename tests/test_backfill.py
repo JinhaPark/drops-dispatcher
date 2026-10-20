@@ -17,6 +17,20 @@ def record(message="123", status="complete"):
 
 
 class LedgerTests(unittest.TestCase):
+    def test_manifest_requires_exact_numeric_continuity(self):
+        manifest = {"status": "held", "source_id": "artificial-engineering", "range": [1, 64],
+                    "editions": [{"edition_number": n, "status": "pending"} for n in range(1, 65)]}
+        b.validate_manifest(pathlib.Path('.'), manifest)
+        manifest['editions'][0], manifest['editions'][1] = manifest['editions'][1], manifest['editions'][0]
+        with self.assertRaises(ValueError):
+            b.validate_manifest(pathlib.Path('.'), manifest)
+
+    def test_historical_scope_excludes_existing_feeds(self):
+        self.assertTrue(b.is_backfill_id("artificial-engineering:edition-1"))
+        self.assertTrue(b.is_backfill_id("artificial-engineering:edition-64"))
+        self.assertFalse(b.is_backfill_id("artificial-engineering:edition-65"))
+        self.assertFalse(b.is_backfill_id("elevate:agentic-verification"))
+
     def test_preserves_unrelated_successes(self):
         self.assertEqual(b.merge_ledgers({"old": record()}, {"new": record()}),
                          {"old": record(), "new": record()})
@@ -93,6 +107,15 @@ class OrderingTests(unittest.TestCase):
         (self.root / b.LEDGER).write_text(json.dumps({"1": {**record(), "sha256": b.sha("1")}}))
         self.run_delivery()
         self.assertEqual([e for e in self.events if e[0] == "send"], [("send", "2"), ("send", "3")])
+
+    def test_finished_backfill_releases_future_live_feed(self):
+        items = [{"edition_number": 1, "status": "ready", "markdown_sha256": "a" * 64}]
+        with patch.object(b, "validate_manifest", return_value=items):
+            self.assertFalse(b.already_completed(self.root, {"status": "active"}))
+            (self.root / b.LEDGER).write_text(json.dumps({"artificial-engineering:edition-1": record()}))
+            self.assertTrue(b.already_completed(self.root, {"status": "active"}))
+            (self.root / b.INFLIGHT).write_text('{"id":"unknown"}')
+            self.assertFalse(b.already_completed(self.root, {"status": "active"}))
 
 
 class GitCheckpointTests(unittest.TestCase):
