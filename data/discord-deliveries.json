@@ -1471,5 +1471,24 @@
       }
     ],
     "total": 2
+  },
+  "artificial-engineering:edition-50": {
+    "sha256": "ea212b6b4d0bd5856582412eb417c41d30c5062ec11b87f5164280851d150228",
+    "status": "complete",
+    "messages": [
+      {
+        "index": 0,
+        "message_id": "1562099615812292820"
+      },
+      {
+        "index": 1,
+        "message_id": "1562099617158406357"
+      },
+      {
+        "index": 2,
+        "message_id": "1562099618546712668"
+      }
+    ],
+    "total": 3
   }
 }
