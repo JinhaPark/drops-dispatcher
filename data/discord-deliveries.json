@@ -878,5 +878,16 @@
       }
     ],
     "total": 2
+  },
+  "elevate:how-modern-browsers-work": {
+    "sha256": "700bec840ac25ae013429ebcca3db3cbcd433926d0958db5140720489a0c48a3",
+    "status": "complete",
+    "messages": [
+      {
+        "index": 0,
+        "message_id": "1562098665030684803"
+      }
+    ],
+    "total": 1
   }
 }
