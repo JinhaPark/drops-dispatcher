@@ -1,6 +1,1 @@
-{
-  "id": "artificial-engineering:edition-43",
-  "sha256": "512d95254c7ab9886b5878c973ef3913a7bd3057e0b50eb598525faa89a4eb74",
-  "run_id": "39431937911",
-  "plan": "data/chronological-backfill.json"
-}
+{}
