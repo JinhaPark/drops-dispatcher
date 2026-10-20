@@ -4,19 +4,35 @@
   "ordering": "published_at,source_id,id",
   "elevate_scope": "First 64 official sitemap entries in publication-date order; archive_index is not a publisher issue number",
   "verified_count": 120,
-  "delivery_success_count": 0,
-  "unique_message_count": 0,
-  "message_order_verified": false,
+  "delivery_success_count": 120,
+  "unique_message_count": 192,
+  "message_order_verified": true,
   "duplicate_message_ids": false,
+  "delivery_actions_conclusion": "success",
+  "inflight_empty": true,
+  "preserved_existing_delivery_records": 11,
+  "preserved_existing_article_files": 10,
+  "resumed_request_verification": {
+    "positions": "100-120",
+    "all_complete": true,
+    "resend_count": 0,
+    "reason": "GitHub Actions continued after the conversation interruption and completed all 120 articles."
+  },
   "validation": "26 automated delivery tests passed; all reviewed article metadata/digests/lengths validated; no external model API; no new schedule",
   "code_pr": "https://github.com/JinhaPark/news/pull/3",
   "code_main_actions": "https://github.com/JinhaPark/news/actions/runs/39430733421",
+  "archive_pr": "https://github.com/JinhaPark/news/pull/4",
+  "archive_commit": "27abe3bcf67670be3c2a71513ddc725e2f3427c6",
+  "archive_pr_actions": "https://github.com/JinhaPark/news/actions/runs/39431859356",
+  "archive_main_actions": "https://github.com/JinhaPark/news/actions/runs/39431937834",
+  "delivery_actions": "https://github.com/JinhaPark/news/actions/runs/39431937911",
   "articles": [
     {
       "source_id": "artificial-engineering",
       "edition_number": 1,
       "archive_index": null,
       "id": "artificial-engineering:edition-1",
+      "delivery_position": null,
       "title": null,
       "published_at": null,
       "canonical_url": null,
@@ -31,6 +47,7 @@
       "edition_number": 2,
       "archive_index": null,
       "id": "artificial-engineering:edition-2",
+      "delivery_position": null,
       "title": null,
       "published_at": null,
       "canonical_url": null,
@@ -45,13 +62,17 @@
       "edition_number": 3,
       "archive_index": null,
       "id": "artificial-engineering:edition-3",
+      "delivery_position": 38,
       "title": "Architecting AI: From Visualization to Trust",
       "published_at": "2025-05-18",
       "canonical_url": "https://www.linkedin.com/pulse/architecting-ai-from-visualization-trust-andr%C3%A9-lindenberg-zcoie",
       "markdown_path": "articles/artificial-engineering/2025-05-18-edition-3.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098151211671584",
+        "1562098152776011787"
+      ],
       "reason": null
     },
     {
@@ -59,13 +80,17 @@
       "edition_number": 4,
       "archive_index": null,
       "id": "artificial-engineering:edition-4",
+      "delivery_position": 39,
       "title": "Profiting from Code: Ethics and Efficiency in AI Engineering",
       "published_at": "2025-05-25",
       "canonical_url": "https://www.linkedin.com/pulse/profiting-from-code-ethics-efficiency-ai-engineering-andr%C3%A9-lindenberg-yaf9e",
       "markdown_path": "articles/artificial-engineering/2025-05-25-edition-4.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098172916924416",
+        "1562098173961576448"
+      ],
       "reason": null
     },
     {
@@ -73,13 +98,17 @@
       "edition_number": 5,
       "archive_index": null,
       "id": "artificial-engineering:edition-5",
+      "delivery_position": 41,
       "title": "From Legacy Fear to Smart Platforms: AI's Role in Software Evolution",
       "published_at": "2025-06-01",
       "canonical_url": "https://www.linkedin.com/pulse/from-legacy-fear-smart-platforms-ais-role-software-andr%C3%A9-lindenberg-h5hoe",
       "markdown_path": "articles/artificial-engineering/2025-06-01-edition-5.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098213664587780",
+        "1562098215082524742"
+      ],
       "reason": null
     },
     {
@@ -87,13 +116,17 @@
       "edition_number": 6,
       "archive_index": null,
       "id": "artificial-engineering:edition-6",
+      "delivery_position": 42,
       "title": "Building AI: From Foundations to Future Opportunities",
       "published_at": "2025-06-08",
       "canonical_url": "https://www.linkedin.com/pulse/building-ai-from-foundations-future-opportunities-andr%C3%A9-lindenberg-216ke",
       "markdown_path": "articles/artificial-engineering/2025-06-08-edition-6.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098236611756223",
+        "1562098237572124752"
+      ],
       "reason": null
     },
     {
@@ -101,13 +134,17 @@
       "edition_number": 7,
       "archive_index": null,
       "id": "artificial-engineering:edition-7",
+      "delivery_position": 44,
       "title": "Mastering AI-Driven Transformation: Scaling, Augmentation, and Migration",
       "published_at": "2025-06-15",
       "canonical_url": "https://www.linkedin.com/pulse/mastering-ai-driven-transformation-scaling-migration-andr%C3%A9-lindenberg-fnife",
       "markdown_path": "articles/artificial-engineering/2025-06-15-edition-7.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098276499464232",
+        "1562098277934043298"
+      ],
       "reason": null
     },
     {
@@ -115,13 +152,17 @@
       "edition_number": 8,
       "archive_index": null,
       "id": "artificial-engineering:edition-8",
+      "delivery_position": 45,
       "title": "The Convergence of AI Architecture: From Decomposition to Reuse",
       "published_at": "2025-06-22",
       "canonical_url": "https://www.linkedin.com/pulse/convergence-ai-architecture-from-decomposition-reuse-andr%C3%A9-lindenberg-mbwje",
       "markdown_path": "articles/artificial-engineering/2025-06-22-edition-8.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098298565828622",
+        "1562098299916390413"
+      ],
       "reason": null
     },
     {
@@ -129,13 +170,17 @@
       "edition_number": 9,
       "archive_index": null,
       "id": "artificial-engineering:edition-9",
+      "delivery_position": 46,
       "title": "Adaptive AI and Scalable Architectures: Reinventing Systems with Intelligence",
       "published_at": "2025-06-29",
       "canonical_url": "https://www.linkedin.com/pulse/adaptive-ai-scalable-architectures-reinventing-andr%C3%A9-lindenberg-5xbie",
       "markdown_path": "articles/artificial-engineering/2025-06-29-edition-9.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098319898050560",
+        "1562098321290690630"
+      ],
       "reason": null
     },
     {
@@ -143,13 +188,17 @@
       "edition_number": 10,
       "archive_index": null,
       "id": "artificial-engineering:edition-10",
+      "delivery_position": 48,
       "title": "The Dual Paths of AI Integration",
       "published_at": "2025-07-06",
       "canonical_url": "https://www.linkedin.com/pulse/navigating-dual-paths-ai-integration-andr%C3%A9-lindenberg-1ejfe",
       "markdown_path": "articles/artificial-engineering/2025-07-06-edition-10.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098362856251424",
+        "1562098364089372713"
+      ],
       "reason": null
     },
     {
@@ -157,13 +206,17 @@
       "edition_number": 11,
       "archive_index": null,
       "id": "artificial-engineering:edition-11",
+      "delivery_position": 49,
       "title": "The AI Memory Revolution & Agentic Systems in Motion",
       "published_at": "2025-07-13",
       "canonical_url": "https://www.linkedin.com/pulse/ai-memory-revolution-agentic-systems-motion-andr%C3%A9-lindenberg-lpoxe",
       "markdown_path": "articles/artificial-engineering/2025-07-13-edition-11.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098383102148659",
+        "1562098384087556146"
+      ],
       "reason": null
     },
     {
@@ -171,13 +224,17 @@
       "edition_number": 12,
       "archive_index": null,
       "id": "artificial-engineering:edition-12",
+      "delivery_position": 51,
       "title": "Pioneering Mindsets in AI Development",
       "published_at": "2025-07-20",
       "canonical_url": "https://www.linkedin.com/pulse/pioneering-mindsets-ai-development-andr%C3%A9-lindenberg-qokae",
       "markdown_path": "articles/artificial-engineering/2025-07-20-edition-12.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098422624948264",
+        "1562098423602221076"
+      ],
       "reason": null
     },
     {
@@ -185,13 +242,17 @@
       "edition_number": 13,
       "archive_index": null,
       "id": "artificial-engineering:edition-13",
+      "delivery_position": 52,
       "title": "Engineering Evolution with AI: From Autonomy to Efficiency",
       "published_at": "2025-07-27",
       "canonical_url": "https://www.linkedin.com/pulse/engineering-evolution-ai-from-autonomy-efficiency-andr%C3%A9-lindenberg-zglqe",
       "markdown_path": "articles/artificial-engineering/2025-07-27-edition-13.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098442342506528",
+        "1562098443575500861"
+      ],
       "reason": null
     },
     {
@@ -199,13 +260,17 @@
       "edition_number": 14,
       "archive_index": null,
       "id": "artificial-engineering:edition-14",
+      "delivery_position": 54,
       "title": "Evolution of Agentic AI and System Transformation",
       "published_at": "2025-08-03",
       "canonical_url": "https://www.linkedin.com/pulse/evolution-agentic-ai-system-transformation-andr%C3%A9-lindenberg-e71ge",
       "markdown_path": "articles/artificial-engineering/2025-08-03-edition-14.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098496973053962",
+        "1562098499217002598"
+      ],
       "reason": null
     },
     {
@@ -213,13 +278,17 @@
       "edition_number": 15,
       "archive_index": null,
       "id": "artificial-engineering:edition-15",
+      "delivery_position": 55,
       "title": "Navigating the AI Agent Landscape: From Tools to Threats",
       "published_at": "2025-08-10",
       "canonical_url": "https://www.linkedin.com/pulse/navigating-ai-agent-landscape-from-tools-threats-andr%C3%A9-lindenberg-8n5ue",
       "markdown_path": "articles/artificial-engineering/2025-08-10-edition-15.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098519957966938",
+        "1562098521174450178"
+      ],
       "reason": null
     },
     {
@@ -227,13 +296,17 @@
       "edition_number": 16,
       "archive_index": null,
       "id": "artificial-engineering:edition-16",
+      "delivery_position": 57,
       "title": "From Secure Systems to Endless Possibilities",
       "published_at": "2025-08-17",
       "canonical_url": "https://www.linkedin.com/pulse/from-secure-systems-endless-possibilities-andr%C3%A9-lindenberg-3xs7e",
       "markdown_path": "articles/artificial-engineering/2025-08-17-edition-16.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098560902889573",
+        "1562098562043613315"
+      ],
       "reason": null
     },
     {
@@ -241,13 +314,17 @@
       "edition_number": 17,
       "archive_index": null,
       "id": "artificial-engineering:edition-17",
+      "delivery_position": 58,
       "title": "From Prompt Engineering to AI-Driven Ecosystems: Building Bridges in AI",
       "published_at": "2025-08-24",
       "canonical_url": "https://www.linkedin.com/pulse/from-prompt-engineering-ai-driven-ecosystems-building-lindenberg-iavre",
       "markdown_path": "articles/artificial-engineering/2025-08-24-edition-17.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098581458919578",
+        "1562098583107534859"
+      ],
       "reason": null
     },
     {
@@ -255,13 +332,17 @@
       "edition_number": 18,
       "archive_index": null,
       "id": "artificial-engineering:edition-18",
+      "delivery_position": 60,
       "title": "Navigating the Intersection of AI and Trust",
       "published_at": "2025-08-31",
       "canonical_url": "https://www.linkedin.com/pulse/navigating-intersection-ai-trust-andr%C3%A9-lindenberg-szq1e",
       "markdown_path": "articles/artificial-engineering/2025-08-31-edition-18.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098623586500659",
+        "1562098624840605747"
+      ],
       "reason": null
     },
     {
@@ -269,13 +350,17 @@
       "edition_number": 19,
       "archive_index": null,
       "id": "artificial-engineering:edition-19",
+      "delivery_position": 61,
       "title": "Transformative Shifts: From Trust to Tactical Deployments",
       "published_at": "2025-09-07",
       "canonical_url": "https://www.linkedin.com/pulse/transformative-shifts-from-trust-tactical-deployments-lindenberg-y9nce",
       "markdown_path": "articles/artificial-engineering/2025-09-07-edition-19.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098645430444182",
+        "1562098646642720920"
+      ],
       "reason": null
     },
     {
@@ -283,13 +368,17 @@
       "edition_number": 20,
       "archive_index": null,
       "id": "artificial-engineering:edition-20",
+      "delivery_position": 63,
       "title": "Orchestrating AI Agents: From Audits to Acceleration",
       "published_at": "2025-09-14",
       "canonical_url": "https://www.linkedin.com/pulse/orchestrating-ai-agents-from-audits-acceleration-andr%C3%A9-lindenberg-qdsme",
       "markdown_path": "articles/artificial-engineering/2025-09-14-edition-20.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098684533932103",
+        "1562098685251428455"
+      ],
       "reason": null
     },
     {
@@ -297,13 +386,17 @@
       "edition_number": 21,
       "archive_index": null,
       "id": "artificial-engineering:edition-21",
+      "delivery_position": 64,
       "title": "Deterministic Systems and Explainable Agents",
       "published_at": "2025-09-21",
       "canonical_url": "https://www.linkedin.com/pulse/deterministic-systems-explainable-agents-andr%C3%A9-lindenberg-laose",
       "markdown_path": "articles/artificial-engineering/2025-09-21-edition-21.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098704901476474",
+        "1562098706113896448"
+      ],
       "reason": null
     },
     {
@@ -311,13 +404,17 @@
       "edition_number": 22,
       "archive_index": null,
       "id": "artificial-engineering:edition-22",
+      "delivery_position": 65,
       "title": "Shaping AI Reasoning, Explainability, and Productivity Boosts",
       "published_at": "2025-09-28",
       "canonical_url": "https://www.linkedin.com/pulse/shaping-ai-reasoning-explainability-productivity-andr%C3%A9-lindenberg-reeae",
       "markdown_path": "articles/artificial-engineering/2025-09-28-edition-22.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098726279970917",
+        "1562098727529877504"
+      ],
       "reason": null
     },
     {
@@ -325,13 +422,17 @@
       "edition_number": 23,
       "archive_index": null,
       "id": "artificial-engineering:edition-23",
+      "delivery_position": 66,
       "title": "Unlocking Efficiency and Transparency",
       "published_at": "2025-10-05",
       "canonical_url": "https://www.linkedin.com/pulse/unlocking-efficiency-transparency-andr%C3%A9-lindenberg-ndpqe",
       "markdown_path": "articles/artificial-engineering/2025-10-05-edition-23.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098748199534702",
+        "1562098749155573822"
+      ],
       "reason": null
     },
     {
@@ -339,13 +440,17 @@
       "edition_number": 24,
       "archive_index": null,
       "id": "artificial-engineering:edition-24",
+      "delivery_position": 67,
       "title": "Building the Thinking Machine: How AI Moves From Scale to Context",
       "published_at": "2025-10-12",
       "canonical_url": "https://www.linkedin.com/pulse/building-thinking-machine-how-ai-moves-from-scale-andr%C3%A9-lindenberg-ei4ae",
       "markdown_path": "articles/artificial-engineering/2025-10-12-edition-24.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098768868806730",
+        "1562098770227888188"
+      ],
       "reason": null
     },
     {
@@ -353,13 +458,17 @@
       "edition_number": 25,
       "archive_index": null,
       "id": "artificial-engineering:edition-25",
+      "delivery_position": 68,
       "title": "Shifting Gears: From Scale to Context in AI",
       "published_at": "2025-10-19",
       "canonical_url": "https://www.linkedin.com/pulse/shifting-gears-from-scale-context-ai-andr%C3%A9-lindenberg-p0the",
       "markdown_path": "articles/artificial-engineering/2025-10-19-edition-25.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098790406819994",
+        "1562098793187516446"
+      ],
       "reason": null
     },
     {
@@ -367,13 +476,17 @@
       "edition_number": 26,
       "archive_index": null,
       "id": "artificial-engineering:edition-26",
+      "delivery_position": 70,
       "title": "Spec Engineering: When Intent Becomes the Source of Truth",
       "published_at": "2025-10-26",
       "canonical_url": "https://www.linkedin.com/pulse/specengineering-when-intent-becomes-sourceoftruth-andr%C3%A9-lindenberg-c5m7e",
       "markdown_path": "articles/artificial-engineering/2025-10-26-edition-26.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098836120277073",
+        "1562098837680816228"
+      ],
       "reason": null
     },
     {
@@ -381,13 +494,17 @@
       "edition_number": 27,
       "archive_index": null,
       "id": "artificial-engineering:edition-27",
+      "delivery_position": 72,
       "title": "Navigating Agentic Automation",
       "published_at": "2025-11-02",
       "canonical_url": "https://www.linkedin.com/pulse/navigating-agentic-automation-andr%C3%A9-lindenberg-cwroe",
       "markdown_path": "articles/artificial-engineering/2025-11-02-edition-27.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098878717755464",
+        "1562098880105939074"
+      ],
       "reason": null
     },
     {
@@ -395,13 +512,17 @@
       "edition_number": 28,
       "archive_index": null,
       "id": "artificial-engineering:edition-28",
+      "delivery_position": 73,
       "title": "Memory, Sovereignty, and Talent",
       "published_at": "2025-11-09",
       "canonical_url": "https://www.linkedin.com/pulse/memory-sovereignty-talent-andr%C3%A9-lindenberg-glyxe",
       "markdown_path": "articles/artificial-engineering/2025-11-09-edition-28.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098899362119700",
+        "1562098900716757012"
+      ],
       "reason": null
     },
     {
@@ -409,13 +530,17 @@
       "edition_number": 29,
       "archive_index": null,
       "id": "artificial-engineering:edition-29",
+      "delivery_position": 74,
       "title": "The Cost-Effective AI Future",
       "published_at": "2025-11-16",
       "canonical_url": "https://www.linkedin.com/pulse/navigating-complexity-ai-leadership-andr%C3%A9-lindenberg-xsqle",
       "markdown_path": "articles/artificial-engineering/2025-11-16-edition-29.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098922107699321",
+        "1562098923445821562"
+      ],
       "reason": null
     },
     {
@@ -423,13 +548,17 @@
       "edition_number": 30,
       "archive_index": null,
       "id": "artificial-engineering:edition-30",
+      "delivery_position": 76,
       "title": "AI-Driven Modernization: From Trustworthy Systems to Dynamic Knowledge Graphs",
       "published_at": "2025-11-23",
       "canonical_url": "https://www.linkedin.com/pulse/ai-driven-modernization-from-trustworthy-systems-andr%C3%A9-lindenberg-fodee",
       "markdown_path": "articles/artificial-engineering/2025-11-23-edition-30.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098968685449216",
+        "1562098970027888651"
+      ],
       "reason": null
     },
     {
@@ -437,13 +566,17 @@
       "edition_number": 31,
       "archive_index": null,
       "id": "artificial-engineering:edition-31",
+      "delivery_position": 78,
       "title": "AI-Driven Re-Engineering of IT-Systems",
       "published_at": "2025-11-30",
       "canonical_url": "https://www.linkedin.com/pulse/ai-driven-re-engineering-it-systems-andr%C3%A9-lindenberg-idn2e",
       "markdown_path": "articles/artificial-engineering/2025-11-30-edition-31.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099008879591465",
+        "1562099010024644678"
+      ],
       "reason": null
     },
     {
@@ -451,13 +584,17 @@
       "edition_number": 32,
       "archive_index": null,
       "id": "artificial-engineering:edition-32",
+      "delivery_position": 80,
       "title": "Navigating AI in Geo Intelligence",
       "published_at": "2025-12-07",
       "canonical_url": "https://www.linkedin.com/pulse/navigating-ai-geo-intelligence-andr%C3%A9-lindenberg-zewqe",
       "markdown_path": "articles/artificial-engineering/2025-12-07-edition-32.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099052286312490",
+        "1562099053725224971"
+      ],
       "reason": null
     },
     {
@@ -465,13 +602,17 @@
       "edition_number": 33,
       "archive_index": null,
       "id": "artificial-engineering:edition-33",
+      "delivery_position": 81,
       "title": "Enabling AI to Comprehend Legacy Code at Senior-Engineer Level",
       "published_at": "2025-12-14",
       "canonical_url": "https://www.linkedin.com/pulse/enabling-ai-comprehend-legacy-code-senior-engineer-level-lindenberg-upf8f",
       "markdown_path": "articles/artificial-engineering/2025-12-14-edition-33.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099074818252900",
+        "1562099075862495345"
+      ],
       "reason": null
     },
     {
@@ -479,13 +620,17 @@
       "edition_number": 34,
       "archive_index": null,
       "id": "artificial-engineering:edition-34",
+      "delivery_position": 83,
       "title": "Enabling AI‑Native Data Architectures, One Use Case at a Time",
       "published_at": "2025-12-21",
       "canonical_url": "https://www.linkedin.com/pulse/enabling-ainative-data-architectures-one-use-case-time-lindenberg-qiere",
       "markdown_path": "articles/artificial-engineering/2025-12-21-edition-34.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099119156101151",
+        "1562099120339030016"
+      ],
       "reason": null
     },
     {
@@ -493,13 +638,17 @@
       "edition_number": 35,
       "archive_index": null,
       "id": "artificial-engineering:edition-35",
+      "delivery_position": 84,
       "title": "Bridging Data and Decision: AI's Expanding Role in Software Engineering",
       "published_at": "2025-12-28",
       "canonical_url": "https://www.linkedin.com/pulse/bridging-data-decision-ais-expanding-role-software-andr%C3%A9-lindenberg-hva4f",
       "markdown_path": "articles/artificial-engineering/2025-12-28-edition-35.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099143596445848",
+        "1562099146838638642"
+      ],
       "reason": null
     },
     {
@@ -507,13 +656,17 @@
       "edition_number": 36,
       "archive_index": null,
       "id": "artificial-engineering:edition-36",
+      "delivery_position": 86,
       "title": "How Smaller AI Systems Are Quietly Winning",
       "published_at": "2026-01-04",
       "canonical_url": "https://www.linkedin.com/pulse/how-smaller-ai-systems-quietly-winning-andr%C3%A9-lindenberg-ebgwf",
       "markdown_path": "articles/artificial-engineering/2026-01-04-edition-36.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099191663165552",
+        "1562099193953386496"
+      ],
       "reason": null
     },
     {
@@ -521,13 +674,17 @@
       "edition_number": 37,
       "archive_index": null,
       "id": "artificial-engineering:edition-37",
+      "delivery_position": 88,
       "title": "Emerging Era of Recursive Language Models",
       "published_at": "2026-01-11",
       "canonical_url": "https://www.linkedin.com/pulse/emerging-era-recursive-language-models-andr%C3%A9-lindenberg-z86ff",
       "markdown_path": "articles/artificial-engineering/2026-01-11-edition-37.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099236022128751",
+        "1562099237452513360"
+      ],
       "reason": null
     },
     {
@@ -535,13 +692,17 @@
       "edition_number": 38,
       "archive_index": null,
       "id": "artificial-engineering:edition-38",
+      "delivery_position": 89,
       "title": "Unpacking AI Contextual Reasoning and Visualization Innovation",
       "published_at": "2026-01-18",
       "canonical_url": "https://www.linkedin.com/pulse/unpacking-ai-contextual-reasoning-visualization-andr%C3%A9-lindenberg-xwkjf",
       "markdown_path": "articles/artificial-engineering/2026-01-18-edition-38.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099258277101640",
+        "1562099260432846848"
+      ],
       "reason": null
     },
     {
@@ -549,13 +710,17 @@
       "edition_number": 39,
       "archive_index": null,
       "id": "artificial-engineering:edition-39",
+      "delivery_position": 91,
       "title": "Shaping AI Landscapes: From Memory Systems to Geospatial Solutions",
       "published_at": "2026-01-25",
       "canonical_url": "https://www.linkedin.com/pulse/shaping-ai-landscapes-from-memory-systems-geospatial-andr%C3%A9-lindenberg-xrasf",
       "markdown_path": "articles/artificial-engineering/2026-01-25-edition-39.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099304393347092",
+        "1562099314669523148"
+      ],
       "reason": null
     },
     {
@@ -563,13 +728,17 @@
       "edition_number": 40,
       "archive_index": null,
       "id": "artificial-engineering:edition-40",
+      "delivery_position": 93,
       "title": "Why the Most Powerful LLMs Can’t Rewrite That Old ERP (Yet)",
       "published_at": "2026-02-01",
       "canonical_url": "https://www.linkedin.com/pulse/why-most-powerful-llms-cant-rewrite-old-erp-yet-andr%C3%A9-lindenberg-jjwsf",
       "markdown_path": "articles/artificial-engineering/2026-02-01-edition-40.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099354813341706",
+        "1562099356205850644"
+      ],
       "reason": null
     },
     {
@@ -577,13 +746,17 @@
       "edition_number": 41,
       "archive_index": null,
       "id": "artificial-engineering:edition-41",
+      "delivery_position": 94,
       "title": "Evals: The Foundation of Reliable AI Agents",
       "published_at": "2026-02-07",
       "canonical_url": "https://www.linkedin.com/pulse/evals-foundation-reliable-ai-agents-andr%C3%A9-lindenberg-tcgoe",
       "markdown_path": "articles/artificial-engineering/2026-02-07-edition-41.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099376095109260",
+        "1562099377122574397"
+      ],
       "reason": null
     },
     {
@@ -591,13 +764,17 @@
       "edition_number": 42,
       "archive_index": null,
       "id": "artificial-engineering:edition-42",
+      "delivery_position": 96,
       "title": "When AI Meets the Backend",
       "published_at": "2026-02-14",
       "canonical_url": "https://www.linkedin.com/pulse/when-ai-meets-backend-andr%C3%A9-lindenberg-sotuf",
       "markdown_path": "articles/artificial-engineering/2026-02-14-edition-42.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099416431599637",
+        "1562099417329176597"
+      ],
       "reason": null
     },
     {
@@ -605,13 +782,17 @@
       "edition_number": 43,
       "archive_index": null,
       "id": "artificial-engineering:edition-43",
+      "delivery_position": 97,
       "title": "The Ontology Is the Moat",
       "published_at": "2026-02-22",
       "canonical_url": "https://www.linkedin.com/pulse/ontology-moat-andr%C3%A9-lindenberg-jpowf",
       "markdown_path": "articles/artificial-engineering/2026-02-22-edition-43.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099436878831629",
+        "1562099438267269232"
+      ],
       "reason": null
     },
     {
@@ -619,13 +800,17 @@
       "edition_number": 44,
       "archive_index": null,
       "id": "artificial-engineering:edition-44",
+      "delivery_position": 98,
       "title": "From Solo Agent to Parallel Fleet",
       "published_at": "2026-03-01",
       "canonical_url": "https://www.linkedin.com/pulse/from-solo-agent-parallel-fleet-andr%C3%A9-lindenberg-ncspf",
       "markdown_path": "articles/artificial-engineering/2026-03-01-edition-44.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099459809218641",
+        "1562099461230960820"
+      ],
       "reason": null
     },
     {
@@ -633,13 +818,17 @@
       "edition_number": 45,
       "archive_index": null,
       "id": "artificial-engineering:edition-45",
+      "delivery_position": 99,
       "title": "Closing the Context Gap: Why Ontologies Are the Missing Layer in AI Systems",
       "published_at": "2026-03-08",
       "canonical_url": "https://www.linkedin.com/pulse/closing-context-gap-why-ontologies-missing-layer-ai-andr%C3%A9-lindenberg-2bhef",
       "markdown_path": "articles/artificial-engineering/2026-03-08-edition-45.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099486623400037",
+        "1562099488607314031"
+      ],
       "reason": null
     },
     {
@@ -647,13 +836,17 @@
       "edition_number": 46,
       "archive_index": null,
       "id": "artificial-engineering:edition-46",
+      "delivery_position": 100,
       "title": "The Memory Problem No One Talks About: Why AI Agents Need Two Clocks",
       "published_at": "2026-03-14",
       "canonical_url": "https://www.linkedin.com/pulse/memory-problem-one-talks-why-ai-agents-need-two-andr%C3%A9-lindenberg-spjvf",
       "markdown_path": "articles/artificial-engineering/2026-03-14-edition-46.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099509323112508",
+        "1562099510522675324"
+      ],
       "reason": null
     },
     {
@@ -661,13 +854,17 @@
       "edition_number": 47,
       "archive_index": null,
       "id": "artificial-engineering:edition-47",
+      "delivery_position": 102,
       "title": "Minimize Surprise, Maximize Agency: What Active Inference Teaches Us About Building AI Agents That Remember, Forget, and Evolve",
       "published_at": "2026-03-21",
       "canonical_url": "https://www.linkedin.com/pulse/minimize-surprise-maximize-agency-what-active-teaches-lindenberg-q39tf",
       "markdown_path": "articles/artificial-engineering/2026-03-21-edition-47.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099548191719577",
+        "1562099549315530894"
+      ],
       "reason": null
     },
     {
@@ -675,13 +872,17 @@
       "edition_number": 48,
       "archive_index": null,
       "id": "artificial-engineering:edition-48",
+      "delivery_position": 103,
       "title": "Context Cores and the End of the Memento Nightmare: Why Agent Memory Needs Graphs, Provenance, and Portability",
       "published_at": "2026-03-28",
       "canonical_url": "https://www.linkedin.com/pulse/context-cores-end-memento-nightmare-why-agent-memory-needs-andr%C3%A9-r1q1f",
       "markdown_path": "articles/artificial-engineering/2026-03-28-edition-48.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099572983988295",
+        "1562099574221308004"
+      ],
       "reason": null
     },
     {
@@ -689,13 +890,17 @@
       "edition_number": 49,
       "archive_index": null,
       "id": "artificial-engineering:edition-49",
+      "delivery_position": 104,
       "title": "Why Production AI Needs Engineering Discipline, Not More Autonomy",
       "published_at": "2026-04-04",
       "canonical_url": "https://www.linkedin.com/pulse/why-production-ai-needs-engineering-discipline-more-andr%C3%A9-lindenberg-av02f",
       "markdown_path": "articles/artificial-engineering/2026-04-04-edition-49.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099593867690004",
+        "1562099595650146377"
+      ],
       "reason": null
     },
     {
@@ -703,13 +908,18 @@
       "edition_number": 50,
       "archive_index": null,
       "id": "artificial-engineering:edition-50",
+      "delivery_position": 105,
       "title": "MemPalace, Milla Jovovich, and the 48-Hour Audit: When Open Source Fact-Checks Itself",
       "published_at": "2026-04-11",
       "canonical_url": "https://www.linkedin.com/pulse/mempalace-milla-jovovich-48-hour-audit-when-open-andr%C3%A9-lindenberg-1akvf",
       "markdown_path": "articles/artificial-engineering/2026-04-11-edition-50.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099615812292820",
+        "1562099617158406357",
+        "1562099618546712668"
+      ],
       "reason": null
     },
     {
@@ -717,13 +927,18 @@
       "edition_number": 51,
       "archive_index": null,
       "id": "artificial-engineering:edition-51",
+      "delivery_position": 106,
       "title": "From Consulting Decks to Slash Commands: Enterprise Architecture Goes Agent-Native",
       "published_at": "2026-04-18",
       "canonical_url": "https://www.linkedin.com/pulse/from-consulting-decks-slash-commands-enterprise-goes-andr%C3%A9-lindenberg-sifjf",
       "markdown_path": "articles/artificial-engineering/2026-04-18-edition-51.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099639677747232",
+        "1562099640969470015",
+        "1562099642299187200"
+      ],
       "reason": null
     },
     {
@@ -731,13 +946,19 @@
       "edition_number": 52,
       "archive_index": null,
       "id": "artificial-engineering:edition-52",
+      "delivery_position": 108,
       "title": "How to Ship a Token-Efficient Coding Agent to Your Team",
       "published_at": "2026-04-25",
       "canonical_url": "https://www.linkedin.com/pulse/how-ship-token-efficient-coding-agent-your-team-andr%C3%A9-lindenberg-nvirf",
       "markdown_path": "articles/artificial-engineering/2026-04-25-edition-52.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099682484818012",
+        "1562099683927793688",
+        "1562099685517164634",
+        "1562099686460882984"
+      ],
       "reason": null
     },
     {
@@ -745,13 +966,17 @@
       "edition_number": 53,
       "archive_index": null,
       "id": "artificial-engineering:edition-53",
+      "delivery_position": 109,
       "title": "Agentic Primitives: Six Levers of Agent Sovereignty",
       "published_at": "2026-05-02",
       "canonical_url": "https://www.linkedin.com/pulse/agentic-primitives-six-levers-agent-sovereignty-andr%C3%A9-lindenberg-vkn3f",
       "markdown_path": "articles/artificial-engineering/2026-05-02-edition-53.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099706002415646",
+        "1562099707696906352"
+      ],
       "reason": null
     },
     {
@@ -759,13 +984,17 @@
       "edition_number": 54,
       "archive_index": null,
       "id": "artificial-engineering:edition-54",
+      "delivery_position": 110,
       "title": "Why Agents Need a World Model",
       "published_at": "2026-05-09",
       "canonical_url": "https://www.linkedin.com/pulse/why-agents-need-world-model-andr%C3%A9-lindenberg-9cc6e",
       "markdown_path": "articles/artificial-engineering/2026-05-09-edition-54.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099727691153570",
+        "1562099729121288282"
+      ],
       "reason": null
     },
     {
@@ -773,13 +1002,17 @@
       "edition_number": 55,
       "archive_index": null,
       "id": "artificial-engineering:edition-55",
+      "delivery_position": 111,
       "title": "The Substrate Shrinks: When 31GB of RAG Becomes 4GB on a Laptop",
       "published_at": "2026-05-16",
       "canonical_url": "https://www.linkedin.com/pulse/substrate-shrinks-when-31gb-rag-becomes-4gb-laptop-andr%C3%A9-lindenberg-p2ngf",
       "markdown_path": "articles/artificial-engineering/2026-05-16-edition-55.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099749233098756",
+        "1562099751686512680"
+      ],
       "reason": null
     },
     {
@@ -787,13 +1020,18 @@
       "edition_number": 56,
       "archive_index": null,
       "id": "artificial-engineering:edition-56",
+      "delivery_position": 112,
       "title": "The Log Is the Agent: Event-Sourced Architectures Take the Stack",
       "published_at": "2026-05-23",
       "canonical_url": "https://www.linkedin.com/pulse/log-agent-event-sourced-architectures-take-stack-andr%C3%A9-lindenberg-p98af",
       "markdown_path": "articles/artificial-engineering/2026-05-23-edition-56.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099771496468510",
+        "1562099772599574584",
+        "1562099774306525295"
+      ],
       "reason": null
     },
     {
@@ -801,13 +1039,17 @@
       "edition_number": 57,
       "archive_index": null,
       "id": "artificial-engineering:edition-57",
+      "delivery_position": 113,
       "title": "The Map Is Only the Surface",
       "published_at": "2026-05-30",
       "canonical_url": "https://www.linkedin.com/pulse/map-only-surface-andr%C3%A9-lindenberg-bp87f",
       "markdown_path": "articles/artificial-engineering/2026-05-30-edition-57.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099794191716513",
+        "1562099795248681000"
+      ],
       "reason": null
     },
     {
@@ -815,13 +1057,18 @@
       "edition_number": 58,
       "archive_index": null,
       "id": "artificial-engineering:edition-58",
+      "delivery_position": 114,
       "title": "The IT Modernization Loop Needs a Score",
       "published_at": "2026-06-06",
       "canonical_url": "https://www.linkedin.com/pulse/modernization-loop-needs-score-andr%C3%A9-lindenberg-6fwqf",
       "markdown_path": "articles/artificial-engineering/2026-06-06-edition-58.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099815444389948",
+        "1562099816752750634",
+        "1562099817818226808"
+      ],
       "reason": null
     },
     {
@@ -829,13 +1076,18 @@
       "edition_number": 59,
       "archive_index": null,
       "id": "artificial-engineering:edition-59",
+      "delivery_position": 115,
       "title": "Own the Harness, Change the Model Equation",
       "published_at": "2026-06-13",
       "canonical_url": "https://www.linkedin.com/pulse/own-harness-change-model-equation-andr%C3%A9-lindenberg-dueze",
       "markdown_path": "articles/artificial-engineering/2026-06-13-edition-59.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099837334192265",
+        "1562099838798274652",
+        "1562099840249368738"
+      ],
       "reason": null
     },
     {
@@ -843,13 +1095,18 @@
       "edition_number": 60,
       "archive_index": null,
       "id": "artificial-engineering:edition-60",
+      "delivery_position": 116,
       "title": "Memory Should Change Future Behavior",
       "published_at": "2026-06-20",
       "canonical_url": "https://www.linkedin.com/pulse/memory-should-change-future-behavior-andr%C3%A9-lindenberg-genve",
       "markdown_path": "articles/artificial-engineering/2026-06-20-edition-60.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099860516245606",
+        "1562099862231715950",
+        "1562099862990753886"
+      ],
       "reason": null
     },
     {
@@ -857,13 +1114,18 @@
       "edition_number": 61,
       "archive_index": null,
       "id": "artificial-engineering:edition-61",
+      "delivery_position": 117,
       "title": "From Prompts to Loops: The Next Step of Agent Engineering",
       "published_at": "2026-06-27",
       "canonical_url": "https://www.linkedin.com/pulse/from-prompts-loops-next-step-agent-engineering-andr%C3%A9-lindenberg-wnqre",
       "markdown_path": "articles/artificial-engineering/2026-06-27-edition-61.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099886466408539",
+        "1562099887858913381",
+        "1562099888781656146"
+      ],
       "reason": null
     },
     {
@@ -871,13 +1133,18 @@
       "edition_number": 62,
       "archive_index": null,
       "id": "artificial-engineering:edition-62",
+      "delivery_position": 118,
       "title": "Plan the Loop Before You Build It",
       "published_at": "2026-07-04",
       "canonical_url": "https://www.linkedin.com/pulse/plan-loop-before-you-build-andr%C3%A9-lindenberg-y0t1e",
       "markdown_path": "articles/artificial-engineering/2026-07-04-edition-62.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099912974405707",
+        "1562099914236891207",
+        "1562099915797172295"
+      ],
       "reason": null
     },
     {
@@ -885,13 +1152,17 @@
       "edition_number": 63,
       "archive_index": null,
       "id": "artificial-engineering:edition-63",
+      "delivery_position": 119,
       "title": "Memory the Model Isn’t Allowed to Write",
       "published_at": "2026-07-11",
       "canonical_url": "https://www.linkedin.com/pulse/memory-model-isnt-allowed-write-andr%C3%A9-lindenberg-mqjse",
       "markdown_path": "articles/artificial-engineering/2026-07-11-edition-63.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099936185684078",
+        "1562099936907239575"
+      ],
       "reason": null
     },
     {
@@ -899,13 +1170,17 @@
       "edition_number": 64,
       "archive_index": null,
       "id": "artificial-engineering:edition-64",
+      "delivery_position": 120,
       "title": "More Machines, Slower Model, Still Worth It",
       "published_at": "2026-07-18",
       "canonical_url": "https://www.linkedin.com/pulse/more-machines-slower-model-still-worth-andr%C3%A9-lindenberg-isufe",
       "markdown_path": "articles/artificial-engineering/2026-07-18-edition-64.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099962702069833",
+        "1562099965105405952"
+      ],
       "reason": null
     },
     {
@@ -913,13 +1188,16 @@
       "edition_number": null,
       "archive_index": 1,
       "id": "elevate:growth-mindset-vs-fixed-mindset",
+      "delivery_position": 1,
       "title": "Growth mindset vs. fixed mindset",
       "published_at": "2023-11-21",
       "canonical_url": "https://addyo.substack.com/p/growth-mindset-vs-fixed-mindset",
       "markdown_path": "articles/elevate/2023-11-21-growth-mindset-vs-fixed-mindset.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562097345414430731"
+      ],
       "reason": null
     },
     {
@@ -927,13 +1205,16 @@
       "edition_number": null,
       "archive_index": 2,
       "id": "elevate:dont-expect-to-be-motivated-everyday",
+      "delivery_position": 2,
       "title": "Don't expect to be motivated everyday.",
       "published_at": "2023-11-25",
       "canonical_url": "https://addyo.substack.com/p/dont-expect-to-be-motivated-everyday",
       "markdown_path": "articles/elevate/2023-11-25-dont-expect-to-be-motivated-everyday.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562097369841934477"
+      ],
       "reason": null
     },
     {
@@ -941,13 +1222,16 @@
       "edition_number": null,
       "archive_index": 3,
       "id": "elevate:effective-software-engineers",
+      "delivery_position": 3,
       "title": "What makes a software engineer effective?",
       "published_at": "2023-11-29",
       "canonical_url": "https://addyo.substack.com/p/effective-software-engineers",
       "markdown_path": "articles/elevate/2023-11-29-effective-software-engineers.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562097389777592421"
+      ],
       "reason": null
     },
     {
@@ -955,6 +1239,7 @@
       "edition_number": null,
       "archive_index": 4,
       "id": "elevate:bonus-book-and-sneak-peek-for-paid",
+      "delivery_position": null,
       "title": "Bonus book and sneak peek for Paid Subscribers",
       "published_at": "2023-12-03",
       "canonical_url": "https://addyo.substack.com/p/bonus-book-and-sneak-peek-for-paid",
@@ -969,6 +1254,7 @@
       "edition_number": null,
       "archive_index": 5,
       "id": "elevate:leading-effective-teams",
+      "delivery_position": null,
       "title": "Leading Effective Teams",
       "published_at": "2023-12-06",
       "canonical_url": "https://addyo.substack.com/p/leading-effective-teams",
@@ -983,13 +1269,16 @@
       "edition_number": null,
       "archive_index": 6,
       "id": "elevate:it-takes-23-mins-to-recover-after",
+      "delivery_position": 4,
       "title": "It takes 23 mins to recover after an interruption",
       "published_at": "2023-12-07",
       "canonical_url": "https://addyo.substack.com/p/it-takes-23-mins-to-recover-after",
       "markdown_path": "articles/elevate/2023-12-07-it-takes-23-mins-to-recover-after.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562097409277034596"
+      ],
       "reason": null
     },
     {
@@ -997,6 +1286,7 @@
       "edition_number": null,
       "archive_index": 7,
       "id": "elevate:drive-effective-results-outcomes",
+      "delivery_position": null,
       "title": "Drive Effective Results: Outcomes vs. Outputs",
       "published_at": "2023-12-11",
       "canonical_url": "https://addyo.substack.com/p/drive-effective-results-outcomes",
@@ -1011,13 +1301,16 @@
       "edition_number": null,
       "archive_index": 8,
       "id": "elevate:change-what-you-do-to-change-where",
+      "delivery_position": 5,
       "title": "Change what you do, to change where you go.",
       "published_at": "2023-12-16",
       "canonical_url": "https://addyo.substack.com/p/change-what-you-do-to-change-where",
       "markdown_path": "articles/elevate/2023-12-16-change-what-you-do-to-change-where.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562097430634299453"
+      ],
       "reason": null
     },
     {
@@ -1025,6 +1318,7 @@
       "edition_number": null,
       "archive_index": 9,
       "id": "elevate:conquering-conflicting-priorities",
+      "delivery_position": null,
       "title": "Conquering conflicting priorities",
       "published_at": "2023-12-17",
       "canonical_url": "https://addyo.substack.com/p/conquering-conflicting-priorities",
@@ -1039,13 +1333,16 @@
       "edition_number": null,
       "archive_index": 10,
       "id": "elevate:good-code-is-like-a-love-letter-to",
+      "delivery_position": 6,
       "title": "Good code is like a love letter to the next developer who will maintain it.",
       "published_at": "2023-12-21",
       "canonical_url": "https://addyo.substack.com/p/good-code-is-like-a-love-letter-to",
       "markdown_path": "articles/elevate/2023-12-21-good-code-is-like-a-love-letter-to.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562097450527887411"
+      ],
       "reason": null
     },
     {
@@ -1053,13 +1350,16 @@
       "edition_number": null,
       "archive_index": 11,
       "id": "elevate:first-do-it-then-do-it-right-then",
+      "delivery_position": 7,
       "title": "First do it, then do it right, then do it better.",
       "published_at": "2023-12-24",
       "canonical_url": "https://addyo.substack.com/p/first-do-it-then-do-it-right-then",
       "markdown_path": "articles/elevate/2023-12-24-first-do-it-then-do-it-right-then.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562097472262774916"
+      ],
       "reason": null
     },
     {
@@ -1067,13 +1367,16 @@
       "edition_number": null,
       "archive_index": 12,
       "id": "elevate:soft-skills-books-for-developers",
+      "delivery_position": 8,
       "title": "Soft Skills books for developers",
       "published_at": "2023-12-26",
       "canonical_url": "https://addyo.substack.com/p/soft-skills-books-for-developers",
       "markdown_path": "articles/elevate/2023-12-26-soft-skills-books-for-developers.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562097498355404840"
+      ],
       "reason": null
     },
     {
@@ -1081,6 +1384,7 @@
       "edition_number": null,
       "archive_index": 13,
       "id": "elevate:setting-a-team-vision-mission-and",
+      "delivery_position": null,
       "title": "Setting a team vision, mission, and strategy",
       "published_at": "2023-12-28",
       "canonical_url": "https://addyo.substack.com/p/setting-a-team-vision-mission-and",
@@ -1095,13 +1399,16 @@
       "edition_number": null,
       "archive_index": 14,
       "id": "elevate:reduce-the-gap-between-idea-and-execution",
+      "delivery_position": 9,
       "title": "Reduce the gap between idea and execution",
       "published_at": "2023-12-29",
       "canonical_url": "https://addyo.substack.com/p/reduce-the-gap-between-idea-and-execution",
       "markdown_path": "articles/elevate/2023-12-29-reduce-the-gap-between-idea-and-execution.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562097523806703690"
+      ],
       "reason": null
     },
     {
@@ -1109,13 +1416,16 @@
       "edition_number": null,
       "archive_index": 15,
       "id": "elevate:23-lessons-in-2023",
+      "delivery_position": 10,
       "title": "23 lessons in 2023",
       "published_at": "2023-12-30",
       "canonical_url": "https://addyo.substack.com/p/23-lessons-in-2023",
       "markdown_path": "articles/elevate/2023-12-30-23-lessons-in-2023.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562097546392764496"
+      ],
       "reason": null
     },
     {
@@ -1123,6 +1433,7 @@
       "edition_number": null,
       "archive_index": 16,
       "id": "elevate:possibilities-if-you-ask-for-what",
+      "delivery_position": null,
       "title": "Possibilities if you ask for what you want.",
       "published_at": "2024-01-02",
       "canonical_url": "https://addyo.substack.com/p/possibilities-if-you-ask-for-what",
@@ -1137,13 +1448,16 @@
       "edition_number": null,
       "archive_index": 17,
       "id": "elevate:stretch-yourself-from-time-to-time",
+      "delivery_position": 11,
       "title": "Stretch yourself from time to time.",
       "published_at": "2024-01-05",
       "canonical_url": "https://addyo.substack.com/p/stretch-yourself-from-time-to-time",
       "markdown_path": "articles/elevate/2024-01-05-stretch-yourself-from-time-to-time.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562097568182304812"
+      ],
       "reason": null
     },
     {
@@ -1151,13 +1465,16 @@
       "edition_number": null,
       "archive_index": 18,
       "id": "elevate:effective-engineering-managers",
+      "delivery_position": 12,
       "title": "Effective engineering managers",
       "published_at": "2024-01-09",
       "canonical_url": "https://addyo.substack.com/p/effective-engineering-managers",
       "markdown_path": "articles/elevate/2024-01-09-effective-engineering-managers.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562097588356784291"
+      ],
       "reason": null
     },
     {
@@ -1165,13 +1482,16 @@
       "edition_number": null,
       "archive_index": 19,
       "id": "elevate:leading-effective-engineering-teams",
+      "delivery_position": 13,
       "title": "Leading Effective Engineering Teams",
       "published_at": "2024-01-18",
       "canonical_url": "https://addyo.substack.com/p/leading-effective-engineering-teams",
       "markdown_path": "articles/elevate/2024-01-18-leading-effective-engineering-teams.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562097609454391336"
+      ],
       "reason": null
     },
     {
@@ -1179,13 +1499,16 @@
       "edition_number": null,
       "archive_index": 20,
       "id": "elevate:consistency-matters",
+      "delivery_position": 14,
       "title": "Consistency matters.",
       "published_at": "2024-01-28",
       "canonical_url": "https://addyo.substack.com/p/consistency-matters",
       "markdown_path": "articles/elevate/2024-01-28-consistency-matters.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562097629926658068"
+      ],
       "reason": null
     },
     {
@@ -1193,13 +1516,16 @@
       "edition_number": null,
       "archive_index": 21,
       "id": "elevate:stick-to-boring-architecture-for",
+      "delivery_position": 15,
       "title": "Stick to boring architecture for as long as possible.",
       "published_at": "2024-02-19",
       "canonical_url": "https://addyo.substack.com/p/stick-to-boring-architecture-for",
       "markdown_path": "articles/elevate/2024-02-19-stick-to-boring-architecture-for.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562097649279176704"
+      ],
       "reason": null
     },
     {
@@ -1207,13 +1533,16 @@
       "edition_number": null,
       "archive_index": 22,
       "id": "elevate:the-debuggers-toolkit",
+      "delivery_position": 16,
       "title": "The Debugger's Toolkit",
       "published_at": "2024-04-09",
       "canonical_url": "https://addyo.substack.com/p/the-debuggers-toolkit",
       "markdown_path": "articles/elevate/2024-04-09-the-debuggers-toolkit.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562097670066147369"
+      ],
       "reason": null
     },
     {
@@ -1221,13 +1550,16 @@
       "edition_number": null,
       "archive_index": 23,
       "id": "elevate:conquering-imposter-syndrome",
+      "delivery_position": 17,
       "title": "Conquering Imposter Syndrome",
       "published_at": "2024-04-30",
       "canonical_url": "https://addyo.substack.com/p/conquering-imposter-syndrome",
       "markdown_path": "articles/elevate/2024-04-30-conquering-imposter-syndrome.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562097689171337351"
+      ],
       "reason": null
     },
     {
@@ -1235,13 +1567,16 @@
       "edition_number": null,
       "archive_index": 24,
       "id": "elevate:10-lessons-from-12-years-at-google",
+      "delivery_position": 18,
       "title": "10 lessons from 12 years at Google",
       "published_at": "2024-05-13",
       "canonical_url": "https://addyo.substack.com/p/10-lessons-from-12-years-at-google",
       "markdown_path": "articles/elevate/2024-05-13-10-lessons-from-12-years-at-google.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562097709312381011"
+      ],
       "reason": null
     },
     {
@@ -1249,13 +1584,16 @@
       "edition_number": null,
       "archive_index": 25,
       "id": "elevate:focus-on-what-you-can-control",
+      "delivery_position": 19,
       "title": "Focus on what you can control",
       "published_at": "2024-06-24",
       "canonical_url": "https://addyo.substack.com/p/focus-on-what-you-can-control",
       "markdown_path": "articles/elevate/2024-06-24-focus-on-what-you-can-control.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562097729969201273"
+      ],
       "reason": null
     },
     {
@@ -1263,13 +1601,16 @@
       "edition_number": null,
       "archive_index": 26,
       "id": "elevate:comparison-is-the-thief-of-joy",
+      "delivery_position": 20,
       "title": "Comparison is the thief of joy",
       "published_at": "2024-08-14",
       "canonical_url": "https://addyo.substack.com/p/comparison-is-the-thief-of-joy",
       "markdown_path": "articles/elevate/2024-08-14-comparison-is-the-thief-of-joy.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562097754136649849"
+      ],
       "reason": null
     },
     {
@@ -1277,13 +1618,16 @@
       "edition_number": null,
       "archive_index": 27,
       "id": "elevate:there-is-no-right-time-just-time",
+      "delivery_position": 21,
       "title": "There is no right time. Just time and what you do with it.",
       "published_at": "2024-08-23",
       "canonical_url": "https://addyo.substack.com/p/there-is-no-right-time-just-time",
       "markdown_path": "articles/elevate/2024-08-23-there-is-no-right-time-just-time.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562097773556269189"
+      ],
       "reason": null
     },
     {
@@ -1291,13 +1635,16 @@
       "edition_number": null,
       "archive_index": 28,
       "id": "elevate:user-centric-engineering",
+      "delivery_position": 22,
       "title": "User-centric engineering.",
       "published_at": "2024-11-15",
       "canonical_url": "https://addyo.substack.com/p/user-centric-engineering",
       "markdown_path": "articles/elevate/2024-11-15-user-centric-engineering.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562097796872671313"
+      ],
       "reason": null
     },
     {
@@ -1305,13 +1652,16 @@
       "edition_number": null,
       "archive_index": 29,
       "id": "elevate:the-70-problem-hard-truths-about",
+      "delivery_position": 23,
       "title": "The 70% problem: Hard truths about AI-assisted coding",
       "published_at": "2024-12-04",
       "canonical_url": "https://addyo.substack.com/p/the-70-problem-hard-truths-about",
       "markdown_path": "articles/elevate/2024-12-04-the-70-problem-hard-truths-about.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562097816367669268"
+      ],
       "reason": null
     },
     {
@@ -1319,13 +1669,16 @@
       "edition_number": null,
       "archive_index": 30,
       "id": "elevate:future-proofing-your-software-engineering",
+      "delivery_position": 24,
       "title": "Future-proofing your Software Engineering career",
       "published_at": "2024-12-23",
       "canonical_url": "https://addyo.substack.com/p/future-proofing-your-software-engineering",
       "markdown_path": "articles/elevate/2024-12-23-future-proofing-your-software-engineering.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562097836319838291"
+      ],
       "reason": null
     },
     {
@@ -1333,13 +1686,16 @@
       "edition_number": null,
       "archive_index": 31,
       "id": "elevate:ai-driven-prototyping-v0-bolt-and",
+      "delivery_position": 25,
       "title": "AI-Driven Prototyping: v0, Bolt, and Lovable Compared",
       "published_at": "2025-01-11",
       "canonical_url": "https://addyo.substack.com/p/ai-driven-prototyping-v0-bolt-and",
       "markdown_path": "articles/elevate/2025-01-11-ai-driven-prototyping-v0-bolt-and.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562097856398237817"
+      ],
       "reason": null
     },
     {
@@ -1347,13 +1703,16 @@
       "edition_number": null,
       "archive_index": 32,
       "id": "elevate:why-i-use-cline-for-ai-engineering",
+      "delivery_position": 26,
       "title": "Why I use Cline for AI Engineering",
       "published_at": "2025-01-30",
       "canonical_url": "https://addyo.substack.com/p/why-i-use-cline-for-ai-engineering",
       "markdown_path": "articles/elevate/2025-01-30-why-i-use-cline-for-ai-engineering.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562097876232966237"
+      ],
       "reason": null
     },
     {
@@ -1361,13 +1720,16 @@
       "edition_number": null,
       "archive_index": 33,
       "id": "elevate:personal-software-the-unbundling",
+      "delivery_position": 27,
       "title": "Personal Software: The Unbundling of the Programmer?",
       "published_at": "2025-02-09",
       "canonical_url": "https://addyo.substack.com/p/personal-software-the-unbundling",
       "markdown_path": "articles/elevate/2025-02-09-personal-software-the-unbundling.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562097897346961558"
+      ],
       "reason": null
     },
     {
@@ -1375,13 +1737,16 @@
       "edition_number": null,
       "archive_index": 34,
       "id": "elevate:speech-to-code-vibe-coding-with-voice",
+      "delivery_position": 28,
       "title": "Speech-to-Code: Vibe Coding with Voice",
       "published_at": "2025-02-28",
       "canonical_url": "https://addyo.substack.com/p/speech-to-code-vibe-coding-with-voice",
       "markdown_path": "articles/elevate/2025-02-28-speech-to-code-vibe-coding-with-voice.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562097918415081533"
+      ],
       "reason": null
     },
     {
@@ -1389,13 +1754,16 @@
       "edition_number": null,
       "archive_index": 35,
       "id": "elevate:applied-software-engineering-at-google",
+      "delivery_position": 29,
       "title": "Applied \"Software Engineering at Google\"",
       "published_at": "2025-03-06",
       "canonical_url": "https://addyo.substack.com/p/applied-software-engineering-at-google",
       "markdown_path": "articles/elevate/2025-03-06-applied-software-engineering-at-google.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562097941429231706"
+      ],
       "reason": null
     },
     {
@@ -1403,13 +1771,16 @@
       "edition_number": null,
       "archive_index": 36,
       "id": "elevate:beyond-the-70-maximizing-the-human",
+      "delivery_position": 30,
       "title": "Beyond the 70%: Maximizing the human 30% of AI-assisted coding",
       "published_at": "2025-03-13",
       "canonical_url": "https://addyo.substack.com/p/beyond-the-70-maximizing-the-human",
       "markdown_path": "articles/elevate/2025-03-13-beyond-the-70-maximizing-the-human.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562097966586662935"
+      ],
       "reason": null
     },
     {
@@ -1417,13 +1788,16 @@
       "edition_number": null,
       "archive_index": 37,
       "id": "elevate:leading-effective-engineering-teams-c9b",
+      "delivery_position": 31,
       "title": "Leading Effective Engineering Teams in the Age of GenAI",
       "published_at": "2025-03-19",
       "canonical_url": "https://addyo.substack.com/p/leading-effective-engineering-teams-c9b",
       "markdown_path": "articles/elevate/2025-03-19-leading-effective-engineering-teams-c9b.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562097995674288168"
+      ],
       "reason": null
     },
     {
@@ -1431,13 +1805,16 @@
       "edition_number": null,
       "archive_index": 38,
       "id": "elevate:mcp-what-it-is-and-why-it-matters",
+      "delivery_position": 32,
       "title": "MCP: What It Is and Why It Matters",
       "published_at": "2025-03-27",
       "canonical_url": "https://addyo.substack.com/p/mcp-what-it-is-and-why-it-matters",
       "markdown_path": "articles/elevate/2025-03-27-mcp-what-it-is-and-why-it-matters.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098021406343263"
+      ],
       "reason": null
     },
     {
@@ -1445,13 +1822,16 @@
       "edition_number": null,
       "archive_index": 39,
       "id": "elevate:vibe-coding-revolution-or-reckless",
+      "delivery_position": 33,
       "title": "Vibe Coding: Revolution or Reckless Abandon?",
       "published_at": "2025-04-03",
       "canonical_url": "https://addyo.substack.com/p/vibe-coding-revolution-or-reckless",
       "markdown_path": "articles/elevate/2025-04-03-vibe-coding-revolution-or-reckless.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098041517768745"
+      ],
       "reason": null
     },
     {
@@ -1459,13 +1839,16 @@
       "edition_number": null,
       "archive_index": 40,
       "id": "elevate:what-are-ai-agents-why-do-they-matter",
+      "delivery_position": 34,
       "title": "What are AI Agents? why do they matter?",
       "published_at": "2025-04-11",
       "canonical_url": "https://addyo.substack.com/p/what-are-ai-agents-why-do-they-matter",
       "markdown_path": "articles/elevate/2025-04-11-what-are-ai-agents-why-do-they-matter.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098063517155518"
+      ],
       "reason": null
     },
     {
@@ -1473,13 +1856,16 @@
       "edition_number": null,
       "archive_index": 41,
       "id": "elevate:vibe-coding-is-not-an-excuse-for",
+      "delivery_position": 35,
       "title": "Vibe Coding is not an excuse for low-quality work",
       "published_at": "2025-04-18",
       "canonical_url": "https://addyo.substack.com/p/vibe-coding-is-not-an-excuse-for",
       "markdown_path": "articles/elevate/2025-04-18-vibe-coding-is-not-an-excuse-for.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098091207827476"
+      ],
       "reason": null
     },
     {
@@ -1487,13 +1873,16 @@
       "edition_number": null,
       "archive_index": 42,
       "id": "elevate:avoiding-skill-atrophy-in-the-age",
+      "delivery_position": 36,
       "title": "Avoiding Skill Atrophy in the Age of AI",
       "published_at": "2025-04-25",
       "canonical_url": "https://addyo.substack.com/p/avoiding-skill-atrophy-in-the-age",
       "markdown_path": "articles/elevate/2025-04-25-avoiding-skill-atrophy-in-the-age.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098111227363478"
+      ],
       "reason": null
     },
     {
@@ -1501,13 +1890,16 @@
       "edition_number": null,
       "archive_index": 43,
       "id": "elevate:ai-wont-kill-junior-devs-but-your",
+      "delivery_position": 37,
       "title": "AI Won't Kill Junior Devs - But Your Hiring Strategy Might",
       "published_at": "2025-05-10",
       "canonical_url": "https://addyo.substack.com/p/ai-wont-kill-junior-devs-but-your",
       "markdown_path": "articles/elevate/2025-05-10-ai-wont-kill-junior-devs-but-your.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098131716276274"
+      ],
       "reason": null
     },
     {
@@ -1515,13 +1907,16 @@
       "edition_number": null,
       "archive_index": 44,
       "id": "elevate:the-prompt-engineering-playbook-for",
+      "delivery_position": 40,
       "title": "The Prompt Engineering Playbook for Programmers",
       "published_at": "2025-05-27",
       "canonical_url": "https://addyo.substack.com/p/the-prompt-engineering-playbook-for",
       "markdown_path": "articles/elevate/2025-05-27-the-prompt-engineering-playbook-for.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098195520032829"
+      ],
       "reason": null
     },
     {
@@ -1529,13 +1924,16 @@
       "edition_number": null,
       "archive_index": 45,
       "id": "elevate:the-trust-but-verify-pattern-for",
+      "delivery_position": 43,
       "title": "The \"Trust, But Verify\" Pattern For AI-Assisted Engineering",
       "published_at": "2025-06-09",
       "canonical_url": "https://addyo.substack.com/p/the-trust-but-verify-pattern-for",
       "markdown_path": "articles/elevate/2025-06-09-the-trust-but-verify-pattern-for.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098257482616832"
+      ],
       "reason": null
     },
     {
@@ -1543,13 +1941,16 @@
       "edition_number": null,
       "archive_index": 46,
       "id": "elevate:the-ai-native-software-engineer",
+      "delivery_position": 47,
       "title": "The AI-Native Software Engineer",
       "published_at": "2025-07-01",
       "canonical_url": "https://addyo.substack.com/p/the-ai-native-software-engineer",
       "markdown_path": "articles/elevate/2025-07-01-the-ai-native-software-engineer.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098340781498488"
+      ],
       "reason": null
     },
     {
@@ -1557,13 +1958,16 @@
       "edition_number": null,
       "archive_index": 47,
       "id": "elevate:context-engineering-bringing-engineering",
+      "delivery_position": 50,
       "title": "Context Engineering: Bringing Engineering Discipline to Prompts",
       "published_at": "2025-07-13",
       "canonical_url": "https://addyo.substack.com/p/context-engineering-bringing-engineering",
       "markdown_path": "articles/elevate/2025-07-13-context-engineering-bringing-engineering.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098403616489503"
+      ],
       "reason": null
     },
     {
@@ -1571,13 +1975,16 @@
       "edition_number": null,
       "archive_index": 48,
       "id": "elevate:coding-for-the-future-agentic-world",
+      "delivery_position": 53,
       "title": "Coding for the Future Agentic World",
       "published_at": "2025-07-29",
       "canonical_url": "https://addyo.substack.com/p/coding-for-the-future-agentic-world",
       "markdown_path": "articles/elevate/2025-07-29-coding-for-the-future-agentic-world.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098475729162250"
+      ],
       "reason": null
     },
     {
@@ -1585,13 +1992,16 @@
       "edition_number": null,
       "archive_index": 49,
       "id": "elevate:the-reality-of-ai-assisted-software",
+      "delivery_position": 56,
       "title": "The reality of AI-Assisted software engineering productivity",
       "published_at": "2025-08-16",
       "canonical_url": "https://addyo.substack.com/p/the-reality-of-ai-assisted-software",
       "markdown_path": "articles/elevate/2025-08-16-the-reality-of-ai-assisted-software.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098541273423872"
+      ],
       "reason": null
     },
     {
@@ -1599,13 +2009,16 @@
       "edition_number": null,
       "archive_index": 50,
       "id": "elevate:vibe-coding-is-not-the-same-as-ai",
+      "delivery_position": 59,
       "title": "Vibe coding is not the same as AI-Assisted engineering.",
       "published_at": "2025-08-30",
       "canonical_url": "https://addyo.substack.com/p/vibe-coding-is-not-the-same-as-ai",
       "markdown_path": "articles/elevate/2025-08-30-vibe-coding-is-not-the-same-as-ai.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098602841739297"
+      ],
       "reason": null
     },
     {
@@ -1613,13 +2026,16 @@
       "edition_number": null,
       "archive_index": 51,
       "id": "elevate:how-modern-browsers-work",
+      "delivery_position": 62,
       "title": "How modern browsers work",
       "published_at": "2025-09-13",
       "canonical_url": "https://addyo.substack.com/p/how-modern-browsers-work",
       "markdown_path": "articles/elevate/2025-09-13-how-modern-browsers-work.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098665030684803"
+      ],
       "reason": null
     },
     {
@@ -1627,13 +2043,16 @@
       "edition_number": null,
       "archive_index": 52,
       "id": "elevate:gemini-cli-tips-and-tricks",
+      "delivery_position": 69,
       "title": "Gemini CLI Tips & Tricks",
       "published_at": "2025-10-21",
       "canonical_url": "https://addyo.substack.com/p/gemini-cli-tips-and-tricks",
       "markdown_path": "articles/elevate/2025-10-21-gemini-cli-tips-and-tricks.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098814582652958"
+      ],
       "reason": null
     },
     {
@@ -1641,13 +2060,16 @@
       "edition_number": null,
       "archive_index": 53,
       "id": "elevate:conductors-to-orchestrators-the-future",
+      "delivery_position": 71,
       "title": "Conductors to Orchestrators: The Future of Agentic Coding",
       "published_at": "2025-11-01",
       "canonical_url": "https://addyo.substack.com/p/conductors-to-orchestrators-the-future",
       "markdown_path": "articles/elevate/2025-11-01-conductors-to-orchestrators-the-future.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098857247121418"
+      ],
       "reason": null
     },
     {
@@ -1655,13 +2077,16 @@
       "edition_number": null,
       "archive_index": 54,
       "id": "elevate:critical-thinking-during-the-age",
+      "delivery_position": 75,
       "title": "Critical Thinking during the age of AI",
       "published_at": "2025-11-21",
       "canonical_url": "https://addyo.substack.com/p/critical-thinking-during-the-age",
       "markdown_path": "articles/elevate/2025-11-21-critical-thinking-during-the-age.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098948263514212"
+      ],
       "reason": null
     },
     {
@@ -1669,13 +2094,16 @@
       "edition_number": null,
       "archive_index": 55,
       "id": "elevate:treat-ai-generated-code-as-a-draft",
+      "delivery_position": 77,
       "title": "Treat AI-Generated code as a draft",
       "published_at": "2025-11-25",
       "canonical_url": "https://addyo.substack.com/p/treat-ai-generated-code-as-a-draft",
       "markdown_path": "articles/elevate/2025-11-25-treat-ai-generated-code-as-a-draft.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562098990328184852"
+      ],
       "reason": null
     },
     {
@@ -1683,13 +2111,16 @@
       "edition_number": null,
       "archive_index": 56,
       "id": "elevate:21-lessons-from-14-years-at-google",
+      "delivery_position": 79,
       "title": "21 Lessons from 14 Years at Google",
       "published_at": "2025-12-04",
       "canonical_url": "https://addyo.substack.com/p/21-lessons-from-14-years-at-google",
       "markdown_path": "articles/elevate/2025-12-04-21-lessons-from-14-years-at-google.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099033466605658"
+      ],
       "reason": null
     },
     {
@@ -1697,13 +2128,16 @@
       "edition_number": null,
       "archive_index": 57,
       "id": "elevate:my-llm-coding-workflow-going-into",
+      "delivery_position": 82,
       "title": "My LLM coding workflow going into 2026",
       "published_at": "2025-12-18",
       "canonical_url": "https://addyo.substack.com/p/my-llm-coding-workflow-going-into",
       "markdown_path": "articles/elevate/2025-12-18-my-llm-coding-workflow-going-into.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099097693986837"
+      ],
       "reason": null
     },
     {
@@ -1711,13 +2145,16 @@
       "edition_number": null,
       "archive_index": 58,
       "id": "elevate:how-good-is-ai-at-coding-react-really",
+      "delivery_position": 85,
       "title": "How Good Is AI at Coding React (Really)?",
       "published_at": "2025-12-29",
       "canonical_url": "https://addyo.substack.com/p/how-good-is-ai-at-coding-react-really",
       "markdown_path": "articles/elevate/2025-12-29-how-good-is-ai-at-coding-react-really.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099172319170570"
+      ],
       "reason": null
     },
     {
@@ -1725,13 +2162,16 @@
       "edition_number": null,
       "archive_index": 59,
       "id": "elevate:code-review-in-the-age-of-ai",
+      "delivery_position": 87,
       "title": "Code Review in the Age of AI",
       "published_at": "2026-01-05",
       "canonical_url": "https://addyo.substack.com/p/code-review-in-the-age-of-ai",
       "markdown_path": "articles/elevate/2026-01-05-code-review-in-the-age-of-ai.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099214325121129"
+      ],
       "reason": null
     },
     {
@@ -1739,13 +2179,16 @@
       "edition_number": null,
       "archive_index": 60,
       "id": "elevate:how-to-write-a-good-spec-for-ai-agents",
+      "delivery_position": 90,
       "title": "How to write a good spec for AI agents",
       "published_at": "2026-01-19",
       "canonical_url": "https://addyo.substack.com/p/how-to-write-a-good-spec-for-ai-agents",
       "markdown_path": "articles/elevate/2026-01-19-how-to-write-a-good-spec-for-ai-agents.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099280796192828"
+      ],
       "reason": null
     },
     {
@@ -1753,13 +2196,16 @@
       "edition_number": null,
       "archive_index": 61,
       "id": "elevate:the-80-problem-in-agentic-coding",
+      "delivery_position": 92,
       "title": "The 80% Problem in Agentic Coding",
       "published_at": "2026-01-28",
       "canonical_url": "https://addyo.substack.com/p/the-80-problem-in-agentic-coding",
       "markdown_path": "articles/elevate/2026-01-28-the-80-problem-in-agentic-coding.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099335100108800"
+      ],
       "reason": null
     },
     {
@@ -1767,13 +2213,16 @@
       "edition_number": null,
       "archive_index": 62,
       "id": "elevate:14-more-lessons-from-14-years-at",
+      "delivery_position": 95,
       "title": "14 More lessons from 14 years at Google",
       "published_at": "2026-02-12",
       "canonical_url": "https://addyo.substack.com/p/14-more-lessons-from-14-years-at",
       "markdown_path": "articles/elevate/2026-02-12-14-more-lessons-from-14-years-at.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099396466970685"
+      ],
       "reason": null
     },
     {
@@ -1781,13 +2230,16 @@
       "edition_number": null,
       "archive_index": 63,
       "id": "elevate:death-of-the-ide",
+      "delivery_position": 101,
       "title": "Is the IDE dead?",
       "published_at": "2026-03-20",
       "canonical_url": "https://addyo.substack.com/p/death-of-the-ide",
       "markdown_path": "articles/elevate/2026-03-20-death-of-the-ide.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099529686192148"
+      ],
       "reason": null
     },
     {
@@ -1795,13 +2247,16 @@
       "edition_number": null,
       "archive_index": 64,
       "id": "elevate:the-agent-stack-bet",
+      "delivery_position": 107,
       "title": "The Agent Stack Bet",
       "published_at": "2026-04-18",
       "canonical_url": "https://addyo.substack.com/p/the-agent-stack-bet",
       "markdown_path": "articles/elevate/2026-04-18-the-agent-stack-bet.md",
       "verification_status": "ready",
-      "delivery_status": "not_sent",
-      "discord_message_ids": [],
+      "delivery_status": "complete",
+      "discord_message_ids": [
+        "1562099662004027485"
+      ],
       "reason": null
     }
   ]
