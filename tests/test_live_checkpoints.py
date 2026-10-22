@@ -207,7 +207,7 @@ class RemoteCheckpointTests(unittest.TestCase):
         restarted = self.clone("no-repost")
         self.assertFalse(self.deliver(restarted, 1,
                                       lambda *a, **kw: self.fail("duplicate post")))
-        with self.assertRaisesRegex(RuntimeError, "reconciliation"):
+        with self.assertRaisesRegex(RuntimeError, "changed before delivery"):
             b.deliver_one(restarted, "live:1", restarted / "article-1.md", b.sha("different"),
                           invoke=lambda *a, **kw: self.fail("revised post"))
 
@@ -224,9 +224,9 @@ class LiveDispatcherTests(unittest.TestCase):
 
     def article(self, n):
         path = self.root / "articles" / "live" / f"2026-10-23-{n}.md"
-        text = (f"---\\nid: live:{n}\\nsource_id: live\\n"
-                f"canonical_url: https://example.test/{n}\\nauthor: Tester\\n"
-                f"published_at: 2026-10-23\\nstatus: ready\\n---\\nTitle {n}\\n")
+        text = (f"---\nid: live:{n}\nsource_id: live\n"
+                f"canonical_url: https://example.test/{n}\nauthor: Tester\n"
+                f"published_at: 2026-10-23\nstatus: ready\n---\nTitle {n}\n")
         path.write_text(text, encoding="utf-8")
         return path
 
@@ -246,7 +246,7 @@ class LiveDispatcherTests(unittest.TestCase):
 
     def test_invalid_second_article_prevents_first_post(self):
         self.article(1)
-        self.article(2).write_text("---\\nid: live:2\\nstatus: ready\\n---\\nBad")
+        self.article(2).write_text("---\nid: live:2\nstatus: ready\n---\nBad")
         with patch.object(b, "deliver_one", side_effect=lambda *a, **kw: self.fail("POST")):
             with self.assertRaisesRegex(RuntimeError, "provenance"):
                 self.run_dispatch()
