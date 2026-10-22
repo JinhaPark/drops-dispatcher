@@ -7,6 +7,8 @@ Monitor the configured newsletters, research each new issue, produce a complete 
 Maintain sources in `sources.json` or the agent task configuration, never scatter source-name checks through generic delivery code.
 - Artificial Engineering: https://www.linkedin.com/newsletters/artificial-engineering-7324756381780140032 — author André Lindenberg. Additional mandatory `project_roundup` section.
 - Elevate: https://addyo.substack.com/archive — author Addy Osmani. No mandatory roundup.
+- Simon Willison: https://simonwillison.net/atom/entries/ — author Simon Willison. Use the official **long-form entries only** Atom feed; exclude the high-volume blogmarks/links/everything feeds. No mandatory roundup.
+- Hamel Husain: https://hamelhusain.substack.com/feed — author Hamel Husain. Use his newsletter RSS as the **single canonical monitoring feed**, not both mirrored blog and newsletter copies. No mandatory roundup.
 Future sources define their own editorial sections, access rules, and completeness requirements.
 
 ## Reader, voice and writing quality
@@ -24,7 +26,8 @@ Elevate has no required roundup. Future sources can add source-specific sections
 Never invent titles, URLs, dates, authors, project names, or facts. If source access is blocked, retain a pending item rather than pretending it was read.
 
 ## Monitoring and cache
-The ChatGPT scheduled agent checks both sources every six hours. A missing or inaccessible source is not equivalent to no new posts.
+The ChatGPT scheduled agent checks **all enabled configured sources** every six hours using `sources.json`; do not hard-code the initial two sources in the task. RSS/Atom is used only to discover original posts, never to distribute generated summaries. A missing or inaccessible feed is not equivalent to no new posts. Confirm the canonical full original post before drafting; distinguish feed `published` from `updated`, never substitute discovery time for missing publication provenance. Exclude reprints/mirrors by normalized canonical URL across **all** sources and already prepared articles, without dropping distinct posts merely because their subjects overlap.
+New sources have **source-specific** `monitoring_started_at` values in `data/monitor-state.json`. An article with a known publication instant must be strictly later than its source's threshold and the global threshold to enter automatic live delivery; a date without a timezone is evaluated conservatively according to the existing calendar-day rule. All pre-onboarding posts, including Hamel's October 20 post, are archive-only and **must not be sent** without explicit backfill approval. Unknown or uncertain dates are held. Keep old source thresholds and existing backfill approvals unchanged.
 Use canonical URL plus stable publisher ID as primary identity, persist original author and publication date as independently verified metadata. Use source text SHA-256 to detect content changes; use editorial policy version and content digest to decide whether a rewrite is needed. Reuse unchanged Markdown; retain revision history in Git. No full scraped copyrighted article text or credentials in this public repository.
 Backfills must not send historical posts to Discord. Before first live delivery, establish an explicit baseline or carefully approved publication set. No old content should be treated as new solely because the workflow was installed.
 
