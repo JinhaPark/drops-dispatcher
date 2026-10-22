@@ -107,6 +107,31 @@ class FeedDiscoveryTests(unittest.TestCase):
             self.assertEqual(current["sources"]["elevate"], state["sources"]["elevate"])
             self.assertEqual(len(json.loads((root / "data/pending.json").read_text())), 1)
 
+    def test_registry_preserves_existing_writers_and_original_urls(self):
+        sources = json.loads((pathlib.Path(__file__).resolve().parents[1] / "sources.json").read_text(encoding="utf-8"))
+        urls = {source["id"]: source["url"] for source in sources}
+        self.assertEqual(urls["artificial-engineering"],
+                         "https://www.linkedin.com/newsletters/artificial-engineering-7324756381780140032")
+        self.assertEqual(urls["elevate"], "https://addyo.substack.com/archive")
+        self.assertEqual(len(urls), 4)
+
+    def test_source_specific_cutoff_does_not_move_global_old_source_baseline(self):
+        import deliver_articles as delivery
+        with tempfile.TemporaryDirectory() as tmp:
+            root = pathlib.Path(tmp)
+            (root / "data").mkdir()
+            (root / "data/monitor-state.json").write_text(json.dumps({
+                "monitoring_started_at": "2026-10-19T18:17:23Z",
+                "sources": {"simon-willison": {"monitoring_started_at": START},
+                            "hamel-husain": {"monitoring_started_at": START}}}))
+            global_start, overrides = delivery.monitoring_policy(root)
+            self.assertEqual(global_start, parse_time("2026-10-19T18:17:23Z"))
+            self.assertEqual(overrides["simon-willison"], parse_time(START))
+            self.assertIsNone(delivery.hold_reason("2026-10-20", global_start))
+            self.assertIsNotNone(delivery.hold_reason("2026-10-20", overrides["simon-willison"]))
+            self.assertIsNotNone(delivery.hold_reason("2026-10-22", overrides["hamel-husain"]))
+            self.assertIsNone(delivery.hold_reason("2026-10-23", overrides["hamel-husain"]))
+
     def test_missing_new_source_baseline_fails_closed(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = pathlib.Path(tmp)
