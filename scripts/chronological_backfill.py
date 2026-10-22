@@ -125,22 +125,8 @@ def deliver(root, manifest, checkpoint=b.persist, invoke=subprocess.run):
         text = (root / item['markdown_path']).read_text(encoding='utf-8')
         if b.sha(text) != item['markdown_sha256']:
             raise RuntimeError('Content changed after validation')
-        previous = b.read_json(root / b.LEDGER, {}).get(item_id)
-        if previous:
-            if previous['sha256'] != item['markdown_sha256'] or previous['status'] != 'complete':
-                raise RuntimeError(f'{item_id} requires reconciliation')
-            continue
-        marker = {'id': item_id, 'sha256': item['markdown_sha256'],
-                  'run_id': os.environ.get('GITHUB_RUN_ID', 'local'), 'plan': MANIFEST}
-        checkpoint(root, {}, marker)
-        result = invoke([sys.executable, str(root / '.agents/skills/discord-feed/scripts/send.py'),
-                         '--file', str(root / item['markdown_path']), '--id', item_id,
-                         '--state', str(root / b.LEDGER)], cwd=root)
-        record = b.read_json(root / b.LEDGER, {}).get(item_id, {})
-        if result.returncode or record.get('status') != 'complete' or record.get('sha256') != item['markdown_sha256']:
-            checkpoint(root, marker, marker)
-            raise RuntimeError(f'{item_id} did not complete; no later article sent')
-        checkpoint(root, marker, {})
+        b.deliver_one(root, item_id, root / item['markdown_path'], item['markdown_sha256'],
+                      text=text, checkpoint=checkpoint, invoke=invoke, plan=MANIFEST)
         print(f"{item['published_at']} {item_id}: remote ledger verified", flush=True)
 
 

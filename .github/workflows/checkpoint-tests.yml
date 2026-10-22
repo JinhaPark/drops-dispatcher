@@ -1,0 +1,25 @@
+name: Offline Discord checkpoint tests
+on:
+  pull_request:
+    paths:
+      - 'scripts/**'
+      - 'tests/**'
+      - '.agents/skills/discord-feed/**'
+      - '.github/workflows/discord-feed.yml'
+      - '.github/workflows/checkpoint-tests.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Offline delivery and regression suite (no Discord credentials)
+        run: |
+          python -m unittest discover -s .agents/skills/discord-feed/tests -v
+          python -m unittest discover -s tests -v
+          python -m compileall -q scripts tests
