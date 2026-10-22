@@ -221,6 +221,9 @@ class LiveDispatcherTests(unittest.TestCase):
         (self.root / "articles" / "live").mkdir(parents=True)
         (self.root / "data").mkdir()
         (self.root / b.LEDGER).write_text("{}", encoding="utf-8")
+        (self.root / dispatcher.MONITOR_STATE).write_text(json.dumps({
+            "monitoring_started_at": "2026-10-19T18:17:23Z"
+        }), encoding="utf-8")
 
     def article(self, n):
         path = self.root / "articles" / "live" / f"2026-10-23-{n}.md"
