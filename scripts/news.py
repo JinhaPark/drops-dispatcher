@@ -10,22 +10,11 @@ def request(url,method='GET',payload=None):
  with urllib.request.urlopen(req,timeout=25) as r:return r.read().decode()
 def strip(s):return re.sub('<[^>]+>',' ',html.unescape(s or '')).strip()
 def fetch():
- sources=load('sources.json',[]);seen=set(load(P/'seen.json',[]));pending=load(P/'pending.json',[]);known={x['id'] for x in pending};found=[]
- for source in sources:
-  if not source.get('enabled') or not source.get('feed_url'):
-   print('No verified feed configured:',source['id']);continue
-  try:
-   root=ET.fromstring(request(source['feed_url']))
-   for entry in root.findall('.//item')[:20]:
-    title=entry.findtext('title') or '';link=entry.findtext('link') or '';guid=entry.findtext('guid') or link
-    uid=source['id']+':'+guid
-    if not link or uid in seen or uid in known:continue
-    date=entry.findtext('pubDate') or ''
-    try:date=datetime.datetime.strptime(date[:25],'%a, %d %b %Y %H:%M:%S').date().isoformat()
-    except ValueError:date=datetime.date.today().isoformat()
-    found.append({'id':uid,'source':source['id'],'date':date,'title':strip(title),'author':source.get('author'),'url':link,'excerpt':strip(entry.findtext('description'))[:1000],'status':'needs_editorial_review'})
-  except Exception as e:print('Source unavailable:',source['id'],type(e).__name__,str(e)[:150])
- pending+=found;save(P/'pending.json',pending);print('New drafts:',len(found))
+ # The pre-existing RSS-only path substituted today's date on malformed dates
+ # and could queue historical posts. Keep discovery conservative and standalone.
+ from feed_discovery import run
+ found=run(pathlib.Path(__file__).resolve().parents[1],lambda url:request(url))
+ print('New drafts:',len(found))
 def build():
  articles=load(P/'articles.json',[]);sources={s['id']:s for s in load('sources.json',[])};ids=set()
  for a in articles:

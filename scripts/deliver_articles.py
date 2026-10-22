@@ -19,11 +19,18 @@ def timestamp(value):
     return datetime.datetime.fromisoformat(value.replace("Z", "+00:00")).astimezone(datetime.timezone.utc)
 
 
-def monitoring_start(root):
+def monitoring_policy(root):
     state = backfill.read_json(root / MONITOR_STATE)
     try:
-        return timestamp(state["monitoring_started_at"])
-    except (TypeError, KeyError, ValueError) as exc:
+        started_at = timestamp(state["monitoring_started_at"])
+        source_starts = {}
+        for source_id, source in state.get("sources", {}).items():
+            if "monitoring_started_at" in source:
+                source_starts[source_id] = max(
+                    started_at, timestamp(source["monitoring_started_at"])
+                )
+        return started_at, source_starts
+    except (TypeError, KeyError, ValueError, AttributeError) as exc:
         raise RuntimeError("Missing or invalid monitoring_started_at; no live posts") from exc
 
 
@@ -58,7 +65,7 @@ def main():
     # were restored. The workflow checks out the latest remote main.
     if backfill.read_json(root / backfill.INFLIGHT, {}):
         raise RuntimeError("Unreconciled remote in-flight delivery; no live posts")
-    started_at = monitoring_start(root)
+    started_at, source_starts = monitoring_policy(root)
     pending = []
     ledger = backfill.read_json(root / backfill.LEDGER, {})
     # Validate every candidate before the first external POST.
@@ -80,7 +87,7 @@ def main():
                 raise RuntimeError(f"{item_id} needs reconciliation; no live posts")
             continue
         try:
-            reason = hold_reason(fields.get("published_at", ""), started_at)
+            reason = hold_reason(fields.get("published_at", ""), source_starts.get(fields.get("source_id"), started_at))
         except ValueError as exc:
             raise RuntimeError(f"Missing or invalid publication date provenance: {path}") from exc
         if reason:

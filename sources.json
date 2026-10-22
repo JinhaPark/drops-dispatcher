@@ -19,5 +19,25 @@
     "url": "https://addyo.substack.com/archive",
     "author": "Addy Osmani",
     "sections": []
+  },
+  {
+    "id": "simon-willison",
+    "name": "Simon Willison — Blog Entries",
+    "url": "https://simonwillison.net/",
+    "feed_url": "https://simonwillison.net/atom/entries/",
+    "feed_format": "atom",
+    "enabled": true,
+    "author": "Simon Willison",
+    "sections": []
+  },
+  {
+    "id": "hamel-husain",
+    "name": "Hamel Husain — Newsletter",
+    "url": "https://hamelhusain.substack.com/",
+    "feed_url": "https://hamelhusain.substack.com/feed",
+    "feed_format": "rss",
+    "enabled": true,
+    "author": "Hamel Husain",
+    "sections": []
   }
 ]
