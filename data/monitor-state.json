@@ -26,6 +26,18 @@
         "published_at": "2026-08-08",
         "url": "https://addyo.substack.com/archive"
       }
+    },
+    "simon-willison": {
+      "monitoring_started_at": "2026-10-22T16:54:19Z",
+      "status": "awaiting_first_check",
+      "last_checked_at": null,
+      "latest_confirmed_issue": null
+    },
+    "hamel-husain": {
+      "monitoring_started_at": "2026-10-22T16:54:19Z",
+      "status": "awaiting_first_check",
+      "last_checked_at": null,
+      "latest_confirmed_issue": null
     }
   }
 }
