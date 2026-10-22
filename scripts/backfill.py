@@ -190,6 +190,62 @@ def persist(root, expected_marker, marker):
     raise RuntimeError("Could not persist ledger; remote in-flight marker blocks replay")
 
 
+
+def deliver_one(root, item_id, article_path, digest, *, text=None,
+                checkpoint=persist, invoke=subprocess.run, plan=None):
+    """One article, one remotely verified transaction; used by backfills and live feeds.
+
+    A remotely committed in-flight marker is the fence before Discord POST.
+    Local per-chunk IDs are saved by send.py and copied to the remote ledger
+    on success or best-effort on failure. The marker remains on any ambiguity.
+    """
+    if read_json(root / INFLIGHT, {}):
+        raise RuntimeError("Prior in-flight delivery requires manual reconciliation")
+    if text is None:
+        text = pathlib.Path(article_path).read_text(encoding="utf-8")
+    if sha(text) != digest:
+        raise RuntimeError(f"Article changed before delivery: {item_id}")
+    previous = read_json(root / LEDGER, {}).get(item_id)
+    if previous:
+        if previous.get("sha256") != digest or previous.get("status") != "complete":
+            raise RuntimeError(f"Delivery requires reconciliation: {item_id}")
+        return False
+
+    marker = {"id": item_id, "sha256": digest,
+              "run_id": os.environ.get("GITHUB_RUN_ID", "local")}
+    if plan:
+        marker["plan"] = plan
+    # Never POST if the pre-send remote commit/push/verification fails.
+    checkpoint(root, {}, marker)
+    command = [sys.executable, str(root / ".agents/skills/discord-feed/scripts/send.py"),
+               "--file", str(article_path), "--id", item_id,
+               "--state", str(root / LEDGER)]
+    try:
+        result = invoke(command, cwd=root)
+    except BaseException:
+        # Do not clear the remote marker. Preserve locally known chunk IDs.
+        checkpoint(root, marker, marker)
+        raise
+    record = read_json(root / LEDGER, {}).get(item_id, {})
+    messages = record.get("messages", [])
+    total = record.get("total", 0)
+    complete = (result.returncode == 0 and record.get("sha256") == digest
+                and record.get("status") == "complete"
+                and isinstance(total, int) and total > 0
+                and isinstance(messages, list) and len(messages) == total
+                and all(isinstance(msg, dict)
+                        and msg.get("index") == index
+                        and msg.get("message_id") for index, msg in enumerate(messages)))
+    if not complete:
+        # If this checkpoint fails, the original remote in-flight marker still
+        # blocks replay, while the runner's failure artifact retains local IDs.
+        checkpoint(root, marker, marker)
+        raise RuntimeError(f"Delivery incomplete or uncertain: {item_id}; reconcile, do not retry")
+    # Any push/verification failure here is fatal; never send the next article.
+    checkpoint(root, marker, {})
+    return True
+
+
 def deliver(root, manifest, checkpoint=persist, invoke=subprocess.run):
     items = validate_manifest(root, manifest)
     if manifest.get("status") != "active":
@@ -203,21 +259,9 @@ def deliver(root, manifest, checkpoint=persist, invoke=subprocess.run):
             print(f"Stopped before unverified Edition {n}")
             return
         item_id, text = validate_article(root, item)
-        previous = read_json(root / LEDGER, {}).get(item_id)
-        if previous:
-            if previous["sha256"] != sha(text) or previous["status"] != "complete":
-                raise RuntimeError(f"Edition {n} requires reconciliation")
-            continue
-        marker = {"id": item_id, "sha256": sha(text), "run_id": os.environ.get("GITHUB_RUN_ID", "local")}
-        checkpoint(root, {}, marker)
-        result = invoke([sys.executable, str(root / ".agents/skills/discord-feed/scripts/send.py"),
-                         "--file", str(root / item["markdown_path"]), "--id", item_id,
-                         "--state", str(root / LEDGER)], cwd=root)
-        record = read_json(root / LEDGER, {}).get(item_id, {})
-        if result.returncode or record.get("status") != "complete":
-            checkpoint(root, marker, marker)
-            raise RuntimeError(f"Edition {n} did not complete; no later edition sent")
-        checkpoint(root, marker, {})
+        deliver_one(root, item_id, root / item["markdown_path"], sha(text),
+                    text=text, checkpoint=checkpoint, invoke=invoke,
+                    plan=MANIFEST)
         print(f"Edition {n}: remote ledger verified", flush=True)
 
 
