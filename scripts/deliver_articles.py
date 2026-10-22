@@ -36,7 +36,7 @@ def main():
             continue
         if (not fields.get("id") or not fields.get("canonical_url")
                 or not fields.get("author")
-                or not re.fullmatch(r"\\d{4}-\\d{2}-\\d{2}", fields.get("published_at", ""))):
+                or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", fields.get("published_at", ""))):
             raise RuntimeError(f"Missing or invalid provenance: {path}")
         item_id = fields["id"]
         digest = backfill.sha(text)
