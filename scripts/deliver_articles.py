@@ -1,10 +1,44 @@
 #!/usr/bin/env python3
 """Dispatch completed Markdown; keep historical backfill on its ordered path."""
+import datetime
 import pathlib
 import re
 
 import backfill
 import chronological_backfill as chronological
+
+
+MONITOR_STATE = "data/monitor-state.json"
+TIMESTAMP = r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})"
+
+
+def timestamp(value):
+    """Require an explicit offset; never guess the publisher's timezone."""
+    if not isinstance(value, str) or not re.fullmatch(TIMESTAMP, value):
+        raise ValueError("Expected an ISO publication timestamp with timezone")
+    return datetime.datetime.fromisoformat(value.replace("Z", "+00:00")).astimezone(datetime.timezone.utc)
+
+
+def monitoring_start(root):
+    state = backfill.read_json(root / MONITOR_STATE)
+    try:
+        return timestamp(state["monitoring_started_at"])
+    except (TypeError, KeyError, ValueError) as exc:
+        raise RuntimeError("Missing or invalid monitoring_started_at; no live posts") from exc
+
+
+def hold_reason(published_at, started_at):
+    """None means live-eligible. Backfill approval belongs to reviewed manifests."""
+    if re.fullmatch(r"\d{4}-\d{2}-\d{2}", published_at):
+        day = datetime.date.fromisoformat(published_at)
+        if day == started_at.date():
+            return "publication time unknown on monitoring start date; explicit timestamp required"
+        if day < started_at.date():
+            return "baseline-only historical article; explicit backfill approval required"
+        return None
+    if timestamp(published_at) <= started_at:
+        return "publication is not strictly after monitoring start; explicit backfill approval required"
+    return None
 
 
 def main():
@@ -24,6 +58,7 @@ def main():
     # were restored. The workflow checks out the latest remote main.
     if backfill.read_json(root / backfill.INFLIGHT, {}):
         raise RuntimeError("Unreconciled remote in-flight delivery; no live posts")
+    started_at = monitoring_start(root)
     pending = []
     ledger = backfill.read_json(root / backfill.LEDGER, {})
     # Validate every candidate before the first external POST.
@@ -35,8 +70,7 @@ def main():
         if fields.get("status") != "ready":
             continue
         if (not fields.get("id") or not fields.get("canonical_url")
-                or not fields.get("author")
-                or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", fields.get("published_at", ""))):
+                or not fields.get("author")):
             raise RuntimeError(f"Missing or invalid provenance: {path}")
         item_id = fields["id"]
         digest = backfill.sha(text)
@@ -44,6 +78,13 @@ def main():
         if prior:
             if prior.get("status") != "complete" or prior.get("sha256") != digest:
                 raise RuntimeError(f"{item_id} needs reconciliation; no live posts")
+            continue
+        try:
+            reason = hold_reason(fields.get("published_at", ""), started_at)
+        except ValueError as exc:
+            raise RuntimeError(f"Missing or invalid publication date provenance: {path}") from exc
+        if reason:
+            print(f"Held {item_id} ({path.relative_to(root)}): {reason}", flush=True)
             continue
         pending.append((path, item_id, digest))
     for path, item_id, digest in pending:
