@@ -157,9 +157,13 @@ def run(root, request):
         policy["last_checked_at"] = checked
         policy["status"] = "feed_checked_pending_original_verification" if new else "feed_checked_no_new_candidates"
         state["sources"][sid] = policy
-    # Do not change the global start, or any old source state.
-    if found:
-        pending.extend(found)
-        pending_path.write_text(json.dumps(pending, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    # No fresh candidate means no authoritative state transition is required.
+    # Avoid writing a no-op checkpoint just to report an uneventful poll.
+    # In particular, restricted feeds must not be interpreted as empty feeds.
+    if not found:
+        return []
+    # Do not change the global start, or any old source baseline.
+    pending.extend(found)
+    pending_path.write_text(json.dumps(pending, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     state_path.write_text(json.dumps(state, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return found
