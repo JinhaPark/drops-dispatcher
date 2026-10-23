@@ -152,7 +152,7 @@ class FeedDiscoveryTests(unittest.TestCase):
                      "sources": {"simon-willison": {"monitoring_started_at": "2026-10-24T00:00:00Z"},
                                  "hamel-husain": {"monitoring_started_at": "2026-10-24T00:00:00Z"}}}
             checkpoint = root / "data/monitor-state.json"
-            checkpoint.write_text(json.dumps(state, indent=2) + "\\n")
+            checkpoint.write_text(json.dumps(state, indent=2) + "\n")
             before = checkpoint.read_bytes()
             def request(url):
                 return ATOM if "simonwillison" in url else RSS
