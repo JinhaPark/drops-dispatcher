@@ -143,5 +143,40 @@ class FeedDiscoveryTests(unittest.TestCase):
                 run(root, lambda _: RSS)
 
 
+    def test_no_new_candidates_do_not_mutate_checkpoint_or_create_pending(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = pathlib.Path(tmp)
+            (root / "data").mkdir()
+            (root / "sources.json").write_text(json.dumps([SIMON, HAMEL]))
+            state = {"monitoring_started_at": "2026-10-19T18:17:23Z",
+                     "sources": {"simon-willison": {"monitoring_started_at": "2026-10-24T00:00:00Z"},
+                                 "hamel-husain": {"monitoring_started_at": "2026-10-24T00:00:00Z"}}}
+            checkpoint = root / "data/monitor-state.json"
+            checkpoint.write_text(json.dumps(state, indent=2) + "\n")
+            before = checkpoint.read_bytes()
+            def request(url):
+                return ATOM if "simonwillison" in url else RSS
+            self.assertEqual(run(root, request), [])
+            self.assertEqual(checkpoint.read_bytes(), before)
+            self.assertFalse((root / "data/pending.json").exists())
+
+    def test_unreadable_feed_is_not_recorded_as_successful_check(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = pathlib.Path(tmp)
+            (root / "data").mkdir()
+            (root / "sources.json").write_text(json.dumps([SIMON, HAMEL]))
+            state = {"monitoring_started_at": "2026-10-19T18:17:23Z",
+                     "sources": {"simon-willison": {"monitoring_started_at": START},
+                                 "hamel-husain": {"monitoring_started_at": START}}}
+            checkpoint = root / "data/monitor-state.json"
+            checkpoint.write_text(json.dumps(state))
+            before = checkpoint.read_bytes()
+            def request(url):
+                raise OSError("feed unavailable")
+            self.assertEqual(run(root, request), [])
+            self.assertEqual(checkpoint.read_bytes(), before)
+            self.assertFalse((root / "data/pending.json").exists())
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -39,5 +39,13 @@
       "last_checked_at": null,
       "latest_confirmed_issue": null
     }
+  },
+  "last_unpersisted_attempt": {
+    "attempted_at": "2026-10-22T18:25:59Z",
+    "provenance": "2026-10-23 ChatGPT scheduled-task report; report only, not independent source re-verification",
+    "outcome": "No eligible newly published issues reported for four monitored sources",
+    "source_access": "Simon Willison and Hamel Husain XML feed bodies unavailable to task; official post lists checked instead",
+    "github_write": "Two attempted checkpoint writes rejected by connector safety checks; no articles or Discord sends",
+    "note": "Historical global and per-source publication baselines were not changed"
   }
 }
