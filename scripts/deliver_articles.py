@@ -6,6 +6,7 @@ import re
 
 import backfill
 import chronological_backfill as chronological
+import one_time_preview as preview
 
 
 MONITOR_STATE = "data/monitor-state.json"
@@ -65,6 +66,14 @@ def main():
     # were restored. The workflow checks out the latest remote main.
     if backfill.read_json(root / backfill.INFLIGHT, {}):
         raise RuntimeError("Unreconciled remote in-flight delivery; no live posts")
+    # Narrow, explicit historical authorization only for two reviewed preview posts.
+    # Does not relax global or source-specific live publication start times.
+    preview_plan = preview.read_manifest(root)
+    if preview_plan is not None and not preview.already_completed(root, preview_plan):
+        if preview_plan.get("status") == "active":
+            (root / ".discord-checkpoints-used").touch()
+            preview.deliver(root, preview_plan)
+            return
     started_at, source_starts = monitoring_policy(root)
     pending = []
     ledger = backfill.read_json(root / backfill.LEDGER, {})
