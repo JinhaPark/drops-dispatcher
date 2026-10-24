@@ -39,5 +39,15 @@
     "enabled": true,
     "author": "Hamel Husain",
     "sections": []
+  },
+  {
+    "id": "devansh-ai-made-simple",
+    "name": "Artificial Intelligence Made Simple",
+    "url": "https://www.artificialintelligencemadesimple.com/",
+    "feed_url": "https://www.artificialintelligencemadesimple.com/feed",
+    "feed_format": "rss",
+    "enabled": true,
+    "author": "Devansh",
+    "sections": []
   }
 ]
