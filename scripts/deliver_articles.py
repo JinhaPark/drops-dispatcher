@@ -7,6 +7,7 @@ import re
 import backfill
 import chronological_backfill as chronological
 import one_time_preview as preview
+import devansh_recent_five as devansh
 
 
 MONITOR_STATE = "data/monitor-state.json"
@@ -73,6 +74,14 @@ def main():
         if preview_plan.get("status") == "active":
             (root / ".discord-checkpoints-used").touch()
             preview.deliver(root, preview_plan)
+            return
+    # User-approved recent five from Devansh: the paid third item remains held.
+    # Reviewed entries use the same remotely verified pre-send checkpoint path.
+    devansh_plan = devansh.read_manifest(root)
+    if devansh_plan is not None and not devansh.already_completed(root, devansh_plan):
+        if devansh_plan.get("status") == "active":
+            (root / ".discord-checkpoints-used").touch()
+            devansh.deliver(root, devansh_plan)
             return
     started_at, source_starts = monitoring_policy(root)
     pending = []

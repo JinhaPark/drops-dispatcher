@@ -7,6 +7,7 @@ on:
       - 'data/artificial-engineering-backfill.json'
       - 'data/chronological-backfill.json'
       - 'data/one-time-preview-20261023.json'
+      - 'data/devansh-recent-five-20261024.json'
   workflow_dispatch:
 permissions:
   contents: write
@@ -34,6 +35,7 @@ jobs:
           python scripts/backfill.py --validate-only
           python scripts/chronological_backfill.py --validate-only
           python scripts/one_time_preview.py --validate-only
+          python scripts/devansh_recent_five.py --validate-only
       - name: Configure checkpoint author
         run: |
           git config user.name 'github-actions[bot]'
