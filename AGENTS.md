@@ -9,6 +9,7 @@ Maintain sources in `sources.json` or the agent task configuration, never scatte
 - Elevate: https://addyo.substack.com/archive — author Addy Osmani. No mandatory roundup.
 - Simon Willison: https://simonwillison.net/atom/entries/ — author Simon Willison. Use the official **long-form entries only** Atom feed; exclude the high-volume blogmarks/links/everything feeds. No mandatory roundup.
 - Hamel Husain: https://hamelhusain.substack.com/feed — author Hamel Husain. Use his newsletter RSS as the **single canonical monitoring feed**, not both mirrored blog and newsletter copies. No mandatory roundup.
+- Devansh: https://www.artificialintelligencemadesimple.com/ — author Devansh, publication **Artificial Intelligence Made Simple**. Discover through its single official Substack RSS at https://www.artificialintelligencemadesimple.com/feed; do not confuse this publication with other similarly named writers or sister publications. No mandatory roundup. New-source history is fenced by the per-source monitoring baseline; a separately approved recent-five historical delivery requires independently verified issue scope, complete original text, reviewed Markdown, and durable delivery evidence before any send.
 Future sources define their own editorial sections, access rules, and completeness requirements.
 
 ## Reader, voice and writing quality

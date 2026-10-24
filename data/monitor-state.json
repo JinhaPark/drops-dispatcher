@@ -38,6 +38,12 @@
       "status": "awaiting_first_check",
       "last_checked_at": null,
       "latest_confirmed_issue": null
+    },
+    "devansh-ai-made-simple": {
+      "monitoring_started_at": "2026-10-24T17:14:19Z",
+      "status": "awaiting_first_check",
+      "last_checked_at": null,
+      "latest_confirmed_issue": null
     }
   },
   "last_unpersisted_attempt": {
