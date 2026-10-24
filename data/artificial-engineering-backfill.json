@@ -27,7 +27,7 @@
       "edition_verified": false,
       "roundup_verified": false,
       "status": "pending",
-      "summary_eojeol": null,
+      "summary_word_count": null,
       "blocked_reason": "No explicit Edition 1 numbering or first-issue statement found; candidate date/order do not establish newsletter issue number.",
       "markdown_path": null,
       "delivery_status": "not_sent_unverified",
@@ -46,7 +46,7 @@
       "edition_verified": false,
       "roundup_verified": false,
       "status": "pending",
-      "summary_eojeol": null,
+      "summary_word_count": null,
       "blocked_reason": "No explicit Edition 2 numbering or first-issue statement found; candidate date/order do not establish newsletter issue number.",
       "markdown_path": null,
       "delivery_status": "not_sent_unverified",
@@ -66,7 +66,7 @@
       "roundup_count": 7,
       "status": "ready",
       "title": "Architecting AI: From Visualization to Trust",
-      "summary_eojeol": 281,
+      "summary_word_count": 281,
       "projects": [
         {
           "name": "DeepWiki",
@@ -134,7 +134,7 @@
       "roundup_count": 4,
       "status": "ready",
       "title": "Profiting from Code: Ethics and Efficiency in AI Engineering",
-      "summary_eojeol": 286,
+      "summary_word_count": 286,
       "projects": [
         {
           "name": "공개 코드와 생성형 AI의 기여 문제",
@@ -187,7 +187,7 @@
       "roundup_count": 7,
       "status": "ready",
       "title": "From Legacy Fear to Smart Platforms: AI's Role in Software Evolution",
-      "summary_eojeol": 286,
+      "summary_word_count": 286,
       "projects": [
         {
           "name": "기존 시스템 현대화의 조직적 장벽",
@@ -255,7 +255,7 @@
       "roundup_count": 6,
       "status": "ready",
       "title": "Building AI: From Foundations to Future Opportunities",
-      "summary_eojeol": 289,
+      "summary_word_count": 289,
       "projects": [
         {
           "name": "Time for Impact 실습 행사",
@@ -318,7 +318,7 @@
       "roundup_count": 9,
       "status": "ready",
       "title": "Mastering AI-Driven Transformation: Scaling, Augmentation, and Migration",
-      "summary_eojeol": 286,
+      "summary_word_count": 286,
       "projects": [
         {
           "name": "기업 설계와 생성형 AI 워크숍",
@@ -396,7 +396,7 @@
       "roundup_count": 7,
       "status": "ready",
       "title": "The Convergence of AI Architecture: From Decomposition to Reuse",
-      "summary_eojeol": 295,
+      "summary_word_count": 295,
       "projects": [
         {
           "name": "AI와 개발자의 설계 판단",
@@ -508,7 +508,7 @@
         "observed_text": "ARTIFICIAL ENGINEERING #9"
       },
       "source_sha256_method": "UTF-8 article-content-blocks direct-child text; whitespace collapsed within blocks; blank line separators",
-      "summary_eojeol": 273,
+      "summary_word_count": 273,
       "full_text_verified": true,
       "markdown_path": "articles/artificial-engineering/2025-06-29-edition-9.md",
       "markdown_sha256": "8a3cc5e31a8fa7d2d22ecd6c0f5107511e6de3083b7e01e3b2358bac14c23c68",
@@ -578,7 +578,7 @@
         "observed_text": "ARTIFICIAL ENGINEERING #10"
       },
       "source_sha256_method": "UTF-8 article-content-blocks direct-child text; whitespace collapsed within blocks; blank line separators",
-      "summary_eojeol": 265,
+      "summary_word_count": 265,
       "full_text_verified": true,
       "markdown_path": "articles/artificial-engineering/2025-07-06-edition-10.md",
       "markdown_sha256": "67d61f36c372cc6f3552b42520bf77fd7e0677cee0e5730919e3048bbba086d7",
@@ -638,7 +638,7 @@
         "observed_text": "ARTIFICIAL ENGINEERING #11"
       },
       "source_sha256_method": "UTF-8 article-content-blocks direct-child text; whitespace collapsed within blocks; blank line separators",
-      "summary_eojeol": 277,
+      "summary_word_count": 277,
       "full_text_verified": true,
       "markdown_path": "articles/artificial-engineering/2025-07-13-edition-11.md",
       "markdown_sha256": "607715e53ea8f2bd3ca8f5b481b9d55999a3248d4adc56d2df8228ea4152e4fd",
@@ -693,7 +693,7 @@
         "observed_text": "ARTIFICIAL ENGINEERING #12"
       },
       "source_sha256_method": "UTF-8 article-content-blocks direct-child text; whitespace collapsed within blocks; blank line separators",
-      "summary_eojeol": 276,
+      "summary_word_count": 276,
       "full_text_verified": true,
       "markdown_path": "articles/artificial-engineering/2025-07-20-edition-12.md",
       "markdown_sha256": "89fcf6131fc9200c335a8086cd55b2380a4c8cee044fdc352aa02c19d7ba3c81",
@@ -758,7 +758,7 @@
         "observed_text": "ARTIFICIAL ENGINEERING #13"
       },
       "source_sha256_method": "UTF-8 article-content-blocks direct-child text; whitespace collapsed within blocks; blank line separators",
-      "summary_eojeol": 276,
+      "summary_word_count": 276,
       "full_text_verified": true,
       "markdown_path": "articles/artificial-engineering/2025-07-27-edition-13.md",
       "markdown_sha256": "246cc55e9927c385dc62501c3a20ab9adb5f1ec64b3ece352e2809e3a954a407",
@@ -823,7 +823,7 @@
         "observed_text": "ARTIFICIAL ENGINEERING #14"
       },
       "source_sha256_method": "UTF-8 article-content-blocks direct-child text; whitespace collapsed within blocks; blank line separators",
-      "summary_eojeol": 267,
+      "summary_word_count": 267,
       "full_text_verified": true,
       "markdown_path": "articles/artificial-engineering/2025-08-03-edition-14.md",
       "markdown_sha256": "e2c8246c240326b962725de81a0de0fd155f258c087c97ac7740cb53e61b23f8",
@@ -888,7 +888,7 @@
         "observed_text": "ARTIFICIAL ENGINEERING #15"
       },
       "source_sha256_method": "UTF-8 article-content-blocks direct-child text; whitespace collapsed within blocks; blank line separators",
-      "summary_eojeol": 276,
+      "summary_word_count": 276,
       "full_text_verified": true,
       "markdown_path": "articles/artificial-engineering/2025-08-10-edition-15.md",
       "markdown_sha256": "2ef741758fcf360cb37ecfe937a0ad7be8c82a6340369984803aebf77cffb660",
@@ -963,7 +963,7 @@
         "observed_text": "ARTIFICIAL ENGINEERING #16"
       },
       "source_sha256_method": "UTF-8 article-content-blocks direct-child text; whitespace collapsed within blocks; blank line separators",
-      "summary_eojeol": 279,
+      "summary_word_count": 279,
       "full_text_verified": true,
       "markdown_path": "articles/artificial-engineering/2025-08-17-edition-16.md",
       "markdown_sha256": "e359c3bdaf7c811c3aa12791d8e133d463fbf13639665d27cd5d1cff2c1cedfe",
@@ -991,7 +991,7 @@
         "cover_sha256": "71a45e969b3906147624b85d8c18acd90e0f07a65918dd1a9a78a5cc65e38de0"
       },
       "title": "From Prompt Engineering to AI-Driven Ecosystems: Building Bridges in AI",
-      "summary_eojeol": 281,
+      "summary_word_count": 281,
       "summary_paragraphs": 4,
       "source_body_verified": true,
       "source_link_count": 5,
@@ -1059,7 +1059,7 @@
         "cover_sha256": "f51787db1c54e6a126bc49c8bf64cf6df2cf89f2740285cbabf55080e5f3abd5"
       },
       "title": "Navigating the Intersection of AI and Trust",
-      "summary_eojeol": 266,
+      "summary_word_count": 266,
       "summary_paragraphs": 4,
       "source_body_verified": true,
       "source_link_count": 8,
@@ -1136,7 +1136,7 @@
         "cover_sha256": "2d62861062d125c2f75389f973d15a213154568ce2d280d7ac0909987db02fcf"
       },
       "title": "Transformative Shifts: From Trust to Tactical Deployments",
-      "summary_eojeol": 262,
+      "summary_word_count": 262,
       "summary_paragraphs": 4,
       "source_body_verified": true,
       "source_link_count": 13,
@@ -1233,7 +1233,7 @@
         "cover_sha256": "5210a548bc4690001ad0b8f132d91e702a188fb2b01a65b815b029a5c90b294b"
       },
       "title": "Orchestrating AI Agents: From Audits to Acceleration",
-      "summary_eojeol": 266,
+      "summary_word_count": 266,
       "summary_paragraphs": 4,
       "source_body_verified": true,
       "source_link_count": 11,
@@ -1322,7 +1322,7 @@
         "cover_sha256": "04d1d3e37f4ea7405f09a017433c2f9d050ea2550c02e97a74f2c311ed64a880"
       },
       "title": "Deterministic Systems and Explainable Agents",
-      "summary_eojeol": 280,
+      "summary_word_count": 280,
       "summary_paragraphs": 4,
       "source_body_verified": true,
       "source_link_count": 13,
@@ -1419,7 +1419,7 @@
         "cover_sha256": "d81aff15e2be0ee4bc954cb1202ebe39a2d55c37f8bb15dbae5efcfb251c5038"
       },
       "title": "Shaping AI Reasoning, Explainability, and Productivity Boosts",
-      "summary_eojeol": 259,
+      "summary_word_count": 259,
       "summary_paragraphs": 4,
       "source_body_verified": true,
       "source_link_count": 7,
@@ -1492,7 +1492,7 @@
         "cover_sha256": "9559f5a13923600c799a3097618e545663d292a07436a877157a6e306202d434"
       },
       "title": "Unlocking Efficiency and Transparency",
-      "summary_eojeol": 262,
+      "summary_word_count": 262,
       "summary_paragraphs": 4,
       "source_body_verified": true,
       "source_link_count": 9,
@@ -1573,7 +1573,7 @@
         "cover_sha256": "8dd416f381c18b3f3ecd233c5b1b964783b4ac2e351ca954a2781c3ec9456421"
       },
       "title": "Building the Thinking Machine: How AI Moves From Scale to Context",
-      "summary_eojeol": 267,
+      "summary_word_count": 267,
       "summary_paragraphs": 4,
       "source_body_verified": true,
       "source_link_count": 11,
@@ -1653,7 +1653,7 @@
       "publication_timestamp": "2025-10-19T08:00:02.000+00:00",
       "source_sha256": "752f8a76312a142638995094e7cb921e541b1b6b95e63e78072c8e4bacf32cb9",
       "source_hash_method": "SHA-256 of UTF-8 author publishing-text-block text in DOM order; collapse whitespace within each block; join blocks with two LF and append LF. Excludes LinkedIn recommendations, comments and profile chrome. Exact input retained only in scratch shift.txt.",
-      "summary_eojeol": 250,
+      "summary_word_count": 250,
       "summary_paragraphs": 4,
       "roundup_verified": true,
       "roundup_count": 8,
@@ -1729,7 +1729,7 @@
       "publication_timestamp": "2025-10-26T09:21:57.000+00:00",
       "source_sha256": "c72969a0f900eed378ab0e01c2a53cc049513e9cc84dd4590664f735f1358869",
       "source_hash_method": "SHA-256 of UTF-8 author publishing-text-block text in DOM order; collapse whitespace within each block; join blocks with two LF and append LF. Excludes LinkedIn recommendations, comments and profile chrome. Exact input retained only in scratch spec.txt.",
-      "summary_eojeol": 252,
+      "summary_word_count": 252,
       "summary_paragraphs": 4,
       "roundup_verified": true,
       "roundup_count": 8,
@@ -1805,7 +1805,7 @@
       "publication_timestamp": "2025-11-02T10:19:43.000+00:00",
       "source_sha256": "2d7087c1fce1df0f5c162e3e5d845c611ca3ae7df1bcf1f0f93c8088f4f91f36",
       "source_hash_method": "SHA-256 of UTF-8 author publishing-text-block text in DOM order; collapse whitespace within each block; join blocks with two LF and append LF. Excludes LinkedIn recommendations, comments and profile chrome. Exact input retained only in scratch automation.txt.",
-      "summary_eojeol": 256,
+      "summary_word_count": 256,
       "summary_paragraphs": 4,
       "roundup_verified": true,
       "roundup_count": 7,
@@ -1876,7 +1876,7 @@
       "publication_timestamp": "2025-11-09T09:31:07.000+00:00",
       "source_sha256": "8a266af1629abb30a6c9bcc89fb8d3083953fde9c2f0ced653a1da27516ec38d",
       "source_hash_method": "SHA-256 of UTF-8 author publishing-text-block text in DOM order; collapse whitespace within each block; join blocks with two LF and append LF. Excludes LinkedIn recommendations, comments and profile chrome. Exact input retained only in scratch memory.txt.",
-      "summary_eojeol": 254,
+      "summary_word_count": 254,
       "summary_paragraphs": 4,
       "roundup_verified": true,
       "roundup_count": 9,
@@ -1957,7 +1957,7 @@
       "publication_timestamp": "2025-11-16T09:00:01.000+00:00",
       "source_sha256": "2f199290c77e9363dc982c304be7aebacc7013bcd59e1018038eb8268c21ffaa",
       "source_hash_method": "SHA-256 of UTF-8 author publishing-text-block text in DOM order; collapse whitespace within each block; join blocks with two LF and append LF. Excludes LinkedIn recommendations, comments and profile chrome. Exact input retained only in scratch cost.txt.",
-      "summary_eojeol": 267,
+      "summary_word_count": 267,
       "summary_paragraphs": 4,
       "roundup_verified": true,
       "roundup_count": 3,
@@ -2008,7 +2008,7 @@
       "publication_timestamp": "2025-11-23T10:00:04.000+00:00",
       "source_sha256": "d9d8cbd19bdb486c5536c7dc621501f6ce04e9be7733e492ad6e7a74c3dc9036",
       "source_hash_method": "SHA-256 of UTF-8 author publishing-text-block text in DOM order; collapse whitespace within each block; join blocks with two LF and append LF. Excludes LinkedIn recommendations, comments and profile chrome. Exact input retained only in scratch modernization.txt.",
-      "summary_eojeol": 258,
+      "summary_word_count": 258,
       "summary_paragraphs": 4,
       "roundup_verified": true,
       "roundup_count": 8,
@@ -2084,7 +2084,7 @@
       "publication_timestamp": "2025-11-30T14:05:59.000+00:00",
       "source_sha256": "1209c925c6fc5c7ec3e2dc2980e1f08a2bd9b60bd66820afe362e13c68ba4a0d",
       "source_hash_method": "SHA-256 of UTF-8 author publishing-text-block text in DOM order; collapse whitespace within each block; join blocks with two LF and append LF. Excludes LinkedIn recommendations, comments and profile chrome. Exact input retained only in scratch reengineering.txt.",
-      "summary_eojeol": 263,
+      "summary_word_count": 263,
       "summary_paragraphs": 4,
       "roundup_verified": true,
       "roundup_count": 6,
@@ -2150,7 +2150,7 @@
       "publication_timestamp": "2025-12-07T09:00:09.000+00:00",
       "source_sha256": "49f011d9ceab35c1788b8ec49d9f6c9b52b5400fdaf90d41f45b03bc82a918fa",
       "source_hash_method": "SHA-256 of UTF-8 author publishing-text-block text in DOM order; collapse whitespace within each block; join blocks with two LF and append LF. Excludes LinkedIn recommendations, comments and profile chrome. Exact input retained only in scratch geo.txt.",
-      "summary_eojeol": 272,
+      "summary_word_count": 272,
       "summary_paragraphs": 4,
       "roundup_verified": true,
       "roundup_count": 7,
@@ -2261,7 +2261,7 @@
         "cover_image_url": "https://media.licdn.com/dms/image/v2/D4D12AQG_s2Rsp6qTOw/article-cover_image-shrink_720_1280/B4DZscf4fXGwAI-/0/1765709680425?e=2147483647&v=beta&t=rYf4LkU0F-Gk51ZhQG8aPQBID6m6LMGvlMhJAVxFi3g",
         "visible_edition": 33
       },
-      "summary_eojeol": 262,
+      "summary_word_count": 262,
       "summary_paragraphs": 4,
       "source_hash_method": "article-main__content blocks, each whitespace normalized, joined by two LF, UTF-8",
       "source_complete": true,
@@ -2321,7 +2321,7 @@
         "cover_image_url": "https://media.licdn.com/dms/image/v2/D4E12AQHsIxJ5EfMlcA/article-cover_image-shrink_600_2000/B4EZtA1FG2GUAU-/0/1766319217591?e=2147483647&v=beta&t=tz5EaCxA58Hm4oQBvsQ0kqyc1uiDpAvn9RUCvGTyngE",
         "visible_edition": 34
       },
-      "summary_eojeol": 263,
+      "summary_word_count": 263,
       "summary_paragraphs": 4,
       "source_hash_method": "article-main__content blocks, each whitespace normalized, joined by two LF, UTF-8",
       "source_complete": true,
@@ -2396,7 +2396,7 @@
         "cover_image_url": "https://media.licdn.com/dms/image/v2/D4D12AQFzAePsi9eG8A/article-cover_image-shrink_600_2000/B4DZtkgzOGK0AY-/0/1766917880898?e=2147483647&v=beta&t=5nYN9GI54CDB68PdA85eTSmSZgZS6zM8mYx_gEN03Yc",
         "visible_edition": 35
       },
-      "summary_eojeol": 265,
+      "summary_word_count": 265,
       "summary_paragraphs": 4,
       "source_hash_method": "article-main__content blocks, each whitespace normalized, joined by two LF, UTF-8",
       "source_complete": true,
@@ -2466,7 +2466,7 @@
         "cover_image_url": "https://media.licdn.com/dms/image/v2/D4D12AQH2MViEEN_bPQ/article-cover_image-shrink_600_2000/B4DZuFolMDH8AQ-/0/1767473568568?e=2147483647&v=beta&t=corDb1ZkDQxJOmmSoSku4B2j6xHv29Bboz7jEtdzt_M",
         "visible_edition": 36
       },
-      "summary_eojeol": 274,
+      "summary_word_count": 274,
       "summary_paragraphs": 4,
       "source_hash_method": "article-main__content blocks, each whitespace normalized, joined by two LF, UTF-8",
       "source_complete": true,
@@ -2536,7 +2536,7 @@
         "cover_image_url": "https://media.licdn.com/dms/image/v2/D4D12AQFLCjinxYh8-Q/article-cover_image-shrink_600_2000/B4DZup8C2hG8AQ-/0/1768082650340?e=2147483647&v=beta&t=tC9SH5lMmC_m9px1g12iYkbdRQMID3DWg6_qvn3BWCw",
         "visible_edition": 37
       },
-      "summary_eojeol": 266,
+      "summary_word_count": 266,
       "summary_paragraphs": 4,
       "source_hash_method": "article-main__content blocks, each whitespace normalized, joined by two LF, UTF-8",
       "source_complete": true,
@@ -2611,7 +2611,7 @@
         "cover_image_url": "https://media.licdn.com/dms/image/v2/D4D12AQHexTgwMrq0sg/article-cover_image-shrink_720_1280/B4DZvNwcMVHYAI-/0/1768683588274?e=2147483647&v=beta&t=_co_rZn9xNpOI2E7xrB4CxKnVt-LQQp3j1T1SMe4Dpw",
         "visible_edition": 38
       },
-      "summary_eojeol": 263,
+      "summary_word_count": 263,
       "summary_paragraphs": 4,
       "source_hash_method": "article-main__content blocks, each whitespace normalized, joined by two LF, UTF-8",
       "source_complete": true,
@@ -2711,7 +2711,7 @@
         "cover_image_url": "https://media.licdn.com/dms/image/v2/D4D12AQHW-PsU4pu-BA/article-cover_image-shrink_600_2000/B4DZvxgd53KUAQ-/0/1769283380856?e=2147483647&v=beta&t=x7ORG9ZG8o4P1j1dLKK_9BDH0SObGgLfWqeqoOxgaIE",
         "visible_edition": 39
       },
-      "summary_eojeol": 264,
+      "summary_word_count": 264,
       "summary_paragraphs": 4,
       "source_hash_method": "article-main__content blocks, each whitespace normalized, joined by two LF, UTF-8",
       "source_complete": true,
@@ -2806,7 +2806,7 @@
         "cover_image_url": "https://media.licdn.com/dms/image/v2/D4D12AQHC3NbTbGZFYQ/article-cover_image-shrink_720_1280/B4DZwVsHeoKUAI-/0/1769890414950?e=2147483647&v=beta&t=JL_qI76OJdDvAXi3enegEKON8BAp8zoLA0CoEF-i63M",
         "visible_edition": 40
       },
-      "summary_eojeol": 258,
+      "summary_word_count": 258,
       "summary_paragraphs": 4,
       "source_hash_method": "article-main__content blocks, each whitespace normalized, joined by two LF, UTF-8",
       "source_complete": true,
@@ -2834,7 +2834,7 @@
       "roundup_count": 10,
       "title": "Evals: The Foundation of Reliable AI Agents",
       "original_title": "Evals: The Foundation of Reliable AI Agents",
-      "summary_eojeol": 250,
+      "summary_word_count": 250,
       "summary_paragraphs": 4,
       "cover_number_verified": true,
       "edition_evidence": {
@@ -2914,7 +2914,7 @@
       "roundup_count": 6,
       "title": "When AI Meets the Backend",
       "original_title": "When AI Meets the Backend",
-      "summary_eojeol": 254,
+      "summary_word_count": 254,
       "summary_paragraphs": 4,
       "cover_number_verified": true,
       "edition_evidence": {
@@ -2978,7 +2978,7 @@
       "roundup_count": 11,
       "title": "The Ontology Is the Moat",
       "original_title": "The Ontology Is the Moat",
-      "summary_eojeol": 259,
+      "summary_word_count": 259,
       "summary_paragraphs": 4,
       "cover_number_verified": true,
       "edition_evidence": {
@@ -3062,7 +3062,7 @@
       "roundup_count": 16,
       "title": "From Solo Agent to Parallel Fleet",
       "original_title": "From Solo Agent to Parallel Fleet",
-      "summary_eojeol": 252,
+      "summary_word_count": 252,
       "summary_paragraphs": 4,
       "cover_number_verified": true,
       "edition_evidence": {
@@ -3166,7 +3166,7 @@
       "roundup_count": 8,
       "title": "Closing the Context Gap: Why Ontologies Are the Missing Layer in AI Systems",
       "original_title": "Closing the Context Gap: Why Ontologies Are the Missing Layer in AI Systems",
-      "summary_eojeol": 262,
+      "summary_word_count": 262,
       "summary_paragraphs": 4,
       "cover_number_verified": true,
       "edition_evidence": {
@@ -3238,7 +3238,7 @@
       "roundup_count": 12,
       "title": "The Memory Problem No One Talks About: Why AI Agents Need Two Clocks",
       "original_title": "The Memory Problem No One Talks About: Why AI Agents Need Two Clocks",
-      "summary_eojeol": 259,
+      "summary_word_count": 259,
       "summary_paragraphs": 4,
       "cover_number_verified": true,
       "edition_evidence": {
@@ -3326,7 +3326,7 @@
       "roundup_count": 14,
       "title": "Minimize Surprise, Maximize Agency: What Active Inference Teaches Us About Building AI Agents That Remember, Forget, and Evolve",
       "original_title": "Minimize Surprise, Maximize Agency: What Active Inference Teaches Us About Building AI Agents That Remember, Forget, and Evolve",
-      "summary_eojeol": 255,
+      "summary_word_count": 255,
       "summary_paragraphs": 4,
       "cover_number_verified": true,
       "edition_evidence": {
@@ -3422,7 +3422,7 @@
       "roundup_count": 14,
       "title": "Context Cores and the End of the Memento Nightmare: Why Agent Memory Needs Graphs, Provenance, and Portability",
       "original_title": "Context Cores and the End of the Memento Nightmare: Why Agent Memory Needs Graphs, Provenance, and Portability",
-      "summary_eojeol": 251,
+      "summary_word_count": 251,
       "summary_paragraphs": 4,
       "cover_number_verified": true,
       "edition_evidence": {
@@ -3601,7 +3601,7 @@
       },
       "metadata_evidence": "Article JSON-LD name, url, author.name, datePublished; date and author also in visible article header",
       "source_sha256_method": "UTF-8 article-content-blocks direct-child text; whitespace collapsed within blocks; blank line separators",
-      "summary_eojeol": 265,
+      "summary_word_count": 265,
       "summary_paragraphs": 4,
       "full_text_verified": true,
       "markdown_path": "articles/artificial-engineering/2026-04-04-edition-49.md",
@@ -3762,7 +3762,7 @@
       },
       "metadata_evidence": "Article JSON-LD name, url, author.name, datePublished; date and author also in visible article header",
       "source_sha256_method": "UTF-8 article-content-blocks direct-child text; whitespace collapsed within blocks; blank line separators",
-      "summary_eojeol": 266,
+      "summary_word_count": 266,
       "summary_paragraphs": 4,
       "full_text_verified": true,
       "intro_claimed_count": 26,
@@ -3902,7 +3902,7 @@
       },
       "metadata_evidence": "Article JSON-LD name, url, author.name, datePublished; date and author also in visible article header",
       "source_sha256_method": "UTF-8 article-content-blocks direct-child text; whitespace collapsed within blocks; blank line separators",
-      "summary_eojeol": 268,
+      "summary_word_count": 268,
       "summary_paragraphs": 4,
       "full_text_verified": true,
       "markdown_path": "articles/artificial-engineering/2026-04-18-edition-51.md",
@@ -4073,7 +4073,7 @@
       },
       "metadata_evidence": "Article JSON-LD name, url, author.name, datePublished; date and author also in visible article header",
       "source_sha256_method": "UTF-8 article-content-blocks direct-child text; whitespace collapsed within blocks; blank line separators",
-      "summary_eojeol": 278,
+      "summary_word_count": 278,
       "summary_paragraphs": 4,
       "full_text_verified": true,
       "markdown_path": "articles/artificial-engineering/2026-04-25-edition-52.md",
@@ -4149,7 +4149,7 @@
       },
       "metadata_evidence": "Article JSON-LD name, url, author.name, datePublished; date and author also in visible article header",
       "source_sha256_method": "UTF-8 article-content-blocks direct-child text; whitespace collapsed within blocks; blank line separators",
-      "summary_eojeol": 285,
+      "summary_word_count": 285,
       "summary_paragraphs": 4,
       "full_text_verified": true,
       "markdown_path": "articles/artificial-engineering/2026-05-02-edition-53.md",
@@ -4230,7 +4230,7 @@
       },
       "metadata_evidence": "Article JSON-LD name, url, author.name, datePublished; date and author also in visible article header",
       "source_sha256_method": "UTF-8 article-content-blocks direct-child text; whitespace collapsed within blocks; blank line separators",
-      "summary_eojeol": 282,
+      "summary_word_count": 282,
       "summary_paragraphs": 4,
       "full_text_verified": true,
       "markdown_path": "articles/artificial-engineering/2026-05-09-edition-54.md",
@@ -4321,7 +4321,7 @@
       },
       "metadata_evidence": "Article JSON-LD name, url, author.name, datePublished; date and author also in visible article header",
       "source_sha256_method": "UTF-8 article-content-blocks direct-child text; whitespace collapsed within blocks; blank line separators",
-      "summary_eojeol": 286,
+      "summary_word_count": 286,
       "summary_paragraphs": 4,
       "full_text_verified": true,
       "markdown_path": "articles/artificial-engineering/2026-05-16-edition-55.md",
@@ -4442,7 +4442,7 @@
       },
       "metadata_evidence": "Article JSON-LD name, url, author.name, datePublished; date and author also in visible article header",
       "source_sha256_method": "UTF-8 article-content-blocks direct-child text; whitespace collapsed within blocks; blank line separators",
-      "summary_eojeol": 276,
+      "summary_word_count": 276,
       "summary_paragraphs": 4,
       "full_text_verified": true,
       "markdown_path": "articles/artificial-engineering/2026-05-23-edition-56.md",
@@ -4542,7 +4542,7 @@
         "cover_image_url": "https://media.licdn.com/dms/image/v2/D4D12AQHoRFWy7imzSg/article-cover_image-shrink_600_2000/B4DZ56mjO2H4AM-/0/1780173386988?e=2147483647&v=beta&t=rVuikHkfnvLZ7aYzHF25T648axC6PSEDm-SvCEGHhJw",
         "visible_edition": 57
       },
-      "summary_eojeol": 257,
+      "summary_word_count": 257,
       "summary_paragraphs": 4,
       "source_hash_method": "article-main__content blocks, each whitespace normalized, joined by two LF, UTF-8",
       "source_complete": true,
@@ -4677,7 +4677,7 @@
         "cover_image_url": "https://media.licdn.com/dms/image/v2/D4D12AQFLyBdZhKMlyA/article-cover_image-shrink_600_2000/B4DZ6ej01_KwAM-/0/1780776652389?e=2147483647&v=beta&t=joLrnqaSMPPlfQeLF8KKC10CHoMdByxJ-Shwo_AclRU",
         "visible_edition": 58
       },
-      "summary_eojeol": 266,
+      "summary_word_count": 266,
       "summary_paragraphs": 4,
       "source_hash_method": "article-main__content blocks, each whitespace normalized, joined by two LF, UTF-8",
       "source_complete": true,
@@ -4777,7 +4777,7 @@
         "cover_image_url": "https://media.licdn.com/dms/image/v2/D4E12AQETqlkMMyHS9A/article-cover_image-shrink_720_1280/B4EZ7CVhjzKoAQ-/0/1781376883208?e=2147483647&v=beta&t=d8k6YvrHfFGr05_CLNwG1oZWF4eSMogAdM1CuHooU5Q",
         "visible_edition": 59
       },
-      "summary_eojeol": 264,
+      "summary_word_count": 264,
       "summary_paragraphs": 4,
       "source_hash_method": "article-main__content blocks, each whitespace normalized, joined by two LF, UTF-8",
       "source_complete": true,
@@ -4887,7 +4887,7 @@
         "cover_image_url": "https://media.licdn.com/dms/image/v2/D4E12AQGFyhSnDP9s3A/article-cover_image-shrink_600_2000/B4EZ7li.qzHAAM-/0/1781967612950?e=2147483647&v=beta&t=UjggEfTQQsRio7xh2gcthlIwirKNdixZdIw6E73Zn3c",
         "visible_edition": 60
       },
-      "summary_eojeol": 265,
+      "summary_word_count": 265,
       "summary_paragraphs": 4,
       "source_hash_method": "article-main__content blocks, each whitespace normalized, joined by two LF, UTF-8",
       "source_complete": true,
@@ -4992,7 +4992,7 @@
         "cover_image_url": "https://media.licdn.com/dms/image/v2/D4E12AQFjEdke1GW8cw/article-cover_image-shrink_720_1280/B4EZ8KZLqJIsAQ-/0/1782585801611?e=2147483647&v=beta&t=D4cbOZPnoCiRflyPt7MRtRiXhTjHxrNym50Olr3geeM",
         "visible_edition": 61
       },
-      "summary_eojeol": 261,
+      "summary_word_count": 261,
       "summary_paragraphs": 4,
       "source_hash_method": "article-main__content blocks, each whitespace normalized, joined by two LF, UTF-8",
       "source_complete": true,
@@ -5102,7 +5102,7 @@
         "cover_image_url": "https://media.licdn.com/dms/image/v2/D4E12AQF2wEW9mlkHMw/article-cover_image-shrink_600_2000/B4EZ8u.bprK4AM-/0/1783199546204?e=2147483647&v=beta&t=XqoLfbuklYNz-XxBomu_NMcMIi4oyCEo36Rno_oFFPA",
         "visible_edition": 62
       },
-      "summary_eojeol": 264,
+      "summary_word_count": 264,
       "summary_paragraphs": 4,
       "source_hash_method": "article-main__content blocks, each whitespace normalized, joined by two LF, UTF-8",
       "source_complete": true,
@@ -5187,7 +5187,7 @@
         "cover_image_url": "https://media.licdn.com/dms/image/v2/D4E12AQHU9MLzxEKYUA/article-cover_image-shrink_720_1280/B4EZ9SEHcfIsAQ-/0/1783788238890?e=2147483647&v=beta&t=VkiBSvY34YVvHeXUJvGr2N-lUdt2-PCvyYcrPxD2W14",
         "visible_edition": 63
       },
-      "summary_eojeol": 256,
+      "summary_word_count": 256,
       "summary_paragraphs": 4,
       "source_hash_method": "article-main__content blocks, each whitespace normalized, joined by two LF, UTF-8",
       "source_complete": true,
@@ -5272,7 +5272,7 @@
         "cover_image_url": "https://media.licdn.com/dms/image/v2/D4E12AQHLhl96dkcqzQ/article-cover_image-shrink_600_2000/B4EZ92p_J6KQAM-/0/1784402146167?e=2147483647&v=beta&t=6UQSg23BFQH4qqvIwI-3VdBL_gnXS0zGutAygbdogJY",
         "visible_edition": 64
       },
-      "summary_eojeol": 267,
+      "summary_word_count": 267,
       "summary_paragraphs": 4,
       "source_hash_method": "article-main__content blocks, each whitespace normalized, joined by two LF, UTF-8",
       "source_complete": true,
