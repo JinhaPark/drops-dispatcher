@@ -91,7 +91,7 @@
       },
       "markdown_path": "articles/elevate/2023-11-21-growth-mindset-vs-fixed-mindset.md",
       "markdown_sha256": "163428c072986f3a1f15910ad9bad3cb46fc21a47669fd07a64094a74cdf1038",
-      "summary_eojeol": 258,
+      "summary_word_count": 258,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -128,7 +128,7 @@
       },
       "markdown_path": "articles/elevate/2023-11-25-dont-expect-to-be-motivated-everyday.md",
       "markdown_sha256": "49f09d8ee7405e128b8f31e44b043236e287d9c3592c2194fa04aa6296df70ed",
-      "summary_eojeol": 263,
+      "summary_word_count": 263,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -165,7 +165,7 @@
       },
       "markdown_path": "articles/elevate/2023-11-29-effective-software-engineers.md",
       "markdown_sha256": "ae87039cd282ca86f34389b87cf14a333d2713705b308c7d7ce7fc6d26164960",
-      "summary_eojeol": 277,
+      "summary_word_count": 277,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -250,7 +250,7 @@
       },
       "markdown_path": "articles/elevate/2023-12-07-it-takes-23-mins-to-recover-after.md",
       "markdown_sha256": "4b79b5db58e78530ef8074c06ede29a59acd099bb76fc0d58a8ec532e9f1d00a",
-      "summary_eojeol": 274,
+      "summary_word_count": 274,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -311,7 +311,7 @@
       },
       "markdown_path": "articles/elevate/2023-12-16-change-what-you-do-to-change-where.md",
       "markdown_sha256": "55f3f8d52c87567a5626b3642df5f14347596ef22c4a85c991b1b02df4b954e3",
-      "summary_eojeol": 276,
+      "summary_word_count": 276,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -365,7 +365,7 @@
       },
       "markdown_path": "articles/elevate/2023-12-21-good-code-is-like-a-love-letter-to.md",
       "markdown_sha256": "c1b07a212aded4e70692e57c610e80a63548e2416722cfa004e801c0e82392fa",
-      "summary_eojeol": 254,
+      "summary_word_count": 254,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -395,7 +395,7 @@
       },
       "markdown_path": "articles/elevate/2023-12-24-first-do-it-then-do-it-right-then.md",
       "markdown_sha256": "e2daa07867a171442cd8372903ce4661da669ff4fda91911eb25deae4d4b3c82",
-      "summary_eojeol": 253,
+      "summary_word_count": 253,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -425,7 +425,7 @@
       },
       "markdown_path": "articles/elevate/2023-12-26-soft-skills-books-for-developers.md",
       "markdown_sha256": "830c581b3a21f907dd730ee23960445434570211d3c5baec2b84d4988040c6e1",
-      "summary_eojeol": 262,
+      "summary_word_count": 262,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -479,7 +479,7 @@
       },
       "markdown_path": "articles/elevate/2023-12-29-reduce-the-gap-between-idea-and-execution.md",
       "markdown_sha256": "1c473df2e84b8770ac76e019fba60a09f8ad76beb2ad3a528d490b048fcdd413",
-      "summary_eojeol": 256,
+      "summary_word_count": 256,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -509,7 +509,7 @@
       },
       "markdown_path": "articles/elevate/2023-12-30-23-lessons-in-2023.md",
       "markdown_sha256": "fa96bed9f01f2d7dd3eafe568c2fd4748d359ddf4fcb55f63288716aa550739c",
-      "summary_eojeol": 260,
+      "summary_word_count": 260,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -567,7 +567,7 @@
       },
       "markdown_path": "articles/elevate/2024-01-05-stretch-yourself-from-time-to-time.md",
       "markdown_sha256": "a21c75f559c2aa1c58b07d70c6bdde1aa40001d1949e655120b01ab77f3a26bf",
-      "summary_eojeol": 250,
+      "summary_word_count": 250,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -601,7 +601,7 @@
       },
       "markdown_path": "articles/elevate/2024-01-09-effective-engineering-managers.md",
       "markdown_sha256": "3adecf7d240a7e96bc6d1a1accf7854d6fb1304728492f407548ba7157365a16",
-      "summary_eojeol": 258,
+      "summary_word_count": 258,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -635,7 +635,7 @@
       },
       "markdown_path": "articles/elevate/2024-01-18-leading-effective-engineering-teams.md",
       "markdown_sha256": "76151eeac4129b86c4f72af92167ae763da86dc2d6cd6057a49f2ffdfbf0a1fb",
-      "summary_eojeol": 250,
+      "summary_word_count": 250,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -669,7 +669,7 @@
       },
       "markdown_path": "articles/elevate/2024-01-28-consistency-matters.md",
       "markdown_sha256": "b7393ac29b6a57c741e181f8aa2b324007b0137a9f44687961ecf820b0592358",
-      "summary_eojeol": 252,
+      "summary_word_count": 252,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -703,7 +703,7 @@
       },
       "markdown_path": "articles/elevate/2024-02-19-stick-to-boring-architecture-for.md",
       "markdown_sha256": "b4caa478c97cb1a0d53c4126b04873059ea56cf9b3d6b90f41597561caad8075",
-      "summary_eojeol": 259,
+      "summary_word_count": 259,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -737,7 +737,7 @@
       },
       "markdown_path": "articles/elevate/2024-04-09-the-debuggers-toolkit.md",
       "markdown_sha256": "8fbaa95ac2b222fcbed9e3d5e97c431ebeb6269490b0a7a043547da79c629681",
-      "summary_eojeol": 257,
+      "summary_word_count": 257,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -771,7 +771,7 @@
       },
       "markdown_path": "articles/elevate/2024-04-30-conquering-imposter-syndrome.md",
       "markdown_sha256": "315bfe16c39243a00821a2ae713cda1fcc4e1b1fe5fe9b7dcc67b4cbb7a144d3",
-      "summary_eojeol": 257,
+      "summary_word_count": 257,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -805,7 +805,7 @@
       },
       "markdown_path": "articles/elevate/2024-05-13-10-lessons-from-12-years-at-google.md",
       "markdown_sha256": "afc37b955cfe04c56752e96074d4e48f522f9740d05b498e9bad3f568263827e",
-      "summary_eojeol": 261,
+      "summary_word_count": 261,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -851,7 +851,7 @@
       },
       "markdown_path": "articles/elevate/2024-06-24-focus-on-what-you-can-control.md",
       "markdown_sha256": "6bca7133a5ed23be0ca5fdcd0cdf4d57e22dfb0f70b690adde5dd1608e060dbd",
-      "summary_eojeol": 255,
+      "summary_word_count": 255,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -897,7 +897,7 @@
       },
       "markdown_path": "articles/elevate/2024-08-14-comparison-is-the-thief-of-joy.md",
       "markdown_sha256": "697b3d1f24898a1af89da1689679943f8100c872d672b237c3e6fdb4b3ead924",
-      "summary_eojeol": 254,
+      "summary_word_count": 254,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -943,7 +943,7 @@
       },
       "markdown_path": "articles/elevate/2024-08-23-there-is-no-right-time-just-time.md",
       "markdown_sha256": "a0c05e49a4cba42aa3af3c3e379ca1815388c28032f7a5be157454767acf25eb",
-      "summary_eojeol": 263,
+      "summary_word_count": 263,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -989,7 +989,7 @@
       },
       "markdown_path": "articles/elevate/2024-11-15-user-centric-engineering.md",
       "markdown_sha256": "b4f6128e106173ec84a1cf4d013dff033a48691b4c757c474632a3a66283d451",
-      "summary_eojeol": 269,
+      "summary_word_count": 269,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -1035,7 +1035,7 @@
       },
       "markdown_path": "articles/elevate/2024-12-04-the-70-problem-hard-truths-about.md",
       "markdown_sha256": "c1ef9a73c322efcc4dc0ec12eb6980190f66ea62f89237de07ff971118e8537b",
-      "summary_eojeol": 275,
+      "summary_word_count": 275,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -1081,7 +1081,7 @@
       },
       "markdown_path": "articles/elevate/2024-12-23-future-proofing-your-software-engineering.md",
       "markdown_sha256": "6c0013cca6393de63ab9a918bb9b872074d5efeb382b14effac24c41d7e6863d",
-      "summary_eojeol": 275,
+      "summary_word_count": 275,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -1127,7 +1127,7 @@
       },
       "markdown_path": "articles/elevate/2025-01-11-ai-driven-prototyping-v0-bolt-and.md",
       "markdown_sha256": "c30f8e24557755d14eaebb522df1a0cbfef7ebbaa39ca1106ffae08ad2e329e7",
-      "summary_eojeol": 282,
+      "summary_word_count": 282,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -1173,7 +1173,7 @@
       },
       "markdown_path": "articles/elevate/2025-01-30-why-i-use-cline-for-ai-engineering.md",
       "markdown_sha256": "b94222f7e01e58b35bd47dba769fd0229ca4dda778a580fa598cdd8e08219e27",
-      "summary_eojeol": 279,
+      "summary_word_count": 279,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -1214,7 +1214,7 @@
       },
       "markdown_path": "articles/elevate/2025-02-09-personal-software-the-unbundling.md",
       "markdown_sha256": "b5ea9304fb69de96489e76b958e47b14bfc736890d90bf92da8ee135fe4bc711",
-      "summary_eojeol": 265,
+      "summary_word_count": 265,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -1255,7 +1255,7 @@
       },
       "markdown_path": "articles/elevate/2025-02-28-speech-to-code-vibe-coding-with-voice.md",
       "markdown_sha256": "66a7c5d6eb7305d912d27780b740656e720be9d80c0b5c3992a8b07a85933291",
-      "summary_eojeol": 262,
+      "summary_word_count": 262,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -1296,7 +1296,7 @@
       },
       "markdown_path": "articles/elevate/2025-03-06-applied-software-engineering-at-google.md",
       "markdown_sha256": "702f7bf814935ca72ef33626845dbbd8c917dcc5157e9ea6ac928440b9304efc",
-      "summary_eojeol": 265,
+      "summary_word_count": 265,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -1337,7 +1337,7 @@
       },
       "markdown_path": "articles/elevate/2025-03-13-beyond-the-70-maximizing-the-human.md",
       "markdown_sha256": "df4ff9138e4e6dfa70935a6f359ea319126e7bec22b5dcc2f34b8ffebf85723f",
-      "summary_eojeol": 260,
+      "summary_word_count": 260,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -1380,7 +1380,7 @@
       },
       "markdown_path": "articles/elevate/2025-03-19-leading-effective-engineering-teams-c9b.md",
       "markdown_sha256": "aa7e9872c72eaee5b6e707acdb0e8e8bdcd82685592a77156da7b8809b0779e0",
-      "summary_eojeol": 266,
+      "summary_word_count": 266,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -1423,7 +1423,7 @@
       },
       "markdown_path": "articles/elevate/2025-03-27-mcp-what-it-is-and-why-it-matters.md",
       "markdown_sha256": "acc7772c830cab7bbc85868613d3ab0ecb00f79bab94507beb28ce1fb2afd640",
-      "summary_eojeol": 265,
+      "summary_word_count": 265,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -1466,7 +1466,7 @@
       },
       "markdown_path": "articles/elevate/2025-04-03-vibe-coding-revolution-or-reckless.md",
       "markdown_sha256": "75ede3f4bc914eaa19a07c308437074883d2137f49983520062049dbd4f37e39",
-      "summary_eojeol": 268,
+      "summary_word_count": 268,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -1507,7 +1507,7 @@
       },
       "markdown_path": "articles/elevate/2025-04-11-what-are-ai-agents-why-do-they-matter.md",
       "markdown_sha256": "9b6afa07b30d3fb905f5d4bbbd66f416dcd8e095ee8ea48252af09ca86091bfa",
-      "summary_eojeol": 267,
+      "summary_word_count": 267,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -1553,7 +1553,7 @@
       },
       "markdown_path": "articles/elevate/2025-04-18-vibe-coding-is-not-an-excuse-for.md",
       "markdown_sha256": "6e171b57ca9dd089074f64482075786f88325be018ffa54c7e115d04760bd889",
-      "summary_eojeol": 251,
+      "summary_word_count": 251,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -1599,7 +1599,7 @@
       },
       "markdown_path": "articles/elevate/2025-04-25-avoiding-skill-atrophy-in-the-age.md",
       "markdown_sha256": "e5b5366cf1a712848adb82562aa182dd48fe5807d5e60dde305993b03c4a6a48",
-      "summary_eojeol": 251,
+      "summary_word_count": 251,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -1646,7 +1646,7 @@
       },
       "markdown_path": "articles/elevate/2025-05-10-ai-wont-kill-junior-devs-but-your.md",
       "markdown_sha256": "610459f0591d3c697217166303fac2ab735533a80348e32f9b354a32492eff5b",
-      "summary_eojeol": 257,
+      "summary_word_count": 257,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -1694,7 +1694,7 @@
       },
       "markdown_path": "articles/elevate/2025-05-27-the-prompt-engineering-playbook-for.md",
       "markdown_sha256": "893595841fc850756697a25858f3367d784055804a1fc8500f80f7f823430153",
-      "summary_eojeol": 252,
+      "summary_word_count": 252,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -1740,7 +1740,7 @@
       },
       "markdown_path": "articles/elevate/2025-06-09-the-trust-but-verify-pattern-for.md",
       "markdown_sha256": "4511e234c551b14adfda1fcdab3158f13c2ff62bf3606366352536a7eb3f5565",
-      "summary_eojeol": 257,
+      "summary_word_count": 257,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -1789,7 +1789,7 @@
       },
       "markdown_path": "articles/elevate/2025-07-01-the-ai-native-software-engineer.md",
       "markdown_sha256": "32560c7aa27a97edcd0c8c93a92fe4e9228e5b74e4056a6e3adc0ec9aa8b14af",
-      "summary_eojeol": 256,
+      "summary_word_count": 256,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -1836,7 +1836,7 @@
       },
       "markdown_path": "articles/elevate/2025-07-13-context-engineering-bringing-engineering.md",
       "markdown_sha256": "d9883fb59e781efd2b93c83e43bd50a3452510918e9ca5411d1a0052404443ac",
-      "summary_eojeol": 257,
+      "summary_word_count": 257,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -1884,7 +1884,7 @@
       },
       "markdown_path": "articles/elevate/2025-07-29-coding-for-the-future-agentic-world.md",
       "markdown_sha256": "4dc8dccc3338760b5f9004f552b0af50491ee5965b5c999d6b2ace0dfd1777a2",
-      "summary_eojeol": 257,
+      "summary_word_count": 257,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -1921,7 +1921,7 @@
       },
       "markdown_path": "articles/elevate/2025-08-16-the-reality-of-ai-assisted-software.md",
       "markdown_sha256": "0aeb34eed2f65142c72d43cc1e5e559203b3800c399dc3d181fad3fb620b0266",
-      "summary_eojeol": 260,
+      "summary_word_count": 260,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -1957,7 +1957,7 @@
       },
       "markdown_path": "articles/elevate/2025-08-30-vibe-coding-is-not-the-same-as-ai.md",
       "markdown_sha256": "a51c9d06ebe14dc2e92b96cb894d747ddb6d3405100445f75ca30c1ee8ebf834",
-      "summary_eojeol": 260,
+      "summary_word_count": 260,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -1994,7 +1994,7 @@
       },
       "markdown_path": "articles/elevate/2025-09-13-how-modern-browsers-work.md",
       "markdown_sha256": "700bec840ac25ae013429ebcca3db3cbcd433926d0958db5140720489a0c48a3",
-      "summary_eojeol": 266,
+      "summary_word_count": 266,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -2033,7 +2033,7 @@
       },
       "markdown_path": "articles/elevate/2025-10-21-gemini-cli-tips-and-tricks.md",
       "markdown_sha256": "6479382b6f91415ae91648f1b8e4f2993e8c8735509e19f9bc6aaa9e1ba43c8c",
-      "summary_eojeol": 265,
+      "summary_word_count": 265,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -2069,7 +2069,7 @@
       },
       "markdown_path": "articles/elevate/2025-11-01-conductors-to-orchestrators-the-future.md",
       "markdown_sha256": "06c1d2329d75ebc1728549628d955a1b5745c05d925699e29b1e93809645ae6e",
-      "summary_eojeol": 259,
+      "summary_word_count": 259,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -2104,7 +2104,7 @@
       },
       "markdown_path": "articles/elevate/2025-11-21-critical-thinking-during-the-age.md",
       "markdown_sha256": "0b3f98640c8b87773068798d8dc00d58fad8996e0d4647eadbf16b98233e34e7",
-      "summary_eojeol": 262,
+      "summary_word_count": 262,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -2139,7 +2139,7 @@
       },
       "markdown_path": "articles/elevate/2025-11-25-treat-ai-generated-code-as-a-draft.md",
       "markdown_sha256": "719d542cbf0fad861fdd8167a161cef27d95c64a53ae474e7028fe587bff0992",
-      "summary_eojeol": 262,
+      "summary_word_count": 262,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -2174,7 +2174,7 @@
       },
       "markdown_path": "articles/elevate/2025-12-04-21-lessons-from-14-years-at-google.md",
       "markdown_sha256": "6fa94d1f6738ec3ecb6a24a8ac9649cb42d3eed1668f3d4334885f6f38898c8c",
-      "summary_eojeol": 263,
+      "summary_word_count": 263,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -2215,7 +2215,7 @@
       },
       "markdown_path": "articles/elevate/2025-12-18-my-llm-coding-workflow-going-into.md",
       "markdown_sha256": "f7d90b91fa71f06d200ef4398d68767a183189aefd01c40cfe2313517d2a5c06",
-      "summary_eojeol": 267,
+      "summary_word_count": 267,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -2257,7 +2257,7 @@
       },
       "markdown_path": "articles/elevate/2025-12-29-how-good-is-ai-at-coding-react-really.md",
       "markdown_sha256": "cf16fba3b7d3db6f16eedcfdb5b566389e96c4d874dba49297aaf761dc1131f3",
-      "summary_eojeol": 269,
+      "summary_word_count": 269,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -2298,7 +2298,7 @@
       },
       "markdown_path": "articles/elevate/2026-01-05-code-review-in-the-age-of-ai.md",
       "markdown_sha256": "488b0755f31451629bcc61b426c9075f8d69c8df11c4f7cb44ce1de6563015cd",
-      "summary_eojeol": 264,
+      "summary_word_count": 264,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -2340,7 +2340,7 @@
       },
       "markdown_path": "articles/elevate/2026-01-19-how-to-write-a-good-spec-for-ai-agents.md",
       "markdown_sha256": "c13a52d16e15f6c86d836aa2ec3c3e820677db7635772376b3176511ea9aa09e",
-      "summary_eojeol": 268,
+      "summary_word_count": 268,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -2381,7 +2381,7 @@
       },
       "markdown_path": "articles/elevate/2026-01-28-the-80-problem-in-agentic-coding.md",
       "markdown_sha256": "42fb49ddcb852ba7d1e978c954e9f11ccaecf95cb1b2038c9a09a18a04e16111",
-      "summary_eojeol": 274,
+      "summary_word_count": 274,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -2422,7 +2422,7 @@
       },
       "markdown_path": "articles/elevate/2026-02-12-14-more-lessons-from-14-years-at.md",
       "markdown_sha256": "fca2be495fa2e8c876811af47fa97dc08985ea78caf5b133fade7378a8a74756",
-      "summary_eojeol": 273,
+      "summary_word_count": 273,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -2463,7 +2463,7 @@
       },
       "markdown_path": "articles/elevate/2026-03-20-death-of-the-ide.md",
       "markdown_sha256": "443e3f05ea7a0efe054025b004801ce68df7b8e0e28e926de5f69eea9e8223ad",
-      "summary_eojeol": 276,
+      "summary_word_count": 276,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     },
@@ -2504,7 +2504,7 @@
       },
       "markdown_path": "articles/elevate/2026-04-18-the-agent-stack-bet.md",
       "markdown_sha256": "2d03544852139572ecd7754d48a08b12fbff6c971540d9b18c744ef6a09342dd",
-      "summary_eojeol": 273,
+      "summary_word_count": 273,
       "summary_paragraphs": 4,
       "editorial_version": "ko-300eojeol-v1"
     }

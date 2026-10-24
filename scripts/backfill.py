@@ -11,6 +11,8 @@ import subprocess
 import sys
 import tempfile
 
+from editorial_policy import SUPPORTED_EDITORIAL_VERSIONS
+
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 MANIFEST = "data/artificial-engineering-backfill.json"
 LEDGER = "data/discord-deliveries.json"
@@ -69,7 +71,9 @@ def validate_article(root, item):
     fields, body = frontmatter(text)
     required = {"id": f"artificial-engineering:edition-{n}", "source_id": "artificial-engineering",
                 "edition_number": str(n), "author": "André Lindenberg", "status": "ready",
-                "editorial_version": "ko-300eojeol-v1", "roundup_verified": "true"}
+                "roundup_verified": "true"}
+    if fields.get("editorial_version") not in SUPPORTED_EDITORIAL_VERSIONS:
+        raise ValueError(f"Invalid editorial_version: Edition {n}")
     for key, value in required.items():
         if fields.get(key) != value:
             raise ValueError(f"Invalid {key}: Edition {n}")
@@ -94,7 +98,7 @@ def validate_article(root, item):
     summary = paragraphs[2:]
     count = len(" ".join(summary).split())
     if not 3 <= len(summary) <= 5 or not 250 <= count <= 350:
-        raise ValueError(f"Summary length invalid: {count} eojeol/{len(summary)} paragraphs")
+        raise ValueError(f"Summary length invalid: {count} words/{len(summary)} paragraphs")
     listed = [line for line in sections[1].splitlines() if line.startswith("- ")]
     projects = item.get("projects", [])
     if len(listed) != len(projects) or len(projects) != item["roundup_count"]:

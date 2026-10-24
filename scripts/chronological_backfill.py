@@ -7,6 +7,7 @@ import re
 import subprocess
 import sys
 
+from editorial_policy import SUPPORTED_EDITORIAL_VERSIONS
 import backfill as b
 
 MANIFEST = 'data/chronological-backfill.json'
@@ -26,7 +27,9 @@ def validate_elevate(root, item):
     expected = {'id': item['id'], 'source_id': 'elevate', 'author': 'Addy Osmani',
                 'published_at': item['published_at'], 'canonical_url': item['canonical_url'],
                 'source_sha256': item['source_sha256'], 'archive_index': str(item['archive_index']),
-                'editorial_version': 'ko-300eojeol-v1', 'status': 'ready'}
+                'status': 'ready'}
+    if fields.get("editorial_version") not in SUPPORTED_EDITORIAL_VERSIONS:
+        raise ValueError("Elevate provenance mismatch: editorial_version")
     for name, value in expected.items():
         if fields.get(name) != value:
             raise ValueError(f'Elevate provenance mismatch: {name}')
@@ -48,7 +51,7 @@ def validate_elevate(root, item):
     summary = paragraphs[2:]
     count = len(' '.join(summary).split())
     if not 3 <= len(summary) <= 5 or not 250 <= count <= 350:
-        raise ValueError(f'Invalid Elevate summary: {count} eojeol')
+        raise ValueError(f'Invalid Elevate summary: {count} words')
     return fields['id'], text
 
 

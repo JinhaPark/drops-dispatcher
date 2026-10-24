@@ -6,6 +6,7 @@ import pathlib
 import re
 
 import backfill
+from editorial_policy import SUPPORTED_EDITORIAL_VERSIONS
 
 MANIFEST = "data/one-time-preview-20261023.json"
 
@@ -56,7 +57,7 @@ def validate(root, manifest):
         for key in ("id", "source_id", "published_at", "author", "canonical_url"):
             if fields.get(key) != expected[key]:
                 raise ValueError("One-time preview front matter mismatch: " + key)
-        if fields.get("status") != "ready" or fields.get("editorial_version") != "ko-300eojeol-v1":
+        if fields.get("status") != "ready" or fields.get("editorial_version") not in SUPPORTED_EDITORIAL_VERSIONS:
             raise ValueError("One-time preview editorial state incorrect")
         datetime.date.fromisoformat(fields["published_at"])
         paragraphs = [p.strip() for p in body.strip().split("\n\n") if p.strip()]
@@ -66,7 +67,7 @@ def validate(root, manifest):
             raise ValueError("One-time preview title or paragraph structure invalid")
         word_count = len(" ".join(paragraphs[2:]).split())
         if not 250 <= word_count <= 350:
-            raise ValueError("One-time preview summary must be 250-350 Korean eojeol")
+            raise ValueError("One-time preview summary must be 250-350 Korean words")
     return items
 
 
