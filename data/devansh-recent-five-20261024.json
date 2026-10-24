@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "kind": "one-time-devansh-recent-five-20261024",
+  "authorized_at": "2026-10-24T17:16:00Z",
+  "status": "active",
+  "scope_note": "Five most recent entries in the official newsletter archive at the authorized time, sorted oldest to newest. October 1 unlisted/alternate article is not a substitute.",
+  "items": [
+    {
+      "id": "devansh-ai-made-simple:the-dirty-math-behind-100-renewable",
+      "source_id": "devansh-ai-made-simple",
+      "published_at": "2026-09-06",
+      "author": "Devansh",
+      "canonical_url": "https://www.artificialintelligencemadesimple.com/p/the-dirty-math-behind-100-renewable",
+      "markdown_path": "articles/devansh-ai-made-simple/2026-09-06-the-dirty-math-behind-100-renewable.md",
+      "status": "ready",
+      "markdown_sha256": "550590111a7712d98d70a02f67a85028ec5f9e85e1bcc01391742a8bcd79879c",
+      "source_review": "complete_official_html"
+    },
+    {
+      "id": "devansh-ai-made-simple:how-will-ai-models-make-money",
+      "source_id": "devansh-ai-made-simple",
+      "published_at": "2026-09-18",
+      "author": "Devansh",
+      "canonical_url": "https://www.artificialintelligencemadesimple.com/p/how-will-ai-models-make-money",
+      "markdown_path": "articles/devansh-ai-made-simple/2026-09-18-how-will-ai-models-make-money.md",
+      "status": "ready",
+      "markdown_sha256": "ef96cacaecea80602dc47d1655517480e187d470939ab6c4755b4de9b8e6928b",
+      "source_review": "complete_official_html"
+    },
+    {
+      "id": "devansh-ai-made-simple:the-ai-bubble-isnt-where-you-think",
+      "source_id": "devansh-ai-made-simple",
+      "published_at": "2026-09-27",
+      "author": "Devansh",
+      "canonical_url": "https://www.artificialintelligencemadesimple.com/p/the-ai-bubble-isnt-where-you-think",
+      "markdown_path": "articles/devansh-ai-made-simple/2026-09-27-the-ai-bubble-isnt-where-you-think.md",
+      "status": "held",
+      "markdown_sha256": null,
+      "reason": "paywalled_full_text_unavailable"
+    },
+    {
+      "id": "devansh-ai-made-simple:what-everyone-misses-about-animal",
+      "source_id": "devansh-ai-made-simple",
+      "published_at": "2026-10-11",
+      "author": "Devansh",
+      "canonical_url": "https://www.artificialintelligencemadesimple.com/p/what-everyone-misses-about-animal",
+      "markdown_path": "articles/devansh-ai-made-simple/2026-10-11-what-everyone-misses-about-animal.md",
+      "status": "ready",
+      "markdown_sha256": "9160727905e067d68a2e959bde205ea2f22ee5244c865ce5b7bae2aefe8a4876",
+      "source_review": "complete_official_html"
+    },
+    {
+      "id": "devansh-ai-made-simple:training-your-own-models-is-an-incredibly",
+      "source_id": "devansh-ai-made-simple",
+      "published_at": "2026-10-19",
+      "author": "Devansh",
+      "canonical_url": "https://www.artificialintelligencemadesimple.com/p/training-your-own-models-is-an-incredibly",
+      "markdown_path": "articles/devansh-ai-made-simple/2026-10-19-training-your-own-models-is-an-incredibly.md",
+      "status": "ready",
+      "markdown_sha256": "0d48f5384e2fe89fe4b7b21e60eef54c073a84d3db611c7d9cfe2a8b464eb8e1",
+      "source_review": "complete_official_html"
+    }
+  ]
+}
