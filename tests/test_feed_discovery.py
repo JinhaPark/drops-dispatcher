@@ -36,6 +36,8 @@ SIMON = {"id": "simon-willison", "author": "Simon Willison", "feed_format": "ato
          "enabled": True, "feed_url": "https://simonwillison.net/atom/entries/"}
 HAMEL = {"id": "hamel-husain", "author": "Hamel Husain", "feed_format": "rss",
          "enabled": True, "feed_url": "https://hamelhusain.substack.com/feed"}
+DEVANSH = {"id": "devansh-ai-made-simple", "author": "Devansh", "feed_format": "rss",
+           "enabled": True, "feed_url": "https://www.artificialintelligencemadesimple.com/feed"}
 START = "2026-10-22T16:54:19Z"
 
 
@@ -113,7 +115,9 @@ class FeedDiscoveryTests(unittest.TestCase):
         self.assertEqual(urls["artificial-engineering"],
                          "https://www.linkedin.com/newsletters/artificial-engineering-7324756381780140032")
         self.assertEqual(urls["elevate"], "https://addyo.substack.com/archive")
-        self.assertEqual(len(urls), 4)
+        self.assertEqual(len(urls), 5)
+        self.assertEqual(urls["devansh-ai-made-simple"],
+                         "https://www.artificialintelligencemadesimple.com/")
 
     def test_source_specific_cutoff_does_not_move_global_old_source_baseline(self):
         import deliver_articles as delivery
@@ -131,6 +135,22 @@ class FeedDiscoveryTests(unittest.TestCase):
             self.assertIsNotNone(delivery.hold_reason("2026-10-20", overrides["simon-willison"]))
             self.assertIsNotNone(delivery.hold_reason("2026-10-22", overrides["hamel-husain"]))
             self.assertIsNone(delivery.hold_reason("2026-10-23", overrides["hamel-husain"]))
+
+    def test_devansh_is_fenced_from_historical_auto_delivery(self):
+        import deliver_articles as delivery
+        repo = pathlib.Path(__file__).resolve().parents[1]
+        sources = json.loads((repo / "sources.json").read_text(encoding="utf-8"))
+        state = json.loads((repo / "data/monitor-state.json").read_text(encoding="utf-8"))
+        source = next(s for s in sources if s["id"] == DEVANSH["id"])
+        self.assertEqual(source["feed_url"], DEVANSH["feed_url"])
+        self.assertEqual(source["author"], "Devansh")
+        cutoff = parse_time(state["sources"][source["id"]]["monitoring_started_at"])
+        self.assertEqual(cutoff, parse_time("2026-10-24T17:14:19Z"))
+        self.assertIsNotNone(delivery.hold_reason("2026-10-19", cutoff))
+        self.assertIsNotNone(delivery.hold_reason("2026-10-24", cutoff))
+        self.assertIsNone(delivery.hold_reason("2026-10-25", cutoff))
+        xml = RSS.replace("hamelhusain.substack.com", "www.artificialintelligencemadesimple.com")
+        self.assertEqual(discover(xml, source, cutoff), [])
 
     def test_missing_new_source_baseline_fails_closed(self):
         with tempfile.TemporaryDirectory() as tmp:
