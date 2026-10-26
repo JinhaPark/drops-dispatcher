@@ -49,8 +49,14 @@ jobs:
           python-version: "3.12"
       - name: Refresh report branch after acquiring concurrency slot
         run: git pull --ff-only origin automation/report-feed
-      - name: Validate Discord delivery skill
-        run: python -m unittest discover -s .agents/skills/discord-feed/tests -v
+      - name: Checkout canonical Discord delivery code from main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: .delivery-runtime
+          persist-credentials: false
+      - name: Validate canonical Discord delivery skill
+        run: python -m unittest discover -s .delivery-runtime/.agents/skills/discord-feed/tests -v
       - name: Require routed webhooks
         shell: bash
         run: |
@@ -64,7 +70,7 @@ jobs:
           fi
       - name: Deliver pending scheduled reports
         run: >-
-          python .agents/skills/discord-feed/scripts/deliver_reports.py
+          python .delivery-runtime/.agents/skills/discord-feed/scripts/deliver_reports.py
           --root reports
           --state "${LEDGER_PATH}"
       - name: Preserve routed delivery ledger
