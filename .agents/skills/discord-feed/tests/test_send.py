@@ -40,41 +40,84 @@ class SplitTests(unittest.TestCase):
 
 
 class DiscordTableRenderingTests(unittest.TestCase):
-    def test_gfm_table_is_wrapped_in_triple_backticks(self):
+    def test_short_numeric_table_is_aligned_without_pipe_delimiters(self):
+        source = "# 보고서\n\n| 지표 | 값 |\n|---|---:|\n| SOXX | 478.20 |\n\n해석 문단입니다.\n"
+        rendered = mod.render_for_discord(source)
+        self.assertIn("```text\n지표", rendered)
+        self.assertIn("SOXX", rendered)
+        self.assertIn("478.20", rendered)
+        self.assertNotIn("|---", rendered)
+        self.assertNotIn("| SOXX |", rendered)
+        self.assertEqual(rendered.count("```"), 2)
+        self.assertTrue(rendered.endswith("해석 문단입니다.\n"))
+
+    def test_vertical_long_descriptive_table(self):
         source = (
-            "# 보고서\n\n"
-            "| 지표 | 값 |\n"
-            "|---|---:|\n"
-            "| SOXX | 478.20 |\n\n"
-            "해석 문단입니다.\n"
+            "| 단계 | 실제 확인·수행 | 결과 |\n"
+            "| --- | --- | --- |\n"
+            "| Self reflection | 보고서 검증과 독립 검토 차이를 확인 | 자체 검토만 수행 |\n"
+            "| Prioritize | 브랜치와 금융모형 검증 증거 대조 | 개선 과제 2건 |\n"
         )
         rendered = mod.render_for_discord(source)
-        self.assertIn("```\n| 지표 | 값 |\n|---|---:|\n| SOXX | 478.20 |\n```", rendered)
-        self.assertTrue(rendered.endswith("해석 문단입니다.\n"))
+        self.assertIn("**Self reflection**", rendered)
+        self.assertIn("- **실제 확인·수행:** 보고서 검증과 독립 검토 차이를 확인", rendered)
+        self.assertIn("- **결과:** 자체 검토만 수행", rendered)
+        self.assertIn("**Prioritize**", rendered)
+        self.assertNotIn("| ---", rendered)
+        self.assertNotIn("```", rendered)
+
+    def test_wide_financial_table_uses_vertical_entries(self):
+        source = (
+            "| 기업 | 10/23 주가 | 시총(십억$) | NTM 보정 FCF 전망(십억$) | NTM FCF/시총 | 실제 5Y CDS |\n"
+            "| --- | ---: | ---: | ---: | ---: | --- |\n"
+            "| Check Point (CHKP) | 159.03 | 16.24 | 0.84 | 약 5.2% | NA |\n"
+        )
+        rendered = mod.render_for_discord(source)
+        self.assertIn("**Check Point (CHKP)**", rendered)
+        self.assertIn("- **NTM FCF/시총:** 약 5.2%", rendered)
+        self.assertIn("- **실제 5Y CDS:** NA", rendered)
+        self.assertNotIn("| Check Point", rendered)
+
+    def test_unicode_alignment_fits_phone_width(self):
+        source = "| 종목 | 가격 | 수익률 |\n|---|---:|---:|\n| 삼성전자 | 100 | 6% |\n| CHKP | 159 | 5% |\n"
+        compact = mod._compact_numeric_table(source.splitlines())
+        self.assertIsNotNone(compact)
+        self.assertLessEqual(max(mod._display_width(row) for row in compact), 36)
+        self.assertEqual(mod._display_width("삼성전자"), 8)
 
     def test_non_table_pipes_are_unchanged(self):
         source = "선택지는 A | B 입니다.\n"
         self.assertEqual(mod.render_for_discord(source), source)
 
+    def test_escaped_pipe_cell_is_preserved(self):
+        source = r"| 구분 | 설명 |" + "\n" + "|---|---|\n" + r"| 판단 | 장점 \| 단점 |" + "\n"
+        rendered = mod.render_for_discord(source)
+        self.assertIn("장점 | 단점", rendered)
+        self.assertIn("**판단**", rendered)
+
     def test_existing_code_block_is_not_double_wrapped(self):
         source = "```\n| a | b |\n|---|---|\n| 1 | 2 |\n```\n"
         self.assertEqual(mod.render_for_discord(source), source)
 
-    def test_long_table_repeats_header_in_balanced_blocks(self):
-        rows = [f"| 지표 {index} | {'값' * 40} |" for index in range(20)]
-        source = "| 지표 | 값 |\n|---|---|\n" + "\n".join(rows) + "\n"
-        rendered = mod.render_for_discord(source, table_limit=500)
+    def test_long_compact_table_repeats_header_in_balanced_blocks(self):
+        rows = [f"| 종목 {index} | {index * 100} |" for index in range(20)]
+        source = "| 종목 | 값 |\n|---|---:|\n" + "\n".join(rows) + "\n"
+        rendered = mod.render_for_discord(source, table_limit=125)
         self.assertGreater(rendered.count("```"), 2)
         self.assertEqual(rendered.count("```") % 2, 0)
-        self.assertEqual(rendered.count("| 지표 | 값 |"), rendered.count("```") // 2)
-        parts = mod.chunks(rendered, 600)
+        self.assertEqual(rendered.count("종목"), 20 + rendered.count("```") // 2)
+        self.assertNotIn("|---", rendered)
+        parts = mod.chunks(rendered, 200)
         self.assertTrue(all(part.count("```") % 2 == 0 for part in parts))
-        self.assertTrue(all(mod.units(part) <= 600 for part in parts))
+        self.assertTrue(all(mod.units(part) <= 200 for part in parts))
 
-    def test_oversized_single_row_fails_closed(self):
-        source = "| 지표 | 값 |\n|---|---|\n| SOXX | " + "x" * 500 + " |\n"
-        with self.assertRaisesRegex(ValueError, "row exceeds"):
-            mod.render_for_discord(source, table_limit=200)
+    def test_long_descriptive_cell_keeps_all_text_without_truncation(self):
+        note = "설명" * 300
+        source = f"| 구분 | 내용 |\n|---|---|\n| 검토 | {note} |\n"
+        rendered = mod.render_for_discord(source)
+        self.assertIn(note, rendered)
+        self.assertNotIn("|---|", rendered)
+        self.assertEqual("".join(mod.chunks(rendered)), rendered)
 
 
 class DurableRecordTests(unittest.TestCase):

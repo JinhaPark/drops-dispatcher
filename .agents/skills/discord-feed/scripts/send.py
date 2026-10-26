@@ -12,6 +12,7 @@ import pathlib
 import re
 import tempfile
 import time
+import unicodedata
 import urllib.error
 import urllib.request
 
@@ -124,8 +125,13 @@ def chunks(text: str, limit: int = 1900) -> list[str]:
 
 
 def _table_cells(line: str) -> list[str]:
-    stripped = line.strip().strip("|")
-    return [cell.strip() for cell in stripped.split("|")]
+    """Parse GFM cells, retaining escaped literal pipes."""
+    row = line.strip()
+    if row.startswith("|"):
+        row = row[1:]
+    if row.endswith("|") and not row.endswith(r"\|"):
+        row = row[:-1]
+    return [value.strip().replace(r"\|", "|") for value in re.split(r"(?<!\\)\|", row)]
 
 
 def _is_table_separator(line: str) -> bool:
@@ -133,75 +139,129 @@ def _is_table_separator(line: str) -> bool:
     return len(cells) >= 2 and all(TABLE_SEPARATOR_CELL.fullmatch(cell) for cell in cells)
 
 
+def _display_width(text: str) -> int:
+    return sum(2 if unicodedata.east_asian_width(c) in ("W", "F") else 1 for c in text)
+
+
+def _number_like(value: str) -> bool:
+    cleaned = value.strip()
+    if cleaned.lower() in {"na", "n/a", "—", "–", "-"}:
+        return True
+    return bool(re.fullmatch(
+        r"(?:약\s*|[~≈]\s*)?[+-]?\s*[$€£₩]?\s*\d[\d,]*(?:\.\d+)?\s*(?:%|bp|bps|억|만|조|달러|원)?",
+        cleaned, flags=re.IGNORECASE
+    ))
+
+
+def _compact_numeric_table(lines: list[str], max_columns: int = 36) -> list[str] | None:
+    """Use an aligned table only when it fits a narrow mobile screen."""
+    header = _table_cells(lines[0])
+    records = [_table_cells(line) for line in lines[2:]]
+    if not records or not 2 <= len(header) <= 3:
+        return None
+    if any(len(row) != len(header) for row in records):
+        return None
+    all_cells = [cell for row in [header, *records] for cell in row]
+    if any("**" in cell or "`" in cell or "](" in cell for cell in all_cells):
+        return None
+    measures = [cell for row in records for cell in row[1:]]
+    if sum(_number_like(value) for value in measures) / len(measures) < 0.8:
+        return None
+    widths = [max(_display_width(row[col]) for row in [header, *records])
+              for col in range(len(header))]
+    if sum(widths) + 2 * (len(widths) - 1) > max_columns:
+        return None
+
+    def format_row(values: list[str]) -> str:
+        cells = []
+        for col, value in enumerate(values):
+            padding = " " * (widths[col] - _display_width(value))
+            cells.append((padding + value) if col else (value + padding))
+        return "  ".join(cells).rstrip()
+
+    rule = "  ".join("─" * width for width in widths)
+    return [format_row(header), rule, *(format_row(record) for record in records)]
+
+
 def _fenced_table_blocks(lines: list[str], limit: int) -> list[str]:
-    """Render one GFM table as independently valid Discord code blocks."""
-    header = lines[:2]
-    body = lines[2:]
+    """Split aligned numeric tables into complete code blocks with headers."""
+    numeric = _compact_numeric_table(lines)
+    if numeric is None:
+        raise ValueError("Not a compact numeric table")
+    header = numeric[:2]
     groups: list[list[str]] = []
     current = list(header)
-
-    for row in body:
+    for row in numeric[2:]:
         candidate = current + [row]
-        rendered = "```\n" + "\n".join(candidate) + "\n```"
-        if units(rendered) <= limit:
+        block = "```text\n" + "\n".join(candidate) + "\n```"
+        if units(block) <= limit:
             current = candidate
             continue
         if len(current) == len(header):
             raise ValueError("Markdown table row exceeds Discord code-block limit")
         groups.append(current)
         current = list(header) + [row]
-        rendered = "```\n" + "\n".join(current) + "\n```"
-        if units(rendered) > limit:
+        if units("```text\n" + "\n".join(current) + "\n```") > limit:
             raise ValueError("Markdown table row exceeds Discord code-block limit")
-
     groups.append(current)
-    return ["```\n" + "\n".join(group) + "\n```" for group in groups]
+    return ["```text\n" + "\n".join(group) + "\n```" for group in groups]
+
+
+def _vertical_table_rows(lines: list[str]) -> list[str]:
+    """Use individual labeled Markdown entries for wide/descriptive tables."""
+    labels = _table_cells(lines[0])
+    data = [_table_cells(row) for row in lines[2:]]
+    if not data or any(len(row) != len(labels) for row in data):
+        return list(lines)
+    output: list[str] = []
+    for row in data:
+        output.append(f"**{row[0]}**")
+        for key, value in zip(labels[1:], row[1:]):
+            output.append(f"- **{key}:** {value}")
+        output.append("")
+    return output
 
 
 def render_for_discord(markdown: str, table_limit: int = TABLE_FENCE_LIMIT) -> str:
-    """Wrap GFM pipe tables in triple-backtick blocks for Discord rendering."""
+    """Adaptive mobile table renderer; preserve original source for hashing."""
     lines = markdown.splitlines()
     output: list[str] = []
     in_fence = False
     fence_marker: str | None = None
     i = 0
-
     while i < len(lines):
         stripped = lines[i].lstrip()
         marker = "```" if stripped.startswith("```") else "~~~" if stripped.startswith("~~~") else None
         if marker:
             output.append(lines[i])
             if not in_fence:
-                in_fence = True
-                fence_marker = marker
+                in_fence, fence_marker = True, marker
             elif marker == fence_marker:
-                in_fence = False
-                fence_marker = None
+                in_fence, fence_marker = False, None
             i += 1
             continue
-
         if (
             not in_fence
             and i + 1 < len(lines)
             and "|" in lines[i]
             and _is_table_separator(lines[i + 1])
+            and len(_table_cells(lines[i])) == len(_table_cells(lines[i + 1]))
         ):
             end = i + 2
             while end < len(lines) and lines[end].strip() and "|" in lines[end]:
                 end += 1
-            blocks = _fenced_table_blocks(lines[i:end], table_limit)
-            for block_index, block in enumerate(blocks):
-                output.append(block)
-                if block_index < len(blocks) - 1:
-                    output.append("")
+            table = lines[i:end]
+            if _compact_numeric_table(table) is not None:
+                for block in _fenced_table_blocks(table, table_limit):
+                    output.extend((block, ""))
+            else:
+                output.extend(_vertical_table_rows(table))
             i = end
             continue
-
         output.append(lines[i])
         i += 1
-
     rendered = "\n".join(output)
-    if markdown.endswith("\n"):
+    if markdown.endswith("\n") and not rendered.endswith("\n"):
         rendered += "\n"
     return rendered
 

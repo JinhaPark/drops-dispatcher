@@ -28,8 +28,10 @@ RECIPE route_completed_output(final_markdown, category, stable_id, path):
     COMMIT_IMMUTABLE_SOURCE(branch, path, final_markdown)
     rendered := RENDER_FOR_DISCORD(
         final_markdown,
-        gfm_pipe_tables = TRIPLE_BACKTICK_CODE_BLOCKS,
-        repeat_table_header_when_split = true
+        gfm_pipe_tables = ADAPTIVE_MOBILE_RENDERING,
+        compact_numeric = ALIGNED_FENCED_BLOCK_MAX_36_DISPLAY_COLUMNS,
+        descriptive_or_wide = VERTICAL_LABELED_ENTRIES,
+        repeat_compact_header_when_split = true
     )
     chunks := SPLIT_WITH_BALANCED_FENCES(rendered, max_utf16_units = 1900)
     receipts := SEND_AND_CHECKPOINT(chunks, route.secret, stable_id)
@@ -47,7 +49,7 @@ For a conditional task whose correct result is silence, create no report file an
 - Scheduled reports: `python .agents/skills/discord-feed/scripts/deliver_reports.py --root reports --state data/discord-report-deliveries.json`
 - Preview rendering and chunk sizes by adding `--dry-run`; never require a webhook for a dry run.
 
-The sender keeps the committed Markdown unchanged for hashing and audit. Immediately before chunking, it wraps each GFM pipe table in triple backticks because Discord does not render Markdown tables. Long tables become multiple balanced code blocks with the header repeated. Existing fenced blocks and non-table pipes remain unchanged; an oversized single table row fails closed.
+The sender hashes and preserves the original Markdown. At delivery time, short 2–3-column tables with predominantly numeric cells become aligned code blocks, with a maximum of 36 display columns and Hangul/CJK-aware width. Wide or descriptive tables become vertical labeled Markdown entries without pipe delimiters. A long compact table repeats its header in separately balanced code blocks. Existing fenced blocks and non-table pipes remain unchanged. Descriptive text is preserved, not truncated. Scheduled reports are stored with their ledger on `automation/report-feed`, but GitHub Actions runs the canonical `main` delivery code and tests through a separate checkout. Do not treat the report branch as a second source of executable code.
 
 ## Accept
 
