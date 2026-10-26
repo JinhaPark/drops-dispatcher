@@ -1,0 +1,93 @@
+name: Deliver scheduled reports to Discord
+
+on:
+  push:
+    branches:
+      - automation/report-feed
+    paths:
+      - "reports/finance/**/*.md"
+      - "reports/general/**/*.md"
+  pull_request:
+    paths:
+      - ".agents/skills/discord-feed/**"
+      - ".github/workflows/report-feed.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: scheduled-report-feed-ledger
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m unittest discover -s .agents/skills/discord-feed/tests -v
+
+  deliver:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      DISCORD_WEBHOOK_URL_FINANCE: ${{ secrets.DISCORD_WEBHOOK_URL_FINANCE }}
+      DISCORD_WEBHOOK_URL_GENERAL: ${{ secrets.DISCORD_WEBHOOK_URL_GENERAL }}
+      LEDGER_PATH: data/discord-report-deliveries.json
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Refresh report branch after acquiring concurrency slot
+        run: git pull --ff-only origin automation/report-feed
+      - name: Validate Discord delivery skill
+        run: python -m unittest discover -s .agents/skills/discord-feed/tests -v
+      - name: Require routed webhooks
+        shell: bash
+        run: |
+          if [[ -z "${DISCORD_WEBHOOK_URL_FINANCE}" ]]; then
+            echo "::error::DISCORD_WEBHOOK_URL_FINANCE is missing in drops Actions secrets."
+            exit 1
+          fi
+          if [[ -z "${DISCORD_WEBHOOK_URL_GENERAL}" ]]; then
+            echo "::error::DISCORD_WEBHOOK_URL_GENERAL is missing in drops Actions secrets."
+            exit 1
+          fi
+      - name: Deliver pending scheduled reports
+        run: >-
+          python .agents/skills/discord-feed/scripts/deliver_reports.py
+          --root reports
+          --state "${LEDGER_PATH}"
+      - name: Preserve routed delivery ledger
+        if: always()
+        shell: bash
+        run: |
+          if [[ ! -f "${LEDGER_PATH}" ]]; then
+            echo "No routed delivery evidence to preserve."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "${LEDGER_PATH}"
+          if git diff --cached --quiet; then
+            echo "Routed delivery ledger is unchanged."
+            exit 0
+          fi
+          git commit -m "Record routed Discord report delivery"
+          git push origin HEAD:automation/report-feed
+      - name: Upload uncertain delivery evidence
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scheduled-report-ledger-${{ github.run_id }}
+          if-no-files-found: ignore
+          path: data/discord-report-deliveries.json

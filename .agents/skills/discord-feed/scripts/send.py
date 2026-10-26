@@ -87,6 +87,15 @@ def main():
     parser.add_argument("--file", required=True)
     parser.add_argument("--id", required=True)
     parser.add_argument("--state", required=True)
+    parser.add_argument(
+        "--webhook-env",
+        choices=(
+            "DISCORD_WEBHOOK_URL",
+            "DISCORD_WEBHOOK_URL_FINANCE",
+            "DISCORD_WEBHOOK_URL_GENERAL",
+        ),
+        default="DISCORD_WEBHOOK_URL",
+    )
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
     text = pathlib.Path(args.file).read_text(encoding="utf-8")
@@ -95,9 +104,9 @@ def main():
     if args.dry_run:
         print(json.dumps({"id":args.id,"sha256":digest,"chunks":len(parts),"utf16_units":[units(p) for p in parts]}))
         return
-    url = os.environ.get("DISCORD_WEBHOOK_URL")
+    url = os.environ.get(args.webhook_env)
     if not url:
-        raise RuntimeError("Missing DISCORD_WEBHOOK_URL")
+        raise RuntimeError("Missing " + args.webhook_env)
     state_path = pathlib.Path(args.state)
     state_path.parent.mkdir(parents=True, exist_ok=True)
     with open(str(state_path)+".lock","a+") as lock:
