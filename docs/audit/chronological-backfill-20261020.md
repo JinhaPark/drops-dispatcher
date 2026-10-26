@@ -155,7 +155,7 @@ Artificial Engineering Edition 1·2는 원문 후보가 있지만 발행번호 �
 - [통합 날짜순 발행 manifest](../../data/chronological-backfill.json)입니다.
 - [Discord 영속 전송 이력](../../data/discord-deliveries.json)입니다.
 - [기존 Artificial Engineering 조사 기록](artificial-engineering-backfill-20261020.md)입니다.
-- [아카이브 PR](https://github.com/JinhaPark/news/pull/4)입니다.
-- [아카이브 main 검증 Actions](https://github.com/JinhaPark/news/actions/runs/39431937834)입니다.
-- [Discord 전송 Actions](https://github.com/JinhaPark/news/actions/runs/39431937911)입니다.
+- [아카이브 PR](https://github.com/JinhaPark/drops/pull/4)입니다.
+- [아카이브 main 검증 Actions](https://github.com/JinhaPark/drops/actions/runs/39431937834)입니다.
+- [Discord 전송 Actions](https://github.com/JinhaPark/drops/actions/runs/39431937911)입니다.
 - [메시지 ID 포함 기계 판독 감사 기록](chronological-backfill-20261020.json)입니다.

@@ -19,13 +19,13 @@
     "reason": "GitHub Actions continued after the conversation interruption and completed all 120 articles."
   },
   "validation": "26 automated delivery tests passed; all reviewed article metadata/digests/lengths validated; no external model API; no new schedule",
-  "code_pr": "https://github.com/JinhaPark/news/pull/3",
-  "code_main_actions": "https://github.com/JinhaPark/news/actions/runs/39430733421",
-  "archive_pr": "https://github.com/JinhaPark/news/pull/4",
+  "code_pr": "https://github.com/JinhaPark/drops/pull/3",
+  "code_main_actions": "https://github.com/JinhaPark/drops/actions/runs/39430733421",
+  "archive_pr": "https://github.com/JinhaPark/drops/pull/4",
   "archive_commit": "27abe3bcf67670be3c2a71513ddc725e2f3427c6",
-  "archive_pr_actions": "https://github.com/JinhaPark/news/actions/runs/39431859356",
-  "archive_main_actions": "https://github.com/JinhaPark/news/actions/runs/39431937834",
-  "delivery_actions": "https://github.com/JinhaPark/news/actions/runs/39431937911",
+  "archive_pr_actions": "https://github.com/JinhaPark/drops/actions/runs/39431859356",
+  "archive_main_actions": "https://github.com/JinhaPark/drops/actions/runs/39431937834",
+  "delivery_actions": "https://github.com/JinhaPark/drops/actions/runs/39431937911",
   "articles": [
     {
       "source_id": "artificial-engineering",

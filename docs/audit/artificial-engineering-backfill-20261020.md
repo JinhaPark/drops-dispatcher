@@ -33,7 +33,7 @@
 - 각 호를 보내기 전에 원격 main에 in-flight 표식을 저장하고, 완료 후 메시지 ID가 담긴 ledger를 원격 main에 저장·재조회한 다음 다음 호로 진행합니다.
 - 원격 충돌 때는 최신 main의 다른 변경과 기존 ledger 기록을 보존합니다. 메시지 ID·내용 해시 충돌, 불확실한 전송, 남은 in-flight 표식은 수동 대조가 필요하며 무조건 재실행하지 않습니다.
 - 기존 4개 분할 테스트와 13개 백필 테스트가 로컬에서 통과했습니다. 테스트에는 순서·누락호 중지·중복 생략·실패 중지·불확실성·실제 로컬 bare Git 저장소의 동시 변경 보존·완료 후 기존 피드 복귀가 포함됩니다.
-- 안전장치 PR #1은 main에 병합되었고 Actions 검증에 성공했습니다: [PR 검증](https://github.com/JinhaPark/news/actions/runs/39416304248), [main 검증](https://github.com/JinhaPark/news/actions/runs/39416357067). 최종 아카이브 변경의 추가 Actions 결과는 해당 PR/커밋의 Checks에서 확인할 수 있습니다.
+- 안전장치 PR #1은 main에 병합되었고 Actions 검증에 성공했습니다: [PR 검증](https://github.com/JinhaPark/drops/actions/runs/39416304248), [main 검증](https://github.com/JinhaPark/drops/actions/runs/39416357067). 최종 아카이브 변경의 추가 Actions 결과는 해당 PR/커밋의 Checks에서 확인할 수 있습니다.
 
 ## 기존 전송 이력과 보존
 

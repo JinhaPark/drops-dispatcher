@@ -44,7 +44,7 @@ jobs:
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
-          if [ -z "$DISCORD_WEBHOOK_URL" ]; then echo "DISCORD_WEBHOOK_URL is missing in news Actions secrets"; exit 1; fi
+          if [ -z "$DISCORD_WEBHOOK_URL" ]; then echo "DISCORD_WEBHOOK_URL is missing in drops Actions secrets"; exit 1; fi
           python scripts/deliver_articles.py
       # Live and backfill both commit and verify each article on remote main.
       # Never bulk-push the local ledger after a failed/uncertain delivery.
