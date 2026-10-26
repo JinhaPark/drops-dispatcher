@@ -16,7 +16,7 @@ The report path is its stable identity. Report files are immutable. A correctly 
 
 ## Workflow boundaries
 
-`.github/workflows/discord-feed.yml` handles approved AI article paths and explicit backfill manifests on `main`. `.github/workflows/report-feed.yml` handles finance and general report files on `automation/report-feed`. Both workflows serialize ledger mutations and ignore ledger-only commits as delivery triggers.
+`.github/workflows/discord-feed.yml` handles approved AI article paths and explicit backfill manifests on `main`. `.github/workflows/report-feed.yml` handles finance and general report files on `automation/report-feed`. Both workflows serialize ledger mutations and ignore ledger-only commits as delivery triggers. The report branch is the durable store for immutable report Markdown and ledger writes. The report workflow checks out the delivery scripts and unit tests from fresh `main` into `.delivery-runtime` and executes those scripts against the report branch's files. Old code copies on the report branch are not executed. This prevents source drift while keeping report/ledger writes off the protected `main`.
 
 Before sending, run the affected skill tests. The report workflow validates both routed secrets because one invocation scans both report categories. Persist the appropriate ledger after every acknowledged message. If persistence fails, retain failure evidence and do not claim reliable deduplication.
 
@@ -24,12 +24,13 @@ Before sending, run the affected skill tests. The report workflow validates both
 
 Discord does not render GitHub-style pipe tables. Keep the repository artifact as authored, then run `render_for_discord` in `send.py`:
 
-1. Detect a table only when a pipe-containing row is followed by a valid Markdown delimiter row.
-2. Ignore tables already inside backtick or tilde fences.
-3. Wrap detected tables in triple backticks.
-4. Split a long table into independently balanced code blocks and repeat its header and delimiter rows.
-5. Fail before delivery when one row plus the repeated header cannot fit the table-block budget.
-6. Chunk the rendered text without cutting any fenced block.
+1. Recognize a pipe table only when the next row is a valid GFM delimiter with matching cell counts.
+2. Preserve existing fenced code blocks and ordinary non-table pipes.
+3. Short tables with 2–3 columns, predominantly numeric body cells and no more than 36 Unicode display columns are right-aligned as appropriate inside triple-backtick `text` blocks. Hangul/CJK width counts as two columns.
+4. Wide or descriptive tables are rendered as vertical Markdown entries, using the first column as the bold title and the remaining columns as labeled fields, not as code blocks.
+5. Split long compact tables into independently balanced code blocks with repeated headers. Long descriptive cells remain intact and use normal paragraph/line chunking without truncation.
+6. Reject malformed compact fences before sending; preserve malformed source table rows rather than silently discarding content.
+7. Chunk only after rendering, at most 1,900 UTF-16 units, never bisecting a fenced block.
 
 Hash the committed source for identity and deduplication. Also record a rendered digest for diagnosis; a formatting implementation change must not silently create a new content identity.
 
