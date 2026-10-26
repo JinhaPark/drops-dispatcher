@@ -1,14 +1,14 @@
 ---
-name: discord-feed
+name: discord-drops
 description: Deliver an already completed Markdown article to Discord, splitting messages safely and deduplicating with a durable delivery ledger. Does not fetch sources or write summaries.
 ---
-# Discord Feed
+# Discord Drops
 
 ## Scope
 Input is final Markdown, a stable `item_id`, optional canonical source URL, and the Discord webhook credential available to the execution environment. Do not scrape, summarize, translate, or edit the article. Caller owns editorial quality and source verification.
 
 ## Invocation
-Run `python .agents/skills/discord-feed/scripts/send.py --file PATH --id STABLE_ID --state PATH`. Set `DISCORD_WEBHOOK_URL` in the runner's environment. Use a private persistent state file (not a transient work directory). See the repository workflow and delivery ledger documentation.
+Run `python .agents/skills/discord-drops/scripts/send.py --file PATH --id STABLE_ID --state PATH`. Set `DISCORD_WEBHOOK_URL` in the runner's environment. Use a private persistent state file (not a transient work directory). See the repository workflow and delivery ledger documentation.
 
 ## Guarantees and limitations
 - Keep every Discord message at most 2000 UTF-16 code units; default to 1900 for margin. Split at paragraph, line, then character boundaries. Never silently truncate or drop Markdown.

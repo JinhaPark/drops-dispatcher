@@ -19,13 +19,13 @@ jobs:
         with:
           python-version: '3.12'
       - name: Run splitting tests
-        run: python -m unittest discover -s .agents/skills/discord-feed/tests -v
+        run: python -m unittest discover -s .agents/skills/discord-drops/tests -v
       - name: Send one smoke-test message
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
           printf 'Discord 피드 연결 테스트입니다. (JinhaPark/news)\n중복 방지 및 전송 이력을 확인합니다.\n' > /tmp/discord-smoke.md
-          python .agents/skills/discord-feed/scripts/send.py --file /tmp/discord-smoke.md --id system:discord-smoke-v1 --state data/discord-deliveries.json
+          python .agents/skills/discord-drops/scripts/send.py --file /tmp/discord-smoke.md --id system:discord-smoke-v1 --state data/discord-deliveries.json
       - name: Persist test delivery ledger
         if: always()
         run: |

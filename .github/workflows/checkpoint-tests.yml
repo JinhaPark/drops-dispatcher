@@ -4,7 +4,7 @@ on:
     paths:
       - 'scripts/**'
       - 'tests/**'
-      - '.agents/skills/discord-feed/**'
+      - '.agents/skills/discord-drops/**'
       - '.github/workflows/discord-feed.yml'
       - '.github/workflows/checkpoint-tests.yml'
   workflow_dispatch:
@@ -20,6 +20,6 @@ jobs:
           python-version: '3.12'
       - name: Offline delivery and regression suite (no Discord credentials)
         run: |
-          python -m unittest discover -s .agents/skills/discord-feed/tests -v
+          python -m unittest discover -s .agents/skills/discord-drops/tests -v
           python -m unittest discover -s tests -v
           python -m compileall -q scripts tests

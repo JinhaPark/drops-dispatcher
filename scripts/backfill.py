@@ -221,7 +221,7 @@ def deliver_one(root, item_id, article_path, digest, *, text=None,
         marker["plan"] = plan
     # Never POST if the pre-send remote commit/push/verification fails.
     checkpoint(root, {}, marker)
-    command = [sys.executable, str(root / ".agents/skills/discord-feed/scripts/send.py"),
+    command = [sys.executable, str(root / ".agents/skills/discord-drops/scripts/send.py"),
                "--file", str(article_path), "--id", item_id,
                "--state", str(root / LEDGER)]
     try:

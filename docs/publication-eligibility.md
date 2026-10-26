@@ -34,7 +34,7 @@ Selection does not modify articles, manifests, monitoring state or delivery data
 Run from the repository root (no Discord credential required):
 
 ```sh
-python -m unittest discover -s .agents/skills/discord-feed/tests -v
+python -m unittest discover -s .agents/skills/discord-drops/tests -v
 python -m unittest discover -s tests -v
 python scripts/backfill.py --validate-only
 python scripts/chronological_backfill.py --validate-only

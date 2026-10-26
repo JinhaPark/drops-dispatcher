@@ -30,7 +30,7 @@ jobs:
         run: git pull --ff-only origin main
       - name: Validate local delivery skill
         run: |
-          python -m unittest discover -s .agents/skills/discord-feed/tests -v
+          python -m unittest discover -s .agents/skills/discord-drops/tests -v
           python -m unittest discover -s tests -v
           python scripts/backfill.py --validate-only
           python scripts/chronological_backfill.py --validate-only
