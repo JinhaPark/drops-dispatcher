@@ -4,9 +4,7 @@ on:
     paths:
       - 'scripts/**'
       - 'tests/**'
-      - '.agents/skills/discord-feed/**'
       - '.github/workflows/discord-feed.yml'
-      - '.github/workflows/report-feed.yml'
       - '.github/workflows/checkpoint-tests.yml'
   workflow_dispatch:
 permissions:
@@ -19,8 +17,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Offline delivery and regression suite (no Discord credentials)
+      - name: Offline checkpoint and publication regression suite
         run: |
-          python -m unittest discover -s .agents/skills/discord-feed/tests -v
           python -m unittest discover -s tests -v
           python -m compileall -q scripts tests

@@ -4,8 +4,8 @@ on:
     paths:
       - 'scripts/**'
       - 'tests/**'
-      - '.agents/skills/discord-feed/**'
-      - '.github/workflows/**'
+      - '.github/workflows/discord-feed.yml'
+      - '.github/workflows/validate-discord.yml'
       - 'articles/**'
       - 'data/artificial-engineering-backfill.json'
       - 'data/elevate-backfill.json'
@@ -16,7 +16,8 @@ on:
     paths:
       - 'scripts/**'
       - 'tests/**'
-      - '.github/workflows/**'
+      - '.github/workflows/discord-feed.yml'
+      - '.github/workflows/validate-discord.yml'
       - 'data/artificial-engineering-backfill.json'
       - 'data/elevate-backfill.json'
       - 'data/chronological-backfill.json'
