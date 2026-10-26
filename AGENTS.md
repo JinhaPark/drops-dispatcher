@@ -64,14 +64,14 @@ After editorial work is complete, use `.agents/skills/discord-feed/SKILL.md` as 
 ## Git and validation
 Before modifying files, read current main and this AGENTS.md. Avoid unrelated edits. For article publication, validate Markdown front matter, dates, links, article length, and required source-specific sections. Choose tests by affected files and runtime dependencies; do not use an explicit merge request as a reason to run unrelated suites. Do not call a code commit a verified Discord delivery; inspect Actions and delivery ledger. Use feature branches/PRs for substantial future changes; avoid overwriting unrelated concurrent work.
 
-## Scoped work and deferred merge
+## Scoped work and prompt merge
 
 - Batch related small changes into one focused PR; reuse that PR for follow-ups to the same unfinished change. Reuse existing artifacts and validation evidence only when their inputs, relevant dependencies, tool versions, and check scope remain applicable; record the revision checked.
 - Before opening or updating a small-change PR, inspect the diff and run only checks needed for the affected files and behavior. State the dependency-based scope in the PR and never claim unperformed tests passed.
-- Keep the PR open until the user explicitly requests its merge. Do not enable auto-merge. A request for a previous change does not authorize this merge.
-- When merge is requested, refresh main and the PR head, resolve conflicts, rerun the relevant checks only when inputs or dependencies changed, and merge after those checks pass. Run a complete repository suite only for broad shared-runtime changes or when no narrower dependency boundary is defensible. Report unavailable checks or failures instead of merging an unverified result.
+- After the required dependency-scoped checks pass, open the PR and merge it promptly unless the user asks to review it first or a required check blocks it. Do not enable auto-merge.
+- Before merging, refresh main and the PR head, resolve conflicts, and rerun relevant checks only when inputs or dependencies changed. Opening or merging a PR does not expand test scope by itself. Run a complete repository suite only for broad shared-runtime changes or when no narrower dependency boundary is defensible. Report unavailable required checks or failures instead of merging an unverified result.
 - Skip unrelated full audits, repeated status polling, and extra image generation. Use a bounded status check when needed; repeat only for new evidence or an explicit request. These instructions do not disable existing CI or bypass required checks.
-- Interpret the following original user instruction subject to the deferred-merge rule above; “지정한 병합 단계” means stop at an open PR unless merge was explicitly requested:
+- Interpret the following original user instruction using the dependency-scoped validation and prompt-merge rules above:
 
 > 이번 요청 범위만 처리하세요. 기존 결과와 검증 기록을 재사용하고 변경된 부분만 확인하세요. 관련 없는 전체 감사, 반복 상태 조회, 추가 이미지 생성은 생략하세요. 필요한 검증을 마치면 지정한 병합 단계까지 진행하고 결과를 간결하게 보고하세요.
 
