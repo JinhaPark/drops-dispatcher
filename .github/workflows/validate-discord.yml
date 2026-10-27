@@ -19,6 +19,18 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Verify Discord route secrets exist without disclosing them
+        shell: bash
+        env:
+          AI_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          FINANCE_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL_FINANCE }}
+          GENERAL_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL_GENERAL }}
+        run: |
+          set -euo pipefail
+          if [[ -z "$AI_WEBHOOK" ]]; then echo "::error::Missing DISCORD_WEBHOOK_URL"; exit 1; fi
+          if [[ -z "$FINANCE_WEBHOOK" ]]; then echo "::error::Missing DISCORD_WEBHOOK_URL_FINANCE"; exit 1; fi
+          if [[ -z "$GENERAL_WEBHOOK" ]]; then echo "::error::Missing DISCORD_WEBHOOK_URL_GENERAL"; exit 1; fi
+          echo "Three Discord route credentials are configured; values not logged"
       - name: Mint private contents read token
         uses: actions/create-github-app-token@v2
         id: private-token
