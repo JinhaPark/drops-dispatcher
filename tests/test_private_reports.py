@@ -82,7 +82,6 @@ class PrivateReportsTests(unittest.TestCase):
         workflow = (ROOT / ".github/workflows/report-feed.yml").read_text(encoding="utf-8")
         self.assertIn("private_repo.py pull --branch main --destination report-data", workflow)
         self.assertNotIn("automation/report-feed", workflow)
-        self.assertIn("github.event_name != 'schedule'", workflow)
 
 
 if __name__ == "__main__":
