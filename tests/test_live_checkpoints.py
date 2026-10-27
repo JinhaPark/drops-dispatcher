@@ -27,6 +27,9 @@ def run_git(root, *args):
 
 class RemoteCheckpointTests(unittest.TestCase):
     def setUp(self):
+        self.offline_git = patch.dict(os.environ, {"DROPS_TEST_LOCAL_CHECKPOINT": "1"})
+        self.offline_git.start()
+        self.addCleanup(self.offline_git.stop)
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.base = pathlib.Path(self.temp.name)
