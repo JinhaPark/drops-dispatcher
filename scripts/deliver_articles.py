@@ -110,12 +110,12 @@ def main():
         except ValueError as exc:
             raise RuntimeError(f"Missing or invalid publication date provenance: {path}") from exc
         if reason:
-            print(f"Held {item_id} ({path.relative_to(root)}): {reason}", flush=True)
+            print("Historical or unverified article held; no post", flush=True)
             continue
         pending.append((path, item_id, digest))
     for path, item_id, digest in pending:
         backfill.deliver_one(root, item_id, path, digest, plan="live")
-        print(f"{item_id}: remote ledger verified", flush=True)
+        print("Article remote receipt verified", flush=True)
 
 
 if __name__ == "__main__":
