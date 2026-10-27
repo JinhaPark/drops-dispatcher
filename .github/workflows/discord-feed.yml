@@ -1,58 +1,47 @@
-name: Deliver approved Markdown to Discord
+name: Validate private data integration (no Discord posts)
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'articles/**/*.md'
-      - 'data/artificial-engineering-backfill.json'
-      - 'data/chronological-backfill.json'
-      - 'data/one-time-preview-20261023.json'
-      - 'data/devansh-recent-five-20261024.json'
   workflow_dispatch:
 permissions:
-  contents: write
+  contents: read
 concurrency:
-  group: discord-feed-ledger
+  group: drops-private-data-migration
   cancel-in-progress: false
 jobs:
-  deliver:
+  validate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout public delivery code
+        uses: actions/checkout@v4
         with:
-          persist-credentials: true
-          ref: main
+          persist-credentials: false
+      - name: Authenticate to private data repository
+        id: app-token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.DROPS_APP_ID }}
+          private-key: ${{ secrets.DROPS_APP_PRIVATE_KEY }}
+          owner: JinhaPark
+          repositories: drops
+          permission-contents: write
+      - name: Checkout private data (no credentials persisted)
+        uses: actions/checkout@v4
+        with:
+          repository: JinhaPark/drops
+          token: ${{ steps.app-token.outputs.token }}
+          path: private-data
+          persist-credentials: false
           fetch-depth: 0
-      - uses: actions/setup-python@v5
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Refresh main after acquiring concurrency slot
-        run: git pull --ff-only origin main
-      - name: Validate local delivery skill
+      - name: Validate readiness without sending messages
+        shell: bash
         run: |
-          python -m unittest discover -s .agents/skills/discord-feed/tests -v
+          set -euo pipefail
+          test -f private-data/data/monitor-state.json
+          test -f private-data/data/discord-deliveries.json
+          test -d private-data/articles
+          test ! -s private-data/data/discord-backfill-inflight.json || python -c 'import json; assert not json.load(open("private-data/data/discord-backfill-inflight.json"))'
           python -m unittest discover -s tests -v
-          python scripts/backfill.py --validate-only
-          python scripts/chronological_backfill.py --validate-only
-          python scripts/one_time_preview.py --validate-only
-          python scripts/devansh_recent_five.py --validate-only
-      - name: Configure checkpoint author
-        run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-      - name: Deliver ready articles
-        env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        run: |
-          if [ -z "$DISCORD_WEBHOOK_URL" ]; then echo "DISCORD_WEBHOOK_URL is missing in drops Actions secrets"; exit 1; fi
-          python scripts/deliver_articles.py
-      # Live and backfill both commit and verify each article on remote main.
-      # Never bulk-push the local ledger after a failed/uncertain delivery.
-      - name: Preserve ledger evidence after failure
-        if: ${{ failure() }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: discord-ledger-${{ github.run_id }}
-          path: |
-            data/discord-deliveries.json
-            data/discord-backfill-inflight.json
+          echo "Private checkout and focused tests passed. Discord delivery remains disabled."
