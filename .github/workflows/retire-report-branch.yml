@@ -1,0 +1,34 @@
+name: Retire obsolete private report branch after verification
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/retire-report-branch.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: retire-private-report-ref
+  cancel-in-progress: false
+jobs:
+  retire:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/create-github-app-token@v2
+        id: private
+        with:
+          app-id: ${{ secrets.DROPS_APP_ID }}
+          private-key: ${{ secrets.DROPS_APP_PRIVATE_KEY }}
+          owner: JinhaPark
+          repositories: drops
+          permission-contents: write
+      - name: Verify complete branch equivalence and delete obsolete ref
+        env:
+          GH_TOKEN: ${{ steps.private.outputs.token }}
+        run: python scripts/retire_old_report_branch.py
