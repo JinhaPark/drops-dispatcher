@@ -1,0 +1,48 @@
+name: One-shot proof of all Discord routing and private receipts
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/verify-discord-three-routes.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: drops-private-three-route-proof
+  cancel-in-progress: false
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Issue scoped private contents write token
+        id: private
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.DROPS_APP_ID }}
+          private-key: ${{ secrets.DROPS_APP_PRIVATE_KEY }}
+          owner: JinhaPark
+          repositories: drops
+          permission-contents: write
+      - name: Load only private delivery checkpoints (no report or article bulk sends)
+        env:
+          GH_TOKEN: ${{ steps.private.outputs.token }}
+        run: |
+          python scripts/private_repo.py pull --branch main --destination route-data --groups data
+          mkdir -p route-data/scripts route-data/.agents/skills
+          cp -a scripts/. route-data/scripts/
+          cp -a .agents/skills/discord-feed route-data/.agents/skills/
+      - name: Post exactly one route check per AI finance and general webhook
+        working-directory: route-data
+        env:
+          GH_TOKEN: ${{ steps.private.outputs.token }}
+          DROPS_PRIVATE_REST: '1'
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          DISCORD_WEBHOOK_URL_FINANCE: ${{ secrets.DISCORD_WEBHOOK_URL_FINANCE }}
+          DISCORD_WEBHOOK_URL_GENERAL: ${{ secrets.DISCORD_WEBHOOK_URL_GENERAL }}
+        run: python scripts/verify_discord_routes.py
