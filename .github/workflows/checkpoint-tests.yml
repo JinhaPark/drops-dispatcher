@@ -28,3 +28,5 @@ jobs:
           python -m unittest discover -s tests -p test_private_repo.py -v
           python -m unittest discover -s tests -p test_private_migration.py -v
           python -m unittest discover -s tests -p test_live_checkpoints.py -v
+          python -m unittest discover -s tests -p test_backfill.py -v
+          python -m unittest discover -s tests -p test_publication_eligibility.py -v
