@@ -163,6 +163,12 @@ def remote_json(root, ref, path, default):
 
 def persist(root, expected_marker, marker):
     """Commit only ledger and crash marker onto latest main; retain other changes."""
+    if os.environ.get("DROPS_PRIVATE_REST") == "1":
+        from private_repo import persist_state
+        return persist_state(root, expected_marker, marker,
+                             ledger_path=LEDGER, marker_path=INFLIGHT,
+                             merge_ledgers=merge_ledgers)
+
     local = read_json(root / LEDGER, {})
     for attempt in range(5):
         git("fetch", "origin", "main", root=root)

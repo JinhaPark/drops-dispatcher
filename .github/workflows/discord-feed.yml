@@ -2,17 +2,10 @@ name: Private-backed Discord delivery
 on:
   schedule:
     - cron: '17 */6 * * *'
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/discord-feed.yml'
-      - 'scripts/**'
-      - 'tests/**'
-      - '.agents/skills/discord-feed/**'
   workflow_dispatch:
     inputs:
       mode:
-        description: 'Validation only or manual delivery'
+        description: 'Validation only or manually approved delivery'
         required: true
         type: choice
         default: validate
@@ -25,14 +18,20 @@ concurrency:
   group: drops-private-delivery-ledger
   cancel-in-progress: false
 jobs:
-  validate:
+  dispatch:
+    # Keep schedule fail-closed while new REST transport is verified.
+    if: ${{ github.event_name == 'workflow_dispatch' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout public delivery code
         uses: actions/checkout@v4
         with:
           persist-credentials: false
-      - name: Authenticate to private data repository
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Generate short-lived private repository token
         id: app-token
         uses: actions/create-github-app-token@v2
         with:
@@ -41,57 +40,43 @@ jobs:
           owner: JinhaPark
           repositories: drops
           permission-contents: write
-      - name: Verify private installation access
+      - name: Read private Markdown and ledger via GitHub API
+        shell: bash
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
-        shell: bash
         run: |
           set -euo pipefail
-          repo=$(gh api repos/JinhaPark/drops --jq '.full_name')
-          test "$repo" = 'JinhaPark/drops'
-          access=$(gh api installation/repositories --jq '.repositories[] | select(.full_name == "JinhaPark/drops") | .full_name')
-          test "$access" = 'JinhaPark/drops' || { echo "::error::GitHub App installation token does not include private drops"; exit 1; }
-          echo "Installation token confirmed for private drops"
-      - name: Checkout private data with installation token
-        env:
-          GH_TOKEN: ${{ steps.app-token.outputs.token }}
-        shell: bash
-        run: |
-          set -euo pipefail
-          gh api repos/JinhaPark/drops/contents/data/monitor-state.json --jq '.sha' >/dev/null
-          gh auth setup-git
-          git clone --depth 1 --branch main https://github.com/JinhaPark/drops.git private-data
-          test -f private-data/data/monitor-state.json
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - name: Install public delivery scripts into temporary private checkout
+          python scripts/private_repo.py pull --branch main --destination private-data --groups articles data sources
+      - name: Install dispatcher code into ephemeral data workspace
         run: |
           mkdir -p private-data/scripts private-data/.agents/skills
           cp -a scripts/. private-data/scripts/
-          cp -a .agents/skills/discord-feed private-data/.agents/skills/
           cp -a tests private-data/tests
-      - name: Validate readiness without sending messages
+          cp -a .agents/skills/discord-feed private-data/.agents/skills/
+      - name: Validate delivery safeguards
         shell: bash
         run: |
           set -euo pipefail
           test -f private-data/data/monitor-state.json
           test -f private-data/data/discord-deliveries.json
           test -d private-data/articles
-          test ! -s private-data/data/discord-backfill-inflight.json || python -c 'import json; assert not json.load(open("private-data/data/discord-backfill-inflight.json"))'
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          marker = Path('private-data/data/discord-backfill-inflight.json')
+          assert not marker.exists() or not json.loads(marker.read_text()), "In-flight delivery requires reconciliation"
+          PY
           (cd private-data && python -m unittest discover -s tests -v)
-          echo "Private checkout and focused tests passed."
-
-      - name: Deliver approved private Markdown (explicit opt-in only)
-        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.mode == 'deliver') }}
+          echo "Private API snapshot and focused tests passed; validation mode never posts."
+      - name: Deliver approved Markdown with atomic private checkpoints
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.mode == 'deliver' }}
+        shell: bash
         working-directory: private-data
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          DROPS_PRIVATE_REST: '1'
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        shell: bash
         run: |
           set -euo pipefail
           test -n "$DISCORD_WEBHOOK_URL"
-          gh auth setup-git
           python scripts/deliver_articles.py
