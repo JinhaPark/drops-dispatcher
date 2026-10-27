@@ -1,0 +1,61 @@
+name: Retire public legacy report branch after private parity verification
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/retire-public-report-branch.yml'
+      - 'scripts/retire_public_report_branch.py'
+      - 'tests/test_retire_public_report_branch.py'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/retire-public-report-branch.yml'
+      - 'scripts/retire_public_report_branch.py'
+      - 'tests/test_retire_public_report_branch.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: drops-public-legacy-ref-retirement
+  cancel-in-progress: false
+
+jobs:
+  focused-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test only public-branch migration and safety conditions
+        run: python -m unittest discover -s tests -p 'test_retire_public_report_branch.py' -v
+
+  retire-public-ref:
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    needs: focused-tests
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Create read-scoped private content verification token
+        uses: actions/create-github-app-token@v2
+        id: private-token
+        with:
+          app-id: ${{ secrets.DROPS_APP_ID }}
+          private-key: ${{ secrets.DROPS_APP_PRIVATE_KEY }}
+          owner: JinhaPark
+          repositories: drops
+          permission-contents: read
+      - name: Verify immutable original blobs in private main, then delete only public obsolete ref
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DROPS_TOKEN: ${{ steps.private-token.outputs.token }}
+        run: python scripts/retire_public_report_branch.py
