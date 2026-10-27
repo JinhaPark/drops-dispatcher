@@ -163,6 +163,8 @@ def remote_json(root, ref, path, default):
 
 def persist(root, expected_marker, marker):
     """Commit only ledger and crash marker onto latest main; retain other changes."""
+    if os.environ.get("DROPS_DATA_ROOT") and os.environ.get("DROPS_PRIVATE_REST") != "1":
+        raise RuntimeError("Private data checkpoints require the private REST transport")
     if os.environ.get("DROPS_PRIVATE_REST") == "1":
         from private_repo import persist_state
         return persist_state(root, expected_marker, marker,
@@ -248,7 +250,7 @@ def deliver_one(root, item_id, article_path, digest, *, text=None,
             raise RuntimeError(f"Remote delivery needs reconciliation: {item_id}")
         checkpoint(root, marker, {})
         return False
-    command = [sys.executable, str(root / ".agents/skills/discord-feed/scripts/send.py"),
+    command = [sys.executable, str(ROOT / ".agents/skills/discord-feed/scripts/send.py"),
                "--file", str(article_path), "--id", item_id,
                "--state", str(root / LEDGER)]
     try:
