@@ -37,6 +37,17 @@ class PrivateRepoTests(unittest.TestCase):
                 with self.assertRaisesRegex(RuntimeError, "changed during snapshot"):
                     private_repo.pull("JinhaPark/drops", "main", Path(d), ("articles",))
 
+    def test_read_only_immutable_snapshot_does_not_require_live_head(self):
+        with tempfile.TemporaryDirectory() as d:
+            entries = {"articles/x.md": {"type": "blob", "sha": "a", "mode": "100644"}}
+            with patch.object(private_repo, "ref_head", return_value="pinned") as ref, \
+                 patch.object(private_repo, "tree_snapshot", return_value=("tree", entries)), \
+                 patch.object(private_repo, "blob_bytes", return_value=b"# Pinned"):
+                private_repo.pull("JinhaPark/drops", "main", Path(d), ("articles",),
+                                  read_only_snapshot=True)
+            self.assertEqual(ref.call_count, 1)
+            self.assertEqual((Path(d) / "articles/x.md").read_bytes(), b"# Pinned")
+
     def test_unreconciled_remote_marker_prevents_any_api_write(self):
         with tempfile.TemporaryDirectory() as d:
             root = Path(d)

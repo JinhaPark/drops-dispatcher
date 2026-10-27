@@ -84,7 +84,8 @@ def _safe_path(path: str) -> bool:
                 and not path.startswith("/") and "\\" not in path)
 
 
-def pull(repo: str, branch: str, destination: Path, groups: tuple[str, ...]):
+def pull(repo: str, branch: str, destination: Path, groups: tuple[str, ...],
+         *, read_only_snapshot: bool = False):
     head = ref_head(repo, branch)
     _, entries = tree_snapshot(repo, head)
     selected = {
@@ -106,7 +107,9 @@ def pull(repo: str, branch: str, destination: Path, groups: tuple[str, ...]):
         target = destination / name
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_bytes(content)
-    if head != ref_head(repo, branch):
+    # A pinned immutable tree is sufficient for validation that never sends.
+    # Live delivery must still verify the branch head did not move.
+    if not read_only_snapshot and head != ref_head(repo, branch):
         raise RuntimeError("Private branch changed during snapshot; retry without sending")
     print(f"Verified private snapshot: {len(selected)} files from {branch}; no content logged")
 
@@ -171,8 +174,11 @@ def main():
     parser.add_argument("--destination", default="private-data")
     parser.add_argument("--groups", nargs="+", choices=["articles", "reports", "data", "sources"],
                         default=["articles", "data", "sources"])
+    parser.add_argument("--read-only-snapshot", action="store_true",
+                        help="Validation only; never use for Discord delivery")
     args = parser.parse_args()
-    pull(DEFAULT_REPO, args.branch, Path(args.destination), tuple(args.groups))
+    pull(DEFAULT_REPO, args.branch, Path(args.destination), tuple(args.groups),
+         read_only_snapshot=args.read_only_snapshot)
 
 
 if __name__ == "__main__":
