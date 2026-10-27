@@ -1,40 +1,10 @@
-name: Discord webhook smoke test
+name: Legacy Discord transport disabled after private migration
 on:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/discord-smoke.yml'
   workflow_dispatch:
 permissions:
-  contents: write
-concurrency:
-  group: discord-feed-ledger
-  cancel-in-progress: false
+  contents: read
 jobs:
-  smoke:
+  legacy-disabled:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - name: Run splitting tests
-        run: python -m unittest discover -s .agents/skills/discord-feed/tests -v
-      - name: Send one smoke-test message
-        env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        run: |
-          printf 'Discord 피드 연결 테스트입니다. (JinhaPark/news)\n중복 방지 및 전송 이력을 확인합니다.\n' > /tmp/discord-smoke.md
-          python .agents/skills/discord-feed/scripts/send.py --file /tmp/discord-smoke.md --id system:discord-smoke-v1 --state data/discord-deliveries.json
-      - name: Persist test delivery ledger
-        if: always()
-        run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/discord-deliveries.json
-          if ! git diff --cached --quiet; then
-            git commit -m 'chore: record Discord smoke test'
-            git push
-          fi
-
-# Re-run the same stable smoke-test ID to verify idempotent delivery.
+      - run: echo "Legacy transport is disabled. Use the guarded private-data dispatcher."
