@@ -6,6 +6,11 @@ on:
       - ".github/workflows/semiconductor-export-monitor.yml"
       - "scripts/publish_semiconductor_alert.py"
       - "tests/test_publish_semiconductor_alert.py"
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/semiconductor-export-monitor.yml"
+      - "scripts/publish_semiconductor_alert.py"
   schedule:
     # Daily and every 15 minutes 00:00-04:59 UTC on days 1-3.
     - cron: "*/15 0-4 1-3 * *"
@@ -39,7 +44,7 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_publish_semiconductor_alert.py' -v
 
   monitor:
-    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push'
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
