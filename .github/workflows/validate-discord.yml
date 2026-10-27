@@ -51,6 +51,8 @@ jobs:
           mkdir -p private-data/.agents/skills private-data/scripts
           cp -a scripts/. private-data/scripts/
           cp -a tests private-data/tests
+          mkdir -p private-data/.github/workflows
+          cp .github/workflows/report-feed.yml private-data/.github/workflows/report-feed.yml
           cp -a .agents/skills/discord-feed private-data/.agents/skills/
           cd private-data
           python -m unittest discover -s .agents/skills/discord-feed/tests -v
