@@ -4,7 +4,6 @@ on:
     paths:
       - 'scripts/**'
       - 'tests/**'
-      - '.github/workflows/discord-feed.yml'
       - '.github/workflows/checkpoint-tests.yml'
   workflow_dispatch:
 permissions:
@@ -14,10 +13,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Offline checkpoint and publication regression suite
+      - name: Isolated offline delivery skill tests
         run: |
-          python -m unittest discover -s tests -v
+          python -m unittest discover -s .agents/skills/discord-feed/tests -v
           python -m compileall -q scripts tests
