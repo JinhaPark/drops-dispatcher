@@ -6,19 +6,19 @@ The scheduled or editorial agent discovers sources, verifies evidence, writes th
 
 ## Routing and repository scope
 
-Configure all three webhook secrets in `JinhaPark/drops` Actions. A secret in another repository or in a ChatGPT task is not shared with this repository. Route by validated repository path only:
+Configure all three webhook secrets in PUBLIC `JinhaPark/drops-dispatcher` Actions. The private repository and ChatGPT tasks do not supply these secrets to the dispatcher. Route by validated repository path only:
 
 - `articles/` uses the AI webhook and article ledger on `main`.
-- `reports/finance/` uses the finance webhook and report ledger on `automation/report-feed`.
-- `reports/general/` uses the general webhook and report ledger on `automation/report-feed`.
+- `reports/finance/` uses the finance webhook and report ledger on private `main`.
+- `reports/general/` uses the general webhook and report ledger on private `main`.
 
 The report path is its stable identity. Report files are immutable. A correctly silent conditional task creates no file or status message.
 
 ## Workflow boundaries
 
-`.github/workflows/discord-feed.yml` handles approved AI article paths and explicit backfill manifests on `main`. `.github/workflows/report-feed.yml` handles finance and general report files on `automation/report-feed`. Both workflows serialize ledger mutations and ignore ledger-only commits as delivery triggers. The report branch is the durable store for immutable report Markdown and ledger writes. The report workflow checks out the delivery scripts and unit tests from fresh `main` into `.delivery-runtime` and executes those scripts against the report branch's files. Old code copies on the report branch are not executed. This prevents source drift while keeping report/ledger writes off the protected `main`.
+`.github/workflows/discord-feed.yml` reads `articles/` on private `drops/main`; `.github/workflows/report-feed.yml` reads `reports/` on the SAME private `main`. Both run canonical delivery code from public `drops-dispatcher/main`. Separate ledgers and in-flight markers remain on private `main`; fast-forward-only REST commits preserve unrelated concurrent writes. Private commits do not directly trigger public workflows and validation runs do not prove Discord delivery.
 
-Before sending, run the affected skill tests. The report workflow validates both routed secrets because one invocation scans both report categories. Persist the appropriate ledger after every acknowledged message. If persistence fails, retain failure evidence and do not claim reliable deduplication.
+Before sending, run the affected skill tests. The report workflow requires the routed secret only when a report is pending for that category; it never falls back to another channel. Persist the appropriate ledger after every acknowledged message. If persistence fails, retain failure evidence and do not claim reliable deduplication.
 
 ## Discord rendering
 
