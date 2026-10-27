@@ -201,6 +201,19 @@ def persist(root, expected_marker, marker):
 
 
 
+def verified_complete(record, digest):
+    if not isinstance(record, dict):
+        return False
+    messages = record.get("messages")
+    total = record.get("total")
+    return (record.get("status") == "complete"
+            and record.get("sha256") == digest
+            and isinstance(total, int) and total > 0
+            and isinstance(messages, list) and len(messages) == total
+            and all(isinstance(m, dict) and m.get("index") == i and m.get("message_id")
+                    for i, m in enumerate(messages)))
+
+
 def deliver_one(root, item_id, article_path, digest, *, text=None,
                 checkpoint=persist, invoke=subprocess.run, plan=None):
     """One article, one remotely verified transaction; used by backfills and live feeds.
@@ -217,7 +230,7 @@ def deliver_one(root, item_id, article_path, digest, *, text=None,
         raise RuntimeError(f"Article changed before delivery: {item_id}")
     previous = read_json(root / LEDGER, {}).get(item_id)
     if previous:
-        if previous.get("sha256") != digest or previous.get("status") != "complete":
+        if not verified_complete(previous, digest):
             raise RuntimeError(f"Delivery requires reconciliation: {item_id}")
         return False
 
@@ -227,6 +240,14 @@ def deliver_one(root, item_id, article_path, digest, *, text=None,
         marker["plan"] = plan
     # Never POST if the pre-send remote commit/push/verification fails.
     checkpoint(root, {}, marker)
+    # A stale local snapshot may gain a completed receipt during the atomic
+    # remote merge. Clear our fence and SKIP, never repost that item.
+    merged_receipt = read_json(root / LEDGER, {}).get(item_id)
+    if merged_receipt:
+        if not verified_complete(merged_receipt, digest):
+            raise RuntimeError(f"Remote delivery needs reconciliation: {item_id}")
+        checkpoint(root, marker, {})
+        return False
     command = [sys.executable, str(root / ".agents/skills/discord-feed/scripts/send.py"),
                "--file", str(article_path), "--id", item_id,
                "--state", str(root / LEDGER)]

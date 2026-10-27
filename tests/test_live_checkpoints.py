@@ -202,6 +202,22 @@ class RemoteCheckpointTests(unittest.TestCase):
             self.deliver(self.runner, 1, fake_success)
         self.assertEqual(self.remote_json(b.INFLIGHT)["id"], "live:1")
 
+    def test_remote_complete_merged_at_presend_checkpoint_never_reposts(self):
+        other = self.clone("other-delivered-first")
+        ledger = b.read_json(other / b.LEDGER)
+        ledger["live:1"] = complete("article-1", "previous-discord-id")
+        self.write_json(other, b.LEDGER, ledger)
+        run_git(other, "add", ".")
+        run_git(other, "commit", "-m", "another runner delivered first")
+        run_git(other, "push", "origin", "main")
+
+        def forbidden(*args, **kwargs):
+            self.fail("Duplicate Discord POST after merged remote receipt")
+        self.assertFalse(self.deliver(self.runner, 1, invoke=forbidden))
+        self.assertEqual(self.remote_json(b.INFLIGHT), {})
+        self.assertEqual(self.remote_json(b.LEDGER)["live:1"]["messages"][0]["message_id"],
+                         "previous-discord-id")
+
     def test_remote_success_is_skipped_and_changed_digest_is_rejected(self):
         self.deliver(self.runner, 1)
         restarted = self.clone("no-repost")
