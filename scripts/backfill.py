@@ -163,14 +163,20 @@ def remote_json(root, ref, path, default):
 
 def persist(root, expected_marker, marker):
     """Commit only ledger and crash marker onto latest main; retain other changes."""
-    if os.environ.get("DROPS_DATA_ROOT") and os.environ.get("DROPS_PRIVATE_REST") != "1":
-        raise RuntimeError("Private data checkpoints require the private REST transport")
     if os.environ.get("DROPS_PRIVATE_REST") == "1":
         from private_repo import persist_state
         return persist_state(root, expected_marker, marker,
                              ledger_path=LEDGER, marker_path=INFLIGHT,
                              merge_ledgers=merge_ledgers)
 
+    # Git transport is restricted to offline fixtures, never public origin/main.
+    if os.environ.get("DROPS_TEST_LOCAL_CHECKPOINT") != "1":
+        raise RuntimeError("Private REST checkpoint transport required")
+    local_origin = git("remote", "get-url", "origin", root=root)
+    if (not pathlib.Path(local_origin).is_absolute()
+            or not pathlib.Path(local_origin).is_dir()
+            or pathlib.Path(root).resolve() == ROOT.resolve()):
+        raise RuntimeError("Offline checkpoint requires a separate local Git origin")
     local = read_json(root / LEDGER, {})
     for attempt in range(5):
         git("fetch", "origin", "main", root=root)
