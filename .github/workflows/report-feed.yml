@@ -23,8 +23,6 @@ concurrency:
   cancel-in-progress: false
 jobs:
   deliver-reports:
-    # Schedule is disabled until the first API-only integration checks pass.
-    if: ${{ github.event_name != 'schedule' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -57,7 +55,7 @@ jobs:
         run: |
           python scripts/deliver_private_reports.py --dry-run
       - name: Deliver and checkpoint only in explicit mode
-        if: ${{ github.event_name == 'workflow_dispatch' && inputs.mode == 'deliver' }}
+        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.mode == 'deliver') }}
         working-directory: report-data
         env:
           GH_TOKEN: ${{ steps.private-token.outputs.token }}
