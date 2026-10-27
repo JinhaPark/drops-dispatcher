@@ -1,4 +1,5 @@
 import json
+import os
 import pathlib
 import subprocess
 import sys
@@ -144,11 +145,14 @@ class GitCheckpointTests(unittest.TestCase):
             run("commit", "-m", "concurrent", cwd=other)
             run("push", "origin", "main", cwd=other)
             marker = {"id": "new"}
-            b.persist(runner, {}, marker)
-            state = b.read_json(runner / b.LEDGER)
-            state["new"] = record()
-            (runner / b.LEDGER).write_text(json.dumps(state))
-            b.persist(runner, marker, {})
+            # Only this temporary local Git fixture may exercise legacy Git transport.
+            # Production stays on private REST and never inherits this exception.
+            with patch.dict(os.environ, {"DROPS_TEST_LOCAL_CHECKPOINT": "1", "DROPS_PRIVATE_REST": "0"}):
+                b.persist(runner, {}, marker)
+                state = b.read_json(runner / b.LEDGER)
+                state["new"] = record()
+                (runner / b.LEDGER).write_text(json.dumps(state))
+                b.persist(runner, marker, {})
             self.assertEqual(run("show", "main:unrelated.txt", cwd=remote), "keep me")
             saved = json.loads(run("show", f"main:{b.LEDGER}", cwd=remote))
             self.assertEqual(set(saved), {"old", "concurrent", "new"})

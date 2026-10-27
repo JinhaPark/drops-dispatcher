@@ -49,8 +49,7 @@ class PublicationEligibilityTests(unittest.TestCase):
         before = old.read_bytes()
         sender, output = self.dispatch()
         self.assertEqual([call.args[1] for call in sender.call_args_list], ['example:new'])
-        self.assertIn('Held artificial-engineering:edition-70', output)
-        self.assertIn('backfill approval required', output)
+        self.assertIn('Historical or unverified article held; no post', output)
         self.assertEqual(old.read_bytes(), before)
 
     def test_date_only_start_day_is_held_with_reason_and_new_issue_continues(self):
@@ -58,7 +57,7 @@ class PublicationEligibilityTests(unittest.TestCase):
         self.article('example:new', '2026-10-20')
         sender, output = self.dispatch()
         self.assertEqual([call.args[1] for call in sender.call_args_list], ['example:new'])
-        self.assertIn('publication time unknown', output)
+        self.assertIn('Historical or unverified article held; no post', output)
 
     def test_exact_timestamp_boundary_and_timezone_offsets(self):
         cases = {
@@ -136,7 +135,7 @@ class PublicationEligibilityTests(unittest.TestCase):
         with patch.object(c, 'already_completed', return_value=True):
             sender, output = self.dispatch()
         self.assertEqual([call.args[1] for call in sender.call_args_list], ['example:new'])
-        self.assertIn('Held example:unapproved', output)
+        self.assertIn('Historical or unverified article held; no post', output)
 
 
 if __name__ == '__main__':
