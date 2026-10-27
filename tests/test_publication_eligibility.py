@@ -2,6 +2,7 @@
 import contextlib
 import io
 import json
+import os
 import pathlib
 import sys
 import tempfile
@@ -37,7 +38,7 @@ class PublicationEligibilityTests(unittest.TestCase):
 
     def dispatch(self):
         output = io.StringIO()
-        with patch.object(d, '__file__', str(self.root / 'scripts/deliver_articles.py')), \
+        with patch.dict(os.environ, {'DROPS_DATA_ROOT': str(self.root)}), \
                 patch.object(b, 'deliver_one') as sender, contextlib.redirect_stdout(output):
             d.main()
         return sender, output.getvalue()
