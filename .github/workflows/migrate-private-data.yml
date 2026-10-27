@@ -31,13 +31,15 @@ jobs:
           ref: main
           token: ${{ steps.app-token.outputs.token }}
           path: private-data
-          persist-credentials: true
+          persist-credentials: false
           fetch-depth: 1
       - name: Copy cache and state without overwriting divergent files
         run: python3 scripts/migrate_private_data.py . private-data
       - name: Commit private snapshot
         working-directory: private-data
         shell: bash
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
@@ -49,5 +51,12 @@ jobs:
             echo "No changes to private data"
           else
             git commit -m "chore: migrate private article cache and delivery checkpoints"
-            git push origin HEAD:main
+            gh auth setup-git
+            git push origin HEAD:refs/heads/main
+            expected=$(git rev-parse HEAD)
+            observed=$(git ls-remote origin refs/heads/main | cut -f1)
+            if [ "$expected" != "$observed" ]; then
+              echo "::error::Private remote did not match migration commit"
+              exit 1
+            fi
           fi
