@@ -1,5 +1,7 @@
-name: Validate private data integration (no Discord posts)
+name: Private-backed Discord delivery
 on:
+  schedule:
+    - cron: '17 */6 * * *'
   push:
     branches: [main]
     paths:
@@ -20,7 +22,7 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: drops-private-data-migration
+  group: drops-private-delivery-ledger
   cancel-in-progress: false
 jobs:
   validate:
@@ -66,10 +68,10 @@ jobs:
           test -d private-data/articles
           test ! -s private-data/data/discord-backfill-inflight.json || python -c 'import json; assert not json.load(open("private-data/data/discord-backfill-inflight.json"))'
           (cd private-data && python -m unittest discover -s tests -v)
-          echo "Private checkout and focused tests passed. Discord delivery remains disabled."
+          echo "Private checkout and focused tests passed."
 
       - name: Deliver approved private Markdown (explicit opt-in only)
-        if: ${{ inputs.mode == 'deliver' }}
+        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.mode == 'deliver') }}
         working-directory: private-data
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
