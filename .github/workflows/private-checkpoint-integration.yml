@@ -1,0 +1,34 @@
+name: Verify private checkpoint transport
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/private-checkpoint-integration.yml'
+      - 'scripts/verify_private_checkpoint.py'
+permissions:
+  contents: read
+concurrency:
+  group: drops-private-checkpoint-probe
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/create-github-app-token@v2
+        id: private-token
+        with:
+          app-id: ${{ secrets.DROPS_APP_ID }}
+          private-key: ${{ secrets.DROPS_APP_PRIVATE_KEY }}
+          owner: JinhaPark
+          repositories: drops
+          permission-contents: write
+      - name: Verify isolated private Git refs and atomic checkpoint writes
+        env:
+          GH_TOKEN: ${{ steps.private-token.outputs.token }}
+        run: python scripts/verify_private_checkpoint.py
