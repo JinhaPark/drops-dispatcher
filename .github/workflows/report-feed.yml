@@ -40,11 +40,11 @@ jobs:
           owner: JinhaPark
           repositories: drops
           permission-contents: write
-      - name: Read private report branch through GitHub API
+      - name: Read private reports from shared private main
         env:
           GH_TOKEN: ${{ steps.private-token.outputs.token }}
         run: |
-          python scripts/private_repo.py pull --branch automation/report-feed --destination report-data --groups reports data
+          python scripts/private_repo.py pull --branch main --destination report-data --groups reports data
       - name: Prepare ephemeral private report runtime
         run: |
           mkdir -p report-data/scripts report-data/.agents/skills

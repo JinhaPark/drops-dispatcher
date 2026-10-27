@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Deliver immutable private finance/general reports with durable GitHub API fences.
 
-Only the dispatcher owns Discord credentials. The report branch contains the
-source, chunk receipts and an in-flight marker in the SAME private commit.
+Only the dispatcher owns Discord credentials. Private drops/main keeps
+article and report sources with separate receipts and in-flight markers.
 """
 from __future__ import annotations
 
@@ -19,7 +19,7 @@ from private_repo import persist_state
 ROOT = Path(__file__).resolve().parents[1]
 LEDGER = "data/discord-report-deliveries.json"
 INFLIGHT = "data/discord-report-inflight.json"
-BRANCH = "automation/report-feed"
+BRANCH = "main"
 
 sys.path.insert(0, str(ROOT / ".agents/skills/discord-feed/scripts"))
 from deliver_reports import report_identity  # noqa: E402

@@ -23,9 +23,14 @@ Reject every other path and never fall back between secrets.
 RECIPE route_completed_output(final_markdown, category, stable_id, path):
     REQUIRE category IN [ai_article, finance, general]
     route := RESOLVE_EXACT_PATH(path, category)
-    branch := main IF category == ai_article ELSE automation/report-feed
+    branch := main
 
     COMMIT_IMMUTABLE_SOURCE(branch, path, final_markdown)
+    # Public dispatcher delivers later; authoring never invokes the webhook.
+    RETURN source_commit, delivery_status = unconfirmed
+
+RECIPE dispatch_approved_source_in_public_runner(stable_id, path):
+    route := RESOLVE_EXACT_PATH(path)
     rendered := RENDER_FOR_DISCORD(
         final_markdown,
         gfm_pipe_tables = ADAPTIVE_MOBILE_RENDERING,
@@ -41,7 +46,7 @@ RECIPE route_completed_output(final_markdown, category, stable_id, path):
     RETURN source_commit, workflow, ledger_receipt
 ~~~
 
-For a conditional task whose correct result is silence, create no report file and invoke no webhook. Preserve other report files and ledger entries when updating `automation/report-feed`.
+For a conditional task whose correct result is silence, create no report file and invoke no webhook. Preserve unrelated article and report files and both separate ledgers on private `main`.
 
 ## Invoke
 
@@ -49,7 +54,7 @@ For a conditional task whose correct result is silence, create no report file an
 - Scheduled reports: `python .agents/skills/discord-feed/scripts/deliver_reports.py --root reports --state data/discord-report-deliveries.json`
 - Preview rendering and chunk sizes by adding `--dry-run`; never require a webhook for a dry run.
 
-The sender hashes and preserves the original Markdown. At delivery time, short 2–3-column tables with predominantly numeric cells become aligned code blocks, with a maximum of 36 display columns and Hangul/CJK-aware width. Wide or descriptive tables become vertical labeled Markdown entries without pipe delimiters. A long compact table repeats its header in separately balanced code blocks. Existing fenced blocks and non-table pipes remain unchanged. Descriptive text is preserved, not truncated. Scheduled reports are stored with their ledger on `automation/report-feed`, but GitHub Actions runs the canonical `main` delivery code and tests through a separate checkout. Do not treat the report branch as a second source of executable code.
+The sender hashes and preserves the original Markdown. At delivery time, short 2–3-column tables with predominantly numeric cells become aligned code blocks, with a maximum of 36 display columns and Hangul/CJK-aware width. Wide or descriptive tables become vertical labeled Markdown entries without pipe delimiters. A long compact table repeats its header in separately balanced code blocks. Existing fenced blocks and non-table pipes remain unchanged. Descriptive text is preserved, not truncated. Articles and reports share private `drops/main`, with independent ledger and in-flight paths. GitHub Actions runs canonical code from public `drops-dispatcher/main`, never executable code from private content.
 
 ## Accept
 

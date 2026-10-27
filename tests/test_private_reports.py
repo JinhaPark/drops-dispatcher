@@ -65,6 +65,24 @@ class PrivateReportsTests(unittest.TestCase):
                 checkpoint.assert_not_called()
                 send.assert_not_called()
 
+    def test_reports_checkpoint_on_shared_main_with_independent_files(self):
+        self.assertEqual(reports.BRANCH, "main")
+        self.assertEqual(reports.LEDGER, "data/discord-report-deliveries.json")
+        self.assertEqual(reports.INFLIGHT, "data/discord-report-inflight.json")
+        self.assertNotEqual(reports.LEDGER, reports.backfill.LEDGER)
+        self.assertNotEqual(reports.INFLIGHT, reports.backfill.INFLIGHT)
+        with patch.object(reports, "persist_state") as persisted:
+            reports.checkpoint(Path("/tmp/private-reports-test"), {}, {"id": "probe"})
+        persisted.assert_called_once()
+        args, kwargs = persisted.call_args
+        self.assertEqual(args[3:5], (reports.LEDGER, reports.INFLIGHT))
+        self.assertEqual(kwargs["branch"], "main")
+
+    def test_report_workflow_reads_main_not_legacy_branch(self):
+        workflow = (ROOT / ".github/workflows/report-feed.yml").read_text(encoding="utf-8")
+        self.assertIn("private_repo.py pull --branch main --destination report-data", workflow)
+        self.assertNotIn("automation/report-feed", workflow)
+
 
 if __name__ == "__main__":
     unittest.main()
