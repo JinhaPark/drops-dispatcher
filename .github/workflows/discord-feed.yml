@@ -19,8 +19,6 @@ concurrency:
   cancel-in-progress: false
 jobs:
   dispatch:
-    # Keep schedule fail-closed while new REST transport is verified.
-    if: ${{ github.event_name == 'workflow_dispatch' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout public delivery code
@@ -69,7 +67,7 @@ jobs:
           (cd private-data && python -m unittest discover -s tests -v)
           echo "Private API snapshot and focused tests passed; validation mode never posts."
       - name: Deliver approved Markdown with atomic private checkpoints
-        if: ${{ github.event_name == 'workflow_dispatch' && inputs.mode == 'deliver' }}
+        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.mode == 'deliver') }}
         shell: bash
         working-directory: private-data
         env:
