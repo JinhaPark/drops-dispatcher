@@ -8,6 +8,7 @@ import backfill
 import chronological_backfill as chronological
 import one_time_preview as preview
 import devansh_recent_five as devansh
+from private_repo import require_private_data_root
 
 
 MONITOR_STATE = "data/monitor-state.json"
@@ -51,7 +52,7 @@ def hold_reason(published_at, started_at):
 
 
 def main():
-    root = pathlib.Path(__file__).resolve().parents[1]
+    root = require_private_data_root(pathlib.Path(__file__).resolve().parents[1])
     plan = backfill.read_json(root / chronological.MANIFEST)
     if plan and not chronological.already_completed(root, plan):
         (root / '.discord-checkpoints-used').touch()
