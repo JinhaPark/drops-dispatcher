@@ -1,0 +1,140 @@
+name: Monitor Korean semiconductor export releases into private drops
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/semiconductor-export-monitor.yml"
+      - "scripts/publish_semiconductor_alert.py"
+      - "tests/test_publish_semiconductor_alert.py"
+  schedule:
+    # Daily and every 15 minutes 00:00-04:59 UTC on days 1-3.
+    - cron: "*/15 0-4 1-3 * *"
+    - cron: "17 0 * * *"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Validate only, or queue newly discovered releases in private drops"
+        required: true
+        type: choice
+        default: validate
+        options: [validate, publish]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: drops-semiconductor-export-producer
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run only semiconductor publication tests
+        run: python -m unittest discover -s tests -p 'test_publish_semiconductor_alert.py' -v
+
+  monitor:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      SKILL_PATH: skills-repo/quant/supplementary/semiconductor/track-korea-semiconductor-exports
+    steps:
+      - name: Checkout public dispatcher
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Checkout public, reviewed skills code
+        uses: actions/checkout@v4
+        with:
+          repository: JinhaPark/skills
+          ref: main
+          path: skills-repo
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Create scoped private drops token
+        id: private-token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.DROPS_APP_ID }}
+          private-key: ${{ secrets.DROPS_APP_PRIVATE_KEY }}
+          owner: JinhaPark
+          repositories: drops
+          permission-contents: write
+      - name: Read private monitoring baseline (never publicize contents)
+        env:
+          GH_TOKEN: ${{ steps.private-token.outputs.token }}
+        run: >-
+          python scripts/publish_semiconductor_alert.py hydrate
+          --state-out "${RUNNER_TEMP}/semiconductor-export-state.json"
+      - name: Discover exact current MOTIR release using repaired skills collector
+        id: discover
+        run: >-
+          python "${SKILL_PATH}/scripts/monitor_motir_release.py"
+          --state "${RUNNER_TEMP}/semiconductor-export-state.json"
+          --release-out "${RUNNER_TEMP}/motir-release.json"
+          --github-output "${GITHUB_OUTPUT}"
+      - name: Save first release as a baseline without dispatching
+        if: >-
+          steps.discover.outputs.bootstrapped == 'true' &&
+          (github.event_name == 'schedule' || inputs.mode == 'publish')
+        env:
+          GH_TOKEN: ${{ steps.private-token.outputs.token }}
+        run: >-
+          python scripts/publish_semiconductor_alert.py baseline
+          --release "${RUNNER_TEMP}/motir-release.json"
+      - name: Pin and verify existing official ECOS cache
+        if: >-
+          steps.discover.outputs.is_new == 'true' &&
+          (github.event_name == 'schedule' || inputs.mode == 'publish')
+        shell: bash
+        run: |
+          set -euo pipefail
+          git -C skills-repo fetch --depth=1 origin \
+            +refs/heads/automation/ecos-cache:refs/remotes/origin/automation/ecos-cache
+          git -C skills-repo rev-parse refs/remotes/origin/automation/ecos-cache > "${RUNNER_TEMP}/ecos-cache-commit.txt"
+          git -C skills-repo show \
+            refs/remotes/origin/automation/ecos-cache:quant/supplementary/semiconductor/track-korea-semiconductor-exports/data/ecos/latest.json \
+            > "${RUNNER_TEMP}/ecos-cache.json"
+          python "${SKILL_PATH}/scripts/cache_ecos_indices.py" \
+            --verify-cache "${RUNNER_TEMP}/ecos-cache.json"
+      - name: Fetch current-period official MTI 831 data
+        if: >-
+          steps.discover.outputs.is_new == 'true' &&
+          (github.event_name == 'schedule' || inputs.mode == 'publish')
+        shell: bash
+        run: |
+          set -euo pipefail
+          observation_month="$(python -c 'import json,sys; print(json.load(open(sys.argv[1]))["observation_month"].replace("-", ""))' "${RUNNER_TEMP}/motir-release.json")"
+          python "${SKILL_PATH}/scripts/fetch_kita_mti831.py" \
+            --end "${observation_month}" \
+            --output "${RUNNER_TEMP}/mti831.json"
+      - name: Build immutable Finance Markdown and source evidence
+        if: >-
+          steps.discover.outputs.is_new == 'true' &&
+          (github.event_name == 'schedule' || inputs.mode == 'publish')
+        run: >-
+          python "${SKILL_PATH}/scripts/build_export_alert.py"
+          --release "${RUNNER_TEMP}/motir-release.json"
+          --cache "${RUNNER_TEMP}/ecos-cache.json"
+          --trade "${RUNNER_TEMP}/mti831.json"
+          --markdown-out "${RUNNER_TEMP}/semiconductor-export-alert.md"
+          --receipt-out "${RUNNER_TEMP}/semiconductor-export-evidence.json"
+      - name: Queue privately; report-feed alone may send and checkpoint
+        if: >-
+          steps.discover.outputs.is_new == 'true' &&
+          (github.event_name == 'schedule' || inputs.mode == 'publish')
+        env:
+          GH_TOKEN: ${{ steps.private-token.outputs.token }}
+        run: >-
+          python scripts/publish_semiconductor_alert.py publish
+          --release "${RUNNER_TEMP}/motir-release.json"
+          --markdown "${RUNNER_TEMP}/semiconductor-export-alert.md"
+          --evidence "${RUNNER_TEMP}/semiconductor-export-evidence.json"
