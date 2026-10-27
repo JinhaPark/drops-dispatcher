@@ -167,6 +167,19 @@ def persist_state(root: Path, expected_marker: dict, marker: dict,
     raise RuntimeError("Private checkpoint concurrency conflict; stop")
 
 
+def require_private_data_root(code_root: Path) -> Path:
+    """Require an explicit, separate private data workspace; never use code checkout."""
+    raw = os.environ.get("DROPS_DATA_ROOT")
+    if not raw:
+        raise RuntimeError("DROPS_DATA_ROOT must explicitly identify private data")
+    root = Path(raw).resolve(strict=True)
+    if not root.is_dir() or root == Path(code_root).resolve():
+        raise RuntimeError("Private data must be separate from dispatcher code")
+    if (root / ".git").exists():
+        raise RuntimeError("Use an ephemeral API-fetched private data workspace")
+    return root
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("command", choices=["pull"])

@@ -14,7 +14,7 @@ import subprocess
 import sys
 
 import backfill
-from private_repo import persist_state
+from private_repo import persist_state, require_private_data_root
 
 ROOT = Path(__file__).resolve().parents[1]
 LEDGER = "data/discord-report-deliveries.json"
@@ -91,7 +91,7 @@ def run(root: Path, dry_run=False):
             continue
         try:
             subprocess.run(
-                [sys.executable, str(root / ".agents/skills/discord-feed/scripts/send.py"),
+                [sys.executable, str(ROOT / ".agents/skills/discord-feed/scripts/send.py"),
                  "--file", str(report), "--id", item_id, "--state", str(root / LEDGER),
                  "--webhook-env", webhook_env],
                 cwd=root, check=True,
@@ -109,4 +109,4 @@ def run(root: Path, dry_run=False):
 
 
 if __name__ == "__main__":
-    run(ROOT, dry_run="--dry-run" in sys.argv)
+    run(require_private_data_root(ROOT), dry_run="--dry-run" in sys.argv)

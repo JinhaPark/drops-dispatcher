@@ -26,4 +26,5 @@ jobs:
           python -m unittest discover -s tests -p test_retire_old_report_branch.py -v
           python -m unittest discover -s tests -p test_verify_discord_routes.py -v
           python -m unittest discover -s tests -p test_private_repo.py -v
+          python -m unittest discover -s tests -p test_private_migration.py -v
           python -m unittest discover -s tests -p test_live_checkpoints.py -v

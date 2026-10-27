@@ -45,19 +45,15 @@ jobs:
           GH_TOKEN: ${{ steps.private-token.outputs.token }}
         run: |
           python scripts/private_repo.py pull --branch main --destination report-data --groups reports data
-      - name: Prepare ephemeral private report runtime
-        run: |
-          mkdir -p report-data/scripts report-data/.agents/skills
-          cp -a scripts/. report-data/scripts/
-          cp -a .agents/skills/discord-feed report-data/.agents/skills/
       - name: Validate routing and pending report identities without posting
-        working-directory: report-data
+        env:
+          DROPS_DATA_ROOT: ${{ github.workspace }}/report-data
         run: |
           python scripts/deliver_private_reports.py --dry-run
       - name: Deliver and checkpoint only in explicit mode
         if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.mode == 'deliver') }}
-        working-directory: report-data
         env:
+          DROPS_DATA_ROOT: ${{ github.workspace }}/report-data
           GH_TOKEN: ${{ steps.private-token.outputs.token }}
           DISCORD_WEBHOOK_URL_FINANCE: ${{ secrets.DISCORD_WEBHOOK_URL_FINANCE }}
           DISCORD_WEBHOOK_URL_GENERAL: ${{ secrets.DISCORD_WEBHOOK_URL_GENERAL }}

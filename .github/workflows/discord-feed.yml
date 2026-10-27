@@ -45,14 +45,6 @@ jobs:
         run: |
           set -euo pipefail
           python scripts/private_repo.py pull --branch main --destination private-data --groups articles data sources
-      - name: Install dispatcher code into ephemeral data workspace
-        run: |
-          mkdir -p private-data/scripts private-data/.agents/skills
-          cp -a scripts/. private-data/scripts/
-          cp -a tests private-data/tests
-          mkdir -p private-data/.github/workflows
-          cp .github/workflows/report-feed.yml private-data/.github/workflows/report-feed.yml
-          cp -a .agents/skills/discord-feed private-data/.agents/skills/
       - name: Validate delivery safeguards
         shell: bash
         run: |
@@ -66,13 +58,13 @@ jobs:
           marker = Path('private-data/data/discord-backfill-inflight.json')
           assert not marker.exists() or not json.loads(marker.read_text()), "In-flight delivery requires reconciliation"
           PY
-          (cd private-data && python -m unittest discover -s tests -v)
+          python -m unittest discover -s tests -p test_publication_eligibility.py -v
           echo "Private API snapshot and focused tests passed; validation mode never posts."
       - name: Deliver approved Markdown with atomic private checkpoints
         if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.mode == 'deliver') }}
         shell: bash
-        working-directory: private-data
         env:
+          DROPS_DATA_ROOT: ${{ github.workspace }}/private-data
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
           DROPS_PRIVATE_REST: '1'
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}

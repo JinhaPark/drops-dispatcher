@@ -1,5 +1,11 @@
 # AGENTS.md — Curated Content Drops
 
+## Authoritative private-data boundary (October 2026)
+
+This public repository is **execution code only**. All references elsewhere in this file to `articles/`, `reports/`, `data/`, `sources.json`, and remote delivery ledgers refer to **private `JinhaPark/drops/main`**, not to public working-tree files. Legacy public paths survive only in immutable Git history; do not rewrite it or restore private material to a public commit. The audited two-ref migration and exact original-ledger archives are documented in `docs/private-data-migration.md`.
+
+The exclusive pipeline is `producer (individual skill / scheduled task) -> JinhaPark/drops (private main) -> JinhaPark/drops-dispatcher (public code) -> routed Discord webhook`. Only this dispatcher holds webhook Actions secrets and sends. Producers create finalized Markdown in the private repository and never call Discord. Finance and general reports share one private `main` branch but have distinct routing and report receipt IDs; AI articles retain their own ledger. GitHub Actions must set `DROPS_DATA_ROOT` to the ephemeral private API snapshot; dispatcher code remains outside that directory. Remote ledger/in-flight checkpoints are written only to private `main`, with required installation-token authentication, pre-send fencing, and confirmed remote receipts. Any authentication/commit/verification uncertainty is a **stop condition**. Never print or upload private content, ledgers, webhook values, or authentication material in public CI output/artifacts. Do not regenerate or repost completed historical material.
+
 ## Mission and separation of responsibilities
 Store reviewed Markdown artifacts and deliver them to the correct Discord channel. AI newsletter agents monitor configured sources, research each eligible issue, produce a complete Korean editorial document, and commit it under `articles/`. Scheduled agents commit completed finance or general reports under their routed `reports/` path. GitHub Actions transports these committed artifacts through `.agents/skills/discord-feed/SKILL.md`; it does not research, translate, summarize, or rewrite prose. Do not use GitHub Pages, RSS distribution, or a separate model API.
 
