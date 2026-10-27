@@ -44,7 +44,14 @@ jobs:
       - name: Verify private installation access
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
-        run: gh api repos/JinhaPark/drops --jq '.full_name' >/dev/null
+        shell: bash
+        run: |
+          set -euo pipefail
+          repo=$(gh api repos/JinhaPark/drops --jq '.full_name')
+          test "$repo" = 'JinhaPark/drops'
+          access=$(gh api installation/repositories --jq '.repositories[] | select(.full_name == "JinhaPark/drops") | .full_name')
+          test "$access" = 'JinhaPark/drops' || { echo "::error::GitHub App installation token does not include private drops"; exit 1; }
+          echo "Installation token confirmed for private drops"
       - name: Checkout private data (no credentials persisted)
         uses: actions/checkout@v4
         with:
