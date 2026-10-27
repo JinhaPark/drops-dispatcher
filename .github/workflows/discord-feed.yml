@@ -49,6 +49,7 @@ jobs:
           mkdir -p private-data/scripts private-data/.agents/skills
           cp -a scripts/. private-data/scripts/
           cp -a .agents/skills/discord-feed private-data/.agents/skills/
+          cp -a tests private-data/tests
       - name: Validate readiness without sending messages
         shell: bash
         run: |
@@ -57,7 +58,7 @@ jobs:
           test -f private-data/data/discord-deliveries.json
           test -d private-data/articles
           test ! -s private-data/data/discord-backfill-inflight.json || python -c 'import json; assert not json.load(open("private-data/data/discord-backfill-inflight.json"))'
-          python -m unittest discover -s tests -v
+          (cd private-data && python -m unittest discover -s tests -v)
           echo "Private checkout and focused tests passed. Discord delivery remains disabled."
 
       - name: Deliver approved private Markdown (explicit opt-in only)
