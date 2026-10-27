@@ -1,6 +1,15 @@
 name: Validate private data integration (no Discord posts)
 on:
   workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Validation only or manual delivery'
+        required: true
+        type: choice
+        default: validate
+        options:
+          - validate
+          - deliver
 permissions:
   contents: read
 concurrency:
@@ -35,6 +44,11 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Install public delivery scripts into temporary private checkout
+        run: |
+          mkdir -p private-data/scripts private-data/.agents/skills
+          cp -a scripts/. private-data/scripts/
+          cp -a .agents/skills/discord-feed private-data/.agents/skills/
       - name: Validate readiness without sending messages
         shell: bash
         run: |
@@ -45,3 +59,16 @@ jobs:
           test ! -s private-data/data/discord-backfill-inflight.json || python -c 'import json; assert not json.load(open("private-data/data/discord-backfill-inflight.json"))'
           python -m unittest discover -s tests -v
           echo "Private checkout and focused tests passed. Discord delivery remains disabled."
+
+      - name: Deliver approved private Markdown (explicit opt-in only)
+        if: ${{ inputs.mode == 'deliver' }}
+        working-directory: private-data
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$DISCORD_WEBHOOK_URL"
+          gh auth setup-git
+          python scripts/deliver_articles.py
