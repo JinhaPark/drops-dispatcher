@@ -47,7 +47,8 @@ def api(repo: str, endpoint: str, method: str = "GET", payload=None):
     )
     try:
         with urllib.request.urlopen(request, timeout=30) as response:
-            return json.loads(response.read().decode("utf-8"))
+            body = response.read()
+            return json.loads(body.decode("utf-8")) if body else {}
     except urllib.error.HTTPError as exc:
         raise ApiError(exc.code, endpoint) from None
 

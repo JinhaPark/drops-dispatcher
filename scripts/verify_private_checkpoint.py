@@ -53,6 +53,13 @@ def main():
     finally:
         if created:
             private_repo.api(REPO, ref, "DELETE")
+            try:
+                private_repo.ref_head(REPO, branch)
+            except private_repo.ApiError as exc:
+                if exc.status != 404:
+                    raise
+            else:
+                raise RuntimeError("Temporary private branch was not removed")
 
 
 if __name__ == "__main__":
