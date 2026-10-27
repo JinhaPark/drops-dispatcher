@@ -43,7 +43,7 @@ def pending(root: Path):
         prior = ledger.get(item_id)
         if prior:
             if prior.get("sha256") != digest or prior.get("status") != "complete":
-                raise RuntimeError(f"Unreconciled delivery receipt for {item_id}")
+                raise RuntimeError("Unreconciled private report delivery receipt")
             continue
         result.append((report, item_id, webhook_env, digest))
     return result
@@ -86,7 +86,7 @@ def run(root: Path, dry_run=False):
         merged_receipt = read_state(root / LEDGER).get(item_id)
         if merged_receipt:
             if not valid_complete(merged_receipt, digest):
-                raise RuntimeError(f"Remote report receipt needs reconciliation: {item_id}")
+                raise RuntimeError("Remote report receipt needs reconciliation")
             checkpoint(root, marker, {})
             continue
         try:
@@ -103,9 +103,9 @@ def run(root: Path, dry_run=False):
         receipt = read_state(root / LEDGER).get(item_id, {})
         if not valid_complete(receipt, digest):
             checkpoint(root, marker, marker)
-            raise RuntimeError(f"Ambiguous report delivery: {item_id}; reconcile manually")
+            raise RuntimeError("Ambiguous private report delivery; reconcile manually")
         checkpoint(root, marker, {})
-        print(f"Confirmed private report receipt for {item_id}")
+        print("Confirmed private report receipt")
 
 
 if __name__ == "__main__":

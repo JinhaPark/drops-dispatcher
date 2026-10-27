@@ -118,7 +118,7 @@ class MigrationTests(unittest.TestCase):
             with self.assertRaisesRegex(RuntimeError, "Missing GH_TOKEN"):
                 private_repo.api(private_repo.DEFAULT_REPO, "git/ref/heads/main")
         with patch.dict(os.environ, {"DROPS_DATA_ROOT": str(self.private), "DROPS_PRIVATE_REST": "0"}):
-            with self.assertRaisesRegex(RuntimeError, "private REST transport"):
+            with self.assertRaisesRegex(RuntimeError, "Private REST checkpoint transport required"):
                 backfill.persist(self.private, {}, {"id": "blocked"})
 
     def test_failed_presend_checkpoint_never_invokes_report_sender(self):
