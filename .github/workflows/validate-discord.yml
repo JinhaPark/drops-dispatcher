@@ -43,7 +43,7 @@ jobs:
       - name: Read private fixture snapshot via GitHub API
         env:
           GH_TOKEN: ${{ steps.private-token.outputs.token }}
-        run: python scripts/private_repo.py pull --destination private-data --groups articles data sources
+        run: python scripts/private_repo.py pull --destination private-data --groups articles data sources --read-only-snapshot
       - name: Test against verified private fixtures
         shell: bash
         run: |
