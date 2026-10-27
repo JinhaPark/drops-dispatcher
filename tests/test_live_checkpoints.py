@@ -1,5 +1,6 @@
 """Offline regression tests for live Discord remote checkpoints. No webhook calls."""
 import json
+import os
 import pathlib
 import subprocess
 import sys
@@ -250,7 +251,7 @@ class LiveDispatcherTests(unittest.TestCase):
         return path
 
     def run_dispatch(self):
-        with patch.object(dispatcher, "__file__", str(self.root / "scripts" / "deliver_articles.py")):
+        with patch.dict(os.environ, {"DROPS_DATA_ROOT": str(self.root)}):
             dispatcher.main()
 
     def test_live_path_uses_shared_checkpoint_per_article(self):
