@@ -1,6 +1,7 @@
 """Offline regressions for exactly five Devansh historical posts (four public, one paid)."""
 import copy
 import json
+import os
 import pathlib
 import shutil
 import sys
@@ -139,8 +140,7 @@ class DevanshRecentFiveTests(unittest.TestCase):
         sender.assert_not_called()
 
     def test_dispatch_integration_sends_reviewed_backfill_before_live(self):
-        with patch.object(deliver_articles, "__file__",
-                          str(self.root / "scripts/deliver_articles.py")), \
+        with patch.dict(os.environ, {"DROPS_DATA_ROOT": str(self.root)}), \
              patch.object(backfill, "deliver_one") as sender:
             deliver_articles.main()
         self.assertEqual([c.args[1] for c in sender.call_args_list],
