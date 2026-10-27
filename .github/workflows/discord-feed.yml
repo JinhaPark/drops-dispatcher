@@ -52,14 +52,16 @@ jobs:
           access=$(gh api installation/repositories --jq '.repositories[] | select(.full_name == "JinhaPark/drops") | .full_name')
           test "$access" = 'JinhaPark/drops' || { echo "::error::GitHub App installation token does not include private drops"; exit 1; }
           echo "Installation token confirmed for private drops"
-      - name: Checkout private data (no credentials persisted)
-        uses: actions/checkout@v4
-        with:
-          repository: JinhaPark/drops
-          token: ${{ steps.app-token.outputs.token }}
-          path: private-data
-          persist-credentials: false
-          fetch-depth: 1
+      - name: Checkout private data with installation token
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh api repos/JinhaPark/drops/contents/data/monitor-state.json --jq '.sha' >/dev/null
+          gh auth setup-git
+          git clone --depth 1 --branch main https://github.com/JinhaPark/drops.git private-data
+          test -f private-data/data/monitor-state.json
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
