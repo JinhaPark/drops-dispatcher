@@ -74,7 +74,7 @@ class PrivateRepoTests(unittest.TestCase):
             self.assertEqual(json.loads((root / "data/discord-backfill-inflight.json").read_text()), marker)
             self.assertEqual(api.call_count, 5)
             self.assertEqual(api.call_args_list[-1].args[2], "PATCH")
-            self.assertIs(api.call_args_list[-1].kwargs["payload"]["force"], False)
+            self.assertIs(api.call_args_list[-1].args[3]["force"], False)
 
 
 if __name__ == "__main__":
