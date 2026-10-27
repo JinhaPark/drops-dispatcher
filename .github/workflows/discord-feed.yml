@@ -41,6 +41,10 @@ jobs:
           owner: JinhaPark
           repositories: drops
           permission-contents: write
+      - name: Verify private installation access
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: gh api repos/JinhaPark/drops --jq '.full_name' >/dev/null
       - name: Checkout private data (no credentials persisted)
         uses: actions/checkout@v4
         with:
@@ -48,7 +52,7 @@ jobs:
           token: ${{ steps.app-token.outputs.token }}
           path: private-data
           persist-credentials: false
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
