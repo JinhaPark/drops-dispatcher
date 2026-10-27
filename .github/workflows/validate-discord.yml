@@ -25,12 +25,15 @@ jobs:
           owner: JinhaPark
           repositories: drops
           permission-contents: read
-      - uses: actions/checkout@v4
-        with:
-          repository: JinhaPark/drops
-          token: ${{ steps.private-token.outputs.token }}
-          path: private-data
-          persist-credentials: false
+      - name: Clone private data through GitHub App token
+        shell: bash
+        env:
+          GH_TOKEN: ${{ steps.private-token.outputs.token }}
+        run: |
+          set -euo pipefail
+          gh api repos/JinhaPark/drops/contents/data/monitor-state.json --jq '.sha' >/dev/null
+          gh auth setup-git
+          git clone --depth 1 --branch main https://github.com/JinhaPark/drops.git private-data
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
