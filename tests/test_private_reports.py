@@ -65,6 +65,28 @@ class PrivateReportsTests(unittest.TestCase):
                 checkpoint.assert_not_called()
                 send.assert_not_called()
 
+    def test_remote_complete_merged_at_presend_checkpoint_skips_post(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            path = root / "reports/finance/demo/2026-10-27.md"
+            path.parent.mkdir(parents=True)
+            path.write_text("# Verification", encoding="utf-8")
+            item_id = "scheduled-report:finance/demo/2026-10-27"
+            digest = hashlib.sha256(path.read_bytes()).hexdigest()
+            (root / "data").mkdir()
+            def fake_checkpoint(workspace, prior, marker):
+                if marker:
+                    complete = {"sha256": digest, "status": "complete",
+                                "total": 1,
+                                "messages": [{"index": 0, "message_id": "existing-id"}]}
+                    (root / reports.LEDGER).write_text(json.dumps({item_id: complete}))
+            with patch.dict("os.environ", {"DISCORD_WEBHOOK_URL_FINANCE": "https://example.test"}), \
+                 patch.object(reports, "checkpoint", side_effect=fake_checkpoint) as checkpoints, \
+                 patch.object(reports.subprocess, "run") as send:
+                reports.run(root)
+                send.assert_not_called()
+                self.assertEqual(checkpoints.call_count, 2)
+
     def test_reports_checkpoint_on_shared_main_with_independent_files(self):
         self.assertEqual(reports.BRANCH, "main")
         self.assertEqual(reports.LEDGER, "data/discord-report-deliveries.json")

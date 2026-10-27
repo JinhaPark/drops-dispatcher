@@ -81,6 +81,14 @@ def run(root: Path, dry_run=False):
         marker = {"id": item_id, "sha256": digest,
                   "run_id": os.environ.get("GITHUB_RUN_ID", "local"), "plan": "reports"}
         checkpoint(root, {}, marker)  # Remotely verified fence BEFORE Discord POST.
+        # Check remote-merged state: another runner might have completed this ID
+        # since we took the local snapshot. Never post it a second time.
+        merged_receipt = read_state(root / LEDGER).get(item_id)
+        if merged_receipt:
+            if not valid_complete(merged_receipt, digest):
+                raise RuntimeError(f"Remote report receipt needs reconciliation: {item_id}")
+            checkpoint(root, marker, {})
+            continue
         try:
             subprocess.run(
                 [sys.executable, str(root / ".agents/skills/discord-feed/scripts/send.py"),
