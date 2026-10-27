@@ -1,10 +1,59 @@
-name: Legacy Discord transport disabled after private migration
+name: Private finance and general report delivery
 on:
+  schedule:
+    - cron: '29 * * * *'
   workflow_dispatch:
+    inputs:
+      mode:
+        type: choice
+        required: true
+        default: validate
+        options: [validate, deliver]
 permissions:
   contents: read
+concurrency:
+  group: drops-private-report-ledger
+  cancel-in-progress: false
 jobs:
-  legacy-disabled:
+  deliver-reports:
+    # Schedule is disabled until the first API-only integration checks pass.
+    if: ${{ github.event_name == 'workflow_dispatch' }}
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Legacy transport is disabled. Use the guarded private-data dispatcher."
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Generate private contents-write installation token
+        id: private-token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.DROPS_APP_ID }}
+          private-key: ${{ secrets.DROPS_APP_PRIVATE_KEY }}
+          owner: JinhaPark
+          repositories: drops
+          permission-contents: write
+      - name: Read private report branch through GitHub API
+        env:
+          GH_TOKEN: ${{ steps.private-token.outputs.token }}
+        run: |
+          python scripts/private_repo.py pull --branch automation/report-feed --destination report-data --groups reports data
+      - name: Prepare ephemeral private report runtime
+        run: |
+          mkdir -p report-data/scripts report-data/.agents/skills
+          cp -a scripts/. report-data/scripts/
+          cp -a .agents/skills/discord-feed report-data/.agents/skills/
+      - name: Validate routing and pending report identities without posting
+        working-directory: report-data
+        run: |
+          python scripts/deliver_private_reports.py --dry-run
+      - name: Deliver and checkpoint only in explicit mode
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.mode == 'deliver' }}
+        working-directory: report-data
+        env:
+          GH_TOKEN: ${{ steps.private-token.outputs.token }}
+          DISCORD_WEBHOOK_URL_FINANCE: ${{ secrets.DISCORD_WEBHOOK_URL_FINANCE }}
+          DISCORD_WEBHOOK_URL_GENERAL: ${{ secrets.DISCORD_WEBHOOK_URL_GENERAL }}
+        run: python scripts/deliver_private_reports.py
