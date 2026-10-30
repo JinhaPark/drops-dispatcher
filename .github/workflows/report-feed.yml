@@ -7,6 +7,9 @@ on:
       - 'scripts/deliver_private_reports.py'
       - 'scripts/private_repo.py'
       - '.agents/skills/discord-feed/scripts/send.py'
+      - '.dispatch/wake-reports.json'
+  repository_dispatch:
+    types: [drops-reports-ready]
   schedule:
     - cron: '29 * * * *'
   workflow_dispatch:
@@ -51,7 +54,16 @@ jobs:
         run: |
           python scripts/deliver_private_reports.py --dry-run
       - name: Deliver and checkpoint only in explicit mode
-        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.mode == 'deliver') }}
+        if: >-
+          ${{
+            github.event_name == 'schedule' ||
+            github.event_name == 'repository_dispatch' ||
+            (github.event_name == 'workflow_dispatch' && inputs.mode == 'deliver') ||
+            (github.event_name == 'push' && (
+              contains(github.event.head_commit.added, '.dispatch/wake-reports.json') ||
+              contains(github.event.head_commit.modified, '.dispatch/wake-reports.json')
+            ))
+          }}
         env:
           DROPS_DATA_ROOT: ${{ github.workspace }}/report-data
           GH_TOKEN: ${{ steps.private-token.outputs.token }}
