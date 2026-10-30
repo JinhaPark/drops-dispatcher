@@ -96,6 +96,14 @@ class SemiconductorWorkflowAuthTests(unittest.TestCase):
         )
         self.assertEqual(workflow.count("persist-credentials: false"), 5)
 
+    def test_motir_cron_concentrates_on_first_of_month_korean_time(self):
+        workflow = self.workflow
+        self.assertIn('cron: "23 0,2,5,8 1 * *"', workflow)
+        self.assertIn('cron: "37 0,6 2-3 * *"', workflow)
+        self.assertEqual(workflow.count("- cron:"), 2)
+        self.assertNotIn('cron: "17 0 * * *"', workflow)
+        self.assertNotIn("*/15", workflow)
+
     def test_ecos_branch_is_checked_out_with_token_not_fetched_anonymously(self):
         workflow = self.workflow
         self.assertIn("ref: automation/ecos-cache", workflow)
