@@ -1,5 +1,11 @@
 name: Private-backed Discord delivery
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.dispatch/wake-articles.json'
+  repository_dispatch:
+    types: [drops-articles-ready]
   schedule:
     - cron: '17 */6 * * *'
   workflow_dispatch:
@@ -61,7 +67,16 @@ jobs:
           python -m unittest discover -s tests -p test_publication_eligibility.py -v
           echo "Private API snapshot and focused tests passed; validation mode never posts."
       - name: Deliver approved Markdown with atomic private checkpoints
-        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.mode == 'deliver') }}
+        if: >-
+          ${{
+            github.event_name == 'schedule' ||
+            github.event_name == 'repository_dispatch' ||
+            (github.event_name == 'workflow_dispatch' && inputs.mode == 'deliver') ||
+            (github.event_name == 'push' && (
+              contains(github.event.head_commit.added, '.dispatch/wake-articles.json') ||
+              contains(github.event.head_commit.modified, '.dispatch/wake-articles.json')
+            ))
+          }}
         shell: bash
         env:
           DROPS_DATA_ROOT: ${{ github.workspace }}/private-data
