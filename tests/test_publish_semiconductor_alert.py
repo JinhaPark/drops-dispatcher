@@ -76,5 +76,34 @@ class PrivateSemiconductorPublicationTests(unittest.TestCase):
             publisher.new_state(release(), "delivered")
 
 
+class SemiconductorWorkflowAuthTests(unittest.TestCase):
+    """Keep private skills checkout authenticated even after repo visibility changes."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.workflow = (
+            Path(__file__).resolve().parents[1]
+            / ".github/workflows/semiconductor-export-monitor.yml"
+        ).read_text(encoding="utf-8")
+
+    def test_skills_checkouts_use_scoped_read_only_installation_token(self):
+        workflow = self.workflow
+        self.assertIn("id: skills-token", workflow)
+        self.assertIn("repositories: skills", workflow)
+        self.assertIn("permission-contents: read", workflow)
+        self.assertEqual(
+            workflow.count("token: ${{ steps.skills-token.outputs.token }}"), 2
+        )
+        self.assertEqual(workflow.count("persist-credentials: false"), 5)
+
+    def test_ecos_branch_is_checked_out_with_token_not_fetched_anonymously(self):
+        workflow = self.workflow
+        self.assertIn("ref: automation/ecos-cache", workflow)
+        self.assertIn("path: skills-cache-repo", workflow)
+        self.assertIn("git -C skills-cache-repo rev-parse HEAD", workflow)
+        self.assertIn("git -C skills-cache-repo show", workflow)
+        self.assertNotIn("git -C skills-repo fetch", workflow)
+
+
 if __name__ == "__main__":
     unittest.main()
