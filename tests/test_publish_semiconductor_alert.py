@@ -94,7 +94,7 @@ class SemiconductorWorkflowAuthTests(unittest.TestCase):
         self.assertEqual(
             workflow.count("token: ${{ steps.skills-token.outputs.token }}"), 2
         )
-        self.assertEqual(workflow.count("persist-credentials: false"), 3)
+        self.assertEqual(workflow.count("persist-credentials: false"), 5)
 
     def test_ecos_branch_is_checked_out_with_token_not_fetched_anonymously(self):
         workflow = self.workflow
