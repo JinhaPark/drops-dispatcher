@@ -59,10 +59,8 @@ jobs:
             github.event_name == 'schedule' ||
             github.event_name == 'repository_dispatch' ||
             (github.event_name == 'workflow_dispatch' && inputs.mode == 'deliver') ||
-            (github.event_name == 'push' && (
-              contains(github.event.head_commit.added, '.dispatch/wake-reports.json') ||
-              contains(github.event.head_commit.modified, '.dispatch/wake-reports.json')
-            ))
+            (github.event_name == 'push' &&
+             github.event.head_commit.message == 'Wake private reports dispatcher')
           }}
         env:
           DROPS_DATA_ROOT: ${{ github.workspace }}/report-data

@@ -32,7 +32,7 @@ After verifying the private commit, read the matching public `.dispatch/wake-rep
 {"version":1,"signal":"2026-10-30T09:30:00Z"}
 ```
 
-The signal must be a new unique value on each committed publication, but **must not contain** the private filename, title, body, stable ID, SHA, user information, or Discord credentials. GitHub's public `push` event wakes the route-specific workflow. If the file SHA changed concurrently, refetch once and retry; otherwise leave the private artifact for scheduled polling. Never create new signal filenames, rewrite the report, or force push.
+The signal must be a new unique value on each committed publication, but **must not contain** the private filename, title, body, stable ID, SHA, user information, or Discord credentials. Commit the marker update with the **exact** message `Wake private reports dispatcher` for reports or `Wake private articles dispatcher` for articles; the route-specific workflow accepts only this marker-only `push` signal. GitHub's public `push` event wakes the corresponding workflow. If the file SHA changed concurrently, refetch once and retry; otherwise leave the private artifact for scheduled polling. Never create new signal filenames, rewrite the report, or force push.
 
 ### Safety and compatibility
 
