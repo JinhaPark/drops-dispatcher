@@ -42,6 +42,34 @@ jobs:
           python-version: "3.12"
       - name: Run only semiconductor publication tests
         run: python -m unittest discover -s tests -p 'test_publish_semiconductor_alert.py' -v
+      - name: Verify private skills read permission on same-repository PRs
+        if: github.event.pull_request.head.repo.full_name == github.repository
+        uses: actions/create-github-app-token@v2
+        id: verify-skills-token
+        with:
+          app-id: ${{ secrets.DROPS_APP_ID }}
+          private-key: ${{ secrets.DROPS_APP_PRIVATE_KEY }}
+          owner: JinhaPark
+          repositories: skills
+          permission-contents: read
+      - name: Verify private skills main checkout
+        if: github.event.pull_request.head.repo.full_name == github.repository
+        uses: actions/checkout@v4
+        with:
+          repository: JinhaPark/skills
+          token: ${{ steps.verify-skills-token.outputs.token }}
+          ref: main
+          path: verify-skills
+          persist-credentials: false
+      - name: Verify private ECOS cache checkout
+        if: github.event.pull_request.head.repo.full_name == github.repository
+        uses: actions/checkout@v4
+        with:
+          repository: JinhaPark/skills
+          token: ${{ steps.verify-skills-token.outputs.token }}
+          ref: automation/ecos-cache
+          path: verify-cache
+          persist-credentials: false
 
   monitor:
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push'
