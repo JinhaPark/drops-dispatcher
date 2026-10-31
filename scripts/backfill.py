@@ -307,13 +307,18 @@ def deliver(root, manifest, checkpoint=persist, invoke=subprocess.run):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--validate-only", action="store_true")
+    parser.add_argument("--data-root", type=pathlib.Path,
+                        help="Separate private fixture root (validation only)")
     args = parser.parse_args()
-    manifest = read_json(ROOT / MANIFEST)
+    if args.data_root and not args.validate_only:
+        parser.error("--data-root requires --validate-only")
+    root = args.data_root.resolve(strict=True) if args.data_root else ROOT
+    manifest = read_json(root / MANIFEST)
     if not manifest:
         print("No backfill manifest")
         return
     if args.validate_only:
-        items = validate_manifest(ROOT, manifest)
+        items = validate_manifest(root, manifest)
         print("Validated", sum(i["status"] == "ready" for i in items), "ready editions")
     else:
         deliver(ROOT, manifest)
