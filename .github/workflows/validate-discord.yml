@@ -52,6 +52,7 @@ jobs:
           cp -a scripts/. private-data/scripts/
           cp -a tests private-data/tests
           mkdir -p private-data/.github/workflows
+          cp .github/workflows/youtube-feed.yml private-data/.github/workflows/youtube-feed.yml
           cp .github/workflows/report-feed.yml private-data/.github/workflows/report-feed.yml
           cp .github/workflows/discord-feed.yml private-data/.github/workflows/discord-feed.yml
           mkdir -p private-data/.dispatch
