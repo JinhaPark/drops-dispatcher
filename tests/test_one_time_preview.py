@@ -1,5 +1,6 @@
 """No-network checks for the user's exactly-two-post one-time approval."""
 import json
+import os
 import pathlib
 import shutil
 import sys
@@ -8,6 +9,7 @@ import unittest
 from unittest.mock import patch
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
+FIXTURE_ROOT = pathlib.Path(os.environ.get("DROPS_TEST_DATA_ROOT", str(ROOT)))
 sys.path.insert(0, str(ROOT / "scripts"))
 import backfill
 import one_time_preview as preview
@@ -19,12 +21,12 @@ class OneTimePreviewTests(unittest.TestCase):
         self.addCleanup(self.temp.cleanup)
         self.root = pathlib.Path(self.temp.name)
         (self.root / "data").mkdir()
-        shutil.copyfile(ROOT / preview.MANIFEST, self.root / preview.MANIFEST)
+        shutil.copyfile(FIXTURE_ROOT / preview.MANIFEST, self.root / preview.MANIFEST)
         self.manifest = preview.read_manifest(self.root)
         for item in self.manifest["items"]:
             destination = self.root / item["markdown_path"]
             destination.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copyfile(ROOT / item["markdown_path"], destination)
+            shutil.copyfile(FIXTURE_ROOT / item["markdown_path"], destination)
         (self.root / backfill.LEDGER).write_text("{}")
         (self.root / backfill.INFLIGHT).write_text("{}")
 
