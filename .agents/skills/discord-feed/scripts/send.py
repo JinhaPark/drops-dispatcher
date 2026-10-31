@@ -356,10 +356,16 @@ def main() -> None:
         default="DISCORD_WEBHOOK_URL",
     )
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--strip-frontmatter", action="store_true", help="Render only the body; preserve full-source identity")
     args = parser.parse_args()
 
     source_text = pathlib.Path(args.file).read_text(encoding="utf-8")
-    rendered_text = render_for_discord(source_text)
+    render_source = source_text
+    if args.strip_frontmatter:
+        if not source_text.startswith("---\n") or "\n---\n" not in source_text[4:]:
+            raise ValueError("Expected summary front matter")
+        render_source = source_text[4:].split("\n---\n", 1)[1]
+    rendered_text = render_for_discord(render_source)
     parts = chunks(rendered_text)
     digest = hashlib.sha256(source_text.encode()).hexdigest()
     rendered_digest = hashlib.sha256(rendered_text.encode()).hexdigest()
@@ -421,3 +427,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
