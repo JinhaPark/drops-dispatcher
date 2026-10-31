@@ -87,3 +87,8 @@ Before modifying files, read current main and this AGENTS.md. Avoid unrelated ed
 - Prefer deterministic code for canonical URL, publication-time, source-digest, threshold and delivery-ledger comparisons. Invoke model research and editorial work only for verified new or changed eligible candidates; reuse unchanged reviewed Markdown after integrity and policy-version checks.
 - Keep discovery, editorial preparation and delivery separate. Do not move monitoring into GitHub Actions, add a model API, alter schedules or weaken durable checkpoints under this documentation policy. A silent run can still consume credits; an inaccessible feed is not proof of no new issues.
 - Load only source-specific material required for current candidates. Retain required source verification, editorial validation and delivery reconciliation; skip unrelated archive-wide audits and repeated status polling.
+
+
+## YouTube private archive and summary route
+
+The user authorized a dedicated YouTube route on 2026-10-31. Private raw captions belong in `youtube/transcripts/<video_id>.json`; reviewed short Korean summaries belong in `youtube/summaries/<source_id>/<video_id>.md`. Only the latter are routed through `youtube-feed.yml` to the existing finance webhook. Keep independent YouTube delivery/in-flight state on private main. Never fetch or print raw captions in public CI. See `docs/youtube-route.md` for producer provenance and conservative cache/request rules.

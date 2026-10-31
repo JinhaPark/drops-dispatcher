@@ -1,0 +1,70 @@
+name: Private YouTube summary delivery
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/youtube-feed.yml'
+      - 'scripts/deliver_private_youtube.py'
+      - 'scripts/private_repo.py'
+      - '.agents/skills/discord-feed/scripts/send.py'
+      - '.dispatch/wake-youtube.json'
+  repository_dispatch:
+    types: [drops-youtube-ready]
+  schedule:
+    - cron: '29 * * * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        type: choice
+        required: true
+        default: validate
+        options: [validate, deliver]
+permissions:
+  contents: read
+concurrency:
+  group: drops-private-youtube-ledger
+  cancel-in-progress: false
+jobs:
+  deliver-youtube:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Generate private contents-write installation token
+        id: private-token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.DROPS_APP_ID }}
+          private-key: ${{ secrets.DROPS_APP_PRIVATE_KEY }}
+          owner: JinhaPark
+          repositories: drops
+          permission-contents: write
+      - name: Read private reports from shared private main
+        env:
+          GH_TOKEN: ${{ steps.private-token.outputs.token }}
+        run: |
+          python scripts/private_repo.py pull --branch main --destination youtube-data --groups youtube/summaries data
+      - name: Validate routing and pending report identities without posting
+        env:
+          DROPS_DATA_ROOT: ${{ github.workspace }}/youtube-data
+        run: |
+          python scripts/deliver_private_youtube.py --dry-run
+      - name: Deliver and checkpoint only in explicit mode
+        if: >-
+          ${{
+            github.event_name == 'schedule' ||
+            github.event_name == 'repository_dispatch' ||
+            (github.event_name == 'workflow_dispatch' && inputs.mode == 'deliver') ||
+            (github.event_name == 'push' &&
+             github.event.head_commit.message == 'Wake private YouTube dispatcher')
+          }}
+        env:
+          DROPS_DATA_ROOT: ${{ github.workspace }}/youtube-data
+          GH_TOKEN: ${{ steps.private-token.outputs.token }}
+          DISCORD_WEBHOOK_URL_FINANCE: ${{ secrets.DISCORD_WEBHOOK_URL_FINANCE }}
+        run: python scripts/deliver_private_youtube.py
+

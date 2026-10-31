@@ -185,7 +185,7 @@ def main():
     parser.add_argument("command", choices=["pull"])
     parser.add_argument("--branch", default="main")
     parser.add_argument("--destination", default="private-data")
-    parser.add_argument("--groups", nargs="+", choices=["articles", "reports", "data", "sources"],
+    parser.add_argument("--groups", nargs="+", choices=["articles", "reports", "data", "sources", "youtube/summaries"],
                         default=["articles", "data", "sources"])
     parser.add_argument("--read-only-snapshot", action="store_true",
                         help="Validation only; never use for Discord delivery")
@@ -196,3 +196,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

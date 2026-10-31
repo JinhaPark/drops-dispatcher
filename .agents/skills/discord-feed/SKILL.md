@@ -13,6 +13,7 @@ Accept final Markdown, a stable item ID, its repository path, and an environment
 | --- | --- | --- |
 | `articles/**/*.md` | `DISCORD_WEBHOOK_URL` | `data/discord-deliveries.json` |
 | `reports/finance/**/*.md` | `DISCORD_WEBHOOK_URL_FINANCE` | `data/discord-report-deliveries.json` |
+| `youtube/summaries/*/*.md` | `DISCORD_WEBHOOK_URL_FINANCE` | `data/discord-youtube-deliveries.json` |
 | `reports/general/**/*.md` | `DISCORD_WEBHOOK_URL_GENERAL` | `data/discord-report-deliveries.json` |
 
 Reject every other path and never fall back between secrets.
@@ -21,7 +22,7 @@ Reject every other path and never fall back between secrets.
 
 ~~~text
 RECIPE route_completed_output(final_markdown, category, stable_id, path):
-    REQUIRE category IN [ai_article, finance, general]
+    REQUIRE category IN [ai_article, finance, general, youtube]
     route := RESOLVE_EXACT_PATH(path, category)
     branch := main
 
@@ -66,3 +67,6 @@ The sender hashes and preserves the original Markdown. At delivery time, short 2
 - An ambiguous response becomes `uncertain` and blocks blind replay.
 - Mentions are disabled, credentials never enter output, and rate limits use bounded retries.
 - Production success requires the completed durable ledger entry, not merely a Git commit or workflow start.
+
+
+YouTube summary dispatch uses `python scripts/deliver_private_youtube.py` with `DROPS_DATA_ROOT` set to a separate private snapshot. The independent YouTube workflow never fetches `youtube/transcripts/` and never sends raw captions.

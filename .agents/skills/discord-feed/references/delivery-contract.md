@@ -45,3 +45,8 @@ Changed content under a delivered stable ID requires explicit revision approval.
 ## Verification
 
 Production delivery is verified only when the workflow finishes and the durable ledger contains `status: complete`, the expected source digest, the rendered digest for new records, the expected chunk total, and one Discord message ID per chunk.
+
+
+## YouTube route
+
+`youtube/summaries/*/<video_id>.md` uses the existing finance secret with stable identity `youtube:<video_id>`, independent `data/discord-youtube-deliveries.json` and `data/discord-youtube-inflight.json` on private main. Only `status: ready` and validated provenance are eligible. Raw `youtube/transcripts/<video_id>.json` is private archival material and must never enter a dispatcher snapshot or Discord message. `youtube-feed.yml` fetches only `youtube/summaries` and checkpoint data; ordinary code pushes validate only. The same durable pre-send fence, digest reconciliation, per-message receipts and uncertainty stop apply.

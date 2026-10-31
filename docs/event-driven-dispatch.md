@@ -43,3 +43,8 @@ The signal must be a new unique value on each committed publication, but **must 
 - If public wakeup fails, do not mark delivery successful. The next scheduled run attempts only still-eligible, safe items. Reconcile any uncertain in-flight state before retrying.
 
 This scheme provides near-immediate wakeup **only when the producer emits the signal after the private commit**. A private repository push made by an unmodified producer does not, by itself, trigger the public workflow.
+
+
+## YouTube summaries
+
+After a new ready immutable YouTube summary is committed to private main, wake `youtube-feed.yml` with content-free event `drops-youtube-ready`, or update the existing `.dispatch/wake-youtube.json` with a unique signal and exact commit message `Wake private YouTube dispatcher`. This route shares the finance webhook but has its own concurrency group and private delivery ledger/in-flight marker. Raw-caption archival commits alone never emit a delivery signal. The hourly fallback processes ready summaries only.
