@@ -7,6 +7,9 @@ on:
       - 'tests/**'
       - '.github/workflows/validate-discord.yml'
       - '.github/workflows/discord-feed.yml'
+      - '.github/workflows/report-feed.yml'
+      - '.github/workflows/youtube-feed.yml'
+      - '.github/workflows/semiconductor-export-monitor.yml'
 permissions:
   contents: read
 jobs:
@@ -44,24 +47,16 @@ jobs:
         env:
           GH_TOKEN: ${{ steps.private-token.outputs.token }}
         run: python scripts/private_repo.py pull --destination private-data --groups articles data sources --read-only-snapshot
-      - name: Test against verified private fixtures
+      - name: Test dispatcher code with separate read-only private fixtures
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p private-data/.agents/skills private-data/scripts
-          cp -a scripts/. private-data/scripts/
-          cp -a tests private-data/tests
-          mkdir -p private-data/.github/workflows
-          cp .github/workflows/youtube-feed.yml private-data/.github/workflows/youtube-feed.yml
-          cp .github/workflows/report-feed.yml private-data/.github/workflows/report-feed.yml
-          cp .github/workflows/discord-feed.yml private-data/.github/workflows/discord-feed.yml
-          mkdir -p private-data/.dispatch
-          cp .dispatch/wake-reports.json .dispatch/wake-articles.json private-data/.dispatch/
-          cp .github/workflows/semiconductor-export-monitor.yml private-data/.github/workflows/semiconductor-export-monitor.yml
-          cp -a .agents/skills/discord-feed private-data/.agents/skills/
-          cd private-data
+          # Always run code and workflow checks from the public checkout.
+          # The immutable private API snapshot is input data, never a code root.
+          test -d private-data/articles
+          test -f private-data/data/discord-deliveries.json
           python -m unittest discover -s .agents/skills/discord-feed/tests -v
           python -m unittest discover -s tests -v
-          python scripts/backfill.py --validate-only
-          python scripts/chronological_backfill.py --validate-only
-          python scripts/devansh_recent_five.py --validate-only
+          python scripts/backfill.py --validate-only --data-root private-data
+          python scripts/chronological_backfill.py --validate-only --data-root private-data
+          python scripts/devansh_recent_five.py --validate-only --data-root private-data

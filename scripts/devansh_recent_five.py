@@ -142,8 +142,12 @@ def deliver(root, manifest, checkpoint=backfill.persist, invoke=None):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--validate-only", action="store_true")
+    parser.add_argument("--data-root", type=pathlib.Path,
+                        help="Separate private fixture root (validation only)")
     args = parser.parse_args()
-    root = backfill.ROOT
+    if args.data_root and not args.validate_only:
+        parser.error("--data-root requires --validate-only")
+    root = args.data_root.resolve(strict=True) if args.data_root else backfill.ROOT
     manifest = read_manifest(root)
     if args.validate_only:
         items = validate(root, manifest)

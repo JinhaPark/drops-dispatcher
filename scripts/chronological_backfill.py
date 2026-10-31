@@ -3,6 +3,7 @@
 import argparse
 import datetime
 import os
+import pathlib
 import re
 import subprocess
 import sys
@@ -136,12 +137,17 @@ def deliver(root, manifest, checkpoint=b.persist, invoke=subprocess.run):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--validate-only', action='store_true')
+    parser.add_argument('--data-root', type=pathlib.Path,
+                        help='Separate private fixture root (validation only)')
     args = parser.parse_args()
-    manifest = b.read_json(b.ROOT / MANIFEST)
+    if args.data_root and not args.validate_only:
+        parser.error('--data-root requires --validate-only')
+    root = args.data_root.resolve(strict=True) if args.data_root else b.ROOT
+    manifest = b.read_json(root / MANIFEST)
     if not manifest:
         print('No chronological publication plan')
     elif args.validate_only:
-        print('Validated chronological articles:', len(validate_manifest(b.ROOT, manifest)))
+        print('Validated chronological articles:', len(validate_manifest(root, manifest)))
     else:
         deliver(b.ROOT, manifest)
 
