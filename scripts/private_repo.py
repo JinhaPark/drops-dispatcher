@@ -86,32 +86,45 @@ def _safe_path(path: str) -> bool:
 
 def pull(repo: str, branch: str, destination: Path, groups: tuple[str, ...],
          *, read_only_snapshot: bool = False):
-    head = ref_head(repo, branch)
-    _, entries = tree_snapshot(repo, head)
-    selected = {
-        name: entry for name, entry in entries.items()
-        if _safe_path(name) and
-        (any(name.startswith(group + "/") for group in groups)
-         or ("sources" in groups and name == "sources.json"))
-    }
-    if "articles" in groups and not any(p.startswith("articles/") for p in selected):
-        raise RuntimeError("No private Markdown articles found")
-    size = 0
-    for name, entry in sorted(selected.items()):
-        if entry.get("mode") not in ("100644", "100755"):
-            raise RuntimeError("Unexpected Git file mode in private snapshot")
-        content = blob_bytes(repo, entry["sha"])
-        size += len(content)
-        if size > MAX_TOTAL:
-            raise RuntimeError("Private snapshot exceeds maximum transport size")
-        target = destination / name
-        target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_bytes(content)
-    # A pinned immutable tree is sufficient for validation that never sends.
-    # Live delivery must still verify the branch head did not move.
-    if not read_only_snapshot and head != ref_head(repo, branch):
-        raise RuntimeError("Private branch changed during snapshot; retry without sending")
-    print(f"Verified private snapshot: {len(selected)} files from {branch}; no content logged")
+    # A moving branch is common when producers/dispatchers update private main.
+    # Retry *reads* before any external POST, never an uncertain Discord send.
+    # Keep files in memory until a verified attempt; do not mix two revisions.
+    attempts = 1 if read_only_snapshot else 3
+    for attempt in range(attempts):
+        head = ref_head(repo, branch)
+        _, entries = tree_snapshot(repo, head)
+        selected = {
+            name: entry for name, entry in entries.items()
+            if _safe_path(name) and
+            (any(name.startswith(group + "/") for group in groups)
+             or ("sources" in groups and name == "sources.json"))
+        }
+        if "articles" in groups and not any(p.startswith("articles/") for p in selected):
+            raise RuntimeError("No private Markdown articles found")
+        size = 0
+        staged = {}
+        for name, entry in sorted(selected.items()):
+            if entry.get("mode") not in ("100644", "100755"):
+                raise RuntimeError("Unexpected Git file mode in private snapshot")
+            content = blob_bytes(repo, entry["sha"])
+            size += len(content)
+            if size > MAX_TOTAL:
+                raise RuntimeError("Private snapshot exceeds maximum transport size")
+            staged[name] = content
+        # Validation can use a pinned immutable tree without checking live HEAD.
+        # Delivery requires a stable HEAD at the end of its snapshot read.
+        if not read_only_snapshot and head != ref_head(repo, branch):
+            if attempt == attempts - 1:
+                raise RuntimeError(
+                    "Private branch changed during snapshot after 3 attempts; "
+                    "retry without sending")
+            continue
+        for name, content in staged.items():
+            target = destination / name
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_bytes(content)
+        print(f"Verified private snapshot: {len(selected)} files from {branch}; no content logged")
+        return
 
 
 def _remote_json(repo, entries, path):
