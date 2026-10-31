@@ -31,11 +31,30 @@ class PrivateRepoTests(unittest.TestCase):
     def test_snapshot_change_is_fatal(self):
         with tempfile.TemporaryDirectory() as d:
             entries = {"articles/x.md": {"type": "blob", "sha": "a", "mode": "100644"}}
-            with patch.object(private_repo, "ref_head", side_effect=["head", "newhead"]), \
+            # A permanently moving branch must stop before writing any data.
+            with patch.object(private_repo, "ref_head",
+                              side_effect=["h1", "h2", "h2", "h3", "h3", "h4"]) as refs, \
                  patch.object(private_repo, "tree_snapshot", return_value=("tree", entries)), \
                  patch.object(private_repo, "blob_bytes", return_value=b"# Original"):
                 with self.assertRaisesRegex(RuntimeError, "changed during snapshot"):
                     private_repo.pull("JinhaPark/drops", "main", Path(d), ("articles",))
+            self.assertEqual(refs.call_count, 6)
+            self.assertFalse((Path(d) / "articles/x.md").exists())
+
+    def test_pull_retries_a_changed_head_without_mixing_private_revisions(self):
+        with tempfile.TemporaryDirectory() as d:
+            first = {"articles/old.md": {"type": "blob", "sha": "old", "mode": "100644"}}
+            second = {"articles/new.md": {"type": "blob", "sha": "new", "mode": "100644"}}
+            with patch.object(private_repo, "ref_head",
+                              side_effect=["first", "second", "second", "second"]) as refs, \
+                 patch.object(private_repo, "tree_snapshot",
+                              side_effect=[("old-tree", first), ("new-tree", second)]), \
+                 patch.object(private_repo, "blob_bytes",
+                              side_effect=lambda repo, sha: {"old": b"Old", "new": b"New"}[sha]):
+                private_repo.pull("JinhaPark/drops", "main", Path(d), ("articles",))
+            self.assertEqual(refs.call_count, 4)
+            self.assertFalse((Path(d) / "articles/old.md").exists())
+            self.assertEqual((Path(d) / "articles/new.md").read_bytes(), b"New")
 
     def test_read_only_immutable_snapshot_does_not_require_live_head(self):
         with tempfile.TemporaryDirectory() as d:
