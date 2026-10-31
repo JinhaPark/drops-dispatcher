@@ -17,6 +17,13 @@ class ValidationLayoutTests(unittest.TestCase):
         self.assertNotIn("private-data/scripts", workflow)
         self.assertNotIn("private-data/.github", workflow)
         self.assertIn("python -m unittest discover -s tests -v", workflow)
+        self.assertIn("DROPS_TEST_DATA_ROOT: ${{ github.workspace }}/private-data", workflow)
+        for name in (
+            "test_devansh_recent_five.py", "test_editorial_policy.py",
+            "test_feed_discovery.py", "test_one_time_preview.py",
+        ):
+            self.assertIn("DROPS_TEST_DATA_ROOT",
+                          (ROOT / "tests" / name).read_text(encoding="utf-8"))
         for name in SCRIPTS:
             self.assertIn(
                 f"python scripts/{name} --validate-only --data-root private-data",
