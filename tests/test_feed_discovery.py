@@ -1,5 +1,6 @@
 """Offline RSS/Atom regression tests (no network, credentials or webhook)."""
 import json
+import os
 import pathlib
 import sys
 import tempfile
@@ -7,6 +8,9 @@ import unittest
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1] / "scripts"))
 from feed_discovery import canonical_key, discover, parse_time, run
+
+FIXTURE_ROOT = pathlib.Path(os.environ.get(
+    "DROPS_TEST_DATA_ROOT", str(pathlib.Path(__file__).resolve().parents[1])))
 
 ATOM = """<?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
@@ -110,7 +114,7 @@ class FeedDiscoveryTests(unittest.TestCase):
             self.assertEqual(len(json.loads((root / "data/pending.json").read_text())), 1)
 
     def test_registry_preserves_existing_writers_and_original_urls(self):
-        sources = json.loads((pathlib.Path(__file__).resolve().parents[1] / "sources.json").read_text(encoding="utf-8"))
+        sources = json.loads((FIXTURE_ROOT / "sources.json").read_text(encoding="utf-8"))
         urls = {source["id"]: source["url"] for source in sources}
         self.assertEqual(urls["artificial-engineering"],
                          "https://www.linkedin.com/newsletters/artificial-engineering-7324756381780140032")
@@ -138,7 +142,7 @@ class FeedDiscoveryTests(unittest.TestCase):
 
     def test_devansh_is_fenced_from_historical_auto_delivery(self):
         import deliver_articles as delivery
-        repo = pathlib.Path(__file__).resolve().parents[1]
+        repo = FIXTURE_ROOT
         sources = json.loads((repo / "sources.json").read_text(encoding="utf-8"))
         state = json.loads((repo / "data/monitor-state.json").read_text(encoding="utf-8"))
         source = next(s for s in sources if s["id"] == DEVANSH["id"])

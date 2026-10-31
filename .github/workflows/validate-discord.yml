@@ -49,6 +49,8 @@ jobs:
         run: python scripts/private_repo.py pull --destination private-data --groups articles data sources --read-only-snapshot
       - name: Test dispatcher code with separate read-only private fixtures
         shell: bash
+        env:
+          DROPS_TEST_DATA_ROOT: ${{ github.workspace }}/private-data
         run: |
           set -euo pipefail
           # Always run code and workflow checks from the public checkout.

@@ -10,6 +10,7 @@ import unittest
 from unittest.mock import patch
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
+FIXTURE_ROOT = pathlib.Path(os.environ.get("DROPS_TEST_DATA_ROOT", str(ROOT)))
 sys.path.insert(0, str(ROOT / "scripts"))
 import backfill
 import devansh_recent_five as devansh
@@ -23,14 +24,14 @@ class DevanshRecentFiveTests(unittest.TestCase):
         self.root = pathlib.Path(self.temp.name)
         (self.root / "scripts").mkdir()
         (self.root / "data").mkdir()
-        shutil.copyfile(ROOT / devansh.MANIFEST, self.root / devansh.MANIFEST)
+        shutil.copyfile(FIXTURE_ROOT / devansh.MANIFEST, self.root / devansh.MANIFEST)
         self.manifest = devansh.read_manifest(self.root)
         for item in self.manifest["items"]:
             if item["status"] != "ready":
                 continue
             target = self.root / item["markdown_path"]
             target.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copyfile(ROOT / item["markdown_path"], target)
+            shutil.copyfile(FIXTURE_ROOT / item["markdown_path"], target)
         (self.root / backfill.LEDGER).write_text("{}\n")
         (self.root / backfill.INFLIGHT).write_text("{}\n")
 
