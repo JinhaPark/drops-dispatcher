@@ -5,6 +5,11 @@ on:
       - 'scripts/**'
       - 'tests/**'
       - '.github/workflows/checkpoint-tests.yml'
+      - '.github/workflows/validate-discord.yml'
+      - '.github/workflows/discord-feed.yml'
+      - '.github/workflows/report-feed.yml'
+      - '.github/workflows/youtube-feed.yml'
+      - '.github/workflows/semiconductor-export-monitor.yml'
   workflow_dispatch:
 permissions:
   contents: read
@@ -28,6 +33,7 @@ jobs:
           python -m unittest discover -s tests -p test_retire_old_report_branch.py -v
           python -m unittest discover -s tests -p test_verify_discord_routes.py -v
           python -m unittest discover -s tests -p test_private_repo.py -v
+          python -m unittest discover -s tests -p test_validation_layout.py -v
           python -m unittest discover -s tests -p test_private_migration.py -v
           python -m unittest discover -s tests -p test_live_checkpoints.py -v
 
