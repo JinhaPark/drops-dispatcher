@@ -10,6 +10,7 @@ import json
 import os
 import pathlib
 import re
+import sys
 import tempfile
 import time
 import unicodedata
@@ -298,7 +299,7 @@ def validate_existing_record(
     return "pending"
 
 
-def send(url: str, content: str) -> str:
+def send(url: str, content: str, *, before_post=None) -> str:
     if not url.startswith("https://discord.com/api/webhooks/") and not url.startswith(
         "https://discordapp.com/api/webhooks/"
     ):
@@ -316,6 +317,8 @@ def send(url: str, content: str) -> str:
             headers={"Content-Type": "application/json", "User-Agent": "discord-feed/1.0"},
         )
         try:
+            if before_post is not None:
+                before_post()
             with urllib.request.urlopen(request, timeout=25) as response:
                 result = json.load(response)
             if not result.get("id"):
@@ -360,6 +363,22 @@ def main() -> None:
     args = parser.parse_args()
 
     source_text = pathlib.Path(args.file).read_text(encoding="utf-8")
+    before_post = None
+    private_root = os.environ.get('DROPS_DATA_ROOT')
+    if args.id.startswith('scheduled-report:general/ticketing/') and not private_root:
+        raise ValueError('Ticketing delivery requires the private data root')
+    if private_root:
+        try:
+            relative = pathlib.Path(args.file).resolve().relative_to(
+                pathlib.Path(private_root).resolve()).as_posix()
+        except ValueError:
+            raise ValueError('Source is outside the private data root') from None
+        if relative.startswith('reports/general/ticketing/'):
+            sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[4] / 'scripts'))
+            from ticketing_pre_post import enrolled_snapshot, require_current
+            source_bytes = source_text.encode('utf-8')
+            if enrolled_snapshot(private_root):
+                before_post = lambda: require_current(relative, source_bytes, args.id)
     render_source = source_text
     if args.strip_frontmatter:
         if not source_text.startswith("---\n") or "\n---\n" not in source_text[4:]:
@@ -413,7 +432,7 @@ def main() -> None:
             atomic(state_path, state)
         for index in range(len(record["messages"]), len(parts)):
             try:
-                message_id = send(url, parts[index])
+                message_id = send(url, parts[index], before_post=before_post)
             except Exception:
                 record["status"] = "uncertain"
                 atomic(state_path, state)
@@ -427,4 +446,5 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
 
