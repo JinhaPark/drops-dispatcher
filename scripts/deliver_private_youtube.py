@@ -53,7 +53,12 @@ def pending(root: Path):
                     "canonical_url": "https://www.youtube.com/watch?v=" + video_id,
                     "transcript_path": "youtube/transcripts/" + video_id + ".json",
                     "editorial_version": "youtube-kakao-v1"}
-        if any(fields.get(k) != v for k, v in required.items()):
+        if any(fields.get(k) != v and not (
+                k == "editorial_version"
+                and fields.get(k) == "youtube-kakao-infomax-title-v2"
+                and path.parent.name == "infomax"
+                and fields.get("source_id") == "infomax")
+               for k, v in required.items()):
             raise ValueError("YouTube provenance mismatch")
         if not re.fullmatch(r"[0-9a-f]{64}", fields.get("transcript_sha256", "")):
             raise ValueError("Missing YouTube transcript digest")
